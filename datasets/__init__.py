@@ -1,3 +1,4 @@
+from .base import BaseDataset
 from .fire_images_dataset import CustomNormalize
 from .fire_images_dataset import FireImagesDataset
 from .fire_images_dataset import FireNetDataset
@@ -6,10 +7,12 @@ from .fire_images_dataset import FiSmoDataset
 from .fire_images_dataset import FiSmoBalancedDataset
 from .fire_images_dataset import FiSmoBlackDataset
 from .fire_images_dataset import FiSmoBalancedBlackDataset
+from .imagenet import ImageNetDataset
 
-__all__ = [ 'FireImagesDataset', 'FireNetDataset', 'FireNetTestDataset',
+
+__all__ = [ 'BaseDataset', 'FireImagesDataset', 'FireNetDataset', 'FireNetTestDataset',
             'FiSmoDataset', 'FiSmoBalancedDataset', 'FiSmoBlackDataset', 'FiSmoBalancedBlackDataset',
-            'CustomNormalize' ]
+            'ImageNetDataset', 'CustomNormalize' ]
 
 available_datasets = {
     'firenet': {
@@ -41,5 +44,10 @@ available_datasets = {
         'name': 'FiSmoBA',
         'class': FiSmoBalancedBlackDataset,
         'num_classes': 2
+    },
+    'imagenet': {
+        'name': 'ImageNet',
+        'class': ImageNetDataset,
+        'num_classes': 1000
     }
 }

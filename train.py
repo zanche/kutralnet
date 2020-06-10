@@ -96,12 +96,12 @@ print('Initiating training, models will be saved at {}'.format(save_path))
 save_callback = SaveCallback(save_path)
 # logs
 with open(os.path.join(save_path, 'training.log'), 'w') as f:
-        with redirect_stdout(f):
-            print(model)
-            # training metrics
-            history, best_model, time_elapsed = train_model(model, criterion, optimizer, train_data, val_data,
-                        epochs=epochs, batch_size=batch_size, shuffle_dataset=shuffle_dataset, scheduler=scheduler,
-                        use_cuda=use_cuda, pin_memory=pin_memory, callbacks=[save_callback])
+    with redirect_stdout(f):
+        print(model)
+        # training metrics
+        history, best_model, time_elapsed = train_model(model, criterion, optimizer, train_data, val_data,
+                    epochs=epochs, batch_size=batch_size, shuffle_dataset=shuffle_dataset, scheduler=scheduler,
+                    use_cuda=use_cuda, pin_memory=pin_memory, callbacks=[save_callback])
 
 # model save
 model_path = os.path.join(save_path, model_path)

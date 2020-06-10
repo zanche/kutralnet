@@ -1,19 +1,34 @@
-"""
-transform_compose = transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ])
-
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters())
-scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=85)
-
-Training complete in 8m 39s
-Best accuracy on epoch 93: 0.891179
-Accuracy of the network on the test images: 82.02%
-"""
+import os
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+def KutralNetPreTrained(classes, freeze_layer=9):
+    """KutralNet model previously trained with ILSVRC2012."""
+    kutralnet = KutralNet(1000) # given the 1000 classes trained
+    here_path = os.path.dirname(os.path.abspath(__file__))
+    folder_path = os.path.join(here_path, 'saved', 'kutralnet', 'imagenet')
+    state_dict = os.path.join(folder_path, 'model_kutralnet.pth')
+    
+    # check if cuda available
+    torch_device = 'cpu'    
+    if torch.cuda.is_available():
+        torch_device = 'cuda'
+        
+    kutralnet.load_state_dict(torch.load(state_dict, 
+          map_location=torch.device(torch_device)))
+    
+    # adapt last layer
+    n_filters = kutralnet.classifier.in_features
+    
+    kutralnet.classifier = nn.Linear(n_filters, classes)
+    
+    # freeze layers
+    # for i, child in enumerate(kutralnet.children()):
+    #     if i < freeze_layer:
+    #         for param in child.parameters():
+    #             param.requires_grad = False
+    return kutralnet
 
 class KutralBlock(nn.Module):
     def __init__(self, in_ch, out_ch, kernel_size=3, stride=1, padding=1, bias=False):

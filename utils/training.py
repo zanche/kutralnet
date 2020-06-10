@@ -17,7 +17,7 @@ class SaveCallback:
     def __call__(self, model, epoch):
         file_path = os.path.join(self.folder_path, 'best_model_ep{:03d}.pth'.format(epoch))
         print('Epoch: {:03d} -> Saving model {}'.format(epoch, file_path))
-        torch.save(model, self.file_path)
+        torch.save(model, file_path)
     # end __call__
 # end SaveCallback
 
@@ -185,10 +185,12 @@ def test_model(model, dataset, batch_size=32, use_cuda=True):
     correct = 0
     Y_test = []
     y_pred = []
+    avg_time = []
     since = time.time()
 
     with torch.no_grad():
         for data in test_loader:
+            loop_time = time.time()
             images, labels = data
 
             if use_cuda:
@@ -202,15 +204,19 @@ def test_model(model, dataset, batch_size=32, use_cuda=True):
             correct += (predicted == labels).sum().item()
             Y_test.extend(labels.tolist())
             y_pred.extend(torch.nn.functional.softmax(outputs, dim=1).tolist())
+            loop_elapsed = time.time() - loop_time
+            avg_time.append(loop_elapsed / labels.size(0))
 
     time_elapsed = time.time() - since
     test_accuracy = 100 * correct / total
     print('Completed in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
+    print('Average time per image {:.0f}m {:.0f}s'.format(
+        np.mean(avg_time) // 60, np.mean(avg_time) % 60))
     print('Accuracy of the network on the test images: {:.2f}%'.format(
             test_accuracy))
 
-    return np.array(Y_test), np.array(y_pred), test_accuracy
+    return np.array(Y_test), np.array(y_pred), test_accuracy, avg_time
 
 # end test_model
 

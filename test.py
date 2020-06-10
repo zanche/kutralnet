@@ -73,7 +73,7 @@ with open(os.path.join(save_path, 'testing.log'), 'a+') as f:
         model.load_state_dict(torch.load(model_path, 
                                     map_location=torch.device(torch_device)))
         # test summary
-        y_true, y_pred, test_accuracy = test_model(model, dataset, 
+        y_true, y_pred, test_accuracy, test_time = test_model(model, dataset, 
                                                    batch_size=batch_size, 
                                                    use_cuda=use_cuda)
         y_score = [y[1] for y in y_pred]

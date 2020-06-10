@@ -1,17 +1,3 @@
-"""
-transform_compose = transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ])
-
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters())
-scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=85)
-
-Training complete in 3m 56s
-Best accuracy on epoch 96: 0.873866
-Accuracy of the network on the test images: 81.54%
-"""
 import torch.nn as nn
 import torch.nn.functional as F
 from .octave import OctConvBlock

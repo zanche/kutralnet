@@ -3,6 +3,7 @@ from torch import optim
 from torchvision import transforms
 from .nadam_optim import Nadam
 
+
 models_conf = {
     'firenet': {
         'img_dims': (64, 64),
@@ -13,7 +14,7 @@ models_conf = {
         'criterion': CrossEntropyLoss(),
         'optimizer': optim.Adam,
         'optimizer_params': {'eps': 1e-6},
-        'preprocess_train': transforms.Compose([
+        'preprocess_train': transforms.Compose([    
                        transforms.Resize((64, 64)), #redimension
                        transforms.ToTensor()
                     ]),
@@ -179,6 +180,81 @@ models_conf['kutralnet_mobileoct'] = {
         'scheduler': None,
         'scheduler_params': {}
     }
+
+models_conf['kutralnet_pre'] = {
+        'img_dims': (84, 84),
+        'model_name': 'KutralNet Pre-Trained',
+        'model_path': 'model_kutralnet.pth',
+        'class_name': 'KutralNetPreTrained',
+        'module_name': 'models.kutralnet',
+        'criterion': CrossEntropyLoss(),
+        'optimizer': optim.Adam,
+        'optimizer_params': {},
+        'preprocess_train': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'preprocess_val': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'preprocess_test': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'scheduler': None,
+        'scheduler_params': {}
+    }
+
+models_conf['kutralnet_mobileoct_pre'] = {
+        'img_dims': (84, 84),
+        'model_name': 'KutralNet Mobile Octave Pre-Trained',
+        'model_path': 'model_kutralnet_mobileoct.pth',
+        'class_name': 'KutralNetMobileOctPreTrained',
+        'module_name': 'models.kutralnet_mobileoct',
+        'criterion': CrossEntropyLoss(),
+        'optimizer': optim.Adam,
+        'optimizer_params': {},
+        'preprocess_train': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'preprocess_val': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'preprocess_test': transforms.Compose([
+                       transforms.Resize((84, 84)), #redimension
+                       transforms.ToTensor()
+                    ]),
+        'scheduler': None,
+        'scheduler_params': {}
+    }
+
+models_conf['resnet18'] = {
+    'img_dims': (224, 224),
+    'model_name': 'ResNet18',
+    'model_path': 'model_resnet18.pth',
+    'class_name': 'ResNet18',
+    'module_name': 'models.resnet',
+    'criterion': CrossEntropyLoss(),
+    'optimizer': optim.Adam,
+    'optimizer_params': {},
+    'preprocess_train': transforms.Compose([
+                   transforms.Resize((224, 224)), #redimension
+                   transforms.ToTensor()
+                ]),
+    'preprocess_val': transforms.Compose([
+                   transforms.Resize((224, 224)), #redimension
+                   transforms.ToTensor()
+                ]),
+    'preprocess_test': transforms.Compose([
+                   transforms.Resize((224, 224)), #redimension
+                   transforms.ToTensor()
+                ]),
+    'scheduler': None,
+    'scheduler_params': {}
+}
 
 def get_config(base_model):
     return models_conf[base_model]

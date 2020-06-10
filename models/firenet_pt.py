@@ -1,8 +1,3 @@
-"""
-64x64
-Training complete in 5m 17s
-Best val Acc: 0.882030
-"""
 import torch.nn as nn
 
 class ConvBlock(nn.Module):

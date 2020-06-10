@@ -1,3 +1,4 @@
+import os
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -6,6 +7,33 @@ from .octave import OctConvBlock
 from .octave import _BatchNorm2d
 from .octave import _LeakyReLU
 from .octave import _MaxPool2d
+
+def KutralNetMobileOctPreTrained(classes, freeze_layer=9):
+    """KutralNetMobileOct model previously trained with ILSVRC2012."""
+    model = KutralNetMobileOct(1000) # given the 1000 classes trained
+    here_path = os.path.dirname(os.path.abspath(__file__))
+    folder_path = os.path.join(here_path, 'saved', 'kutralnet_mobileoct', 'imagenet')
+    state_dict = os.path.join(folder_path, 'model_kutralnet_mobileoct.pth')
+    
+    # check if cuda available
+    torch_device = 'cpu'    
+    if torch.cuda.is_available():
+        torch_device = 'cuda'
+        
+    model.load_state_dict(torch.load(state_dict, 
+          map_location=torch.device(torch_device)))
+    
+    # adapt last layer
+    n_filters = model.classifier.in_features
+    
+    model.classifier = nn.Linear(n_filters, classes)
+    
+    # freeze layers
+    # for i, child in enumerate(kutralnet.children()):
+    #     if i < freeze_layer:
+    #         for param in child.parameters():
+    #             param.requires_grad = False
+    return model
 
 class InvertedResidualOct(nn.Module):
     """
