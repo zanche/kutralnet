@@ -28,25 +28,26 @@ def add_bool_arg(parser, name, default=False, **kwargs):
     parser.set_defaults(**{name.replace('-', '_'):default})
 # end add_bool_arg
 
-def get_paths(root_path):
-    models_root = os.path.join(root_path, 'models')
-    models_save_path = os.path.join(root_path, 'models', 'saved')
-    models_results_path = os.path.join(root_path, 'models', 'results')
+def get_paths(models_root):
+    models_save_path = os.path.join(models_root, 'saved')
+    models_results_path = os.path.join(models_root, 'results')
     
+    # models root
+    if not os.path.exists(models_root):
+        os.makedirs(models_root)
+        
     # save models folder
     if not os.path.exists(models_save_path):
-        os.mkdir(models_save_path)
+        os.makedirs(models_save_path)
     
     # results models folder
     if not os.path.exists(models_results_path):
-        os.mkdir(models_results_path)
+        os.makedirs(models_results_path)
     
-    print('Root path:', root_path)
-    print('Models path:', models_root)
     print('Models saved path:', models_save_path)
     print('Models results path:', models_results_path)
     
-    return models_root, models_save_path, models_results_path
+    return models_save_path, models_results_path
 # end get_paths
 
 def get_model(base_model='kutralnet', num_classes=2, extra_params=None):

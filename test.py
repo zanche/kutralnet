@@ -59,7 +59,11 @@ dataset = test_dataset(transform=transform_compose, preload=preload_data)
 
 # read models direclty from the repository's folder
 root_path = os.path.join('.')
-models_root, models_save_path, models_results_path = get_paths(root_path)
+models_root = os.path.join(root_path, 'models')
+print('Root path:', root_path)
+print('Models path:', models_root)
+models_save_path, models_results_path = get_paths(models_root)
+
 # folder of saved results
 final_folder = train_dataset_name if version is None else '{}_{}'.format(
     train_dataset_name, version)

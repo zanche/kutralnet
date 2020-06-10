@@ -83,7 +83,11 @@ if config['scheduler'] is not None:
 # folder for save results
 # save models direclty in the repository's folder
 root_path = os.path.join('.')
-models_root, models_save_path, models_results_path = get_paths(root_path)
+models_root = os.path.join(root_path, 'models')
+print('Root path:', root_path)
+print('Models path:', models_root)
+models_save_path, models_results_path = get_paths(models_root)
+
 
 final_folder = dataset_name if version is None else '{}_{}'.format(dataset_name, version)
 folder_name = os.path.join(base_model, final_folder)
