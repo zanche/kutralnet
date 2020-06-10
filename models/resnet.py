@@ -48,5 +48,3 @@ def ResNet18(classes):
     )
 
 # end ResNet18
-
-print(ResNet18(2))
