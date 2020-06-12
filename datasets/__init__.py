@@ -14,7 +14,7 @@ __all__ = [ 'BaseDataset', 'FireImagesDataset', 'FireNetDataset', 'FireNetTestDa
             'FiSmoDataset', 'FiSmoBalancedDataset', 'FiSmoBlackDataset', 'FiSmoBalancedBlackDataset',
             'ImageNetDataset', 'CustomNormalize' ]
 
-available_datasets = {
+datasets = {
     'firenet': {
         'name': 'FireNet',
         'class': FireNetDataset,

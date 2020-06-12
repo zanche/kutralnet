@@ -2,74 +2,52 @@ import os
 import time
 import copy
 import torch
-import importlib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from .models import models_conf
 
 
-class SaveCallback:
-    def __init__(self, folder_path):
-        self.folder_path = folder_path
+class BestModelSaveCallback:
+    """Save the model with higher accuracy during training.
+    
+    Arguments:
+    ---------
+        model_path (string): the file where to save the model.
+    """
+    
+    def __init__(self, model_path):
+        self.model_path = model_path
+        self.prev_acc = -1.
     # end __init__
 
-    def __call__(self, model, epoch):
-        file_path = os.path.join(self.folder_path, 'best_model_ep{:03d}.pth'.format(epoch))
-        print('Epoch: {:03d} -> Saving model {}'.format(epoch, file_path))
-        torch.save(model, file_path)
+    def __call__(self, model, acc):
+        """Compare and save the model.
+        
+        Arguments:
+        ---------
+            model (torch.nn.Module): the model to be saved.
+            acc (float): the accuracy value to be compared.
+        """
+        if acc >= self.prev_acc:
+            print('Saving model...', end=' ')
+            best_model = copy.deepcopy(model.state_dict())
+            torch.save(best_model, self.model_path)
+            self.prev_acc = acc
     # end __call__
 # end SaveCallback
 
 def add_bool_arg(parser, name, default=False, **kwargs):
     group = parser.add_mutually_exclusive_group(required=False)
-    group.add_argument('--' + name, dest=name.replace('-', '_'), action='store_true', **kwargs)
-    group.add_argument('--no-' + name, dest=name.replace('-', '_'), action='store_false', **kwargs)
+    group.add_argument('--' + name, dest=name.replace('-', '_'), 
+                       action='store_true', **kwargs)
+    group.add_argument('--no-' + name, dest=name.replace('-', '_'), 
+                       action='store_false', **kwargs)
     parser.set_defaults(**{name.replace('-', '_'):default})
 # end add_bool_arg
 
-def get_paths(models_root):
-    models_save_path = os.path.join(models_root, 'saved')
-    models_results_path = os.path.join(models_root, 'results')
-    
-    # models root
-    if not os.path.exists(models_root):
-        os.makedirs(models_root)
-        
-    # save models folder
-    if not os.path.exists(models_save_path):
-        os.makedirs(models_save_path)
-    
-    # results models folder
-    if not os.path.exists(models_results_path):
-        os.makedirs(models_results_path)
-    
-    print('Models saved path:', models_save_path)
-    print('Models results path:', models_results_path)
-    
-    return models_save_path, models_results_path
-# end get_paths
-
-def get_model(base_model='kutralnet', num_classes=2, extra_params=None):
-    model, config = None, None
-    if base_model in models_conf:
-        config = models_conf[base_model]
-        module = importlib.import_module(config['module_name'])        
-        fire_model = getattr(module, config['class_name'])
-        params = {'classes': num_classes }
-
-        if extra_params is not None:
-            params.update(extra_params)
-
-        model = fire_model(**params)
-    else:
-        raise ValueError('Must choose a model first [firenet, octfiresnet, resnet, kutralnet]')
-
-    return model, config
-# end get_model
-
-def train_model(model, criterion, optimizer, train_data, val_data, epochs=100, batch_size=32,
-                shuffle_dataset=True, scheduler=None, use_cuda=True, pin_memory=False, callbacks=None):
+def train_model(model, criterion, optimizer, train_data, val_data, 
+                epochs=100, batch_size=32, shuffle_dataset=True, scheduler=None, 
+                use_cuda=True, pin_memory=False, callbacks=None):
     # prepare dataset
     train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size,
                             pin_memory=pin_memory, shuffle=shuffle_dataset, num_workers=2)
@@ -81,18 +59,15 @@ def train_model(model, criterion, optimizer, train_data, val_data, epochs=100, b
 
     data_loaders = {"train": train_loader, "val": validation_loader}
     data_lengths = {"train": len(train_data), "val": len(val_data)}
-    print('data_lengths', data_lengths)
+    print('Dataset lengths', data_lengths)
 
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
-    best_acc = 0.0
-    best_ep = 0
-    history = {}
-    history['loss'] = []
-    history['acc'] = []
-    history['val_loss'] = []
-    history['val_acc'] = []
+    history = dict(
+            loss=[], acc=[],
+            val_acc=[], val_loss=[]
+        )
 
     for epoch in range(epochs):
         print('Epoch {:03d}/{:03d}'.format(epoch +1, epochs), end=": ")
@@ -145,15 +120,13 @@ def train_model(model, criterion, optimizer, train_data, val_data, epochs=100, b
             history[loss_key].append(epoch_loss)
             history[acc_key].append(epoch_acc.item())
 
-            print('{} Loss: {:.4f}'.format(phase.capitalize(), epoch_loss), 'Acc: {:.4f}'.format(epoch_acc), end=" | ")
+            print('{} Loss: {:.4f}'.format(phase.capitalize(), epoch_loss), 
+                  'Acc: {:.4f}'.format(epoch_acc), end=" | ")
             # deep copy the model
-            if phase == 'val' and epoch_acc > best_acc:
-                best_acc = epoch_acc
-                best_ep = epoch +1
-                best_model_wts = copy.deepcopy(model.state_dict())
+            if phase == 'val':
                 if callbacks is not None:
                     for c in callbacks:
-                        c(best_model_wts, best_ep)
+                        c(model, epoch_acc)
 
         if scheduler is not None:
             scheduler.step()
@@ -167,7 +140,6 @@ def train_model(model, criterion, optimizer, train_data, val_data, epochs=100, b
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
-    print('Best accuracy on epoch {}: {:4f}'.format(best_ep, best_acc))
 
     return history, best_model_wts, time_elapsed
 # end train_model
@@ -186,12 +158,10 @@ def test_model(model, dataset, batch_size=32, use_cuda=True):
     correct = 0
     Y_test = []
     y_pred = []
-    avg_time = []
     since = time.time()
 
     with torch.no_grad():
         for data in test_loader:
-            loop_time = time.time()
             images, labels = data
 
             if use_cuda:
@@ -205,70 +175,22 @@ def test_model(model, dataset, batch_size=32, use_cuda=True):
             correct += (predicted == labels).sum().item()
             Y_test.extend(labels.tolist())
             y_pred.extend(torch.nn.functional.softmax(outputs, dim=1).tolist())
-            loop_elapsed = time.time() - loop_time
-            avg_time.append(loop_elapsed / labels.size(0))
 
     time_elapsed = time.time() - since
     test_accuracy = 100 * correct / total
     print('Completed in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
-    print('Average time per image {:.0f}m {:.0f}s'.format(
-        np.mean(avg_time) // 60, np.mean(avg_time) % 60))
     print('Accuracy of the network on the test images: {:.2f}%'.format(
             test_accuracy))
 
-    return np.array(Y_test), np.array(y_pred), test_accuracy, avg_time
+    return np.array(Y_test), np.array(y_pred), test_accuracy, time_elapsed
 
 # end test_model
 
-def show_samples(data):
-    fig = plt.figure()
-
-    for i in range(len(data)):
-        sample = data[i]
-
-        print(i, sample[0].shape, sample[1].shape)
-
-        ax = plt.subplot(1, 4, i + 1)
-        plt.tight_layout()
-        label = 'Fire' if sample[1] == 1 else 'Nofire'
-        ax.set_title('Sample {}'.format(label))
-        ax.axis('off')
-        img = sample[0].transpose(2, 0)
-        plt.imshow(img.transpose(0, 1))
-
-        if i == 3:
-            plt.show()
-            break
-# end show_samples
-
-def plot_history(history, folder_path=None):
-    plt.plot(history['acc'])
-    plt.plot(history['val_acc'])
-    plt.title('Model accuracy')
-    plt.ylabel('Accuracy')
-    plt.xlabel('Epoch')
-    plt.legend(['Training', 'Validation'], loc='upper left')
-
-    if folder_path is not None:
-        plt.savefig(os.path.join(folder_path, 'accuracy.png'))
-
-    plt.show()
-
-    plt.plot(history['loss'])
-    plt.plot(history['val_loss'])
-    plt.title('Model loss')
-    plt.ylabel('Loss')
-    plt.xlabel('Epoch')
-    plt.legend(['Training', 'Validation'], loc='upper left')
-
-    if folder_path is not None:
-        plt.savefig(os.path.join(folder_path, 'loss.png'))
-
-    plt.show()
-# end plot_history
-
-def save_history(history, file_path='history.csv'):
-    df = pd.DataFrame(data=history)
-    df.to_csv(file_path)
+def save_csv(data_source, file_path='history.csv', header=True, index=True):
+    if isinstance(data_source, pd.DataFrame):
+        data_source.to_csv(file_path, header=header, index=index)
+    else:
+        df = pd.DataFrame(data=data_source)
+        df.to_csv(file_path, header=header, index=index)
     return True

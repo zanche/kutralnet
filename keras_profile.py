@@ -1,3 +1,4 @@
+import os
 import tensorflow as tf
 import keras.backend as K
 from models.firenet_tf import firenet_tf
@@ -12,16 +13,25 @@ def get_flops(model):
 
     return flops.total_float_ops  # Prints the "flops" of the model.
 
-model = firenet_tf(input_shape=(64, 64, 3))
-model.compile(loss='sparse_categorical_crossentropy',
-              optimizer='adam',
-              metrics=['accuracy'])
+def model_profile():
+    model = firenet_tf(input_shape=(64, 64, 3))
+    model.compile(loss='sparse_categorical_crossentropy',
+                  optimizer='adam',
+                  metrics=['accuracy'])
+    flops = get_flops(model)
+    print(flops)
+    return flops
 
-print(get_flops(model))
+def model_size(model_path):
+    # size
+    file_size = os.stat(model_path).st_size
+    file_size /= 1024 **2
+    fs_string = '{:.2f}MB'.format(file_size)
+    print(fs_string)
+    return fs_string
 
-model = firenet_tf(input_shape=(64, 64, 3))
-model.compile(loss='sparse_categorical_crossentropy',
-              optimizer='adam',
-              metrics=['accuracy'])
 
-print(get_flops(model))
+if __name__ == '__main__':
+    # probing calculation stability
+    model_profile()
+    model_profile()

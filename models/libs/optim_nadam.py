@@ -10,7 +10,6 @@ Created on Sat Dec 09 14:38:12 2017
 @author: Ashish Katiyar
 """
 
-import math
 import torch
 from torch.optim import Optimizer
 
