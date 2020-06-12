@@ -1,0 +1,25 @@
+Model ID,resnet
+Model name,ResNet50
+Training dataset ID,firenet
+Training dataset name,FireNet
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)"
+Scheduler,None
+Model parameters,31.9089M
+Model FLOPS,4.1485G
+Training time (s),561
+Validation accuracy,0.9821673631668092
+Best ep,78
+Model on-disk size,121.98MB

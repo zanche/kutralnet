@@ -1,0 +1,25 @@
+Model ID,kutralnet_mobileoct
+Model name,KutralNet Mobile Octave
+Training dataset ID,fismo_balanced
+Training dataset name,FiSmoB
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)"
+Scheduler,None
+Model parameters,185.2500K
+Model FLOPS,26.1383M
+Training time (s),141
+Validation accuracy,0.9365482330322266
+Best ep,16
+Model on-disk size,0.75MB

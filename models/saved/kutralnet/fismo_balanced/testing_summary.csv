@@ -1,0 +1,14 @@
+Version,None
+Testing time (s),5.003789186477661
+AUROC value,0.8312142865808534
+Testing accuracy,0.7531572904707232
+Using CUDA,False
+Batch size,32
+NoFire precision,0.5683297180043384
+NoFire recall,0.9424460431654677
+NoFire f1-score,0.7090663058186739
+NoFire support,278
+Fire precision,0.9609756097560975
+Fire recall,0.6644182124789207
+Fire f1-score,0.7856430707876372
+Fire support,593

@@ -1,0 +1,24 @@
+Model ID,octfiresnet
+Model name,OctFiResNet
+Training dataset ID,firenet
+Training dataset name,FireNet
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Nadam (
+Parameter Group 0
+    betas: (0.9, 0.999)
+    eps: 1e-07
+    lr: 0.0001
+    weight_decay: 0
+)"
+Scheduler,None
+Model parameters,956.2260K
+Model FLOPS,943.1864M
+Training time (s),215
+Validation accuracy,0.9533607959747314
+Best ep,86
+Model on-disk size,3.73MB

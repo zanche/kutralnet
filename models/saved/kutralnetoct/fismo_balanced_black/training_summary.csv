@@ -1,0 +1,25 @@
+Model ID,kutralnetoct
+Model name,KutralNet Octave
+Training dataset ID,fismo_balanced_black
+Training dataset name,FiSmoBA
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)"
+Scheduler,None
+Model parameters,125.7300K
+Model FLOPS,30.5869M
+Training time (s),90
+Validation accuracy,0.9263958930969238
+Best ep,68
+Model on-disk size,0.49MB

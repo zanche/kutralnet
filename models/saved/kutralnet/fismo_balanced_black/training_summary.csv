@@ -1,0 +1,26 @@
+Model ID,kutralnet
+Model name,KutralNet
+Training dataset ID,fismo_balanced_black
+Training dataset name,FiSmoBA
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.001
+    lr: 0.001
+    weight_decay: 0
+)"
+Scheduler,StepLR(step_size=85)
+Model parameters,138.9140K
+Model FLOPS,77.6637M
+Training time (s),82
+Validation accuracy,0.9340101480484008
+Best ep,58
+Model on-disk size,0.54MB

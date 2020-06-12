@@ -1,0 +1,25 @@
+Model ID,kutralnet_mobile
+Model name,KutralNet Mobile
+Training dataset ID,fismo
+Training dataset name,FiSmo
+Version,None
+Using cuda,True
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,CrossEntropyLoss()
+Optimizer,"Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)"
+Scheduler,None
+Model parameters,173.0900K
+Model FLOPS,44.9377M
+Training time (s),262
+Validation accuracy,0.859851598739624
+Best ep,95
+Model on-disk size,0.69MB
