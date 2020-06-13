@@ -293,10 +293,12 @@ def get_model_paths(models_root, model_name, dataset_name, version=None,
     if create_path:
         # models root
         if not os.path.exists(models_root):
+            print('Creating models_root path', models_root)
             os.makedirs(models_root)
         
         # model save path folder
         if not os.path.exists(save_path):
+            print('Creating save path', save_path)
             os.makedirs(save_path)
     
     else:

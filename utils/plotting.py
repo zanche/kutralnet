@@ -12,9 +12,17 @@ import pandas as pd
 from matplotlib.ticker import PercentFormatter
 import matplotlib.pyplot as plt
 from models import get_model_paths
-# import matplotlib as mpl
-# from cycler import cycler
-# mpl.rcParams['axes.prop_cycle'] = cycler(color=plt.cm.Dark2(np.linspace(0.1, 0.9, 10)))
+import matplotlib as mpl
+from cycler import cycler
+# mpl.rcParams['axes.prop_cycle'] = cycler(color=plt.cm.Dark2(np.linspace(0.1, 0.9, 9)))
+# mpl.rcParams['axes.prop_cycle'] = cycler(color=plt.cm.tab10([0,1,2,6]))
+# mpl.rcParams['axes.prop_cycle'] = cycler(color=['#4c78a8', # blue
+#                                                 '#f58518', # orange
+#                                                 '#e45756', # red
+#                                                 '#72b7b2', # cyan?
+#                                                 '#7888cd',
+#                                                 '#e49744', 
+#                                                 ])
 
 
 class PlotHelper:
@@ -76,8 +84,9 @@ class PlotHelper:
         """
         if not self.title is None:
             ax.set_title(self.title, fontsize=fontsize, **kwargs)
+            
         
-    def plot_bar(self, width=0.25, ylim=None, offset=0.02):
+    def plot_bar(self, width=0.25, ylim=None, offset=0.01):
         """
         Plot a Bar graph.
 
@@ -92,33 +101,49 @@ class PlotHelper:
             fig matplotlib.Figure: the figure to be reused
             ax Axes: the axes to be reused
         """
+        colors =['#4c78a8', # blue
+                '#f58518', # orange
+                '#e45756', # red
+                '#72b7b2', # cyan?
+                '#7888cd',
+                '#e49744',
+            ]
+        
         xis_string = isinstance(self.xdata[0], str)
         fig, ax = plt.subplots()
         if xis_string:
             # the label locations
             bar_labels = self.xdata
-            x = np.arange(len(bar_labels), dtype=float)
+            dist = (width + offset) * self.n_items
+            dist += 0.2 #space between groups
+            x = np.arange(0, len(bar_labels)*dist, dist, dtype=float)
             x_val = x - width / 2 * (self.n_items -1) # distance from center
             x_val -= offset / 2 * (self.n_items -1) # distance between bars        
             ax.set_xticks(x)
+            ax.tick_params(
+                axis='x',          # changes apply to the x-axis
+                which='both',      # both major and minor ticks are affected
+                bottom=False)      # ticks along the bottom edge are off
             ax.set_xticklabels(bar_labels)  
         else:
             x_val = self.xdata
         
         for i in range(self.n_items):
-            ax.bar(x_val, self.ydata[i], width, label=self.legends[i], zorder=2)
+            ax.bar(x_val, self.ydata[i], width, label=self.legends[i], 
+                   color=colors[i], zorder=2)
             if xis_string:
                 x_val += width + offset
         
-        # Add some text for labels, title and custom x-axis tick labels, etc.
-        ax.set_ylabel(self.ylabel, fontsize=14)
-        ax.set_xlabel(self.xlabel, fontsize=14)
         if not ylim is None:
             ax.set_ylim(ylim)
+            
         self.make_title(ax)
+        ax.set_ylabel(self.ylabel, fontsize=14)
+        ax.set_xlabel(self.xlabel, fontsize=14)
         ax.legend(loc="lower right", prop={'size': 14})
         ax.grid()        
         fig.tight_layout()
+        
         self.fig, self.ax = fig, ax
         return fig, ax
     
@@ -126,30 +151,42 @@ class PlotHelper:
         """Plot a Bar graph with percentage representation of axis."""
         fig, ax = self.plot_bar(width=width, ylim=ylim, offset=offset)        
         ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
+        self.fig, self.ax = fig, ax
         return fig, ax
         
     def plot_roc(self, lw=2):
-        """Plot the ROC curve."""        
+        """Plot the ROC curve."""
+        colors =['#0059b3', # blue
+                '#e65c00', # orange
+                '#af1d1d', # red
+                '#346562', # cyan?
+                '#374895',
+                '#df7b21',
+            ]
+        
         fig, ax = plt.subplots()
         for i in range(self.n_items):
             fpr = self.xdata[i]
             tpr = self.ydata[i]
             legend = self.legends[i]
             
-            ax.plot(fpr, tpr, lw=lw, label=legend, linestyle='-.')
+            ax.plot(fpr, tpr, lw=lw, label=legend, color=colors[i], 
+                    linestyle='-.')
         
         # baseline
         ax.plot([0, 1], [0, 1], color='black', lw=1, linestyle='--')
         ax.set_ylim([ 0.0, 1.01])
         ax.set_xlim([-0.01, 1.0])
-        ax.grid()
-        ax.set_xlabel(self.xlabel, fontsize=14)
-        ax.set_ylabel(self.ylabel, fontsize=14)
-        
         ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
         ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
+        
+        self.make_title(ax)
+        ax.set_xlabel(self.xlabel, fontsize=14)
+        ax.set_ylabel(self.ylabel, fontsize=14)
         ax.legend(loc="lower right", prop={'size': 14})
+        ax.grid()        
         fig.tight_layout()
+        
         self.fig, self.ax = fig, ax
         return fig, ax
     
@@ -214,7 +251,8 @@ def get_testing_acc(testing_data):
     auroc_val = testing_data.iloc[2, 1]
     return float(test_acc), float(auroc_val)
 
-def plot_all(models_root, datasets, models, version=None, name_prefix=None):
+def plot_all(models_root, datasets, models, version=None, title=False,
+             name_prefix=None, extension='pdf'):
     """Plot all the required graphs once (and save it).
     
     If name_prefix is set, the graphics will be saved inside 
@@ -245,20 +283,26 @@ def plot_all(models_root, datasets, models, version=None, name_prefix=None):
             legend = '{} AUROC={:.2f}'.format(model_name, roc_auc)
             plotter_roc.add_data(legend, fpr, tpr)
             
-        plotter_roc.title = "ROC curve for {} dataset".format(dataset_name)
+        if title:
+            plotter_roc.title = "ROC curve for {} dataset".format(dataset_name)
         plotter_roc.plot_roc()
         if must_save:
-            file_name = "{}_{}_ROCcurve.pdf".format(name_prefix, dataset_name)
+            file_name = "{}_{}_ROCcurve.{}".format(name_prefix, dataset_name, 
+                                                   extension)
             plotter_roc.save(os.path.join(results_path, file_name))
+    
+    if title:
+        plotter_val.title = 'Training results'
+        plotter_test.title = 'Test results'
         
     plotter_val.plot_bar_percentage(ylim=[0.3, 1.01])
     plotter_test.plot_bar_percentage(ylim=[0.3, 1.01])
     
     if must_save:
-        file_name = "{}_validation_accuracy.pdf".format(name_prefix)
+        file_name = "{}_validation_accuracy.{}".format(name_prefix, extension)
         plotter_val.save(os.path.join(results_path, file_name))
         
-        file_name = "{}_test_accuracy.pdf".format(name_prefix,)
+        file_name = "{}_test_accuracy.{}".format(name_prefix, extension)
         plotter_test.save(os.path.join(results_path, file_name))
     
 def plot_history(history, folder_path=None):
@@ -319,7 +363,7 @@ if __name__ == '__main__':
     
     # baseline comparison
     models = ['firenet_tf', 'kutralnet', 'octfiresnet', 'resnet']
-    datasets = ['fismo']# ['firenet', 'fismo', 'fismo_black']
+    datasets = ['firenet', 'fismo', 'fismo_black']
     plot_all(models_root, datasets, models, version=version, 
              name_prefix='baseline')
     

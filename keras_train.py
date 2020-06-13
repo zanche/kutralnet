@@ -3,7 +3,6 @@ import time
 import pickle
 import argparse
 import numpy as np
-from contextlib import redirect_stdout
 from keras.callbacks import ModelCheckpoint, CSVLogger
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import classification_report
@@ -13,7 +12,6 @@ from models.firenet_tf import firenet_tf
 from utils.dataset import load_dataset
 from utils.dataset import load_firenet_test_dataset
 from utils.dataset import preprocess
-from keras_profile import model_profile
 from keras_profile import model_size
 from utils.training import add_bool_arg
 from utils.training import save_csv
