@@ -14,7 +14,7 @@ from utils.training import save_csv
 
 
 parser = argparse.ArgumentParser(description='Fire classification test')
-parser.add_argument('--base-model', metavar='BM', default='kutralnet',
+parser.add_argument('--model', metavar='BM', default='kutralnet',
                     help='the trained model ID to test')
 parser.add_argument('--dataset', metavar='DS', default='fismo',
                     help='the dataset ID used for training')
@@ -22,27 +22,36 @@ parser.add_argument('--version', metavar='VER', default=None,
                     help='the training version to perform the test')
 parser.add_argument('--batch-size', metavar='BS', default=32, type=int,
                     help='the number of items in the batch')
+parser.add_argument('--models-path', default='models',
+                    help='the path where storage the models')
 add_bool_arg(parser, 'preload-data', default=True, help='choose if load or not the dataset on-memory')
+add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
-
-# Seed
-seed_val = 666
-use_cuda = torch.cuda.is_available()
-torch.manual_seed(seed_val)
-np.random.seed(seed_val)
-torch_device = 'cpu'
-
-if use_cuda:
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    torch_device = 'cuda'
 
 # user's selection
 model_id = args.base_model #'kutralnet'
 train_dataset_id = args.dataset #'fismo'
 version = args.version #None
+models_root = args.models_path
 preload_data = bool(args.preload_data) #True # load dataset on-memory
 batch_size = args.batch_size #32
+must_seed = bool(args.seed)
+# cuda if available
+use_cuda = torch.cuda.is_available()
+torch_device = 'cpu'
+
+if use_cuda:
+    torch_device = 'cuda'
+
+if must_seed:
+    # Seed
+    seed_val = 666
+    torch.manual_seed(seed_val)
+    np.random.seed(seed_val)
+    
+    if use_cuda:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False        
 
 # dataset selection
 test_dataset_id = 'firenet_test'
@@ -57,9 +66,6 @@ transform_compose = config['preprocess_test']
 dataset = test_dataset(transform=transform_compose, preload=preload_data)
 
 # read models direclty from the repository's folder
-root_path = os.path.join('.')
-models_root = os.path.join(root_path, 'models')
-print('Root path:', root_path)
 print('Models path:', models_root)
 save_path, model_path = get_model_paths(models_root, model_id, 
                                                  train_dataset_id, version)

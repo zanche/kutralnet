@@ -16,7 +16,7 @@ from utils.plotting import plot_history
 
 
 parser = argparse.ArgumentParser(description='Classification models training script')
-parser.add_argument('--base-model', metavar='BM', default='kutralnet',
+parser.add_argument('--model', metavar='BM', default='kutralnet',
                     help='the model ID for training')
 parser.add_argument('--epochs', metavar='EP', default=100, type=int,
                     help='the number of maximum iterations')
@@ -26,30 +26,37 @@ parser.add_argument('--dataset', metavar='DS', default='fismo',
                     help='the dataset ID for training')
 parser.add_argument('--version', metavar='VER', default=None,
                     help='the training version')
+parser.add_argument('--models-path', metavar='MODEL_PATH', default='models',
+                    help='the path where storage the models')
 add_bool_arg(parser, 'preload-data', default=False, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'pin-memory', default=False, help='choose if pin or not the data into CUDA memory')
+add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
 
-# Seed
-seed_val = 666
-use_cuda = torch.cuda.is_available()
-torch.manual_seed(seed_val)
-np.random.seed(seed_val)
-
-if use_cuda:
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-
 # user's selections
-model_id = args.base_model #'kutralnet'
+model_id = args.model #'kutralnet'
 dataset_id = args.dataset #'fismo'
 version = args.version #None
+models_root = args.models_path
 # train config
 epochs = args.epochs #100
 batch_size = args.batch_size #32
 shuffle_dataset = True
 preload_data = bool(args.preload_data) #False # load dataset on-memory
 pin_memory = bool(args.pin_memory) #False # pin dataset on-memory
+must_seed = bool(args.seed)
+# cuda if available
+use_cuda = torch.cuda.is_available()
+
+# Seed
+if must_seed:
+    seed_val = 666
+    torch.manual_seed(seed_val)
+    np.random.seed(seed_val)
+
+    if use_cuda:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
 # dataset selection
 dataset_name = datasets[dataset_id]['name']
@@ -89,9 +96,6 @@ if config['scheduler'] is not None:
     scheduler_info = scheduler_info.replace("'", "").replace(": ", "=")
 
 # save models direclty in the repository's folder
-root_path = os.path.join('.')
-models_root = os.path.join(root_path, 'models')
-print('Root path:', root_path)
 print('Models path:', models_root)
 save_path, model_path = get_model_paths(models_root, model_id, 
                                                  dataset_id, version=version,
