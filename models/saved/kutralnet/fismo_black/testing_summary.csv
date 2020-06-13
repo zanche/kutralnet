@@ -8,7 +8,7 @@ NoFire precision,0.5762004175365344
 NoFire recall,0.9928057553956835
 NoFire f1-score,0.7291941875825628
 NoFire support,278
-Fire precision,0.9948979591836735
+Fire precision,0.9948979591836736
 Fire recall,0.657672849915683
 Fire f1-score,0.7918781725888325
 Fire support,593

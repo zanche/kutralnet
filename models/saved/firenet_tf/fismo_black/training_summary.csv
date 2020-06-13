@@ -1,0 +1,18 @@
+Model ID,firenet_tf
+Model name,FireNet
+Training dataset ID,fismo_black
+Training dataset name,FiSmoA
+Version,None
+Using CUDA,Unknown
+Epochs,100
+Batch size,32
+Shuffle dataset,True
+Loss function,sparse_categorical_crossentropy
+Optimizer,adam
+Scheduler,None
+Model parameters,646.82K
+Model FLOPS,Undefined
+Training time (s),114.19655084609985
+Validation accuracy,0.8564885
+Best ep,21
+Model on-disk size,7.47MB
