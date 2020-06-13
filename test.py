@@ -29,7 +29,7 @@ add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for
 args = parser.parse_args()
 
 # user's selection
-model_id = args.base_model #'kutralnet'
+model_id = args.model #'kutralnet'
 train_dataset_id = args.dataset #'fismo'
 version = args.version #None
 models_root = args.models_path

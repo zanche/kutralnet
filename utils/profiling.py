@@ -39,7 +39,7 @@ def model_performance(history_file):
         
     #history.sort_values('val_acc'), inplace=True)
     best_row = history.sort_values('val_acc').tail(1)
-    best_val_acc, best_ep = best_row.iloc[0]['val_acc'], best_row.iloc[0][0]
+    best_val_acc, best_ep = best_row.iloc[0]['val_acc'], best_row.index[0]
     best_ep = int(best_ep) +1
     print('Max validation accuracy {:.4f} reached on epoch {}'.format(
                     best_val_acc, best_ep))
