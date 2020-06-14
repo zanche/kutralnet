@@ -190,6 +190,10 @@ class PlotHelper:
         self.fig, self.ax = fig, ax
         return fig, ax
     
+    def show(self):
+        """Present the figure."""
+        return plt.show()
+    
     def save(self, file_path):
         """Save the current Figure into file_path."""
         self.fig.savefig(file_path)
@@ -251,59 +255,134 @@ def get_testing_acc(testing_data):
     auroc_val = testing_data.iloc[2, 1]
     return float(test_acc), float(auroc_val)
 
-def plot_all(models_root, datasets, models, version=None, title=False,
+def plot_all(models_root, datasets, models, 
+             graphs=['val', 'test', 'roc'],
+             versions=[None], title=False,
              name_prefix=None, extension='pdf'):
     """Plot all the required graphs once (and save it).
     
     If name_prefix is set, the graphics will be saved inside 
-    {models_root}/results folder with {name_prefix}_(test|validation).pdf
+    {models_root}/results folder with {name_prefix}_(test|validation).pdf    
+    Arguments:
+    ---------        
+        models_root string: specify the models root folder containing the
+            saved/{model} folders
+        datasets list: the list containing the datasets id to plot
+        models list: the list containing the models id to plot
+        graphs list: (optional) the list containing the graphs id to be plotted:
+            val -> the validation accuracy bar plot
+            test -> the test accuracy bar plot
+            roc -> the ROC curve line plot
+            ep -> the best episode bar plot
+            auroc -> the AUROC value bar plot
+        versions list: (optional) the list containing the versions to plot
+        title string: (optional) the plot's title
+        name_prefix string: (optional) specify the prefix name to save the plots.
+            if any value is set, all the plot in the graphs list will be saved.
+        extension string: (optional) the extension for figure.save() method.
     """
+    if len(graphs) == 0:
+        print("Nothing to plot...")
+        return False
+    
     must_save = not name_prefix is None
     results_path = get_results_path(models_root, create_path=must_save)
     
-    plotter_val = PlotHelper('Dataset', 'Validation Accuracy')
-    plotter_test = PlotHelper('Dataset', 'Test Accuracy')
+    if 'val' in graphs:
+        plotter_val = PlotHelper('Dataset', 'Validation Accuracy')
+    if 'test' in graphs:
+        plotter_test = PlotHelper('Dataset', 'Test Accuracy')
+    if 'ep' in graphs:
+        plotter_ep = PlotHelper('Dataset', 'Best episode')
+    if 'auroc' in graphs:
+        plotter_auroc = PlotHelper('Dataset', 'AUROC values')
     
     for dataset_id in datasets:
-        plotter_roc = PlotHelper('False Positive Rate', 'True Positive Rate')
+        if 'roc' in graphs:
+            plotter_roc = PlotHelper('False Positive Rate', 'True Positive Rate')
         
         for model_id in models:
-            training_data, testing_data, roc_data = get_data(models_root, 
-                                                model_id, dataset_id, version)
-            model_name, dataset_name = get_names(training_data)
-            val_acc, best_epoch = get_validation_acc(training_data)
-            test_acc, auroc_val = get_testing_acc(testing_data)
+            for version_id in versions:
+                training_data, testing_data, roc_data = get_data(models_root, 
+                                                    model_id, dataset_id, version_id)
+                model_name, dataset_name = get_names(training_data)
+                val_acc, best_epoch = get_validation_acc(training_data)
+                test_acc, auroc_val = get_testing_acc(testing_data)
+                
+                if not version_id is None:
+                    model_name += "-" + version_id
+                
+                if 'val' in graphs:
+                    plotter_val.add_data(model_name, dataset_name, val_acc)
+                
+                if 'test' in graphs:
+                    plotter_test.add_data(model_name, dataset_name, test_acc)
+                
+                if 'roc' in graphs:
+                    fpr = roc_data['fpr']
+                    tpr = roc_data['tpr']
+                    roc_auc = roc_data['roc_auc']
+                    legend = '{} AUROC={:.2f}'.format(model_name, roc_auc)
+                    plotter_roc.add_data(legend, fpr, tpr)
+                
+                if 'ep' in graphs:
+                    plotter_ep.add_data(model_name, dataset_name, best_epoch)
+                    
+                if 'auroc' in graphs:
+                    plotter_auroc.add_data(model_name, dataset_name, auroc_val)
+
+        if 'roc' in graphs:            
+            if title:
+                plotter_roc.title = "ROC curve for {} dataset".format(dataset_name)
+            print('Plotting {} ROC...'.format(dataset_name))
+            plotter_roc.plot_roc()
+            plotter_roc.show()
             
-            plotter_val.add_data(model_name, dataset_name, val_acc)
-            plotter_test.add_data(model_name, dataset_name, test_acc)
-            
-            fpr = roc_data['fpr']
-            tpr = roc_data['tpr']
-            roc_auc = roc_data['roc_auc']
-            legend = '{} AUROC={:.2f}'.format(model_name, roc_auc)
-            plotter_roc.add_data(legend, fpr, tpr)
-            
-        if title:
-            plotter_roc.title = "ROC curve for {} dataset".format(dataset_name)
-        plotter_roc.plot_roc()
-        if must_save:
-            file_name = "{}_{}_ROCcurve.{}".format(name_prefix, dataset_name, 
-                                                   extension)
-            plotter_roc.save(os.path.join(results_path, file_name))
+            if must_save:
+                file_name = "{}_{}_ROCcurve.{}".format(name_prefix, dataset_name, 
+                                                       extension)
+                plotter_roc.save(os.path.join(results_path, file_name))
     
     if title:
-        plotter_val.title = 'Training results'
-        plotter_test.title = 'Test results'
-        
-    plotter_val.plot_bar_percentage(ylim=[0.3, 1.01])
-    plotter_test.plot_bar_percentage(ylim=[0.3, 1.01])
+        if 'val' in graphs:
+            plotter_val.title = 'Training results' 
+        if 'test' in graphs:
+            plotter_test.title = 'Test results'
+        if 'ep' in graphs:
+            plotter_ep.title = 'Highest episodes'
+        if 'auroc' in graphs:
+            plotter_auroc.title = 'AUROC results'
     
+    if 'val' in graphs:
+        print('Plotting validation...')
+        plotter_val.plot_bar_percentage(ylim=[0.3, 1.01])
+        plotter_val.show()
+    if 'test' in graphs:    
+        print('Plotting test...')
+        plotter_test.plot_bar_percentage(ylim=[0.3, 1.01])
+        plotter_test.show()        
+    if 'ep' in graphs:
+        print('Plotting best episodes...')
+        plotter_ep.plot_bar()
+        plotter_ep.show()    
+    if 'auroc' in graphs:
+        print('Plotting AUROC...')
+        plotter_auroc.plot_bar_percentage()
+        plotter_auroc.show()
+            
     if must_save:
-        file_name = "{}_validation_accuracy.{}".format(name_prefix, extension)
-        plotter_val.save(os.path.join(results_path, file_name))
-        
-        file_name = "{}_test_accuracy.{}".format(name_prefix, extension)
-        plotter_test.save(os.path.join(results_path, file_name))
+        if 'val' in graphs: 
+            file_name = "{}_validation_accuracy.{}".format(name_prefix, extension)
+            plotter_val.save(os.path.join(results_path, file_name))
+        if 'test' in graphs:
+            file_name = "{}_test_accuracy.{}".format(name_prefix, extension)
+            plotter_test.save(os.path.join(results_path, file_name))
+        if 'ep' in graphs:  
+            file_name = "{}_best_episodes.{}".format(name_prefix, extension)
+            plotter_ep.save(os.path.join(results_path, file_name))
+        if 'auroc' in graphs:
+            file_name = "{}_auroc_values.{}".format(name_prefix, extension)
+            plotter_auroc.save(os.path.join(results_path, file_name))
     
 def plot_history(history, folder_path=None):
     """Plot history file from training."""
@@ -313,6 +392,7 @@ def plot_history(history, folder_path=None):
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Training', 'Validation'], loc='upper left')
+    plt.tight_layout()
 
     if folder_path is not None:
         plt.savefig(os.path.join(folder_path, 'accuracy.png'))
@@ -325,6 +405,7 @@ def plot_history(history, folder_path=None):
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Training', 'Validation'], loc='upper left')
+    plt.tight_layout()
 
     if folder_path is not None:
         plt.savefig(os.path.join(folder_path, 'loss.png'))
