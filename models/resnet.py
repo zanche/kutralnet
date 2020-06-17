@@ -25,16 +25,14 @@ def resnet_sharma(classes):
     )
 # end resnet_sharma
 
-def ResNet18(classes):
+def ResNet18(classes, freeze_layer=9):
     """
     ResNet18 for use with Transfer-learning
     """
     resnet = resnet18(pretrained=True)
     num_ftrs = resnet.fc.in_features
     # modify the last layer to add another FC
-    resnet.fc = nn.Linear(num_ftrs, 1024)
-    # freeze for transfer learning
-    freeze_layer = 9
+    resnet.fc = nn.Linear(num_ftrs, 1024)   
 
     # freeze layers
     for i, child in enumerate(resnet.children()):
