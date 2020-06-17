@@ -12,17 +12,6 @@ import pandas as pd
 from matplotlib.ticker import PercentFormatter
 import matplotlib.pyplot as plt
 from models import get_model_paths
-import matplotlib as mpl
-from cycler import cycler
-# mpl.rcParams['axes.prop_cycle'] = cycler(color=plt.cm.Dark2(np.linspace(0.1, 0.9, 9)))
-# mpl.rcParams['axes.prop_cycle'] = cycler(color=plt.cm.tab10([0,1,2,6]))
-# mpl.rcParams['axes.prop_cycle'] = cycler(color=['#4c78a8', # blue
-#                                                 '#f58518', # orange
-#                                                 '#e45756', # red
-#                                                 '#72b7b2', # cyan?
-#                                                 '#7888cd',
-#                                                 '#e49744', 
-#                                                 ])
 
 
 class PlotHelper:

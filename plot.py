@@ -14,7 +14,7 @@ parser.add_argument('--versions', nargs='*',
 parser.add_argument('--graphs', default='val test roc', nargs='+',
                     help='the graphs to be presented, i.e., --graphs val testr roc')
 parser.add_argument('--models-path', default='models',
-                    help='the path where storages the models')
+                    help='the path where are stored the models')
 parser.add_argument('--save-prefix', default='test',
                     help='the prefix to save the figures')
 args = parser.parse_args()
@@ -50,19 +50,6 @@ if 'portable' in models:
     plot_all(models_root, d, m, graphs=graphs, versions=versions,
          name_prefix='portable', title=False)
 
-# pretained test
-# models = ['kutralnet_pre']
-# datasets = ['fismo']
-# versions = [
-#         #'test_0freeze', 
-#         'test_0freeze_2dense',
-#         #'test_1freeze', 
-#         'test_1freeze_2dense',
-#         #'test_2freeze', 
-#         'test_2freeze_2dense',
-#         #'test_3freeze', 
-#         'test_3freeze_2dense',
-#         ]
 if len(models) > 0:
     plot_all(models_root, datasets, models, graphs=graphs, versions=versions,
              name_prefix=save_prefix, title=False)

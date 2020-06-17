@@ -19,7 +19,7 @@ from utils.plotting import plot_history
 
 
 parser = argparse.ArgumentParser(description='Classification models training script, TF versions')
-parser.add_argument('--base-model', metavar='BM', default='firenet_tf',
+parser.add_argument('--model', metavar='BM', default='firenet_tf',
                     help='the model ID for training')
 parser.add_argument('--epochs', metavar='EP', default=100, type=int,
                     help='the number of maximum iterations')
@@ -29,44 +29,48 @@ parser.add_argument('--dataset', metavar='DS', default='fismo',
                     help='the dataset ID for training')
 parser.add_argument('--version', metavar='VER', default=None,
                     help='the training version')
+parser.add_argument('--models-path', metavar='MODEL_PATH', default='models',
+                    help='the path where storage the models')
 add_bool_arg(parser, 'preload-data', default=False, help='choose if load or not the dataset on-memory')
-add_bool_arg(parser, 'pin-memory', default=False, help='choose if pin or not the data into CUDA memory')
+add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
-
-# Set a seed value
-seed_value= 666
-# 1. Set `PYTHONHASHSEED` environment variable at a fixed value
-os.environ['PYTHONHASHSEED']=str(seed_value)
-# 2. Set `python` built-in pseudo-random generator at a fixed value
-import random
-random.seed(seed_value)
-# 3. Set `numpy` pseudo-random generator at a fixed value
-np.random.seed(seed_value)
-# 4. Set `tensorflow` pseudo-random generator at a fixed value
-import tensorflow as tf
-tf.set_random_seed(seed_value)
-# 5. For layers that introduce randomness like dropout, make sure to set seed values
-# model.add(Dropout(0.25, seed=seed_value))
-#6 Configure a new global `tensorflow` session
-from keras import backend as K
-session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
-sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
-K.set_session(sess)
-
 
 must_train = True
 must_test = True
 # user's selections
-model_id = args.base_model #'kutralnet'
+model_id = args.model #'kutralnet'
 dataset_id = args.dataset #'fismo'
 version = args.version #None
+models_root = args.models_path
 # train config
 epochs = args.epochs #100
 batch_size = args.batch_size #32
 shuffle_dataset = True
 preload_data = bool(args.preload_data) #False # load dataset on-memory
-pin_memory = bool(args.pin_memory) #False # pin dataset on-memory
+must_seed = bool(args.seed) #True # set seed value
 use_cuda = 'Unknown'
+
+# Seed
+if must_seed:
+    # Set a seed value
+    seed_value= 666
+    # 1. Set `PYTHONHASHSEED` environment variable at a fixed value
+    os.environ['PYTHONHASHSEED']=str(seed_value)
+    # 2. Set `python` built-in pseudo-random generator at a fixed value
+    import random
+    random.seed(seed_value)
+    # 3. Set `numpy` pseudo-random generator at a fixed value
+    np.random.seed(seed_value)
+    # 4. Set `tensorflow` pseudo-random generator at a fixed value
+    import tensorflow as tf
+    tf.set_random_seed(seed_value)
+    # 5. For layers that introduce randomness like dropout, make sure to set seed values
+    # model.add(Dropout(0.25, seed=seed_value))
+    #6 Configure a new global `tensorflow` session
+    from keras import backend as K
+    session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+    sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+    K.set_session(sess)
 
 # dataset selection
 dataset_name = datasets[dataset_id]['name']
@@ -74,9 +78,6 @@ num_classes = datasets[dataset_id]['num_classes']
 ds_folder, get_dataset = load_dataset(dataset_id)
 
 # save models direclty in the repository's folder
-root_path = os.path.join('.')
-models_root = os.path.join(root_path, 'models')
-print('Root path:', root_path)
 print('Models path:', models_root)
 save_path, _ = get_model_paths(models_root, model_id, dataset_id, 
                                version=version, create_path=True)
@@ -152,6 +153,7 @@ if must_train:
 
     best_ep = np.argmax(history.history['val_acc'])
     best_acc = history.history['val_acc'][best_ep]
+    best_ep += 1
 
     time_elapsed = time.time() - since
 

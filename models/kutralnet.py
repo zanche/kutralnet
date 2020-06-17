@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-def KutralNetPreTrained(classes, freeze_layer=9):
+def KutralNetPreTrained(classes, freeze_layer=1):
     """KutralNet model previously trained with ILSVRC2012."""
     kutralnet = KutralNet(1000) # given the 1000 classes trained
     here_path = os.path.dirname(os.path.abspath(__file__))
@@ -24,10 +24,11 @@ def KutralNetPreTrained(classes, freeze_layer=9):
     kutralnet.classifier = nn.Linear(n_filters, classes)
     
     # freeze layers
-    # for i, child in enumerate(kutralnet.children()):
-    #     if i < freeze_layer:
-    #         for param in child.parameters():
-    #             param.requires_grad = False
+    for i, child in enumerate(kutralnet.children()):
+        if i < freeze_layer:
+            for param in child.parameters():
+                param.requires_grad = False
+                
     return kutralnet
 
 class KutralBlock(nn.Module):

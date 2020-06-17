@@ -44,7 +44,7 @@ batch_size = args.batch_size #32
 shuffle_dataset = True
 preload_data = bool(args.preload_data) #False # load dataset on-memory
 pin_memory = bool(args.pin_memory) #False # pin dataset on-memory
-must_seed = bool(args.seed)
+must_seed = bool(args.seed) #True # set seed value
 # cuda if available
 use_cuda = torch.cuda.is_available()
 
