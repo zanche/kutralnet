@@ -1,4 +1,5 @@
 import os
+import json
 import torch
 import argparse
 import numpy as np
@@ -16,18 +17,20 @@ from utils.plotting import plot_history
 
 
 parser = argparse.ArgumentParser(description='Classification models training script')
-parser.add_argument('--model', metavar='BM', default='kutralnet',
+parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
-parser.add_argument('--epochs', metavar='EP', default=100, type=int,
+parser.add_argument('--epochs', default=100, type=int,
                     help='the number of maximum iterations')
-parser.add_argument('--batch-size', metavar='BS', default=32, type=int,
+parser.add_argument('--batch-size', default=32, type=int,
                     help='the number of items in the batch')
-parser.add_argument('--dataset', metavar='DS', default='fismo',
+parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
-parser.add_argument('--version', metavar='VER', default=None,
+parser.add_argument('--version', metavar='VERSION_ID', default=None,
                     help='the training version')
-parser.add_argument('--models-path', metavar='MODEL_PATH', default='models',
+parser.add_argument('--models-path', default='models',
                     help='the path where storage the models')
+parser.add_argument('--model-params', default=None,
+                    help='the params to instantiate the model')
 add_bool_arg(parser, 'preload-data', default=False, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'pin-memory', default=False, help='choose if pin or not the data into CUDA memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
@@ -45,6 +48,10 @@ shuffle_dataset = True
 preload_data = bool(args.preload_data) #False # load dataset on-memory
 pin_memory = bool(args.pin_memory) #False # pin dataset on-memory
 must_seed = bool(args.seed) #True # set seed value
+extra_params = args.model_params
+
+if not extra_params is None:
+    extra_params = json.loads(extra_params)
 # cuda if available
 use_cuda = torch.cuda.is_available()
 
@@ -64,7 +71,8 @@ base_dataset = datasets[dataset_id]['class']
 num_classes = datasets[dataset_id]['num_classes']
 
 # model load
-model, config = get_model(model_id, num_classes=num_classes)
+model, config = get_model(model_id, num_classes=num_classes, 
+                          extra_params=extra_params)
 
 # common preprocess
 transform_train = config['preprocess_train']

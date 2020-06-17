@@ -276,7 +276,6 @@ def plot_all(models_root, datasets, models,
     
     must_save = not name_prefix is None
     results_path = get_results_path(models_root, create_path=must_save)
-    #plotters = dict()
     
     if 'val' in graphs:
         plotter_val = PlotHelper('Dataset', 'Validation Accuracy')

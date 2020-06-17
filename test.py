@@ -1,4 +1,5 @@
 import os
+import json
 import torch
 import pickle
 import argparse
@@ -14,16 +15,18 @@ from utils.training import save_csv
 
 
 parser = argparse.ArgumentParser(description='Fire classification test')
-parser.add_argument('--model', metavar='BM', default='kutralnet',
-                    help='the trained model ID to test')
-parser.add_argument('--dataset', metavar='DS', default='fismo',
-                    help='the dataset ID used for training')
-parser.add_argument('--version', metavar='VER', default=None,
-                    help='the training version to perform the test')
-parser.add_argument('--batch-size', metavar='BS', default=32, type=int,
+parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
+                    help='the model ID for training')
+parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
+                    help='the dataset ID for training')
+parser.add_argument('--version', metavar='VERSION_ID', default=None,
+                    help='the training version')
+parser.add_argument('--batch-size', default=32, type=int,
                     help='the number of items in the batch')
 parser.add_argument('--models-path', default='models',
                     help='the path where storage the models')
+parser.add_argument('--model-params', default=None,
+                    help='the params to instantiate the model')
 add_bool_arg(parser, 'preload-data', default=True, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
@@ -36,6 +39,10 @@ models_root = args.models_path
 preload_data = bool(args.preload_data) #True # load dataset on-memory
 batch_size = args.batch_size #32
 must_seed = bool(args.seed)
+extra_params = args.model_params
+
+if not extra_params is None:
+    extra_params = json.loads(extra_params)
 # cuda if available
 use_cuda = torch.cuda.is_available()
 torch_device = 'cpu'
@@ -59,7 +66,8 @@ test_dataset = datasets[test_dataset_id]['class']
 test_num_classes = datasets[test_dataset_id]['num_classes']
 
 # model load
-model, config = get_model(model_id, num_classes=test_num_classes)
+model, config = get_model(model_id, num_classes=test_num_classes, 
+                          extra_params=extra_params)
 
 # dataset load
 transform_compose = config['preprocess_test']
