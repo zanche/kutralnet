@@ -11,8 +11,8 @@ parser.add_argument('--datasets', default=['fismo'], nargs='+',
                     help='the datasets ID used for training as --datasets fismo (firenet (fismo_black))')
 parser.add_argument('--versions', nargs='*',
                     help='the trained version be presented as --versions v1 v2 v3')
-parser.add_argument('--graphs', default='val test roc', nargs='+',
-                    help='the graphs to be presented, i.e., --graphs val testr roc')
+parser.add_argument('--graphs', default=['val', 'test', 'roc'], nargs='+',
+                    help='the graphs to be presented, i.e., --graphs val test roc')
 parser.add_argument('--models-path', default='models',
                     help='the path where are stored the models')
 parser.add_argument('--save-prefix', default='test',
