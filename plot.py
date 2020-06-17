@@ -1,15 +1,18 @@
 import os
 import argparse
+from utils.training import add_bool_arg
 from utils.plotting import plot_all
 
 
 parser = argparse.ArgumentParser(description='Summary plot script')
-parser.add_argument('--models', default=['baseline', 'portable'], nargs='+',
+parser.add_argument('--models', metavar='MODEL_ID',
+                    default=['baseline', 'portable'], nargs='+',
                     help='the trained models ID presented, i.e, --models \
                     resnet kutralnet kutralnet_octave ocfiresnet')
-parser.add_argument('--datasets', default=['fismo'], nargs='+',
-                    help='the datasets ID used for training as --datasets fismo (firenet (fismo_black))')
-parser.add_argument('--versions', nargs='*',
+parser.add_argument('--datasets', metavar='DATASET_ID', 
+                    default=['fismo'], nargs='+',
+                    help='the datasets ID used for training as --datasets fismo [firenet [fismo_black]]')
+parser.add_argument('--versions', metavar='VERSION_ID', nargs='*',
                     help='the trained version be presented as --versions v1 v2 v3')
 parser.add_argument('--graphs', default=['val', 'test', 'roc'], nargs='+',
                     help='the graphs to be presented, i.e., --graphs val test roc')
@@ -17,12 +20,14 @@ parser.add_argument('--models-path', default='models',
                     help='the path where are stored the models')
 parser.add_argument('--save-prefix', default='test',
                     help='the prefix to save the figures')
+add_bool_arg(parser, 'title', default=False, help='choose if add or not a title to the plots')
 args = parser.parse_args()
 
 # user's selections
 models = args.models #'kutralnet'
 datasets = args.datasets #'fismo'
 versions = args.versions #None    
+add_title = bool(args.title) #False # add a title to the plot
 graphs = args.graphs
 save_prefix = args.save_prefix
 models_root = args.models_path
@@ -52,4 +57,4 @@ if 'portable' in models:
 
 if len(models) > 0:
     plot_all(models_root, datasets, models, graphs=graphs, versions=versions,
-             name_prefix=save_prefix, title=False)
+             name_prefix=save_prefix, title=add_title)
