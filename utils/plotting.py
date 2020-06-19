@@ -53,8 +53,11 @@ class PlotHelper:
             idx = self.legends.index(legend)
             duplicated = True
             
-        if not xdata in self.xdata:
-            self.xdata.append(xdata)            
+        if isinstance(xdata, str):
+            if not xdata in self.xdata:
+                self.xdata.append(xdata)            
+        else:
+            self.xdata.append(xdata)
             
         if duplicated:
             if not isinstance(self.ydata[idx], list):
