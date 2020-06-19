@@ -8,7 +8,7 @@ from .octave import _BatchNorm2d
 from .octave import _LeakyReLU
 from .octave import _MaxPool2d
 
-def KutralNetMobileOctPreTrained(classes, freeze_layer=9):
+def KutralNetMobileOctPreTrained(classes, freeze_layer=0):
     """KutralNetMobileOct model previously trained with ILSVRC2012."""
     model = KutralNetMobileOct(1000) # given the 1000 classes trained
     here_path = os.path.dirname(os.path.abspath(__file__))
@@ -29,10 +29,11 @@ def KutralNetMobileOctPreTrained(classes, freeze_layer=9):
     model.classifier = nn.Linear(n_filters, classes)
     
     # freeze layers
-    # for i, child in enumerate(kutralnet.children()):
-    #     if i < freeze_layer:
-    #         for param in child.parameters():
-    #             param.requires_grad = False
+    for i, child in enumerate(model.children()):
+        if i < freeze_layer:
+            for param in child.parameters():
+                param.requires_grad = False
+                
     return model
 
 class InvertedResidualOct(nn.Module):
