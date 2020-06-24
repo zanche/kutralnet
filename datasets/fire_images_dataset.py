@@ -24,7 +24,6 @@ class FireImagesDataset(BaseDataset):
         
         super().__init__(name=name, root_path=root_path, csv_file=csv_file, transform=transform,
             purpose=purpose, preload=preload)
-
         
     # end __init__
 # end FireImagesDataset
@@ -42,34 +41,6 @@ class FireNetTestDataset(FireImagesDataset):
             csv_file='dataset_test.csv', transform=transform, purpose=purpose, preload=preload)
     # end __init__
 # end FireNetTestDataset
-
-class FiSmoDataset(FireImagesDataset):
-    def __init__(self, transform=None, purpose='train', preload=False):
-        super().__init__(name='FiSmo', root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset.csv', transform=transform, purpose=purpose, preload=preload)
-    # end __init__
-# end FiSmoDataset
-
-class FiSmoBalancedDataset(FireImagesDataset):
-    def __init__(self, transform=None, purpose='train', preload=False):
-        super().__init__(name='FiSmoBalanced', root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_balanced.csv', transform=transform, purpose=purpose, preload=preload)
-    # end __init__
-# end FiSmoBalancedDataset
-
-class FiSmoBlackDataset(FireImagesDataset):
-    def __init__(self, transform=None, purpose='train', preload=False):
-        super().__init__(name='FiSmoBlack', root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_black.csv', transform=transform, purpose=purpose, preload=preload)
-    # end __init__
-# end FiSmoBlackDataset
-
-class FiSmoBalancedBlackDataset(FireImagesDataset):
-    def __init__(self, transform=None, purpose='train', preload=False):
-        super().__init__(name='FiSmoBalancedBlack', root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_balanced_black.csv', transform=transform, purpose=purpose, preload=preload)
-    # end __init__
-# end FiSmoBalancedBlackDataset
 
 class CustomNormalize:
     def __init__(self, interval=(0, 1)):

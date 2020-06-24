@@ -25,7 +25,7 @@ parser.add_argument('--batch-size', default=32, type=int,
                     help='the number of items in the batch')
 parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
-parser.add_argument('--version', metavar='VERSION_ID', default=None,
+parser.add_argument('--version', metavar='VERSION_ID', default='BCEloss',
                     help='the training version')
 parser.add_argument('--models-path', default='models',
                     help='the path where storage the models')
@@ -83,7 +83,9 @@ train_data = base_dataset(transform=transform_train, preload=preload_data)
 val_data = base_dataset(purpose='val', transform=transform_val, preload=preload_data)
 
 # loss function
-criterion = config['criterion']
+#criterion = config['criterion']
+# Binary Cross Entropy with logits for hot-encoded labels
+criterion = torch.nn.BCEWithLogitsLoss()
 opt_args = {'params': model.parameters()}
 opt_args.update(config['optimizer_params'])
 

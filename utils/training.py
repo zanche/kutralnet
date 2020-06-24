@@ -109,7 +109,13 @@ def train_model(model, criterion, optimizer, train_data, val_data,
                 # statistics
                 running_loss += loss.item()
                 # Accuracy
-                correct = (outputs.argmax(dim=1) == labels).float().sum()
+                if outputs.shape[1] == 2: # two classes
+                    correct = (outputs.argmax(dim=1) == labels).float().sum()
+                else: # more classes
+                    # treshold the values
+                    outputs[outputs >= 0.5] = 1
+                    outputs[outputs < 0.5] = 0
+                    correct = (outputs == labels).float().sum() / outputs.shape[1]
                 running_acc += correct
 
             epoch_loss = running_loss / data_lengths[phase]

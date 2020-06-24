@@ -25,7 +25,7 @@ def resnet_sharma(classes):
     )
 # end resnet_sharma
 
-def ResNet18(classes, freeze_layer=9):
+def ResNet18(classes, freeze_layer=4):
     """
     ResNet18 for use with Transfer-learning
     """

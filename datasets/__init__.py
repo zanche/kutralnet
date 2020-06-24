@@ -3,10 +3,11 @@ from .fire_images_dataset import CustomNormalize
 from .fire_images_dataset import FireImagesDataset
 from .fire_images_dataset import FireNetDataset
 from .fire_images_dataset import FireNetTestDataset
-from .fire_images_dataset import FiSmoDataset
-from .fire_images_dataset import FiSmoBalancedDataset
-from .fire_images_dataset import FiSmoBlackDataset
-from .fire_images_dataset import FiSmoBalancedBlackDataset
+from .fire_smoke_dataset import FireSmokeImagesDataset
+from .fire_smoke_dataset import FiSmoDataset
+from .fire_smoke_dataset import FiSmoBalancedDataset
+from .fire_smoke_dataset import FiSmoBlackDataset
+from .fire_smoke_dataset import FiSmoBalancedBlackDataset
 from .imagenet import ImageNetDataset
 
 
@@ -28,22 +29,22 @@ datasets = {
     'fismo': {
         'name': 'FiSmo',
         'class': FiSmoDataset,
-        'num_classes': 2
+        'num_classes': 3
     },
     'fismo_balanced': {
         'name': 'FiSmoB',
         'class': FiSmoBalancedDataset,
-        'num_classes': 2
+        'num_classes': 3
     },
     'fismo_black': {
         'name': 'FiSmoA',
         'class': FiSmoBlackDataset,
-        'num_classes': 2
+        'num_classes': 3
     },
     'fismo_balanced_black': {
         'name': 'FiSmoBA',
         'class': FiSmoBalancedBlackDataset,
-        'num_classes': 2
+        'num_classes': 3
     },
     'imagenet': {
         'name': 'ImageNet',
