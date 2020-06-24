@@ -58,7 +58,6 @@ class FiSmoBalancedDataset(FireSmokeImagesDataset):
 
 class FiSmoBlackDataset(FireSmokeImagesDataset):
     def __init__(self, transform=None, purpose='train', preload=False):
-        raise NotImplementedError('The csv file must be complemented with smoke images.')
         super().__init__(name='FiSmoBlack', root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_black.csv', transform=transform, purpose=purpose, preload=preload)
     # end __init__
