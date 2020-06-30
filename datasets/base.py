@@ -10,7 +10,7 @@ datasets_path = os.path.dirname(os.path.abspath(__file__))
 
 class BaseDataset(Dataset):
     def __init__(self, name, root_path, csv_file='dataset.csv', transform=None,
-        purpose='train', preload=False, hot_encode=False):
+        purpose='train', preload=False, multi_label=False):
         self.root_path = root_path
         self.csv_file = csv_file
         self.name = name
@@ -18,7 +18,7 @@ class BaseDataset(Dataset):
         self.transform = transform
         self.preload = preload
         self.data = self.read_csv()
-        self.hot_encode = hot_encode
+        self.multi_label = multi_label
         
         if not hasattr(self, 'labels'):
             self.labels = None
@@ -47,8 +47,11 @@ class BaseDataset(Dataset):
                                 self.data.iloc[idx]['folder_path'],
                                 self.data.iloc[idx]['image_id'])
         image = Image.open(img_path).convert('RGB')
-        # read label
-        label = self.parse_label(idx)
+        
+        # read label        
+        label = self.data.iloc[idx]['class']
+        label = self.label2tensor(label)
+        
         # apply transformations
         if self.transform:
             image = self.transform(image)
@@ -85,27 +88,56 @@ class BaseDataset(Dataset):
         time_elapsed // 60, time_elapsed % 60))
     # end _preload
     
-    def parse_label(self, idx):
-        label_name = self.data.iloc[idx]['class']
+    def label2idx(self, label):
+        idx = []
         
-        if '[' in label_name: # is a list
-            label_name = ast.literal_eval(label_name)
-            label = []
-            for l in label_name:
-                label.append(self.labels[l]['idx'])
+        if '[' in label: # is a list
+            label = ast.literal_eval(label)
+            for l in label:
+                if l in self.labels:
+                    idx.append(self.labels[l]['idx'])
         else:
-            label = [self.labels[label_name]['idx']]
+            if label in self.labels:
+                idx.append(self.labels[label]['idx'])
+            else:
+                idx.append(label)
+                
+        if (not self.multi_label
+            and len(idx) == 1):
+            return idx[0]
+        else:
+            return idx     
+    # end label2idx
+    
+    def label2tensor(self, label):
+        label_id = self.label2idx(label)
+        
+        
+        if isinstance(label_id, str):
+            print('Warning: no label \'{}\' matches!'.format(label_id),
+                  'first label \'{}\' used instead'.format(next(iter(self.labels))))
+            label_id = 0
+        elif (isinstance(label_id, list) 
+            and len(label_id) == 0):
+            print('Warning: no label matches! first',
+                  'label \'{}\' used instead'.format(next(iter(self.labels))))
+            label_id = 0
         
         # to tensor            
-        labels_tensor = torch.as_tensor(label)
+        labels_tensor = torch.as_tensor(label_id)
         
-        if self.hot_encode:
+        if self.multi_label:
             # Create one-hot encodings of labels
             one_hot = torch.nn.functional.one_hot(labels_tensor, 
                                                   num_classes=len(self.labels))
             # if multi-label
             return torch.sum(one_hot, dim=0).float()
-        
+        # print(labels_tensor)
         return labels_tensor
+    # end label2tensor
+    
+    def labels_describe(self):
+        print(self.data[
+            ['image_id', 'class']].groupby(['class']).agg(['count']))
            
 # end BaseDataset

@@ -10,9 +10,9 @@ class FireImagesDataset(BaseDataset):
     def __init__(self, name, root_path, csv_file='dataset.csv', transform=None,
         purpose='train', preload=False):
         self.labels = {
-            'no_fire': {
+            'none': {
                 'idx': 0,
-                'label': 'no_fire',
+                'label': 'none',
                 'name': 'NoFire'
             },
             'fire': {
@@ -25,7 +25,7 @@ class FireImagesDataset(BaseDataset):
         super().__init__(name=name, root_path=root_path, csv_file=csv_file, transform=transform,
             purpose=purpose, preload=preload)
         
-    # end __init__
+    # end __init__    
 # end FireImagesDataset
 
 class FireNetDataset(FireImagesDataset):
@@ -71,6 +71,6 @@ if __name__ == '__main__':
 
     dataset = FireImagesDataset('FireNet', data_path, transform=transform_compose)
     print(dataset.data)
-    print(len(dataset))
     sample = dataset[1618]
     print(sample)
+    dataset.labels_describe()

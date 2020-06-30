@@ -9,8 +9,10 @@ import os
 import importlib
 from torch import optim
 from torch.nn import CrossEntropyLoss
+from torch.nn import BCEWithLogitsLoss
 from torchvision import transforms
 from .libs.optim_nadam import Nadam
+
 
 models = dict()
 models['firenet'] = dict(
@@ -19,7 +21,6 @@ models['firenet'] = dict(
         model_path= 'model_firenet.pth',
         class_name= 'FireNet',
         module_name= 'models.firenet_pt',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(eps= 1e-6),
         preprocess_train= transforms.Compose([    
@@ -52,7 +53,6 @@ models['octfiresnet'] = dict(
         model_path= 'model_octfiresnet.pth',
         class_name= 'OctFiResNet',
         module_name= 'models.octfiresnet',
-        criterion= CrossEntropyLoss(),
         optimizer= Nadam,
         optimizer_params= dict(lr= 1e-4, eps= 1e-7),
         preprocess_train= transforms.Compose([
@@ -77,7 +77,6 @@ models['resnet'] = dict(
         model_path= 'model_resnet.pth',
         class_name= 'resnet_sharma',
         module_name= 'models.resnet',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -102,7 +101,6 @@ models['kutralnet'] = dict(
         model_path= 'model_kutralnet.pth',
         class_name= 'KutralNet',
         module_name= 'models.kutralnet',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -127,7 +125,6 @@ models['kutralnetoct'] = dict(
         model_path= 'model_kutralnetoct.pth',
         class_name= 'KutralNetOct',
         module_name= 'models.kutralnetoct',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -152,7 +149,6 @@ models['kutralnet_mobile'] =  dict(
         model_path= 'model_kutralnet_mobile.pth',
         class_name= 'KutralNetMobile',
         module_name= 'models.kutralnet_mobile',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -177,7 +173,6 @@ models['kutralnet_mobileoct'] = dict(
         model_path= 'model_kutralnet_mobileoct.pth',
         class_name= 'KutralNetMobileOct',
         module_name= 'models.kutralnet_mobileoct',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -202,7 +197,6 @@ models['kutralnet_pre'] = dict(
         model_path= 'model_kutralnet.pth',
         class_name= 'KutralNetPreTrained',
         module_name= 'models.kutralnet',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -227,7 +221,6 @@ models['kutralnet_mobileoct_pre'] = dict(
         model_path= 'model_kutralnet_mobileoct.pth',
         class_name= 'KutralNetMobileOctPreTrained',
         module_name= 'models.kutralnet_mobileoct',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -252,7 +245,6 @@ models['resnet18'] = dict(
         model_path= 'model_resnet18.pth',
         class_name= 'ResNet18',
         module_name= 'models.resnet',
-        criterion= CrossEntropyLoss(),
         optimizer= optim.Adam,
         optimizer_params= dict(),
         preprocess_train= transforms.Compose([
@@ -314,15 +306,32 @@ def get_model(model_id='kutralnet', num_classes=2, extra_params=None):
     if model_id in models:
         config = models[model_id]
         module = importlib.import_module(config['module_name'])        
-        fire_model = getattr(module, config['class_name'])
+        model = getattr(module, config['class_name'])
         params = {'classes': num_classes }
 
         if extra_params is not None:
             params.update(extra_params)
 
-        model = fire_model(**params)
+        model = model(**params)
     else:
         raise ValueError('Must choose from a model available' + str(models.keys()))
 
     return model, config
 # end get_model
+
+
+def get_loss(loss_name='ce'):
+    losses = [
+        'ce' # CrossEntropy
+        'bce' #BinaryCrossEntropy
+        ]
+    
+    if loss_name == 'ce':
+        # Cross Entropy binary classification
+        return CrossEntropyLoss()
+    elif loss_name == 'bce':
+        # Binary Cross Entropy with logits for hot-encoded labels
+        return BCEWithLogitsLoss()
+    else:
+        raise ValueError('Must choose a registered loss function', losses)
+# end get_loss

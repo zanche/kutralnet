@@ -6,6 +6,7 @@ import numpy as np
 from datasets import datasets
 from models import get_model
 from models import get_model_paths
+from models import get_loss
 from utils.training import add_bool_arg
 from utils.training import train_model
 from utils.training import save_csv
@@ -19,6 +20,8 @@ from utils.plotting import plot_history
 parser = argparse.ArgumentParser(description='Classification models training script')
 parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
+parser.add_argument('--loss', default='ce',
+                    help='the loss function for the model')
 parser.add_argument('--epochs', default=100, type=int,
                     help='the number of maximum iterations')
 parser.add_argument('--batch-size', default=32, type=int,
@@ -42,6 +45,7 @@ dataset_id = args.dataset #'fismo'
 version = args.version #None
 models_root = args.models_path
 # train config
+loss_fn = args.loss
 epochs = args.epochs #100
 batch_size = args.batch_size #32
 shuffle_dataset = True
@@ -83,13 +87,11 @@ train_data = base_dataset(transform=transform_train, preload=preload_data)
 val_data = base_dataset(purpose='val', transform=transform_val, preload=preload_data)
 
 # loss function
-#criterion = config['criterion']
-# Binary Cross Entropy with logits for hot-encoded labels
-criterion = torch.nn.BCEWithLogitsLoss()
-opt_args = {'params': model.parameters()}
-opt_args.update(config['optimizer_params'])
+criterion = get_loss(loss_fn)
 
 # optimizer
+opt_args = {'params': model.parameters()}
+opt_args.update(config['optimizer_params'])
 optimizer = config['optimizer'](**opt_args)
 
 # scheduler

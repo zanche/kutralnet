@@ -14,7 +14,7 @@ from .base import datasets_path
 
 class FireSmokeImagesDataset(BaseDataset):
     def __init__(self, name, root_path, csv_file='dataset.csv', transform=None,
-        purpose='train', preload=False, hot_encode=True):
+        purpose='train', preload=False, multi_label=True):
         self.labels = {
             'none': {
                 'idx': 0,
@@ -35,7 +35,7 @@ class FireSmokeImagesDataset(BaseDataset):
         
         super().__init__(name=name, root_path=root_path, csv_file=csv_file, 
                          transform=transform, purpose=purpose, preload=preload,
-                         hot_encode=hot_encode)
+                         multi_label=multi_label)
         
     # end __init__
 # end FireSmokeImagesDataset
