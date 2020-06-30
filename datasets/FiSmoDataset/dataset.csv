@@ -1,93 +1,93 @@
 folder_path,image_id,class,purpose
 BoWFire/dataset/img,fire000.png,fire,train
-BoWFire/dataset/img,fire001.png,fire,val
+BoWFire/dataset/img,fire001.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire002.png,fire,train
-BoWFire/dataset/img,fire003.png,fire,train
+BoWFire/dataset/img,fire003.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire004.png,fire,train
-BoWFire/dataset/img,fire005.png,fire,train
-BoWFire/dataset/img,fire006.png,fire,val
+BoWFire/dataset/img,fire005.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire006.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire007.png,fire,train
-BoWFire/dataset/img,fire008.png,fire,val
-BoWFire/dataset/img,fire009.png,fire,train
-BoWFire/dataset/img,fire010.png,fire,val
+BoWFire/dataset/img,fire008.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire009.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire010.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire011.png,fire,train
 BoWFire/dataset/img,fire012.png,fire,train
 BoWFire/dataset/img,fire013.png,fire,train
 BoWFire/dataset/img,fire014.png,fire,train
-BoWFire/dataset/img,fire015.png,fire,train
-BoWFire/dataset/img,fire016.png,fire,train
+BoWFire/dataset/img,fire015.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire016.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire017.png,fire,train
-BoWFire/dataset/img,fire018.png,fire,train
-BoWFire/dataset/img,fire019.png,fire,val
-BoWFire/dataset/img,fire020.png,fire,train
+BoWFire/dataset/img,fire018.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire019.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire020.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire021.png,fire,train
-BoWFire/dataset/img,fire022.png,fire,val
+BoWFire/dataset/img,fire022.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire023.png,fire,train
-BoWFire/dataset/img,fire024.png,fire,train
+BoWFire/dataset/img,fire024.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire025.png,fire,train
-BoWFire/dataset/img,fire026.png,fire,train
+BoWFire/dataset/img,fire026.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire027.png,fire,train
 BoWFire/dataset/img,fire028.png,fire,train
 BoWFire/dataset/img,fire029.png,fire,val
-BoWFire/dataset/img,fire030.png,fire,val
-BoWFire/dataset/img,fire031.png,fire,train
+BoWFire/dataset/img,fire030.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire031.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire032.png,fire,train
 BoWFire/dataset/img,fire033.png,fire,train
-BoWFire/dataset/img,fire034.png,fire,val
-BoWFire/dataset/img,fire035.png,fire,train
-BoWFire/dataset/img,fire036.png,fire,val
+BoWFire/dataset/img,fire034.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire035.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire036.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire037.png,fire,val
 BoWFire/dataset/img,fire038.png,fire,train
-BoWFire/dataset/img,fire039.png,fire,train
+BoWFire/dataset/img,fire039.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire040.png,fire,train
-BoWFire/dataset/img,fire041.png,fire,train
-BoWFire/dataset/img,fire042.png,fire,val
-BoWFire/dataset/img,fire043.png,fire,train
-BoWFire/dataset/img,fire044.png,fire,train
-BoWFire/dataset/img,fire045.png,fire,train
-BoWFire/dataset/img,fire046.png,fire,train
-BoWFire/dataset/img,fire047.png,fire,train
-BoWFire/dataset/img,fire048.png,fire,train
-BoWFire/dataset/img,fire049.png,fire,train
-BoWFire/dataset/img,fire050.png,fire,train
+BoWFire/dataset/img,fire041.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire042.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire043.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire044.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire045.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire046.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire047.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire048.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire049.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire050.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire051.png,fire,val
 BoWFire/dataset/img,fire052.png,fire,train
-BoWFire/dataset/img,fire053.png,fire,train
+BoWFire/dataset/img,fire053.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire054.png,fire,train
-BoWFire/dataset/img,fire055.png,fire,train
-BoWFire/dataset/img,fire056.png,fire,val
+BoWFire/dataset/img,fire055.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire056.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire057.png,fire,train
 BoWFire/dataset/img,fire058.png,fire,train
-BoWFire/dataset/img,fire059.png,fire,val
+BoWFire/dataset/img,fire059.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire060.png,fire,train
 BoWFire/dataset/img,fire061.png,fire,train
 BoWFire/dataset/img,fire062.png,fire,train
 BoWFire/dataset/img,fire063.png,fire,val
-BoWFire/dataset/img,fire064.png,fire,train
-BoWFire/dataset/img,fire065.png,fire,train
-BoWFire/dataset/img,fire066.png,fire,val
+BoWFire/dataset/img,fire064.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire065.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire066.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,fire067.png,fire,train
 BoWFire/dataset/img,fire068.png,fire,train
-BoWFire/dataset/img,fire069.png,fire,val
-BoWFire/dataset/img,fire070.png,fire,train
-BoWFire/dataset/img,fire071.png,fire,val
-BoWFire/dataset/img,fire072.png,fire,train
-BoWFire/dataset/img,fire073.png,fire,train
+BoWFire/dataset/img,fire069.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire070.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire071.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire072.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire073.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire074.png,fire,train
-BoWFire/dataset/img,fire075.png,fire,val
-BoWFire/dataset/img,fire076.png,fire,train
-BoWFire/dataset/img,fire077.png,fire,val
-BoWFire/dataset/img,fire078.png,fire,train
-BoWFire/dataset/img,fire079.png,fire,train
-BoWFire/dataset/img,fire080.png,fire,train
-BoWFire/dataset/img,fire081.png,fire,val
-BoWFire/dataset/img,fire082.png,fire,train
+BoWFire/dataset/img,fire075.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire076.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire077.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire078.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire079.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire080.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire081.png,"['fire', 'smoke']",val
+BoWFire/dataset/img,fire082.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire083.png,fire,train
 BoWFire/dataset/img,fire084.png,fire,train
-BoWFire/dataset/img,fire085.png,fire,train
-BoWFire/dataset/img,fire086.png,fire,train
+BoWFire/dataset/img,fire085.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire086.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire087.png,fire,train
-BoWFire/dataset/img,fire088.png,fire,train
+BoWFire/dataset/img,fire088.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire089.png,fire,train
 BoWFire/dataset/img,fire090.png,fire,train
 BoWFire/dataset/img,fire091.png,fire,train
@@ -113,11 +113,11 @@ BoWFire/dataset/img,fire110.png,fire,val
 BoWFire/dataset/img,fire111.png,fire,train
 BoWFire/dataset/img,fire112.png,fire,train
 BoWFire/dataset/img,fire113.png,fire,train
-BoWFire/dataset/img,fire114.png,fire,train
-BoWFire/dataset/img,fire115.png,fire,train
-BoWFire/dataset/img,fire116.png,fire,train
+BoWFire/dataset/img,fire114.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire115.png,"['fire', 'smoke']",train
+BoWFire/dataset/img,fire116.png,"['fire', 'smoke']",train
 BoWFire/dataset/img,fire117.png,fire,val
-BoWFire/dataset/img,fire118.png,fire,val
+BoWFire/dataset/img,fire118.png,"['fire', 'smoke']",val
 BoWFire/dataset/img,not_fire000.png,none,train
 BoWFire/dataset/img,not_fire001.png,none,train
 BoWFire/dataset/img,not_fire002.png,none,train
@@ -225,20 +225,20 @@ BoWFire/dataset/img,not_fire103.png,none,train
 BoWFire/dataset/img,not_fire104.png,none,train
 BoWFire/dataset/img,not_fire105.png,none,train
 BoWFire/dataset/img,not_fire106.png,none,val
-Flickr-Fire/Flickr-Fire_flame,10056384055.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,10056411806.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,10056416296.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,102623808.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,10580806505.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,10597446265.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,10056384055.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,10056411806.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,10056416296.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,102623808.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,10580806505.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,10597446265.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,10930175713.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,11003925206.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,11004054583.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,11004054583.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,11872842823.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,12194305515.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,12391229664.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,12194305515.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,12391229664.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,12405426584.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,125313793.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,125313793.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,1262123367.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,13132894073.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,1323951262.jpg,fire,train
@@ -248,40 +248,40 @@ Flickr-Fire/Flickr-Fire_flame,133687772.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,1347766409.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,1347800571.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,1348687676.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,1348688138.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,1348688138.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,1349925617.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,1350814740.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,1355653239.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,136172381.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,136184399.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,13681644045.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,13882743445.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,1350814740.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,1355653239.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,136172381.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,136184399.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,13681644045.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,13882743445.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,13925268240.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,13992030549.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14013225480.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,13992030549.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,14013225480.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,14101170689.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,14108615161.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,14108800372.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14289226306.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,14289226306.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,1441032166.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14659061178.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14668880389.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14668973807.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,14826202984.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15009177388.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,14659061178.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,14668880389.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,14668973807.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,14826202984.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15009177388.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,15203188307.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15204176242.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15228578997.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15305196110.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15309131548.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15495790465.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,15510505225.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,16717747279.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,15204176242.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15228578997.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15305196110.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15309131548.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15495790465.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,15510505225.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,16717747279.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,1681099466.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,16882297441.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,197614296.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,197614296.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,197614317.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,197614348.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,197614348.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,199179727.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,2079318122.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2100430649.jpg,fire,train
@@ -289,206 +289,206 @@ Flickr-Fire/Flickr-Fire_flame,2129690209.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2134905284.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,217033899.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,217033900.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2205815980.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,2205815980.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,2214949768.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,222896685.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,222896685.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,2266127389.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2283552659.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,234586462.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,234594320.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,234595216.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,234595578.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,234595578.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,2350153003.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2368380213.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2368380221.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,2368380213.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2368380221.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,2376835234.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2421101566.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2463466965.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2475839871.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2520399025.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,2583248148.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,2588277163.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2589111474.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2601504895.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2659228935.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2763895994.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,2588277163.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2589111474.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2601504895.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2659228935.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2763895994.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,2788307508.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2788307630.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,2788307630.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,2788307894.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,2788308480.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2807636139.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,2909849370.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2941118552.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2941118852.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2941119142.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2941120754.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,2941121238.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3036460099.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3061797389.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3061797613.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,2788308480.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2807636139.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,2909849370.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2941118552.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2941118852.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2941119142.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2941120754.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,2941121238.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3036460099.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3061797389.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3061797613.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3062423828.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,3080971742.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,3080972524.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3093068185.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3093068185.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3093909604.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3119704377.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3166400720.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3119704377.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3166400720.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3166401322.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3168124185.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3168124185.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3184776104.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,3193307623.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3250420727.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3265838394.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3250420727.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3265838394.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3296470485.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,336061274.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,336061274.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,338600396.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,3455824051.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3462787393.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,3462787393.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,3524844258.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,3540320095.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3550832287.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3602185709.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3602186063.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3602186203.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3602186763.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3540320095.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3550832287.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3602185709.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3602186063.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3602186203.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3602186763.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3602195819.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,36180038.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,3641309860.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3683360341.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3683360341.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3711554641.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3724580534.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3814844370.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3724580534.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,3814844370.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,3831071845.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,3871651429.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,3871651429.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,389052130.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,389052131.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,3928394038.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,3961177699.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4009828678.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,4009828678.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,4026757020.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4036666068.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,4036666068.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,405017094.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,407835092.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,410224379.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,410224379.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,4141222378.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4176154587.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,4176154587.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,4243555489.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,4386567997.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,4387330728.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4417019412.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4438630647.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4439407480.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,4417019412.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,4438630647.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,4439407480.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,445517150.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,4456050834.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,4456050834.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,4462830545.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,4487684944.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,4502101984.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,4502101984.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,4515882737.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,4517563314.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,4616018195.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4764055281.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,476498161.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,4764055281.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,476498161.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,4780990481.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4781629436.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4804968935.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,4804971041.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4805530220.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,4805549500.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,4781629436.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,4804968935.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,4804971041.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,4805530220.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,4805549500.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,4994897329.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5002547830.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5029121449.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,5109439137.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5153345133.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5153947540.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5158179448.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5169183658.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,5158179448.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,5169183658.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,521836276.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5266424551.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5282656610.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,5394840230.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5424454090.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5424454224.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,5458151901.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,5282656610.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,5394840230.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,5424454090.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,5424454224.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,5458151901.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,5568608752.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5646983964.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,56506716.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5664815876.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,56506716.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,5664815876.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,5676587075.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5676589257.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5697867406.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5711827176.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,5711827176.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,57501838.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,5865338094.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5899041202.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,5999806428.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,5999807342.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,5899041202.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,5999806428.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,5999807342.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6022946183.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,60368466.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6062950120.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6062950120.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6111346617.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6111892242.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6120859849.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6111892242.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6120859849.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6120941321.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6121605539.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6123713663.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,6132394080.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6132394080.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6145533985.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,6166828063.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,62595681.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6260417989.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,6300222033.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,6316654784.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6332999386.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6316654784.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6332999386.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6343272227.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,64204662.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6521127091.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,64204662.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6521127091.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,65689124.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,65794762.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,6589721029.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6589721029.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,66081345.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6626046887.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6701745985.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6800418937.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6800421075.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6800421265.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6701745985.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6800418937.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6800421075.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6800421265.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6818431202.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6844913426.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,6845339314.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,6845341036.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6929121989.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,6946982225.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,6946983269.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6929121989.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,6946982225.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,6946983269.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,695450348.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6954585529.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,6988259890.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,6954585529.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,6988259890.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,6991477263.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,71053705.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7132796143.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,71053705.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,7132796143.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,7132884091.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,7143228781.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7153382597.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7156169555.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,7153382597.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,7156169555.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,73750271.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,7390704632.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7748431320.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7755058476.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,79064588.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,794766556.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,7748431320.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,7755058476.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,79064588.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,794766556.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,7974755017.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,7974757077.jpg,fire,val
 Flickr-Fire/Flickr-Fire_flame,7974758867.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,7974762759.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,7974765785.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,7974762759.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,7974765785.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,7999709978.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,8070283472.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,8108331879.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,8120017851.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,8138235591.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,8164752637.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,8164756001.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,8120017851.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,8138235591.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,8164752637.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,8164756001.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,8325694785.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,8573716863.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,8573719093.jpg,fire,train
+Flickr-Fire/Flickr-Fire_flame,8573716863.jpg,"['fire', 'smoke']",train
+Flickr-Fire/Flickr-Fire_flame,8573719093.jpg,"['fire', 'smoke']",train
 Flickr-Fire/Flickr-Fire_flame,8607074001.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,8607074387.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,8669592973.jpg,fire,val
@@ -503,10 +503,10 @@ Flickr-Fire/Flickr-Fire_flame,95655944.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,95657794.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,9641187338.jpg,fire,train
 Flickr-Fire/Flickr-Fire_flame,9665083099.jpg,fire,train
-Flickr-Fire/Flickr-Fire_flame,9727892614.jpg,fire,val
-Flickr-Fire/Flickr-Fire_flame,9731402415.jpg,fire,val
+Flickr-Fire/Flickr-Fire_flame,9727892614.jpg,"['fire', 'smoke']",val
+Flickr-Fire/Flickr-Fire_flame,9731402415.jpg,"['fire', 'smoke']",val
 Flickr-Fire/Flickr-Fire_flame,9823481175.jpg,fire,train
-Flickr-FireSmoke/imgs,10010466715.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,10010466715.jpg,fire,train
 Flickr-FireSmoke/imgs,10014491315.jpg,none,train
 Flickr-FireSmoke/imgs,10014519106.jpg,none,train
 Flickr-FireSmoke/imgs,10024337175.jpg,none,val
@@ -526,7 +526,7 @@ Flickr-FireSmoke/imgs,10224820054.jpg,none,train
 Flickr-FireSmoke/imgs,10263320926.jpg,none,train
 Flickr-FireSmoke/imgs,1031631319.jpg,none,train
 Flickr-FireSmoke/imgs,1034893891.jpg,fire,train
-Flickr-FireSmoke/imgs,10353936644.jpg,none,train
+Flickr-FireSmoke/imgs,10353936644.jpg,smoke,train
 Flickr-FireSmoke/imgs,10370074406.jpg,none,train
 Flickr-FireSmoke/imgs,1037991401.jpg,smoke,train
 Flickr-FireSmoke/imgs,1037991471.jpg,none,train
@@ -596,15 +596,15 @@ Flickr-FireSmoke/imgs,11103322246.jpg,none,val
 Flickr-FireSmoke/imgs,11112566995.jpg,fire,val
 Flickr-FireSmoke/imgs,11112568835.jpg,fire,train
 Flickr-FireSmoke/imgs,11112572165.jpg,fire,train
-Flickr-FireSmoke/imgs,11112606144.jpg,fire,train
+Flickr-FireSmoke/imgs,11112606144.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,11112620576.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,11112622264.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,11112627664.jpg,fire,train
+Flickr-FireSmoke/imgs,11112627664.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,11112628666.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,11112629426.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,11112633404.jpg,fire,val
+Flickr-FireSmoke/imgs,11112633404.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,11112728243.jpg,fire,val
-Flickr-FireSmoke/imgs,11112741063.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,11112741063.jpg,fire,train
 Flickr-FireSmoke/imgs,11112763713.jpg,fire,train
 Flickr-FireSmoke/imgs,11112769503.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,111186136.jpg,none,val
@@ -636,7 +636,7 @@ Flickr-FireSmoke/imgs,11224622073.jpg,none,train
 Flickr-FireSmoke/imgs,11225707313.jpg,none,train
 Flickr-FireSmoke/imgs,1122747583.jpg,none,val
 Flickr-FireSmoke/imgs,11246212103.jpg,fire,val
-Flickr-FireSmoke/imgs,1128523259.jpg,smoke,train
+Flickr-FireSmoke/imgs,1128523259.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,11299551536.jpg,fire,train
 Flickr-FireSmoke/imgs,11314830365.jpg,none,train
 Flickr-FireSmoke/imgs,11326882163.jpg,fire,train
@@ -647,7 +647,7 @@ Flickr-FireSmoke/imgs,11401086844.jpg,none,train
 Flickr-FireSmoke/imgs,11422885554.jpg,none,val
 Flickr-FireSmoke/imgs,11422889744.jpg,none,train
 Flickr-FireSmoke/imgs,11424431653.jpg,none,train
-Flickr-FireSmoke/imgs,114303635.jpg,fire,train
+Flickr-FireSmoke/imgs,114303635.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,114303636.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,11436878673.jpg,fire,val
 Flickr-FireSmoke/imgs,11437448986.jpg,none,val
@@ -665,7 +665,7 @@ Flickr-FireSmoke/imgs,116536504.jpg,none,train
 Flickr-FireSmoke/imgs,1166322612.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,1166322630.jpg,smoke,train
 Flickr-FireSmoke/imgs,1166322642.jpg,fire,train
-Flickr-FireSmoke/imgs,1166322664.jpg,none,val
+Flickr-FireSmoke/imgs,1166322664.jpg,fire,val
 Flickr-FireSmoke/imgs,1166322674.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,1167157142.jpg,fire,train
 Flickr-FireSmoke/imgs,11677721486.jpg,fire,train
@@ -706,7 +706,7 @@ Flickr-FireSmoke/imgs,12159465683.jpg,none,train
 Flickr-FireSmoke/imgs,12159614994.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,12159619364.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,12159657704.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,12159692684.jpg,fire,val
+Flickr-FireSmoke/imgs,12159692684.jpg,none,val
 Flickr-FireSmoke/imgs,12159913996.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,12159936086.jpg,smoke,train
 Flickr-FireSmoke/imgs,12159944696.jpg,"['fire', 'smoke']",train
@@ -876,7 +876,7 @@ Flickr-FireSmoke/imgs,1404210829.jpg,none,train
 Flickr-FireSmoke/imgs,14044466587.jpg,none,train
 Flickr-FireSmoke/imgs,14045313136.jpg,none,train
 Flickr-FireSmoke/imgs,14053745845.jpg,fire,train
-Flickr-FireSmoke/imgs,14060113414.jpg,fire,train
+Flickr-FireSmoke/imgs,14060113414.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,14068326761.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,14071995884.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,140787006.jpg,"['fire', 'smoke']",train
@@ -897,7 +897,7 @@ Flickr-FireSmoke/imgs,14104784828.jpg,none,train
 Flickr-FireSmoke/imgs,14105205937.jpg,none,train
 Flickr-FireSmoke/imgs,14105285289.jpg,none,train
 Flickr-FireSmoke/imgs,14105434519.jpg,none,train
-Flickr-FireSmoke/imgs,14107618750.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,14107618750.jpg,fire,train
 Flickr-FireSmoke/imgs,14108050413.jpg,none,train
 Flickr-FireSmoke/imgs,14108101280.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,14108199567.jpg,"['fire', 'smoke']",train
@@ -976,7 +976,7 @@ Flickr-FireSmoke/imgs,14297978764.jpg,none,val
 Flickr-FireSmoke/imgs,14298060374.jpg,none,val
 Flickr-FireSmoke/imgs,14298474425.jpg,none,val
 Flickr-FireSmoke/imgs,14300754211.jpg,none,val
-Flickr-FireSmoke/imgs,14301036920.jpg,smoke,train
+Flickr-FireSmoke/imgs,14301036920.jpg,none,train
 Flickr-FireSmoke/imgs,14301612778.jpg,none,train
 Flickr-FireSmoke/imgs,14301638088.jpg,none,train
 Flickr-FireSmoke/imgs,14307292791.jpg,none,train
@@ -1391,7 +1391,7 @@ Flickr-FireSmoke/imgs,1655433189.jpg,none,train
 Flickr-FireSmoke/imgs,1655507469.jpg,none,train
 Flickr-FireSmoke/imgs,1656381914.jpg,none,val
 Flickr-FireSmoke/imgs,1656392074.jpg,none,train
-Flickr-FireSmoke/imgs,166118538.jpg,none,train
+Flickr-FireSmoke/imgs,166118538.jpg,fire,train
 Flickr-FireSmoke/imgs,1681783891.jpg,fire,train
 Flickr-FireSmoke/imgs,1681790081.jpg,fire,train
 Flickr-FireSmoke/imgs,1681813437.jpg,fire,train
@@ -1407,7 +1407,7 @@ Flickr-FireSmoke/imgs,1720389715.jpg,smoke,train
 Flickr-FireSmoke/imgs,1720399055.jpg,none,val
 Flickr-FireSmoke/imgs,1721243786.jpg,none,val
 Flickr-FireSmoke/imgs,1721845540.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,1722850924.jpg,none,train
+Flickr-FireSmoke/imgs,1722850924.jpg,smoke,train
 Flickr-FireSmoke/imgs,1722872592.jpg,smoke,train
 Flickr-FireSmoke/imgs,1724350154.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,1744029007.jpg,fire,train
@@ -1508,7 +1508,7 @@ Flickr-FireSmoke/imgs,2133362077.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2133362271.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2133362847.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2134140526.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,2134140888.jpg,fire,train
+Flickr-FireSmoke/imgs,2134140888.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2134141618.jpg,fire,train
 Flickr-FireSmoke/imgs,2134142006.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2135364075.jpg,none,train
@@ -1524,7 +1524,7 @@ Flickr-FireSmoke/imgs,2165164731.jpg,fire,val
 Flickr-FireSmoke/imgs,2172418353.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2183116795.jpg,none,train
 Flickr-FireSmoke/imgs,2188050654.jpg,fire,train
-Flickr-FireSmoke/imgs,2193629551.jpg,fire,train
+Flickr-FireSmoke/imgs,2193629551.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2194403378.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2198144601.jpg,none,train
 Flickr-FireSmoke/imgs,2200708561.jpg,none,train
@@ -1561,7 +1561,7 @@ Flickr-FireSmoke/imgs,2284528595.jpg,none,train
 Flickr-FireSmoke/imgs,2284620405.jpg,none,train
 Flickr-FireSmoke/imgs,2284693859.jpg,fire,train
 Flickr-FireSmoke/imgs,2285156750.jpg,none,train
-Flickr-FireSmoke/imgs,228619845.jpg,none,train
+Flickr-FireSmoke/imgs,228619845.jpg,fire,train
 Flickr-FireSmoke/imgs,228619847.jpg,fire,train
 Flickr-FireSmoke/imgs,228619848.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,228619850.jpg,"['fire', 'smoke']",val
@@ -1608,7 +1608,7 @@ Flickr-FireSmoke/imgs,23345730.jpg,smoke,train
 Flickr-FireSmoke/imgs,23345942.jpg,none,train
 Flickr-FireSmoke/imgs,23346072.jpg,smoke,train
 Flickr-FireSmoke/imgs,23346252.jpg,smoke,train
-Flickr-FireSmoke/imgs,2338016309.jpg,none,train
+Flickr-FireSmoke/imgs,2338016309.jpg,fire,train
 Flickr-FireSmoke/imgs,2340645774.jpg,none,train
 Flickr-FireSmoke/imgs,2341506681.jpg,none,train
 Flickr-FireSmoke/imgs,2342317408.jpg,none,train
@@ -1665,8 +1665,8 @@ Flickr-FireSmoke/imgs,2401655885.jpg,none,val
 Flickr-FireSmoke/imgs,2402241210.jpg,none,train
 Flickr-FireSmoke/imgs,240267682.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,240267724.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,240267808.jpg,fire,train
-Flickr-FireSmoke/imgs,240267966.jpg,fire,train
+Flickr-FireSmoke/imgs,240267808.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,240267966.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2406015712.jpg,none,val
 Flickr-FireSmoke/imgs,2406604687.jpg,none,train
 Flickr-FireSmoke/imgs,241170115.jpg,none,train
@@ -1742,7 +1742,7 @@ Flickr-FireSmoke/imgs,2488039283.jpg,fire,val
 Flickr-FireSmoke/imgs,2488471266.jpg,fire,train
 Flickr-FireSmoke/imgs,2488496709.jpg,fire,train
 Flickr-FireSmoke/imgs,248887416.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,248887489.jpg,fire,train
+Flickr-FireSmoke/imgs,248887489.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2489549373.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,248971139.jpg,fire,val
 Flickr-FireSmoke/imgs,248971192.jpg,"['fire', 'smoke']",train
@@ -1833,7 +1833,7 @@ Flickr-FireSmoke/imgs,2654242554.jpg,fire,train
 Flickr-FireSmoke/imgs,2654242664.jpg,none,train
 Flickr-FireSmoke/imgs,2655052473.jpg,fire,train
 Flickr-FireSmoke/imgs,2659161858.jpg,fire,train
-Flickr-FireSmoke/imgs,2664747029.jpg,fire,train
+Flickr-FireSmoke/imgs,2664747029.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2666994692.jpg,none,val
 Flickr-FireSmoke/imgs,2667433751.jpg,none,train
 Flickr-FireSmoke/imgs,2667549711.jpg,none,train
@@ -1932,12 +1932,12 @@ Flickr-FireSmoke/imgs,2790581353.jpg,fire,val
 Flickr-FireSmoke/imgs,2790582307.jpg,fire,train
 Flickr-FireSmoke/imgs,2790582947.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2791429890.jpg,fire,val
-Flickr-FireSmoke/imgs,2791429952.jpg,fire,train
-Flickr-FireSmoke/imgs,2791430102.jpg,fire,val
+Flickr-FireSmoke/imgs,2791429952.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,2791430102.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2791430460.jpg,fire,val
 Flickr-FireSmoke/imgs,2791430662.jpg,fire,train
 Flickr-FireSmoke/imgs,2791430972.jpg,fire,train
-Flickr-FireSmoke/imgs,2791431486.jpg,fire,train
+Flickr-FireSmoke/imgs,2791431486.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2791432158.jpg,fire,val
 Flickr-FireSmoke/imgs,2791432256.jpg,fire,val
 Flickr-FireSmoke/imgs,2791432390.jpg,fire,train
@@ -1957,7 +1957,7 @@ Flickr-FireSmoke/imgs,2812870208.jpg,none,train
 Flickr-FireSmoke/imgs,2812878302.jpg,none,train
 Flickr-FireSmoke/imgs,2815350324.jpg,fire,val
 Flickr-FireSmoke/imgs,2817941855.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,2818789062.jpg,smoke,val
+Flickr-FireSmoke/imgs,2818789062.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2818790450.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2818790914.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2818791336.jpg,"['fire', 'smoke']",val
@@ -1995,7 +1995,7 @@ Flickr-FireSmoke/imgs,2854582683.jpg,fire,train
 Flickr-FireSmoke/imgs,2854583729.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,2859684056.jpg,fire,train
 Flickr-FireSmoke/imgs,286034159.jpg,fire,train
-Flickr-FireSmoke/imgs,2861821651.jpg,smoke,train
+Flickr-FireSmoke/imgs,2861821651.jpg,none,train
 Flickr-FireSmoke/imgs,286329704.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2870300758.jpg,fire,val
 Flickr-FireSmoke/imgs,2871635070.jpg,none,train
@@ -2029,8 +2029,8 @@ Flickr-FireSmoke/imgs,2922483189.jpg,none,train
 Flickr-FireSmoke/imgs,2923334998.jpg,none,train
 Flickr-FireSmoke/imgs,2925323379.jpg,none,train
 Flickr-FireSmoke/imgs,2926691829.jpg,none,train
-Flickr-FireSmoke/imgs,292862101.jpg,fire,train
-Flickr-FireSmoke/imgs,292862234.jpg,fire,train
+Flickr-FireSmoke/imgs,292862101.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,292862234.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,2930947014.jpg,none,train
 Flickr-FireSmoke/imgs,2931450738.jpg,none,train
 Flickr-FireSmoke/imgs,293454485.jpg,none,train
@@ -2038,7 +2038,7 @@ Flickr-FireSmoke/imgs,2938573746.jpg,none,val
 Flickr-FireSmoke/imgs,2940694255.jpg,fire,train
 Flickr-FireSmoke/imgs,2944407520.jpg,none,train
 Flickr-FireSmoke/imgs,2944407784.jpg,none,val
-Flickr-FireSmoke/imgs,2951368555.jpg,"['fire', 'smoke']",val
+Flickr-FireSmoke/imgs,2951368555.jpg,fire,val
 Flickr-FireSmoke/imgs,2951368581.jpg,none,train
 Flickr-FireSmoke/imgs,2955391829.jpg,none,train
 Flickr-FireSmoke/imgs,2955394263.jpg,none,val
@@ -2071,7 +2071,7 @@ Flickr-FireSmoke/imgs,2986940689.jpg,fire,val
 Flickr-FireSmoke/imgs,2987168803.jpg,none,train
 Flickr-FireSmoke/imgs,298728856.jpg,none,train
 Flickr-FireSmoke/imgs,2993428107.jpg,fire,train
-Flickr-FireSmoke/imgs,3000640763.jpg,none,train
+Flickr-FireSmoke/imgs,3000640763.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3000660821.jpg,none,train
 Flickr-FireSmoke/imgs,3000661533.jpg,none,val
 Flickr-FireSmoke/imgs,3000662831.jpg,none,train
@@ -2169,7 +2169,7 @@ Flickr-FireSmoke/imgs,3099427504.jpg,fire,train
 Flickr-FireSmoke/imgs,3102405715.jpg,none,train
 Flickr-FireSmoke/imgs,3103239764.jpg,none,train
 Flickr-FireSmoke/imgs,3113096082.jpg,fire,train
-Flickr-FireSmoke/imgs,311898960.jpg,fire,train
+Flickr-FireSmoke/imgs,311898960.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3119087862.jpg,fire,train
 Flickr-FireSmoke/imgs,312806580.jpg,none,train
 Flickr-FireSmoke/imgs,3128149769.jpg,none,val
@@ -2255,7 +2255,7 @@ Flickr-FireSmoke/imgs,3240100588.jpg,none,val
 Flickr-FireSmoke/imgs,3241662305.jpg,none,train
 Flickr-FireSmoke/imgs,324213231.jpg,fire,train
 Flickr-FireSmoke/imgs,3246234403.jpg,none,train
-Flickr-FireSmoke/imgs,3246627531.jpg,none,train
+Flickr-FireSmoke/imgs,3246627531.jpg,fire,train
 Flickr-FireSmoke/imgs,3248421043.jpg,none,train
 Flickr-FireSmoke/imgs,3250830246.jpg,fire,val
 Flickr-FireSmoke/imgs,3256014953.jpg,fire,train
@@ -2268,15 +2268,15 @@ Flickr-FireSmoke/imgs,3264331170.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3264332426.jpg,fire,train
 Flickr-FireSmoke/imgs,3264750738.jpg,none,train
 Flickr-FireSmoke/imgs,3265420895.jpg,fire,train
-Flickr-FireSmoke/imgs,3265423951.jpg,none,train
+Flickr-FireSmoke/imgs,3265423951.jpg,smoke,train
 Flickr-FireSmoke/imgs,3265425403.jpg,smoke,train
 Flickr-FireSmoke/imgs,3266244908.jpg,smoke,val
 Flickr-FireSmoke/imgs,3266246330.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,3266249494.jpg,none,train
-Flickr-FireSmoke/imgs,3266484263.jpg,fire,train
+Flickr-FireSmoke/imgs,3266249494.jpg,smoke,train
+Flickr-FireSmoke/imgs,3266484263.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3266492421.jpg,none,val
 Flickr-FireSmoke/imgs,3266495359.jpg,none,train
-Flickr-FireSmoke/imgs,3266501701.jpg,none,train
+Flickr-FireSmoke/imgs,3266501701.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3266507563.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3267321512.jpg,smoke,train
 Flickr-FireSmoke/imgs,3267328294.jpg,"['fire', 'smoke']",train
@@ -2289,7 +2289,7 @@ Flickr-FireSmoke/imgs,3281349748.jpg,none,train
 Flickr-FireSmoke/imgs,3283015134.jpg,fire,train
 Flickr-FireSmoke/imgs,3283959085.jpg,none,train
 Flickr-FireSmoke/imgs,3284695489.jpg,fire,train
-Flickr-FireSmoke/imgs,3285515676.jpg,fire,train
+Flickr-FireSmoke/imgs,3285515676.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3285674140.jpg,fire,train
 Flickr-FireSmoke/imgs,3291225093.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3298229052.jpg,smoke,train
@@ -2419,7 +2419,7 @@ Flickr-FireSmoke/imgs,3473222705.jpg,none,train
 Flickr-FireSmoke/imgs,3473230357.jpg,none,train
 Flickr-FireSmoke/imgs,3473231491.jpg,none,val
 Flickr-FireSmoke/imgs,3473232703.jpg,none,train
-Flickr-FireSmoke/imgs,347382031.jpg,none,train
+Flickr-FireSmoke/imgs,347382031.jpg,fire,train
 Flickr-FireSmoke/imgs,3474008376.jpg,none,train
 Flickr-FireSmoke/imgs,3474011834.jpg,none,train
 Flickr-FireSmoke/imgs,3474014912.jpg,none,val
@@ -2444,7 +2444,7 @@ Flickr-FireSmoke/imgs,34967879.jpg,fire,train
 Flickr-FireSmoke/imgs,3499497571.jpg,none,train
 Flickr-FireSmoke/imgs,3499505305.jpg,none,val
 Flickr-FireSmoke/imgs,3500315638.jpg,none,train
-Flickr-FireSmoke/imgs,3500318636.jpg,smoke,train
+Flickr-FireSmoke/imgs,3500318636.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3500323036.jpg,none,train
 Flickr-FireSmoke/imgs,3500985218.jpg,none,train
 Flickr-FireSmoke/imgs,3503520569.jpg,none,val
@@ -2484,7 +2484,7 @@ Flickr-FireSmoke/imgs,3603000778.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,3603272611.jpg,none,train
 Flickr-FireSmoke/imgs,3617694613.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,362010296.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,362010300.jpg,fire,train
+Flickr-FireSmoke/imgs,362010300.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,362010303.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,363044088.jpg,none,train
 Flickr-FireSmoke/imgs,3631862686.jpg,fire,train
@@ -2507,7 +2507,7 @@ Flickr-FireSmoke/imgs,3673672646.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3673674990.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3673678838.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3673690036.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,3673694492.jpg,fire,train
+Flickr-FireSmoke/imgs,3673694492.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3673696624.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,367585495.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,367586773.jpg,"['fire', 'smoke']",train
@@ -2634,7 +2634,7 @@ Flickr-FireSmoke/imgs,383387180.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3839596271.jpg,none,train
 Flickr-FireSmoke/imgs,3845678909.jpg,none,train
 Flickr-FireSmoke/imgs,3846251576.jpg,none,train
-Flickr-FireSmoke/imgs,3848275600.jpg,none,train
+Flickr-FireSmoke/imgs,3848275600.jpg,smoke,train
 Flickr-FireSmoke/imgs,3853815889.jpg,fire,train
 Flickr-FireSmoke/imgs,3853816621.jpg,fire,val
 Flickr-FireSmoke/imgs,3854606788.jpg,fire,train
@@ -2683,13 +2683,13 @@ Flickr-FireSmoke/imgs,3952856302.jpg,smoke,train
 Flickr-FireSmoke/imgs,3953496212.jpg,fire,val
 Flickr-FireSmoke/imgs,39559628.jpg,fire,train
 Flickr-FireSmoke/imgs,396265191.jpg,none,train
-Flickr-FireSmoke/imgs,3963311982.jpg,fire,train
+Flickr-FireSmoke/imgs,3963311982.jpg,none,train
 Flickr-FireSmoke/imgs,3966895407.jpg,none,train
 Flickr-FireSmoke/imgs,397070712.jpg,none,train
 Flickr-FireSmoke/imgs,397166050.jpg,none,train
 Flickr-FireSmoke/imgs,3973538871.jpg,fire,val
-Flickr-FireSmoke/imgs,3982371487.jpg,fire,train
-Flickr-FireSmoke/imgs,3983133970.jpg,fire,val
+Flickr-FireSmoke/imgs,3982371487.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,3983133970.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,3983134444.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,3992119704.jpg,none,train
 Flickr-FireSmoke/imgs,3996395529.jpg,none,train
@@ -2701,7 +2701,7 @@ Flickr-FireSmoke/imgs,4004099722.jpg,none,val
 Flickr-FireSmoke/imgs,4004107580.jpg,none,val
 Flickr-FireSmoke/imgs,4006436834.jpg,none,train
 Flickr-FireSmoke/imgs,400649765.jpg,fire,train
-Flickr-FireSmoke/imgs,4008545979.jpg,fire,train
+Flickr-FireSmoke/imgs,4008545979.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4012993187.jpg,none,train
 Flickr-FireSmoke/imgs,4032160217.jpg,none,train
 Flickr-FireSmoke/imgs,4034848121.jpg,fire,train
@@ -2747,8 +2747,8 @@ Flickr-FireSmoke/imgs,4071975526.jpg,none,train
 Flickr-FireSmoke/imgs,407576702.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,407576751.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,407577524.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,407577617.jpg,fire,train
-Flickr-FireSmoke/imgs,407577752.jpg,fire,train
+Flickr-FireSmoke/imgs,407577617.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,407577752.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4078108204.jpg,none,train
 Flickr-FireSmoke/imgs,4078108876.jpg,smoke,train
 Flickr-FireSmoke/imgs,407835090.jpg,"['fire', 'smoke']",val
@@ -3096,7 +3096,7 @@ Flickr-FireSmoke/imgs,4455542309.jpg,none,train
 Flickr-FireSmoke/imgs,4458060859.jpg,fire,train
 Flickr-FireSmoke/imgs,4459539663.jpg,fire,train
 Flickr-FireSmoke/imgs,4459544165.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,4460071610.jpg,fire,train
+Flickr-FireSmoke/imgs,4460071610.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4465545943.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,4465553361.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4465560343.jpg,"['fire', 'smoke']",train
@@ -3120,7 +3120,7 @@ Flickr-FireSmoke/imgs,446644983.jpg,none,train
 Flickr-FireSmoke/imgs,4472029652.jpg,none,train
 Flickr-FireSmoke/imgs,4472033148.jpg,fire,val
 Flickr-FireSmoke/imgs,4472653993.jpg,none,val
-Flickr-FireSmoke/imgs,4482100809.jpg,fire,train
+Flickr-FireSmoke/imgs,4482100809.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4483078132.jpg,none,train
 Flickr-FireSmoke/imgs,4492202804.jpg,none,train
 Flickr-FireSmoke/imgs,4492414795.jpg,none,train
@@ -3151,9 +3151,9 @@ Flickr-FireSmoke/imgs,4534236924.jpg,none,train
 Flickr-FireSmoke/imgs,4534917031.jpg,none,train
 Flickr-FireSmoke/imgs,4537882183.jpg,none,train
 Flickr-FireSmoke/imgs,4540359559.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,4540989616.jpg,fire,train
+Flickr-FireSmoke/imgs,4540989616.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4540991112.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,4540992344.jpg,fire,train
+Flickr-FireSmoke/imgs,4540992344.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,454112660.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,4544638235.jpg,none,train
 Flickr-FireSmoke/imgs,4544639035.jpg,none,train
@@ -3208,21 +3208,21 @@ Flickr-FireSmoke/imgs,4628413573.jpg,smoke,train
 Flickr-FireSmoke/imgs,4628419739.jpg,none,train
 Flickr-FireSmoke/imgs,4629032432.jpg,smoke,val
 Flickr-FireSmoke/imgs,4633340855.jpg,fire,train
-Flickr-FireSmoke/imgs,4633568097.jpg,none,train
-Flickr-FireSmoke/imgs,4633570799.jpg,none,train
+Flickr-FireSmoke/imgs,4633568097.jpg,smoke,train
+Flickr-FireSmoke/imgs,4633570799.jpg,smoke,train
 Flickr-FireSmoke/imgs,4633573791.jpg,smoke,train
 Flickr-FireSmoke/imgs,4633580263.jpg,smoke,val
-Flickr-FireSmoke/imgs,4633583397.jpg,none,train
-Flickr-FireSmoke/imgs,4633589399.jpg,none,train
-Flickr-FireSmoke/imgs,4633592191.jpg,none,train
-Flickr-FireSmoke/imgs,4633598265.jpg,none,train
+Flickr-FireSmoke/imgs,4633583397.jpg,smoke,train
+Flickr-FireSmoke/imgs,4633589399.jpg,smoke,train
+Flickr-FireSmoke/imgs,4633592191.jpg,smoke,train
+Flickr-FireSmoke/imgs,4633598265.jpg,smoke,train
 Flickr-FireSmoke/imgs,4633601045.jpg,none,train
 Flickr-FireSmoke/imgs,4633604127.jpg,smoke,train
 Flickr-FireSmoke/imgs,4633618225.jpg,none,train
 Flickr-FireSmoke/imgs,4633620995.jpg,smoke,train
-Flickr-FireSmoke/imgs,4633625995.jpg,none,train
+Flickr-FireSmoke/imgs,4633625995.jpg,smoke,train
 Flickr-FireSmoke/imgs,4634174046.jpg,smoke,train
-Flickr-FireSmoke/imgs,4634183438.jpg,none,train
+Flickr-FireSmoke/imgs,4634183438.jpg,smoke,train
 Flickr-FireSmoke/imgs,4634228118.jpg,smoke,train
 Flickr-FireSmoke/imgs,4634236016.jpg,none,train
 Flickr-FireSmoke/imgs,4648280220.jpg,fire,train
@@ -3241,10 +3241,10 @@ Flickr-FireSmoke/imgs,4660301054.jpg,none,train
 Flickr-FireSmoke/imgs,4660320386.jpg,fire,train
 Flickr-FireSmoke/imgs,4660912645.jpg,smoke,train
 Flickr-FireSmoke/imgs,4662116071.jpg,fire,train
-Flickr-FireSmoke/imgs,4662445647.jpg,fire,train
+Flickr-FireSmoke/imgs,4662445647.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4662706464.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4663442153.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,4664062656.jpg,fire,val
+Flickr-FireSmoke/imgs,4664062656.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,466732578.jpg,none,val
 Flickr-FireSmoke/imgs,466858422.jpg,none,val
 Flickr-FireSmoke/imgs,466858430.jpg,fire,train
@@ -3255,7 +3255,7 @@ Flickr-FireSmoke/imgs,4668766692.jpg,fire,train
 Flickr-FireSmoke/imgs,4668767018.jpg,fire,val
 Flickr-FireSmoke/imgs,4668767636.jpg,fire,train
 Flickr-FireSmoke/imgs,4669586540.jpg,fire,val
-Flickr-FireSmoke/imgs,4669591012.jpg,none,train
+Flickr-FireSmoke/imgs,4669591012.jpg,fire,train
 Flickr-FireSmoke/imgs,4671367216.jpg,fire,train
 Flickr-FireSmoke/imgs,4677017760.jpg,none,train
 Flickr-FireSmoke/imgs,4682364347.jpg,smoke,val
@@ -3293,7 +3293,7 @@ Flickr-FireSmoke/imgs,474255898.jpg,none,train
 Flickr-FireSmoke/imgs,4743472838.jpg,none,train
 Flickr-FireSmoke/imgs,4743488054.jpg,none,train
 Flickr-FireSmoke/imgs,4743935407.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,4745115480.jpg,fire,train
+Flickr-FireSmoke/imgs,4745115480.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4745116472.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4746782973.jpg,none,train
 Flickr-FireSmoke/imgs,4746784363.jpg,none,train
@@ -3318,7 +3318,7 @@ Flickr-FireSmoke/imgs,4747427114.jpg,none,train
 Flickr-FireSmoke/imgs,4747427768.jpg,none,train
 Flickr-FireSmoke/imgs,4747428090.jpg,none,train
 Flickr-FireSmoke/imgs,4747428826.jpg,none,train
-Flickr-FireSmoke/imgs,4753097821.jpg,"['fire', 'smoke']",val
+Flickr-FireSmoke/imgs,4753097821.jpg,smoke,val
 Flickr-FireSmoke/imgs,4757264403.jpg,none,train
 Flickr-FireSmoke/imgs,4757906322.jpg,none,val
 Flickr-FireSmoke/imgs,477393918.jpg,none,train
@@ -3332,16 +3332,16 @@ Flickr-FireSmoke/imgs,4777451119.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4777933444.jpg,none,train
 Flickr-FireSmoke/imgs,4778084696.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4781386131.jpg,fire,val
-Flickr-FireSmoke/imgs,4781386291.jpg,none,train
+Flickr-FireSmoke/imgs,4781386291.jpg,fire,train
 Flickr-FireSmoke/imgs,4782011360.jpg,none,train
-Flickr-FireSmoke/imgs,4782022272.jpg,none,train
+Flickr-FireSmoke/imgs,4782022272.jpg,fire,train
 Flickr-FireSmoke/imgs,478990525.jpg,none,val
 Flickr-FireSmoke/imgs,4790496745.jpg,none,train
 Flickr-FireSmoke/imgs,4793789429.jpg,none,train
 Flickr-FireSmoke/imgs,4797292745.jpg,none,train
 Flickr-FireSmoke/imgs,4805647223.jpg,fire,val
-Flickr-FireSmoke/imgs,4805648837.jpg,none,train
-Flickr-FireSmoke/imgs,4806245666.jpg,none,train
+Flickr-FireSmoke/imgs,4805648837.jpg,fire,train
+Flickr-FireSmoke/imgs,4806245666.jpg,fire,train
 Flickr-FireSmoke/imgs,4810586191.jpg,fire,train
 Flickr-FireSmoke/imgs,481097144.jpg,none,val
 Flickr-FireSmoke/imgs,4811210820.jpg,fire,train
@@ -3436,12 +3436,12 @@ Flickr-FireSmoke/imgs,4879952633.jpg,none,val
 Flickr-FireSmoke/imgs,4879957731.jpg,none,train
 Flickr-FireSmoke/imgs,4883180570.jpg,fire,train
 Flickr-FireSmoke/imgs,4883441011.jpg,fire,train
-Flickr-FireSmoke/imgs,4884043396.jpg,none,train
+Flickr-FireSmoke/imgs,4884043396.jpg,fire,train
 Flickr-FireSmoke/imgs,4884046210.jpg,fire,train
 Flickr-FireSmoke/imgs,4884047634.jpg,fire,train
 Flickr-FireSmoke/imgs,488953663.jpg,none,train
 Flickr-FireSmoke/imgs,4892599663.jpg,fire,train
-Flickr-FireSmoke/imgs,4893139696.jpg,none,train
+Flickr-FireSmoke/imgs,4893139696.jpg,fire,train
 Flickr-FireSmoke/imgs,4893197268.jpg,fire,train
 Flickr-FireSmoke/imgs,4893197646.jpg,fire,train
 Flickr-FireSmoke/imgs,4894565063.jpg,none,train
@@ -3478,7 +3478,7 @@ Flickr-FireSmoke/imgs,4940800557.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,4945537661.jpg,none,train
 Flickr-FireSmoke/imgs,4947252429.jpg,none,train
 Flickr-FireSmoke/imgs,4947841838.jpg,none,train
-Flickr-FireSmoke/imgs,4956573738.jpg,none,train
+Flickr-FireSmoke/imgs,4956573738.jpg,fire,train
 Flickr-FireSmoke/imgs,4960084736.jpg,none,val
 Flickr-FireSmoke/imgs,4960605926.jpg,fire,train
 Flickr-FireSmoke/imgs,496200364.jpg,fire,train
@@ -3609,7 +3609,7 @@ Flickr-FireSmoke/imgs,513104964.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,513106422.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,513107118.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5131364401.jpg,fire,train
-Flickr-FireSmoke/imgs,5131366505.jpg,none,train
+Flickr-FireSmoke/imgs,5131366505.jpg,fire,train
 Flickr-FireSmoke/imgs,513137147.jpg,smoke,train
 Flickr-FireSmoke/imgs,513137471.jpg,smoke,train
 Flickr-FireSmoke/imgs,513137771.jpg,smoke,train
@@ -3689,7 +3689,7 @@ Flickr-FireSmoke/imgs,519237415.jpg,none,train
 Flickr-FireSmoke/imgs,519238053.jpg,smoke,train
 Flickr-FireSmoke/imgs,519240105.jpg,none,train
 Flickr-FireSmoke/imgs,519242263.jpg,smoke,train
-Flickr-FireSmoke/imgs,519243129.jpg,none,train
+Flickr-FireSmoke/imgs,519243129.jpg,smoke,train
 Flickr-FireSmoke/imgs,519244535.jpg,none,train
 Flickr-FireSmoke/imgs,519245887.jpg,smoke,train
 Flickr-FireSmoke/imgs,5193142194.jpg,none,train
@@ -3755,9 +3755,9 @@ Flickr-FireSmoke/imgs,524580393.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,524581595.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,524584449.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5247492729.jpg,fire,train
-Flickr-FireSmoke/imgs,5250061909.jpg,fire,train
-Flickr-FireSmoke/imgs,5250062113.jpg,fire,train
-Flickr-FireSmoke/imgs,5250065019.jpg,fire,train
+Flickr-FireSmoke/imgs,5250061909.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,5250062113.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,5250065019.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5250666376.jpg,fire,train
 Flickr-FireSmoke/imgs,5250667808.jpg,fire,train
 Flickr-FireSmoke/imgs,5250669030.jpg,"['fire', 'smoke']",train
@@ -3765,8 +3765,8 @@ Flickr-FireSmoke/imgs,5251107529.jpg,fire,train
 Flickr-FireSmoke/imgs,5251712488.jpg,fire,train
 Flickr-FireSmoke/imgs,5252078124.jpg,none,train
 Flickr-FireSmoke/imgs,5261111593.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,5261112509.jpg,fire,val
-Flickr-FireSmoke/imgs,5261113463.jpg,fire,train
+Flickr-FireSmoke/imgs,5261112509.jpg,"['fire', 'smoke']",val
+Flickr-FireSmoke/imgs,5261113463.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5261114037.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5261375332.jpg,fire,train
 Flickr-FireSmoke/imgs,5261436255.jpg,"['fire', 'smoke']",train
@@ -3775,7 +3775,7 @@ Flickr-FireSmoke/imgs,5261719560.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5261720662.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5264692843.jpg,none,val
 Flickr-FireSmoke/imgs,5265938976.jpg,none,val
-Flickr-FireSmoke/imgs,526884448.jpg,smoke,train
+Flickr-FireSmoke/imgs,526884448.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5269028591.jpg,none,val
 Flickr-FireSmoke/imgs,5269409859.jpg,none,train
 Flickr-FireSmoke/imgs,5275117259.jpg,none,val
@@ -3821,7 +3821,7 @@ Flickr-FireSmoke/imgs,533822937.jpg,fire,train
 Flickr-FireSmoke/imgs,5339494444.jpg,none,train
 Flickr-FireSmoke/imgs,5340225912.jpg,none,train
 Flickr-FireSmoke/imgs,5344811749.jpg,fire,train
-Flickr-FireSmoke/imgs,5347011663.jpg,none,train
+Flickr-FireSmoke/imgs,5347011663.jpg,fire,train
 Flickr-FireSmoke/imgs,5347117625.jpg,smoke,train
 Flickr-FireSmoke/imgs,5352890772.jpg,fire,train
 Flickr-FireSmoke/imgs,5358970214.jpg,none,train
@@ -3858,7 +3858,7 @@ Flickr-FireSmoke/imgs,544216160.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5442555511.jpg,none,train
 Flickr-FireSmoke/imgs,5444958065.jpg,none,train
 Flickr-FireSmoke/imgs,5445325227.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,5445919410.jpg,fire,train
+Flickr-FireSmoke/imgs,5445919410.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5446662439.jpg,fire,val
 Flickr-FireSmoke/imgs,5449105467.jpg,none,train
 Flickr-FireSmoke/imgs,5449968437.jpg,fire,train
@@ -3901,7 +3901,7 @@ Flickr-FireSmoke/imgs,5520885744.jpg,fire,train
 Flickr-FireSmoke/imgs,5521975962.jpg,fire,train
 Flickr-FireSmoke/imgs,5523944448.jpg,fire,train
 Flickr-FireSmoke/imgs,5525195161.jpg,none,train
-Flickr-FireSmoke/imgs,5527008883.jpg,none,train
+Flickr-FireSmoke/imgs,5527008883.jpg,fire,train
 Flickr-FireSmoke/imgs,5531036713.jpg,none,train
 Flickr-FireSmoke/imgs,5532667567.jpg,smoke,train
 Flickr-FireSmoke/imgs,5532685125.jpg,smoke,train
@@ -4002,7 +4002,7 @@ Flickr-FireSmoke/imgs,5706981686.jpg,fire,train
 Flickr-FireSmoke/imgs,5711271507.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5713941094.jpg,none,train
 Flickr-FireSmoke/imgs,5718427133.jpg,fire,train
-Flickr-FireSmoke/imgs,5718429517.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,5718429517.jpg,fire,train
 Flickr-FireSmoke/imgs,5718430273.jpg,fire,train
 Flickr-FireSmoke/imgs,5718984618.jpg,fire,train
 Flickr-FireSmoke/imgs,5718985016.jpg,fire,train
@@ -4017,7 +4017,7 @@ Flickr-FireSmoke/imgs,5731703744.jpg,none,train
 Flickr-FireSmoke/imgs,5733336881.jpg,none,train
 Flickr-FireSmoke/imgs,5736971013.jpg,none,train
 Flickr-FireSmoke/imgs,5740766270.jpg,none,val
-Flickr-FireSmoke/imgs,5749100191.jpg,none,train
+Flickr-FireSmoke/imgs,5749100191.jpg,smoke,train
 Flickr-FireSmoke/imgs,5749101271.jpg,smoke,train
 Flickr-FireSmoke/imgs,5749151971.jpg,none,train
 Flickr-FireSmoke/imgs,5749154288.jpg,none,val
@@ -4082,7 +4082,7 @@ Flickr-FireSmoke/imgs,5784339327.jpg,fire,train
 Flickr-FireSmoke/imgs,5784342959.jpg,fire,train
 Flickr-FireSmoke/imgs,5784368949.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5784407411.jpg,fire,train
-Flickr-FireSmoke/imgs,5784843036.jpg,none,train
+Flickr-FireSmoke/imgs,5784843036.jpg,smoke,train
 Flickr-FireSmoke/imgs,5784879780.jpg,fire,train
 Flickr-FireSmoke/imgs,5784886652.jpg,fire,train
 Flickr-FireSmoke/imgs,5784888944.jpg,fire,train
@@ -4093,7 +4093,7 @@ Flickr-FireSmoke/imgs,5793586153.jpg,none,train
 Flickr-FireSmoke/imgs,5796759787.jpg,none,train
 Flickr-FireSmoke/imgs,5797316530.jpg,none,train
 Flickr-FireSmoke/imgs,5807644537.jpg,fire,train
-Flickr-FireSmoke/imgs,5807737771.jpg,fire,train
+Flickr-FireSmoke/imgs,5807737771.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5808491015.jpg,none,train
 Flickr-FireSmoke/imgs,580991288.jpg,fire,train
 Flickr-FireSmoke/imgs,5816804839.jpg,none,train
@@ -4121,7 +4121,7 @@ Flickr-FireSmoke/imgs,5838551830.jpg,smoke,train
 Flickr-FireSmoke/imgs,5838635645.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5838651857.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5838654139.jpg,fire,train
-Flickr-FireSmoke/imgs,5838663286.jpg,none,val
+Flickr-FireSmoke/imgs,5838663286.jpg,fire,val
 Flickr-FireSmoke/imgs,5838665280.jpg,fire,train
 Flickr-FireSmoke/imgs,5838677365.jpg,fire,train
 Flickr-FireSmoke/imgs,5838855882.jpg,"['fire', 'smoke']",val
@@ -4179,7 +4179,7 @@ Flickr-FireSmoke/imgs,5891979845.jpg,none,train
 Flickr-FireSmoke/imgs,5892545150.jpg,none,train
 Flickr-FireSmoke/imgs,5895076476.jpg,none,train
 Flickr-FireSmoke/imgs,5902826057.jpg,none,train
-Flickr-FireSmoke/imgs,5903252675.jpg,fire,train
+Flickr-FireSmoke/imgs,5903252675.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5905399697.jpg,none,train
 Flickr-FireSmoke/imgs,5908978013.jpg,none,train
 Flickr-FireSmoke/imgs,5909986355.jpg,none,train
@@ -4215,8 +4215,8 @@ Flickr-FireSmoke/imgs,5936523844.jpg,none,train
 Flickr-FireSmoke/imgs,5937016868.jpg,none,train
 Flickr-FireSmoke/imgs,5938954586.jpg,none,train
 Flickr-FireSmoke/imgs,5940265880.jpg,none,train
-Flickr-FireSmoke/imgs,5944261909.jpg,none,train
-Flickr-FireSmoke/imgs,5944815124.jpg,none,train
+Flickr-FireSmoke/imgs,5944261909.jpg,fire,train
+Flickr-FireSmoke/imgs,5944815124.jpg,fire,train
 Flickr-FireSmoke/imgs,5947814763.jpg,none,train
 Flickr-FireSmoke/imgs,5948763078.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,5952505972.jpg,none,train
@@ -4231,7 +4231,7 @@ Flickr-FireSmoke/imgs,5989565312.jpg,none,val
 Flickr-FireSmoke/imgs,5995043934.jpg,none,train
 Flickr-FireSmoke/imgs,5996663339.jpg,fire,val
 Flickr-FireSmoke/imgs,5997206906.jpg,fire,train
-Flickr-FireSmoke/imgs,5997256656.jpg,none,train
+Flickr-FireSmoke/imgs,5997256656.jpg,fire,train
 Flickr-FireSmoke/imgs,5999197239.jpg,none,val
 Flickr-FireSmoke/imgs,6004524648.jpg,none,train
 Flickr-FireSmoke/imgs,6004849611.jpg,"['fire', 'smoke']",train
@@ -4352,7 +4352,7 @@ Flickr-FireSmoke/imgs,6019242608.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,6020008139.jpg,none,train
 Flickr-FireSmoke/imgs,6020009739.jpg,none,train
 Flickr-FireSmoke/imgs,6021446480.jpg,none,train
-Flickr-FireSmoke/imgs,6021499930.jpg,none,train
+Flickr-FireSmoke/imgs,6021499930.jpg,smoke,train
 Flickr-FireSmoke/imgs,6022471278.jpg,none,val
 Flickr-FireSmoke/imgs,6023890369.jpg,fire,train
 Flickr-FireSmoke/imgs,6024448570.jpg,"['fire', 'smoke']",train
@@ -4414,9 +4414,9 @@ Flickr-FireSmoke/imgs,6026048804.jpg,none,train
 Flickr-FireSmoke/imgs,6026048990.jpg,none,train
 Flickr-FireSmoke/imgs,6026649766.jpg,smoke,train
 Flickr-FireSmoke/imgs,6026651396.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,6026877879.jpg,fire,train
+Flickr-FireSmoke/imgs,6026877879.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6026894922.jpg,fire,train
-Flickr-FireSmoke/imgs,6027432488.jpg,fire,train
+Flickr-FireSmoke/imgs,6027432488.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6027744381.jpg,none,train
 Flickr-FireSmoke/imgs,6027749629.jpg,none,train
 Flickr-FireSmoke/imgs,6028027593.jpg,fire,train
@@ -4457,14 +4457,14 @@ Flickr-FireSmoke/imgs,6037339913.jpg,none,train
 Flickr-FireSmoke/imgs,6037690530.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6039893608.jpg,none,train
 Flickr-FireSmoke/imgs,6041854630.jpg,none,train
-Flickr-FireSmoke/imgs,60452315.jpg,none,train
+Flickr-FireSmoke/imgs,60452315.jpg,fire,train
 Flickr-FireSmoke/imgs,6045336735.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,60453827.jpg,fire,train
 Flickr-FireSmoke/imgs,60463625.jpg,fire,train
 Flickr-FireSmoke/imgs,60463627.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,60463628.jpg,fire,val
 Flickr-FireSmoke/imgs,6048157689.jpg,none,train
-Flickr-FireSmoke/imgs,6053117149.jpg,none,train
+Flickr-FireSmoke/imgs,6053117149.jpg,fire,train
 Flickr-FireSmoke/imgs,6053484317.jpg,none,val
 Flickr-FireSmoke/imgs,6055474229.jpg,none,train
 Flickr-FireSmoke/imgs,6055854582.jpg,none,train
@@ -4492,7 +4492,7 @@ Flickr-FireSmoke/imgs,6082946820.jpg,none,val
 Flickr-FireSmoke/imgs,6083699840.jpg,none,train
 Flickr-FireSmoke/imgs,6090606030.jpg,none,train
 Flickr-FireSmoke/imgs,6093418708.jpg,none,train
-Flickr-FireSmoke/imgs,6096139916.jpg,none,train
+Flickr-FireSmoke/imgs,6096139916.jpg,fire,train
 Flickr-FireSmoke/imgs,6101178903.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6110278112.jpg,none,train
 Flickr-FireSmoke/imgs,6113188182.jpg,fire,train
@@ -4508,7 +4508,7 @@ Flickr-FireSmoke/imgs,6131003058.jpg,none,train
 Flickr-FireSmoke/imgs,6132801129.jpg,none,train
 Flickr-FireSmoke/imgs,6133690156.jpg,none,train
 Flickr-FireSmoke/imgs,6133690392.jpg,none,train
-Flickr-FireSmoke/imgs,6134480067.jpg,fire,val
+Flickr-FireSmoke/imgs,6134480067.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,6135028534.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6136459095.jpg,none,train
 Flickr-FireSmoke/imgs,6137854070.jpg,none,train
@@ -4538,7 +4538,7 @@ Flickr-FireSmoke/imgs,6167676191.jpg,none,train
 Flickr-FireSmoke/imgs,6168651389.jpg,none,train
 Flickr-FireSmoke/imgs,6169950609.jpg,none,val
 Flickr-FireSmoke/imgs,6172104867.jpg,none,train
-Flickr-FireSmoke/imgs,6173757760.jpg,none,train
+Flickr-FireSmoke/imgs,6173757760.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6173757818.jpg,smoke,train
 Flickr-FireSmoke/imgs,6177498477.jpg,none,train
 Flickr-FireSmoke/imgs,6180334583.jpg,none,train
@@ -4555,15 +4555,15 @@ Flickr-FireSmoke/imgs,6188437650.jpg,none,train
 Flickr-FireSmoke/imgs,6189212689.jpg,none,train
 Flickr-FireSmoke/imgs,6189220547.jpg,none,val
 Flickr-FireSmoke/imgs,6190196662.jpg,none,train
-Flickr-FireSmoke/imgs,6190738748.jpg,smoke,train
+Flickr-FireSmoke/imgs,6190738748.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6195971029.jpg,none,train
 Flickr-FireSmoke/imgs,6196235249.jpg,none,train
 Flickr-FireSmoke/imgs,6203848650.jpg,none,train
 Flickr-FireSmoke/imgs,6205179985.jpg,none,val
-Flickr-FireSmoke/imgs,6205182513.jpg,smoke,train
+Flickr-FireSmoke/imgs,6205182513.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6205697324.jpg,none,train
 Flickr-FireSmoke/imgs,6206228709.jpg,none,train
-Flickr-FireSmoke/imgs,6210901397.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,6210901397.jpg,fire,train
 Flickr-FireSmoke/imgs,621130291.jpg,none,train
 Flickr-FireSmoke/imgs,6211413424.jpg,fire,train
 Flickr-FireSmoke/imgs,6211414190.jpg,"['fire', 'smoke']",val
@@ -4572,7 +4572,7 @@ Flickr-FireSmoke/imgs,6220689363.jpg,none,train
 Flickr-FireSmoke/imgs,6221082426.jpg,none,train
 Flickr-FireSmoke/imgs,6221083126.jpg,none,train
 Flickr-FireSmoke/imgs,62211994.jpg,none,train
-Flickr-FireSmoke/imgs,6222159183.jpg,none,val
+Flickr-FireSmoke/imgs,6222159183.jpg,fire,val
 Flickr-FireSmoke/imgs,6224099471.jpg,none,train
 Flickr-FireSmoke/imgs,6224161713.jpg,fire,val
 Flickr-FireSmoke/imgs,6224268668.jpg,none,train
@@ -4584,15 +4584,15 @@ Flickr-FireSmoke/imgs,6232800012.jpg,none,train
 Flickr-FireSmoke/imgs,623455041.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6235567737.jpg,none,train
 Flickr-FireSmoke/imgs,6241600679.jpg,fire,train
-Flickr-FireSmoke/imgs,6241626405.jpg,none,train
+Flickr-FireSmoke/imgs,6241626405.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6241668120.jpg,none,train
 Flickr-FireSmoke/imgs,6241670196.jpg,none,train
 Flickr-FireSmoke/imgs,6241710431.jpg,none,train
 Flickr-FireSmoke/imgs,6242116732.jpg,fire,train
 Flickr-FireSmoke/imgs,6242116928.jpg,fire,train
 Flickr-FireSmoke/imgs,6242950049.jpg,fire,val
-Flickr-FireSmoke/imgs,6242971655.jpg,none,train
-Flickr-FireSmoke/imgs,6243485656.jpg,none,train
+Flickr-FireSmoke/imgs,6242971655.jpg,fire,train
+Flickr-FireSmoke/imgs,6243485656.jpg,fire,train
 Flickr-FireSmoke/imgs,6243749315.jpg,smoke,train
 Flickr-FireSmoke/imgs,6244266400.jpg,smoke,val
 Flickr-FireSmoke/imgs,6244267104.jpg,smoke,train
@@ -4667,7 +4667,7 @@ Flickr-FireSmoke/imgs,6275669562.jpg,none,train
 Flickr-FireSmoke/imgs,6283600243.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6286199440.jpg,fire,train
 Flickr-FireSmoke/imgs,6286202672.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,6287682725.jpg,none,train
+Flickr-FireSmoke/imgs,6287682725.jpg,fire,train
 Flickr-FireSmoke/imgs,6288208880.jpg,none,train
 Flickr-FireSmoke/imgs,6290542437.jpg,none,train
 Flickr-FireSmoke/imgs,6292456874.jpg,none,train
@@ -4676,7 +4676,7 @@ Flickr-FireSmoke/imgs,6297360032.jpg,none,train
 Flickr-FireSmoke/imgs,6297381409.jpg,none,train
 Flickr-FireSmoke/imgs,6297384849.jpg,none,train
 Flickr-FireSmoke/imgs,6298201066.jpg,fire,train
-Flickr-FireSmoke/imgs,6301030348.jpg,none,train
+Flickr-FireSmoke/imgs,6301030348.jpg,fire,train
 Flickr-FireSmoke/imgs,6302969170.jpg,none,train
 Flickr-FireSmoke/imgs,6303841173.jpg,none,train
 Flickr-FireSmoke/imgs,6304990303.jpg,fire,train
@@ -4690,7 +4690,7 @@ Flickr-FireSmoke/imgs,6315130014.jpg,none,train
 Flickr-FireSmoke/imgs,6316626967.jpg,none,train
 Flickr-FireSmoke/imgs,6317147564.jpg,smoke,train
 Flickr-FireSmoke/imgs,6317896562.jpg,none,train
-Flickr-FireSmoke/imgs,6319168880.jpg,none,train
+Flickr-FireSmoke/imgs,6319168880.jpg,smoke,train
 Flickr-FireSmoke/imgs,6319188807.jpg,fire,train
 Flickr-FireSmoke/imgs,6319192913.jpg,fire,train
 Flickr-FireSmoke/imgs,6319194767.jpg,fire,train
@@ -4708,7 +4708,7 @@ Flickr-FireSmoke/imgs,6352678830.jpg,fire,train
 Flickr-FireSmoke/imgs,6354998159.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6356821099.jpg,none,train
 Flickr-FireSmoke/imgs,6356829731.jpg,none,train
-Flickr-FireSmoke/imgs,6357823697.jpg,none,train
+Flickr-FireSmoke/imgs,6357823697.jpg,fire,train
 Flickr-FireSmoke/imgs,63621614.jpg,none,val
 Flickr-FireSmoke/imgs,6362227357.jpg,none,train
 Flickr-FireSmoke/imgs,6364486899.jpg,"['fire', 'smoke']",val
@@ -4732,21 +4732,21 @@ Flickr-FireSmoke/imgs,6380358753.jpg,none,train
 Flickr-FireSmoke/imgs,6384753811.jpg,none,train
 Flickr-FireSmoke/imgs,6385110923.jpg,none,train
 Flickr-FireSmoke/imgs,6385269473.jpg,none,train
-Flickr-FireSmoke/imgs,6390611777.jpg,none,train
-Flickr-FireSmoke/imgs,6396926401.jpg,fire,train
-Flickr-FireSmoke/imgs,6406625151.jpg,fire,val
-Flickr-FireSmoke/imgs,6406625261.jpg,fire,train
+Flickr-FireSmoke/imgs,6390611777.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,6396926401.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,6406625151.jpg,"['fire', 'smoke']",val
+Flickr-FireSmoke/imgs,6406625261.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6407654229.jpg,none,val
 Flickr-FireSmoke/imgs,6407739709.jpg,none,train
 Flickr-FireSmoke/imgs,64144307.jpg,none,val
 Flickr-FireSmoke/imgs,6418002903.jpg,fire,train
-Flickr-FireSmoke/imgs,6419705625.jpg,fire,train
+Flickr-FireSmoke/imgs,6419705625.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,6420849409.jpg,none,train
 Flickr-FireSmoke/imgs,6429208117.jpg,none,train
 Flickr-FireSmoke/imgs,6438800997.jpg,none,val
 Flickr-FireSmoke/imgs,6454473123.jpg,none,val
 Flickr-FireSmoke/imgs,6459044307.jpg,none,train
-Flickr-FireSmoke/imgs,6459047327.jpg,none,train
+Flickr-FireSmoke/imgs,6459047327.jpg,fire,train
 Flickr-FireSmoke/imgs,6461744429.jpg,none,train
 Flickr-FireSmoke/imgs,6464854273.jpg,none,train
 Flickr-FireSmoke/imgs,6477671015.jpg,"['fire', 'smoke']",train
@@ -4812,9 +4812,9 @@ Flickr-FireSmoke/imgs,6541733651.jpg,none,train
 Flickr-FireSmoke/imgs,6541736449.jpg,none,train
 Flickr-FireSmoke/imgs,6541741851.jpg,smoke,train
 Flickr-FireSmoke/imgs,6541744351.jpg,smoke,val
-Flickr-FireSmoke/imgs,6541746655.jpg,none,train
-Flickr-FireSmoke/imgs,6541749111.jpg,none,train
-Flickr-FireSmoke/imgs,6541751431.jpg,none,train
+Flickr-FireSmoke/imgs,6541746655.jpg,smoke,train
+Flickr-FireSmoke/imgs,6541749111.jpg,smoke,train
+Flickr-FireSmoke/imgs,6541751431.jpg,smoke,train
 Flickr-FireSmoke/imgs,6541754443.jpg,none,train
 Flickr-FireSmoke/imgs,6541755727.jpg,none,val
 Flickr-FireSmoke/imgs,6541758153.jpg,none,val
@@ -4904,8 +4904,8 @@ Flickr-FireSmoke/imgs,6756661455.jpg,none,train
 Flickr-FireSmoke/imgs,6756668609.jpg,none,train
 Flickr-FireSmoke/imgs,6756669489.jpg,fire,train
 Flickr-FireSmoke/imgs,6756670201.jpg,fire,train
-Flickr-FireSmoke/imgs,6756671097.jpg,none,train
-Flickr-FireSmoke/imgs,6756671971.jpg,none,train
+Flickr-FireSmoke/imgs,6756671097.jpg,fire,train
+Flickr-FireSmoke/imgs,6756671971.jpg,fire,train
 Flickr-FireSmoke/imgs,6766179149.jpg,none,train
 Flickr-FireSmoke/imgs,6766549169.jpg,fire,train
 Flickr-FireSmoke/imgs,6770318301.jpg,none,train
@@ -4919,7 +4919,7 @@ Flickr-FireSmoke/imgs,6777240179.jpg,none,train
 Flickr-FireSmoke/imgs,6784271333.jpg,none,train
 Flickr-FireSmoke/imgs,6790454857.jpg,none,train
 Flickr-FireSmoke/imgs,6791633407.jpg,none,train
-Flickr-FireSmoke/imgs,6794267782.jpg,none,train
+Flickr-FireSmoke/imgs,6794267782.jpg,fire,train
 Flickr-FireSmoke/imgs,6798511857.jpg,none,train
 Flickr-FireSmoke/imgs,6801054678.jpg,none,train
 Flickr-FireSmoke/imgs,6801763988.jpg,none,val
@@ -5023,17 +5023,17 @@ Flickr-FireSmoke/imgs,70095169.jpg,none,train
 Flickr-FireSmoke/imgs,7009895777.jpg,smoke,train
 Flickr-FireSmoke/imgs,7010729643.jpg,none,train
 Flickr-FireSmoke/imgs,7016170829.jpg,none,val
-Flickr-FireSmoke/imgs,70162234.jpg,fire,val
+Flickr-FireSmoke/imgs,70162234.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,70162235.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,70162236.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,70162238.jpg,smoke,train
+Flickr-FireSmoke/imgs,70162238.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,70162239.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,70162240.jpg,smoke,val
-Flickr-FireSmoke/imgs,70164148.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,70164148.jpg,smoke,train
 Flickr-FireSmoke/imgs,70164150.jpg,smoke,val
 Flickr-FireSmoke/imgs,7016933431.jpg,fire,train
 Flickr-FireSmoke/imgs,7024504369.jpg,none,train
-Flickr-FireSmoke/imgs,7030103221.jpg,fire,train
+Flickr-FireSmoke/imgs,7030103221.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7040810685.jpg,fire,train
 Flickr-FireSmoke/imgs,7052562051.jpg,none,val
 Flickr-FireSmoke/imgs,7059507795.jpg,none,train
@@ -5110,7 +5110,7 @@ Flickr-FireSmoke/imgs,7295697776.jpg,none,val
 Flickr-FireSmoke/imgs,7305845674.jpg,none,train
 Flickr-FireSmoke/imgs,7305955590.jpg,none,train
 Flickr-FireSmoke/imgs,7305956784.jpg,none,train
-Flickr-FireSmoke/imgs,7318156480.jpg,fire,train
+Flickr-FireSmoke/imgs,7318156480.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7321707556.jpg,none,train
 Flickr-FireSmoke/imgs,732261052.jpg,none,train
 Flickr-FireSmoke/imgs,7327765790.jpg,none,train
@@ -5123,7 +5123,7 @@ Flickr-FireSmoke/imgs,73582239.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,736252420.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7376649980.jpg,none,train
 Flickr-FireSmoke/imgs,7387678982.jpg,none,train
-Flickr-FireSmoke/imgs,7390288944.jpg,fire,train
+Flickr-FireSmoke/imgs,7390288944.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7390297470.jpg,fire,train
 Flickr-FireSmoke/imgs,7391326294.jpg,none,train
 Flickr-FireSmoke/imgs,7393459992.jpg,none,train
@@ -5166,7 +5166,7 @@ Flickr-FireSmoke/imgs,7532449102.jpg,none,train
 Flickr-FireSmoke/imgs,7533533492.jpg,fire,train
 Flickr-FireSmoke/imgs,7536375178.jpg,none,train
 Flickr-FireSmoke/imgs,7539175138.jpg,none,train
-Flickr-FireSmoke/imgs,754549639.jpg,fire,train
+Flickr-FireSmoke/imgs,754549639.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7548682154.jpg,fire,val
 Flickr-FireSmoke/imgs,7558558324.jpg,none,train
 Flickr-FireSmoke/imgs,7570612018.jpg,"['fire', 'smoke']",train
@@ -5197,13 +5197,13 @@ Flickr-FireSmoke/imgs,764807167.jpg,fire,train
 Flickr-FireSmoke/imgs,76540723.jpg,none,train
 Flickr-FireSmoke/imgs,76540750.jpg,none,train
 Flickr-FireSmoke/imgs,76540799.jpg,none,train
-Flickr-FireSmoke/imgs,76541237.jpg,none,train
+Flickr-FireSmoke/imgs,76541237.jpg,fire,train
 Flickr-FireSmoke/imgs,76541264.jpg,fire,train
 Flickr-FireSmoke/imgs,7656230266.jpg,fire,train
 Flickr-FireSmoke/imgs,7657009922.jpg,fire,train
 Flickr-FireSmoke/imgs,7657010096.jpg,fire,train
-Flickr-FireSmoke/imgs,7657844994.jpg,none,val
-Flickr-FireSmoke/imgs,7660400104.jpg,fire,train
+Flickr-FireSmoke/imgs,7657844994.jpg,fire,val
+Flickr-FireSmoke/imgs,7660400104.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7663779984.jpg,fire,train
 Flickr-FireSmoke/imgs,7663780832.jpg,fire,train
 Flickr-FireSmoke/imgs,7664092312.jpg,none,train
@@ -5222,7 +5222,7 @@ Flickr-FireSmoke/imgs,7750763820.jpg,none,train
 Flickr-FireSmoke/imgs,7750825132.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7753313056.jpg,fire,val
 Flickr-FireSmoke/imgs,775747328.jpg,fire,train
-Flickr-FireSmoke/imgs,7758512484.jpg,none,train
+Flickr-FireSmoke/imgs,7758512484.jpg,fire,train
 Flickr-FireSmoke/imgs,7768348444.jpg,none,val
 Flickr-FireSmoke/imgs,7768353170.jpg,none,train
 Flickr-FireSmoke/imgs,7771173064.jpg,fire,train
@@ -5244,7 +5244,7 @@ Flickr-FireSmoke/imgs,7806547580.jpg,fire,train
 Flickr-FireSmoke/imgs,7820732302.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7820734598.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7820736702.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,7820738666.jpg,fire,train
+Flickr-FireSmoke/imgs,7820738666.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7820739550.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7820742496.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7820759848.jpg,"['fire', 'smoke']",train
@@ -5259,21 +5259,21 @@ Flickr-FireSmoke/imgs,7823839900.jpg,smoke,train
 Flickr-FireSmoke/imgs,7826084528.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,7826138338.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,78262826.jpg,none,train
-Flickr-FireSmoke/imgs,7828333272.jpg,none,train
+Flickr-FireSmoke/imgs,7828333272.jpg,smoke,train
 Flickr-FireSmoke/imgs,7838108368.jpg,smoke,train
 Flickr-FireSmoke/imgs,7857284578.jpg,none,val
 Flickr-FireSmoke/imgs,7868734040.jpg,none,train
 Flickr-FireSmoke/imgs,7868734854.jpg,none,train
 Flickr-FireSmoke/imgs,7877210534.jpg,none,val
 Flickr-FireSmoke/imgs,7893675582.jpg,smoke,train
-Flickr-FireSmoke/imgs,7893693198.jpg,none,train
+Flickr-FireSmoke/imgs,7893693198.jpg,smoke,train
 Flickr-FireSmoke/imgs,7893736042.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,7895484836.jpg,fire,train
 Flickr-FireSmoke/imgs,7901276468.jpg,none,train
 Flickr-FireSmoke/imgs,7908427784.jpg,fire,train
 Flickr-FireSmoke/imgs,7915785178.jpg,none,train
 Flickr-FireSmoke/imgs,7924715254.jpg,smoke,train
-Flickr-FireSmoke/imgs,7925016608.jpg,fire,train
+Flickr-FireSmoke/imgs,7925016608.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,7931640994.jpg,fire,train
 Flickr-FireSmoke/imgs,7935126874.jpg,fire,val
 Flickr-FireSmoke/imgs,7938021666.jpg,"['fire', 'smoke']",train
@@ -5406,7 +5406,7 @@ Flickr-FireSmoke/imgs,8041304153.jpg,smoke,train
 Flickr-FireSmoke/imgs,8041304894.jpg,smoke,train
 Flickr-FireSmoke/imgs,8041305615.jpg,smoke,train
 Flickr-FireSmoke/imgs,8041306060.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,8041307145.jpg,smoke,train
+Flickr-FireSmoke/imgs,8041307145.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8041307448.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,8041307687.jpg,smoke,train
 Flickr-FireSmoke/imgs,8041307936.jpg,smoke,train
@@ -5514,7 +5514,7 @@ Flickr-FireSmoke/imgs,8063002401.jpg,none,train
 Flickr-FireSmoke/imgs,8063014036.jpg,none,train
 Flickr-FireSmoke/imgs,8063032825.jpg,none,train
 Flickr-FireSmoke/imgs,8063659244.jpg,none,train
-Flickr-FireSmoke/imgs,8071303561.jpg,none,train
+Flickr-FireSmoke/imgs,8071303561.jpg,fire,train
 Flickr-FireSmoke/imgs,8071522777.jpg,none,val
 Flickr-FireSmoke/imgs,8072224298.jpg,none,train
 Flickr-FireSmoke/imgs,8072233430.jpg,none,train
@@ -5524,7 +5524,7 @@ Flickr-FireSmoke/imgs,8073775391.jpg,none,train
 Flickr-FireSmoke/imgs,8077106366.jpg,none,train
 Flickr-FireSmoke/imgs,8078698270.jpg,fire,train
 Flickr-FireSmoke/imgs,8083008570.jpg,none,train
-Flickr-FireSmoke/imgs,8090489039.jpg,fire,train
+Flickr-FireSmoke/imgs,8090489039.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8090981642.jpg,none,val
 Flickr-FireSmoke/imgs,809228172.jpg,none,train
 Flickr-FireSmoke/imgs,809239712.jpg,none,val
@@ -5573,7 +5573,7 @@ Flickr-FireSmoke/imgs,8170052976.jpg,fire,train
 Flickr-FireSmoke/imgs,8172038880.jpg,none,train
 Flickr-FireSmoke/imgs,81747969.jpg,fire,train
 Flickr-FireSmoke/imgs,818236010.jpg,none,train
-Flickr-FireSmoke/imgs,8187307084.jpg,fire,train
+Flickr-FireSmoke/imgs,8187307084.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8189860219.jpg,none,train
 Flickr-FireSmoke/imgs,8193095400.jpg,none,train
 Flickr-FireSmoke/imgs,8193880962.jpg,none,train
@@ -5614,12 +5614,12 @@ Flickr-FireSmoke/imgs,8252821281.jpg,none,train
 Flickr-FireSmoke/imgs,8254076933.jpg,none,train
 Flickr-FireSmoke/imgs,8254702385.jpg,fire,train
 Flickr-FireSmoke/imgs,8254891993.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,8254895293.jpg,fire,train
-Flickr-FireSmoke/imgs,8254903371.jpg,fire,train
+Flickr-FireSmoke/imgs,8254895293.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,8254903371.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8255960738.jpg,"['fire', 'smoke']",val
 Flickr-FireSmoke/imgs,8255971576.jpg,fire,train
 Flickr-FireSmoke/imgs,8256160784.jpg,none,train
-Flickr-FireSmoke/imgs,8263455073.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,8263455073.jpg,fire,train
 Flickr-FireSmoke/imgs,8263499992.jpg,none,train
 Flickr-FireSmoke/imgs,8265158899.jpg,fire,train
 Flickr-FireSmoke/imgs,8265692146.jpg,none,train
@@ -5647,12 +5647,12 @@ Flickr-FireSmoke/imgs,8352592586.jpg,none,train
 Flickr-FireSmoke/imgs,8358083273.jpg,none,val
 Flickr-FireSmoke/imgs,8360353648.jpg,fire,train
 Flickr-FireSmoke/imgs,8369787245.jpg,smoke,train
-Flickr-FireSmoke/imgs,8374363064.jpg,none,train
+Flickr-FireSmoke/imgs,8374363064.jpg,fire,train
 Flickr-FireSmoke/imgs,8382163965.jpg,fire,train
 Flickr-FireSmoke/imgs,8382342922.jpg,none,train
 Flickr-FireSmoke/imgs,8383637077.jpg,none,train
-Flickr-FireSmoke/imgs,8383801285.jpg,none,train
-Flickr-FireSmoke/imgs,8383806167.jpg,none,train
+Flickr-FireSmoke/imgs,8383801285.jpg,fire,train
+Flickr-FireSmoke/imgs,8383806167.jpg,fire,train
 Flickr-FireSmoke/imgs,8384726866.jpg,none,train
 Flickr-FireSmoke/imgs,8386524303.jpg,fire,train
 Flickr-FireSmoke/imgs,83962387.jpg,"['fire', 'smoke']",train
@@ -5685,7 +5685,7 @@ Flickr-FireSmoke/imgs,8437076065.jpg,none,train
 Flickr-FireSmoke/imgs,8444860441.jpg,none,train
 Flickr-FireSmoke/imgs,8444942019.jpg,none,train
 Flickr-FireSmoke/imgs,8446031026.jpg,fire,val
-Flickr-FireSmoke/imgs,8446449906.jpg,none,val
+Flickr-FireSmoke/imgs,8446449906.jpg,fire,val
 Flickr-FireSmoke/imgs,8448756437.jpg,none,train
 Flickr-FireSmoke/imgs,8449134536.jpg,fire,train
 Flickr-FireSmoke/imgs,8457402061.jpg,"['fire', 'smoke']",train
@@ -5695,7 +5695,7 @@ Flickr-FireSmoke/imgs,8460362579.jpg,none,train
 Flickr-FireSmoke/imgs,8465628607.jpg,none,train
 Flickr-FireSmoke/imgs,8465894278.jpg,none,train
 Flickr-FireSmoke/imgs,8466023574.jpg,"['fire', 'smoke']",val
-Flickr-FireSmoke/imgs,8466023812.jpg,none,train
+Flickr-FireSmoke/imgs,8466023812.jpg,fire,train
 Flickr-FireSmoke/imgs,847040309.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,847042117.jpg,fire,val
 Flickr-FireSmoke/imgs,847042997.jpg,none,train
@@ -5705,7 +5705,7 @@ Flickr-FireSmoke/imgs,8472387428.jpg,fire,train
 Flickr-FireSmoke/imgs,8472735483.jpg,fire,train
 Flickr-FireSmoke/imgs,8473614343.jpg,none,train
 Flickr-FireSmoke/imgs,8474696722.jpg,none,train
-Flickr-FireSmoke/imgs,8476817575.jpg,none,train
+Flickr-FireSmoke/imgs,8476817575.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8476834527.jpg,none,train
 Flickr-FireSmoke/imgs,8477922874.jpg,none,train
 Flickr-FireSmoke/imgs,8477924270.jpg,none,train
@@ -5756,7 +5756,7 @@ Flickr-FireSmoke/imgs,8538401906.jpg,none,train
 Flickr-FireSmoke/imgs,8542020356.jpg,none,train
 Flickr-FireSmoke/imgs,8545480101.jpg,none,train
 Flickr-FireSmoke/imgs,8547688771.jpg,none,val
-Flickr-FireSmoke/imgs,8547813805.jpg,none,train
+Flickr-FireSmoke/imgs,8547813805.jpg,fire,train
 Flickr-FireSmoke/imgs,8551846113.jpg,fire,val
 Flickr-FireSmoke/imgs,8554577251.jpg,fire,train
 Flickr-FireSmoke/imgs,8557598613.jpg,none,train
@@ -5764,13 +5764,13 @@ Flickr-FireSmoke/imgs,85591550.jpg,none,train
 Flickr-FireSmoke/imgs,8562079055.jpg,none,train
 Flickr-FireSmoke/imgs,8576126749.jpg,none,train
 Flickr-FireSmoke/imgs,8579802309.jpg,fire,train
-Flickr-FireSmoke/imgs,8579806587.jpg,none,val
-Flickr-FireSmoke/imgs,8579814443.jpg,none,train
+Flickr-FireSmoke/imgs,8579806587.jpg,fire,val
+Flickr-FireSmoke/imgs,8579814443.jpg,fire,train
 Flickr-FireSmoke/imgs,8579815229.jpg,fire,train
 Flickr-FireSmoke/imgs,8580218713.jpg,fire,train
-Flickr-FireSmoke/imgs,8580907696.jpg,none,train
+Flickr-FireSmoke/imgs,8580907696.jpg,fire,train
 Flickr-FireSmoke/imgs,8584443081.jpg,fire,train
-Flickr-FireSmoke/imgs,8585541966.jpg,fire,train
+Flickr-FireSmoke/imgs,8585541966.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8585604397.jpg,none,train
 Flickr-FireSmoke/imgs,8585650271.jpg,none,train
 Flickr-FireSmoke/imgs,8585894486.jpg,none,val
@@ -5793,7 +5793,7 @@ Flickr-FireSmoke/imgs,8620550748.jpg,none,val
 Flickr-FireSmoke/imgs,8625673367.jpg,smoke,train
 Flickr-FireSmoke/imgs,8627448399.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8630410079.jpg,none,train
-Flickr-FireSmoke/imgs,8633084521.jpg,fire,train
+Flickr-FireSmoke/imgs,8633084521.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8635209287.jpg,none,train
 Flickr-FireSmoke/imgs,8635211255.jpg,fire,val
 Flickr-FireSmoke/imgs,8635875735.jpg,fire,train
@@ -5804,8 +5804,8 @@ Flickr-FireSmoke/imgs,8638089636.jpg,fire,train
 Flickr-FireSmoke/imgs,8638091874.jpg,fire,train
 Flickr-FireSmoke/imgs,8638092478.jpg,fire,val
 Flickr-FireSmoke/imgs,8638093102.jpg,"['fire', 'smoke']",train
-Flickr-FireSmoke/imgs,8638097406.jpg,fire,train
-Flickr-FireSmoke/imgs,8638098440.jpg,fire,train
+Flickr-FireSmoke/imgs,8638097406.jpg,"['fire', 'smoke']",train
+Flickr-FireSmoke/imgs,8638098440.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8645097815.jpg,none,train
 Flickr-FireSmoke/imgs,8651658175.jpg,none,val
 Flickr-FireSmoke/imgs,8652757634.jpg,none,train
@@ -5880,7 +5880,7 @@ Flickr-FireSmoke/imgs,8788380471.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8788384999.jpg,fire,train
 Flickr-FireSmoke/imgs,8800294273.jpg,none,val
 Flickr-FireSmoke/imgs,8802786451.jpg,fire,train
-Flickr-FireSmoke/imgs,8802786859.jpg,fire,train
+Flickr-FireSmoke/imgs,8802786859.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,8856062024.jpg,none,train
 Flickr-FireSmoke/imgs,8860813750.jpg,smoke,train
 Flickr-FireSmoke/imgs,8862106575.jpg,none,train
@@ -6059,6 +6059,6 @@ Flickr-FireSmoke/imgs,9873252723.jpg,none,train
 Flickr-FireSmoke/imgs,9873862536.jpg,none,val
 Flickr-FireSmoke/imgs,9890919895.jpg,none,train
 Flickr-FireSmoke/imgs,9897721513.jpg,smoke,train
-Flickr-FireSmoke/imgs,9901508214.jpg,none,train
-Flickr-FireSmoke/imgs,99694895.jpg,fire,train
+Flickr-FireSmoke/imgs,9901508214.jpg,fire,train
+Flickr-FireSmoke/imgs,99694895.jpg,"['fire', 'smoke']",train
 Flickr-FireSmoke/imgs,9986034884.jpg,none,val
