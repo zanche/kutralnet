@@ -1,5 +1,6 @@
 import os
 import ast
+import math
 import time
 import torch
 import pandas as pd
@@ -17,15 +18,28 @@ class BaseDataset(Dataset):
         self.purpose = purpose
         self.transform = transform
         self.preload = preload
-        self.data = self.read_csv()
         self.multi_label = multi_label
+        self.data = self.read_csv()
+        self.loaded = False
         
         if not hasattr(self, 'labels'):
-            self.labels = None
-
+            self.set_labels()
+            
+        if not hasattr(self, 'label_default'):
+            self.set_label_default()
+        
         if self.preload:
-            self._preload()
+            self.load_data()
+            
     # end __init__
+    
+    @property
+    def is_splitted(self):
+        if not 'purpose' in self.data:
+            return False
+        
+        splits = self.data['purpose'].value_counts()
+        return len(splits.keys()) > 1
 
     def __len__(self):
         return len(self.data)
@@ -35,7 +49,7 @@ class BaseDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        if self.preload:
+        if self.loaded:
             return self.x[idx], self.y[idx]
 
         return self._item(idx)
@@ -43,7 +57,7 @@ class BaseDataset(Dataset):
 
     def _item(self, idx):
         # read image
-        img_path = os.path.join(self.root_path,
+        img_path = os.path.join(self.data.iloc[idx]['base_path'],
                                 self.data.iloc[idx]['folder_path'],
                                 self.data.iloc[idx]['image_id'])
         image = Image.open(img_path).convert('RGB')
@@ -58,13 +72,30 @@ class BaseDataset(Dataset):
 
         return image, label
     # end _item
+        
+    def set_labels(self):
+        raise NotImplementedError('Labels must be specified before use.')
+        
+    def set_label_default(self, label=None):
+        # first label is used
+        if label is None:
+            label = next(iter(self.labels))
+        
+        self.label_default = self.labels[label]
+        return self.label_default
 
     def read_csv(self):
         # csv read
         csv_path = os.path.join(self.root_path, self.csv_file)
-        print('Reading {}({}) from file: {} (on-memory={})'.format(self.name,
-                        self.purpose, csv_path, self.preload))
+        print_purpose = 'all' if self.purpose is None else self.purpose
+        print('Reading {}({}) from file: {}'.format(self.name,
+                        print_purpose, 
+                        str(os.path.sep).join(csv_path.split(os.path.sep)[-3:]))
+              )
+        
         dataset_df = pd.read_csv(csv_path)
+        # append base folder path
+        dataset_df['base_path'] = dataset_df.apply(lambda row: self.root_path, axis=1)
 
         if self.purpose is not None and 'purpose' in dataset_df:
             dataset_df = dataset_df[dataset_df['purpose'] == self.purpose]
@@ -74,10 +105,11 @@ class BaseDataset(Dataset):
         return dataset_df
     # read_csv
 
-    def _preload(self):
+    def load_data(self):
         self.x = []
         self.y = []
         
+        print('Loading dataset...')
         since = time.time()
         for i in range(len(self.data)):
             item = self._item(i)
@@ -86,6 +118,7 @@ class BaseDataset(Dataset):
         time_elapsed = time.time() - since
         print('Dataset loaded in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
+        self.loaded = True
     # end _preload
     
     def label2idx(self, label):
@@ -112,16 +145,22 @@ class BaseDataset(Dataset):
     def label2tensor(self, label):
         label_id = self.label2idx(label)
         
+        def isValidLabel(label):
+            if isinstance(label_id, str) or label is None:
+                print('Warning: no label \'{}\' registered!'.format(label_id),
+                  'default label \'{}\' used instead'.format(
+                      self.label_default['label']))
+                return False
+            return True
         
-        if isinstance(label_id, str):
-            print('Warning: no label \'{}\' matches!'.format(label_id),
-                  'first label \'{}\' used instead'.format(next(iter(self.labels))))
-            label_id = 0
-        elif (isinstance(label_id, list) 
-            and len(label_id) == 0):
-            print('Warning: no label matches! first',
-                  'label \'{}\' used instead'.format(next(iter(self.labels))))
-            label_id = 0
+        # check labels
+        if self.multi_label:
+            for i, l in enumerate(label_id):
+                if not isValidLabel(l):
+                    label_id[i] = self.label_default['idx']
+        else:
+            if not isValidLabel(label_id):
+                label_id = self.label_default['idx']           
         
         # to tensor            
         labels_tensor = torch.as_tensor(label_id)
@@ -132,12 +171,58 @@ class BaseDataset(Dataset):
                                                   num_classes=len(self.labels))
             # if multi-label
             return torch.sum(one_hot, dim=0).float()
-        # print(labels_tensor)
+        
         return labels_tensor
     # end label2tensor
     
-    def labels_describe(self):
-        print(self.data[
-            ['image_id', 'class']].groupby(['class']).agg(['count']))
+    def labels_describe(self, full=False):
+        if full:
+            cols = ['image_id', 'class', 'purpose']
+            groups = ['class', 'purpose']
+        else:
+            cols = ['image_id', 'class']
+            groups = ['class']
+            
+        print(self.data[cols].groupby(groups).agg(['count']))
+    # end labels_describe
+    
+    
+    def split(self, size=0.2, persist=False):
+        # classes count
+        instance_by_label = self.data['class'].value_counts()
+        split_df = None
+        
+        print('Splitting dataset...')        
+        for label in instance_by_label.keys():
+            # calculate number of elements by label
+            n_images = math.ceil(instance_by_label[label] * size)
+            
+            # filter by label and split
+            label_df = self.data.loc[self.data['class'] == label]
+            
+            # shufle data and reset
+            label_df = label_df.sample(frac=1.)
+            label_df = label_df.reset_index(drop=True)
+            
+            # purpose labeling
+            label_df['purpose'] = 'train'
+            label_df.loc[label_df.tail(n_images).index, 'purpose'] = 'val'
+            
+            # concat splitted dataset
+            split_df = pd.concat([split_df, label_df])
+            
+        # order data reset
+        split_df.sort_values(['folder_path', 'image_id'], inplace=True)
+        split_df.reset_index(drop=True, inplace=True)
+        # summary
+        print(split_df.groupby(['class', 'purpose']).agg({'purpose': ['count']}))
+        
+        if persist:
+            print('Saving changes...')
+            split_df.to_csv(os.path.join(self.root_path, self.csv_file), 
+                            index=False)
+    
+        self.data = split_df
            
 # end BaseDataset
+        

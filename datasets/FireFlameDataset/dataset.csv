@@ -1,0 +1,2701 @@
+folder_path,image_id,class,purpose
+Train/Fire,image_0.jpg,"['fire', 'smoke']",val
+Train/Fire,image_1.jpg,"['fire', 'smoke']",train
+Train/Fire,image_10.jpg,"['fire', 'smoke']",train
+Train/Fire,image_100.jpg,fire,train
+Train/Fire,image_101.jpg,"['fire', 'smoke']",train
+Train/Fire,image_102.jpg,"['fire', 'smoke']",val
+Train/Fire,image_103.jpg,"['fire', 'smoke']",train
+Train/Fire,image_104.jpg,"['fire', 'smoke']",train
+Train/Fire,image_105.jpg,"['fire', 'smoke']",val
+Train/Fire,image_106.jpg,"['fire', 'smoke']",train
+Train/Fire,image_107.jpg,"['fire', 'smoke']",train
+Train/Fire,image_108.jpg,"['fire', 'smoke']",val
+Train/Fire,image_109.jpg,"['fire', 'smoke']",train
+Train/Fire,image_11.jpg,"['fire', 'smoke']",val
+Train/Fire,image_110.jpg,"['fire', 'smoke']",train
+Train/Fire,image_111.jpg,"['fire', 'smoke']",val
+Train/Fire,image_112.jpg,fire,train
+Train/Fire,image_113.jpg,"['fire', 'smoke']",train
+Train/Fire,image_114.jpg,"['fire', 'smoke']",train
+Train/Fire,image_115.jpg,"['fire', 'smoke']",train
+Train/Fire,image_116.jpg,"['fire', 'smoke']",train
+Train/Fire,image_117.jpg,"['fire', 'smoke']",train
+Train/Fire,image_118.jpg,"['fire', 'smoke']",train
+Train/Fire,image_119.jpg,"['fire', 'smoke']",val
+Train/Fire,image_12.jpg,smoke,val
+Train/Fire,image_120.jpg,"['fire', 'smoke']",train
+Train/Fire,image_121.jpg,fire,train
+Train/Fire,image_122.jpg,smoke,train
+Train/Fire,image_123.jpg,smoke,train
+Train/Fire,image_124.jpg,"['fire', 'smoke']",train
+Train/Fire,image_125.jpg,fire,train
+Train/Fire,image_126.jpg,fire,val
+Train/Fire,image_127.jpg,"['fire', 'smoke']",val
+Train/Fire,image_128.jpg,fire,train
+Train/Fire,image_129.jpg,fire,train
+Train/Fire,image_13.jpg,"['fire', 'smoke']",train
+Train/Fire,image_130.jpg,"['fire', 'smoke']",train
+Train/Fire,image_131.jpg,"['fire', 'smoke']",train
+Train/Fire,image_132.jpg,"['fire', 'smoke']",train
+Train/Fire,image_133.jpg,"['fire', 'smoke']",train
+Train/Fire,image_134.jpg,fire,train
+Train/Fire,image_135.jpg,"['fire', 'smoke']",train
+Train/Fire,image_136.jpg,fire,train
+Train/Fire,image_137.jpg,"['fire', 'smoke']",val
+Train/Fire,image_138.jpg,"['fire', 'smoke']",train
+Train/Fire,image_139.jpg,"['fire', 'smoke']",train
+Train/Fire,image_14.jpg,"['fire', 'smoke']",train
+Train/Fire,image_140.jpg,fire,val
+Train/Fire,image_141.jpg,fire,val
+Train/Fire,image_142.jpg,"['fire', 'smoke']",train
+Train/Fire,image_143.jpg,"['fire', 'smoke']",val
+Train/Fire,image_144.jpg,"['fire', 'smoke']",val
+Train/Fire,image_145.jpg,"['fire', 'smoke']",train
+Train/Fire,image_146.jpg,"['fire', 'smoke']",train
+Train/Fire,image_147.jpg,fire,train
+Train/Fire,image_148.jpg,fire,train
+Train/Fire,image_149.jpg,"['fire', 'smoke']",train
+Train/Fire,image_15.jpg,fire,train
+Train/Fire,image_150.jpg,fire,train
+Train/Fire,image_151.jpg,fire,train
+Train/Fire,image_152.jpg,fire,train
+Train/Fire,image_153.jpg,"['fire', 'smoke']",train
+Train/Fire,image_154.jpg,"['fire', 'smoke']",val
+Train/Fire,image_155.jpg,fire,train
+Train/Fire,image_156.jpg,fire,val
+Train/Fire,image_157.jpg,"['fire', 'smoke']",train
+Train/Fire,image_158.jpg,"['fire', 'smoke']",train
+Train/Fire,image_159.jpg,fire,train
+Train/Fire,image_16.jpg,"['fire', 'smoke']",train
+Train/Fire,image_160.jpg,"['fire', 'smoke']",train
+Train/Fire,image_161.jpg,"['fire', 'smoke']",val
+Train/Fire,image_162.jpg,"['fire', 'smoke']",train
+Train/Fire,image_163.jpg,"['fire', 'smoke']",train
+Train/Fire,image_164.jpg,"['fire', 'smoke']",train
+Train/Fire,image_165.jpg,fire,train
+Train/Fire,image_166.jpg,"['fire', 'smoke']",val
+Train/Fire,image_167.jpg,fire,train
+Train/Fire,image_168.jpg,"['fire', 'smoke']",train
+Train/Fire,image_169.jpg,"['fire', 'smoke']",train
+Train/Fire,image_17.jpg,fire,train
+Train/Fire,image_170.jpg,"['fire', 'smoke']",train
+Train/Fire,image_171.jpg,fire,train
+Train/Fire,image_172.jpg,fire,train
+Train/Fire,image_173.jpg,"['fire', 'smoke']",val
+Train/Fire,image_174.jpg,"['fire', 'smoke']",train
+Train/Fire,image_175.jpg,"['fire', 'smoke']",train
+Train/Fire,image_176.jpg,"['fire', 'smoke']",train
+Train/Fire,image_177.jpg,fire,val
+Train/Fire,image_178.jpg,"['fire', 'smoke']",train
+Train/Fire,image_179.jpg,fire,val
+Train/Fire,image_18.jpg,"['fire', 'smoke']",train
+Train/Fire,image_180.jpg,"['fire', 'smoke']",train
+Train/Fire,image_181.jpg,"['fire', 'smoke']",train
+Train/Fire,image_182.jpg,fire,val
+Train/Fire,image_183.jpg,"['fire', 'smoke']",train
+Train/Fire,image_184.jpg,fire,val
+Train/Fire,image_185.jpg,"['fire', 'smoke']",train
+Train/Fire,image_186.jpg,"['fire', 'smoke']",train
+Train/Fire,image_187.jpg,"['fire', 'smoke']",val
+Train/Fire,image_188.jpg,"['fire', 'smoke']",train
+Train/Fire,image_189.jpg,fire,train
+Train/Fire,image_19.jpg,"['fire', 'smoke']",train
+Train/Fire,image_190.jpg,"['fire', 'smoke']",train
+Train/Fire,image_191.jpg,"['fire', 'smoke']",val
+Train/Fire,image_192.jpg,"['fire', 'smoke']",train
+Train/Fire,image_193.jpg,"['fire', 'smoke']",train
+Train/Fire,image_194.jpg,"['fire', 'smoke']",train
+Train/Fire,image_195.jpg,"['fire', 'smoke']",train
+Train/Fire,image_196.jpg,"['fire', 'smoke']",train
+Train/Fire,image_197.jpg,"['fire', 'smoke']",train
+Train/Fire,image_198.jpg,fire,train
+Train/Fire,image_199.jpg,"['fire', 'smoke']",train
+Train/Fire,image_2.jpg,fire,train
+Train/Fire,image_20.jpg,"['fire', 'smoke']",train
+Train/Fire,image_200.jpg,"['fire', 'smoke']",val
+Train/Fire,image_201.jpg,"['fire', 'smoke']",train
+Train/Fire,image_202.jpg,"['fire', 'smoke']",train
+Train/Fire,image_203.jpg,"['fire', 'smoke']",train
+Train/Fire,image_204.jpg,"['fire', 'smoke']",val
+Train/Fire,image_205.jpg,fire,train
+Train/Fire,image_206.jpg,"['fire', 'smoke']",train
+Train/Fire,image_207.jpg,fire,train
+Train/Fire,image_208.jpg,"['fire', 'smoke']",train
+Train/Fire,image_209.jpg,"['fire', 'smoke']",train
+Train/Fire,image_21.jpg,fire,train
+Train/Fire,image_210.jpg,"['fire', 'smoke']",train
+Train/Fire,image_211.jpg,"['fire', 'smoke']",train
+Train/Fire,image_212.jpg,"['fire', 'smoke']",val
+Train/Fire,image_213.jpg,"['fire', 'smoke']",val
+Train/Fire,image_214.jpg,"['fire', 'smoke']",val
+Train/Fire,image_215.jpg,"['fire', 'smoke']",train
+Train/Fire,image_216.jpg,"['fire', 'smoke']",train
+Train/Fire,image_217.jpg,"['fire', 'smoke']",val
+Train/Fire,image_218.jpg,fire,train
+Train/Fire,image_219.jpg,"['fire', 'smoke']",train
+Train/Fire,image_22.jpg,"['fire', 'smoke']",train
+Train/Fire,image_220.jpg,"['fire', 'smoke']",train
+Train/Fire,image_221.jpg,"['fire', 'smoke']",train
+Train/Fire,image_222.jpg,"['fire', 'smoke']",train
+Train/Fire,image_223.jpg,"['fire', 'smoke']",train
+Train/Fire,image_224.jpg,fire,train
+Train/Fire,image_225.jpg,"['fire', 'smoke']",train
+Train/Fire,image_226.jpg,"['fire', 'smoke']",train
+Train/Fire,image_227.jpg,"['fire', 'smoke']",train
+Train/Fire,image_228.jpg,fire,train
+Train/Fire,image_229.jpg,"['fire', 'smoke']",train
+Train/Fire,image_23.jpg,"['fire', 'smoke']",val
+Train/Fire,image_230.jpg,fire,train
+Train/Fire,image_231.jpg,fire,train
+Train/Fire,image_232.jpg,fire,train
+Train/Fire,image_233.jpg,"['fire', 'smoke']",train
+Train/Fire,image_234.jpg,fire,train
+Train/Fire,image_235.jpg,"['fire', 'smoke']",train
+Train/Fire,image_236.jpg,fire,train
+Train/Fire,image_237.jpg,"['fire', 'smoke']",train
+Train/Fire,image_238.jpg,"['fire', 'smoke']",train
+Train/Fire,image_239.jpg,fire,train
+Train/Fire,image_24.jpg,fire,train
+Train/Fire,image_240.jpg,"['fire', 'smoke']",train
+Train/Fire,image_241.jpg,"['fire', 'smoke']",train
+Train/Fire,image_242.jpg,fire,train
+Train/Fire,image_243.jpg,"['fire', 'smoke']",train
+Train/Fire,image_244.jpg,"['fire', 'smoke']",train
+Train/Fire,image_245.jpg,fire,train
+Train/Fire,image_246.jpg,"['fire', 'smoke']",train
+Train/Fire,image_247.jpg,fire,train
+Train/Fire,image_248.jpg,"['fire', 'smoke']",train
+Train/Fire,image_249.jpg,"['fire', 'smoke']",train
+Train/Fire,image_25.jpg,"['fire', 'smoke']",train
+Train/Fire,image_250.jpg,"['fire', 'smoke']",train
+Train/Fire,image_251.jpg,"['fire', 'smoke']",train
+Train/Fire,image_252.jpg,"['fire', 'smoke']",train
+Train/Fire,image_253.jpg,"['fire', 'smoke']",train
+Train/Fire,image_254.jpg,"['fire', 'smoke']",train
+Train/Fire,image_255.jpg,fire,train
+Train/Fire,image_256.jpg,fire,train
+Train/Fire,image_257.jpg,"['fire', 'smoke']",val
+Train/Fire,image_258.jpg,"['fire', 'smoke']",train
+Train/Fire,image_259.jpg,"['fire', 'smoke']",train
+Train/Fire,image_26.jpg,"['fire', 'smoke']",train
+Train/Fire,image_260.jpg,fire,train
+Train/Fire,image_261.jpg,"['fire', 'smoke']",train
+Train/Fire,image_262.jpg,fire,val
+Train/Fire,image_263.jpg,"['fire', 'smoke']",val
+Train/Fire,image_264.jpg,"['fire', 'smoke']",val
+Train/Fire,image_265.jpg,"['fire', 'smoke']",train
+Train/Fire,image_266.jpg,"['fire', 'smoke']",train
+Train/Fire,image_267.jpg,fire,val
+Train/Fire,image_268.jpg,"['fire', 'smoke']",train
+Train/Fire,image_269.jpg,"['fire', 'smoke']",train
+Train/Fire,image_27.jpg,"['fire', 'smoke']",train
+Train/Fire,image_270.jpg,fire,train
+Train/Fire,image_271.jpg,"['fire', 'smoke']",train
+Train/Fire,image_272.jpg,"['fire', 'smoke']",train
+Train/Fire,image_273.jpg,"['fire', 'smoke']",train
+Train/Fire,image_274.jpg,"['fire', 'smoke']",train
+Train/Fire,image_275.jpg,"['fire', 'smoke']",train
+Train/Fire,image_276.jpg,"['fire', 'smoke']",train
+Train/Fire,image_277.jpg,"['fire', 'smoke']",val
+Train/Fire,image_278.jpg,"['fire', 'smoke']",train
+Train/Fire,image_279.jpg,"['fire', 'smoke']",train
+Train/Fire,image_28.jpg,"['fire', 'smoke']",train
+Train/Fire,image_280.jpg,"['fire', 'smoke']",train
+Train/Fire,image_281.jpg,"['fire', 'smoke']",train
+Train/Fire,image_282.jpg,"['fire', 'smoke']",val
+Train/Fire,image_283.jpg,"['fire', 'smoke']",val
+Train/Fire,image_284.jpg,"['fire', 'smoke']",train
+Train/Fire,image_285.jpg,"['fire', 'smoke']",val
+Train/Fire,image_286.jpg,"['fire', 'smoke']",train
+Train/Fire,image_287.jpg,fire,val
+Train/Fire,image_288.jpg,"['fire', 'smoke']",train
+Train/Fire,image_289.jpg,"['fire', 'smoke']",train
+Train/Fire,image_29.jpg,"['fire', 'smoke']",train
+Train/Fire,image_290.jpg,"['fire', 'smoke']",train
+Train/Fire,image_291.jpg,"['fire', 'smoke']",val
+Train/Fire,image_292.jpg,fire,train
+Train/Fire,image_293.jpg,fire,train
+Train/Fire,image_294.jpg,fire,train
+Train/Fire,image_295.jpg,fire,train
+Train/Fire,image_296.jpg,"['fire', 'smoke']",train
+Train/Fire,image_297.jpg,"['fire', 'smoke']",train
+Train/Fire,image_298.jpg,"['fire', 'smoke']",val
+Train/Fire,image_299.jpg,"['fire', 'smoke']",train
+Train/Fire,image_3.jpg,"['fire', 'smoke']",train
+Train/Fire,image_30.jpg,fire,train
+Train/Fire,image_300.jpg,"['fire', 'smoke']",train
+Train/Fire,image_301.jpg,"['fire', 'smoke']",train
+Train/Fire,image_302.jpg,"['fire', 'smoke']",train
+Train/Fire,image_303.jpg,"['fire', 'smoke']",train
+Train/Fire,image_304.jpg,"['fire', 'smoke']",train
+Train/Fire,image_305.jpg,"['fire', 'smoke']",train
+Train/Fire,image_306.jpg,"['fire', 'smoke']",val
+Train/Fire,image_307.jpg,"['fire', 'smoke']",train
+Train/Fire,image_308.jpg,fire,train
+Train/Fire,image_309.jpg,"['fire', 'smoke']",train
+Train/Fire,image_31.jpg,fire,train
+Train/Fire,image_310.jpg,"['fire', 'smoke']",train
+Train/Fire,image_311.jpg,smoke,train
+Train/Fire,image_312.jpg,"['fire', 'smoke']",train
+Train/Fire,image_313.jpg,fire,val
+Train/Fire,image_314.jpg,fire,train
+Train/Fire,image_315.jpg,"['fire', 'smoke']",train
+Train/Fire,image_316.jpg,"['fire', 'smoke']",train
+Train/Fire,image_317.jpg,"['fire', 'smoke']",train
+Train/Fire,image_318.jpg,fire,val
+Train/Fire,image_319.jpg,"['fire', 'smoke']",val
+Train/Fire,image_32.jpg,"['fire', 'smoke']",train
+Train/Fire,image_320.jpg,"['fire', 'smoke']",train
+Train/Fire,image_321.jpg,"['fire', 'smoke']",train
+Train/Fire,image_322.jpg,"['fire', 'smoke']",train
+Train/Fire,image_323.jpg,fire,train
+Train/Fire,image_324.jpg,"['fire', 'smoke']",train
+Train/Fire,image_325.jpg,fire,train
+Train/Fire,image_326.jpg,"['fire', 'smoke']",train
+Train/Fire,image_327.jpg,"['fire', 'smoke']",train
+Train/Fire,image_328.jpg,"['fire', 'smoke']",train
+Train/Fire,image_329.jpg,"['fire', 'smoke']",train
+Train/Fire,image_33.jpg,"['fire', 'smoke']",train
+Train/Fire,image_330.jpg,"['fire', 'smoke']",train
+Train/Fire,image_331.jpg,"['fire', 'smoke']",train
+Train/Fire,image_332.jpg,fire,train
+Train/Fire,image_333.jpg,"['fire', 'smoke']",val
+Train/Fire,image_334.jpg,"['fire', 'smoke']",train
+Train/Fire,image_335.jpg,"['fire', 'smoke']",val
+Train/Fire,image_336.jpg,"['fire', 'smoke']",train
+Train/Fire,image_337.jpg,fire,train
+Train/Fire,image_338.jpg,fire,train
+Train/Fire,image_339.jpg,"['fire', 'smoke']",train
+Train/Fire,image_34.jpg,fire,train
+Train/Fire,image_340.jpg,"['fire', 'smoke']",train
+Train/Fire,image_341.jpg,"['fire', 'smoke']",val
+Train/Fire,image_342.jpg,"['fire', 'smoke']",train
+Train/Fire,image_343.jpg,"['fire', 'smoke']",train
+Train/Fire,image_344.jpg,"['fire', 'smoke']",val
+Train/Fire,image_345.jpg,"['fire', 'smoke']",val
+Train/Fire,image_346.jpg,"['fire', 'smoke']",train
+Train/Fire,image_347.jpg,fire,train
+Train/Fire,image_348.jpg,"['fire', 'smoke']",train
+Train/Fire,image_349.jpg,fire,val
+Train/Fire,image_35.jpg,fire,train
+Train/Fire,image_350.jpg,"['fire', 'smoke']",val
+Train/Fire,image_351.jpg,"['fire', 'smoke']",train
+Train/Fire,image_352.jpg,"['fire', 'smoke']",train
+Train/Fire,image_353.jpg,"['fire', 'smoke']",train
+Train/Fire,image_354.jpg,"['fire', 'smoke']",train
+Train/Fire,image_355.jpg,"['fire', 'smoke']",train
+Train/Fire,image_356.jpg,fire,train
+Train/Fire,image_357.jpg,"['fire', 'smoke']",train
+Train/Fire,image_358.jpg,"['fire', 'smoke']",train
+Train/Fire,image_359.jpg,"['fire', 'smoke']",val
+Train/Fire,image_36.jpg,"['fire', 'smoke']",train
+Train/Fire,image_360.jpg,"['fire', 'smoke']",train
+Train/Fire,image_361.jpg,fire,train
+Train/Fire,image_362.jpg,"['fire', 'smoke']",train
+Train/Fire,image_363.jpg,"['fire', 'smoke']",train
+Train/Fire,image_364.jpg,"['fire', 'smoke']",train
+Train/Fire,image_365.jpg,"['fire', 'smoke']",train
+Train/Fire,image_366.jpg,"['fire', 'smoke']",train
+Train/Fire,image_367.jpg,"['fire', 'smoke']",train
+Train/Fire,image_368.jpg,fire,val
+Train/Fire,image_369.jpg,"['fire', 'smoke']",train
+Train/Fire,image_37.jpg,fire,train
+Train/Fire,image_370.jpg,"['fire', 'smoke']",train
+Train/Fire,image_371.jpg,fire,train
+Train/Fire,image_372.jpg,"['fire', 'smoke']",val
+Train/Fire,image_373.jpg,"['fire', 'smoke']",train
+Train/Fire,image_374.jpg,"['fire', 'smoke']",train
+Train/Fire,image_375.jpg,fire,train
+Train/Fire,image_376.jpg,"['fire', 'smoke']",train
+Train/Fire,image_377.jpg,"['fire', 'smoke']",train
+Train/Fire,image_378.jpg,"['fire', 'smoke']",train
+Train/Fire,image_379.jpg,"['fire', 'smoke']",val
+Train/Fire,image_38.jpg,"['fire', 'smoke']",train
+Train/Fire,image_380.jpg,"['fire', 'smoke']",train
+Train/Fire,image_381.jpg,"['fire', 'smoke']",train
+Train/Fire,image_382.jpg,"['fire', 'smoke']",train
+Train/Fire,image_383.jpg,fire,train
+Train/Fire,image_384.jpg,"['fire', 'smoke']",train
+Train/Fire,image_385.jpg,"['fire', 'smoke']",train
+Train/Fire,image_386.jpg,"['fire', 'smoke']",train
+Train/Fire,image_387.jpg,"['fire', 'smoke']",train
+Train/Fire,image_388.jpg,fire,train
+Train/Fire,image_389.jpg,"['fire', 'smoke']",train
+Train/Fire,image_39.jpg,fire,train
+Train/Fire,image_390.jpg,"['fire', 'smoke']",val
+Train/Fire,image_391.jpg,"['fire', 'smoke']",train
+Train/Fire,image_392.jpg,"['fire', 'smoke']",train
+Train/Fire,image_393.jpg,fire,val
+Train/Fire,image_394.jpg,"['fire', 'smoke']",train
+Train/Fire,image_395.jpg,"['fire', 'smoke']",train
+Train/Fire,image_396.jpg,"['fire', 'smoke']",train
+Train/Fire,image_397.jpg,"['fire', 'smoke']",val
+Train/Fire,image_398.jpg,"['fire', 'smoke']",train
+Train/Fire,image_399.jpg,"['fire', 'smoke']",train
+Train/Fire,image_4.jpg,"['fire', 'smoke']",train
+Train/Fire,image_40.jpg,"['fire', 'smoke']",val
+Train/Fire,image_400.jpg,fire,val
+Train/Fire,image_401.jpg,"['fire', 'smoke']",train
+Train/Fire,image_402.jpg,"['fire', 'smoke']",train
+Train/Fire,image_403.jpg,"['fire', 'smoke']",train
+Train/Fire,image_404.jpg,"['fire', 'smoke']",val
+Train/Fire,image_405.jpg,"['fire', 'smoke']",train
+Train/Fire,image_406.jpg,fire,train
+Train/Fire,image_407.jpg,"['fire', 'smoke']",train
+Train/Fire,image_408.jpg,"['fire', 'smoke']",train
+Train/Fire,image_409.jpg,"['fire', 'smoke']",train
+Train/Fire,image_41.jpg,"['fire', 'smoke']",train
+Train/Fire,image_410.jpg,fire,train
+Train/Fire,image_411.jpg,"['fire', 'smoke']",train
+Train/Fire,image_412.jpg,"['fire', 'smoke']",train
+Train/Fire,image_413.jpg,smoke,train
+Train/Fire,image_414.jpg,"['fire', 'smoke']",train
+Train/Fire,image_415.jpg,fire,train
+Train/Fire,image_416.jpg,"['fire', 'smoke']",train
+Train/Fire,image_417.jpg,"['fire', 'smoke']",train
+Train/Fire,image_418.jpg,"['fire', 'smoke']",train
+Train/Fire,image_419.jpg,fire,train
+Train/Fire,image_42.jpg,"['fire', 'smoke']",train
+Train/Fire,image_420.jpg,"['fire', 'smoke']",train
+Train/Fire,image_421.jpg,"['fire', 'smoke']",val
+Train/Fire,image_422.jpg,fire,train
+Train/Fire,image_423.jpg,fire,train
+Train/Fire,image_424.jpg,"['fire', 'smoke']",train
+Train/Fire,image_425.jpg,"['fire', 'smoke']",train
+Train/Fire,image_426.jpg,"['fire', 'smoke']",train
+Train/Fire,image_427.jpg,fire,train
+Train/Fire,image_428.jpg,"['fire', 'smoke']",train
+Train/Fire,image_429.jpg,"['fire', 'smoke']",train
+Train/Fire,image_43.jpg,"['fire', 'smoke']",train
+Train/Fire,image_430.jpg,"['fire', 'smoke']",train
+Train/Fire,image_431.jpg,fire,train
+Train/Fire,image_432.jpg,fire,train
+Train/Fire,image_433.jpg,"['fire', 'smoke']",train
+Train/Fire,image_434.jpg,fire,val
+Train/Fire,image_435.jpg,"['fire', 'smoke']",train
+Train/Fire,image_436.jpg,fire,train
+Train/Fire,image_437.jpg,fire,val
+Train/Fire,image_438.jpg,"['fire', 'smoke']",val
+Train/Fire,image_439.jpg,fire,train
+Train/Fire,image_44.jpg,smoke,train
+Train/Fire,image_440.jpg,fire,train
+Train/Fire,image_441.jpg,fire,train
+Train/Fire,image_442.jpg,"['fire', 'smoke']",val
+Train/Fire,image_443.jpg,"['fire', 'smoke']",train
+Train/Fire,image_444.jpg,fire,val
+Train/Fire,image_445.jpg,"['fire', 'smoke']",train
+Train/Fire,image_446.jpg,"['fire', 'smoke']",train
+Train/Fire,image_447.jpg,"['fire', 'smoke']",train
+Train/Fire,image_448.jpg,fire,train
+Train/Fire,image_449.jpg,"['fire', 'smoke']",val
+Train/Fire,image_45.jpg,"['fire', 'smoke']",train
+Train/Fire,image_450.jpg,"['fire', 'smoke']",train
+Train/Fire,image_451.jpg,"['fire', 'smoke']",train
+Train/Fire,image_452.jpg,fire,val
+Train/Fire,image_453.jpg,"['fire', 'smoke']",val
+Train/Fire,image_454.jpg,"['fire', 'smoke']",val
+Train/Fire,image_455.jpg,fire,train
+Train/Fire,image_456.jpg,fire,train
+Train/Fire,image_457.jpg,fire,train
+Train/Fire,image_458.jpg,fire,train
+Train/Fire,image_459.jpg,"['fire', 'smoke']",train
+Train/Fire,image_46.jpg,fire,train
+Train/Fire,image_460.jpg,"['fire', 'smoke']",val
+Train/Fire,image_461.jpg,"['fire', 'smoke']",val
+Train/Fire,image_462.jpg,fire,val
+Train/Fire,image_463.jpg,fire,train
+Train/Fire,image_464.jpg,"['fire', 'smoke']",train
+Train/Fire,image_465.jpg,"['fire', 'smoke']",val
+Train/Fire,image_466.jpg,"['fire', 'smoke']",val
+Train/Fire,image_467.jpg,fire,train
+Train/Fire,image_468.jpg,"['fire', 'smoke']",train
+Train/Fire,image_469.jpg,"['fire', 'smoke']",train
+Train/Fire,image_47.jpg,"['fire', 'smoke']",train
+Train/Fire,image_470.jpg,"['fire', 'smoke']",val
+Train/Fire,image_471.jpg,fire,train
+Train/Fire,image_472.jpg,fire,train
+Train/Fire,image_473.jpg,fire,train
+Train/Fire,image_474.jpg,"['fire', 'smoke']",train
+Train/Fire,image_475.jpg,"['fire', 'smoke']",train
+Train/Fire,image_476.jpg,"['fire', 'smoke']",train
+Train/Fire,image_477.jpg,smoke,train
+Train/Fire,image_478.jpg,fire,train
+Train/Fire,image_479.jpg,"['fire', 'smoke']",train
+Train/Fire,image_48.jpg,"['fire', 'smoke']",train
+Train/Fire,image_480.jpg,smoke,train
+Train/Fire,image_481.jpg,"['fire', 'smoke']",train
+Train/Fire,image_482.jpg,"['fire', 'smoke']",train
+Train/Fire,image_483.jpg,"['fire', 'smoke']",train
+Train/Fire,image_484.jpg,"['fire', 'smoke']",train
+Train/Fire,image_485.jpg,"['fire', 'smoke']",train
+Train/Fire,image_486.jpg,"['fire', 'smoke']",val
+Train/Fire,image_487.jpg,"['fire', 'smoke']",train
+Train/Fire,image_488.jpg,fire,train
+Train/Fire,image_489.jpg,"['fire', 'smoke']",train
+Train/Fire,image_49.jpg,"['fire', 'smoke']",train
+Train/Fire,image_490.jpg,"['fire', 'smoke']",train
+Train/Fire,image_491.jpg,"['fire', 'smoke']",train
+Train/Fire,image_492.jpg,"['fire', 'smoke']",train
+Train/Fire,image_493.jpg,"['fire', 'smoke']",train
+Train/Fire,image_494.jpg,"['fire', 'smoke']",train
+Train/Fire,image_495.jpg,fire,val
+Train/Fire,image_496.jpg,"['fire', 'smoke']",val
+Train/Fire,image_497.jpg,"['fire', 'smoke']",train
+Train/Fire,image_498.jpg,fire,train
+Train/Fire,image_499.jpg,"['fire', 'smoke']",train
+Train/Fire,image_5.jpg,fire,train
+Train/Fire,image_50.jpg,"['fire', 'smoke']",train
+Train/Fire,image_500.jpg,none,train
+Train/Fire,image_501.jpg,fire,train
+Train/Fire,image_502.jpg,"['fire', 'smoke']",train
+Train/Fire,image_503.jpg,fire,train
+Train/Fire,image_504.jpg,"['fire', 'smoke']",train
+Train/Fire,image_505.jpg,"['fire', 'smoke']",train
+Train/Fire,image_506.jpg,"['fire', 'smoke']",train
+Train/Fire,image_507.jpg,"['fire', 'smoke']",train
+Train/Fire,image_508.jpg,"['fire', 'smoke']",val
+Train/Fire,image_509.jpg,"['fire', 'smoke']",train
+Train/Fire,image_51.jpg,fire,train
+Train/Fire,image_510.jpg,fire,train
+Train/Fire,image_511.jpg,"['fire', 'smoke']",train
+Train/Fire,image_512.jpg,"['fire', 'smoke']",val
+Train/Fire,image_513.jpg,"['fire', 'smoke']",train
+Train/Fire,image_514.jpg,fire,train
+Train/Fire,image_515.jpg,"['fire', 'smoke']",train
+Train/Fire,image_516.jpg,fire,val
+Train/Fire,image_517.jpg,"['fire', 'smoke']",val
+Train/Fire,image_518.jpg,"['fire', 'smoke']",train
+Train/Fire,image_519.jpg,fire,train
+Train/Fire,image_52.jpg,fire,train
+Train/Fire,image_520.jpg,fire,train
+Train/Fire,image_521.jpg,"['fire', 'smoke']",train
+Train/Fire,image_522.jpg,"['fire', 'smoke']",val
+Train/Fire,image_523.jpg,"['fire', 'smoke']",val
+Train/Fire,image_524.jpg,fire,train
+Train/Fire,image_525.jpg,"['fire', 'smoke']",train
+Train/Fire,image_526.jpg,"['fire', 'smoke']",train
+Train/Fire,image_527.jpg,"['fire', 'smoke']",train
+Train/Fire,image_528.jpg,fire,train
+Train/Fire,image_529.jpg,"['fire', 'smoke']",train
+Train/Fire,image_53.jpg,fire,train
+Train/Fire,image_530.jpg,fire,train
+Train/Fire,image_531.jpg,"['fire', 'smoke']",train
+Train/Fire,image_532.jpg,fire,val
+Train/Fire,image_533.jpg,"['fire', 'smoke']",train
+Train/Fire,image_534.jpg,"['fire', 'smoke']",train
+Train/Fire,image_535.jpg,smoke,train
+Train/Fire,image_536.jpg,"['fire', 'smoke']",train
+Train/Fire,image_537.jpg,"['fire', 'smoke']",train
+Train/Fire,image_538.jpg,"['fire', 'smoke']",train
+Train/Fire,image_539.jpg,fire,val
+Train/Fire,image_54.jpg,"['fire', 'smoke']",val
+Train/Fire,image_540.jpg,fire,train
+Train/Fire,image_541.jpg,"['fire', 'smoke']",train
+Train/Fire,image_542.jpg,"['fire', 'smoke']",train
+Train/Fire,image_543.jpg,"['fire', 'smoke']",train
+Train/Fire,image_544.jpg,"['fire', 'smoke']",val
+Train/Fire,image_545.jpg,fire,train
+Train/Fire,image_546.jpg,fire,train
+Train/Fire,image_547.jpg,"['fire', 'smoke']",val
+Train/Fire,image_548.jpg,"['fire', 'smoke']",train
+Train/Fire,image_549.jpg,"['fire', 'smoke']",train
+Train/Fire,image_55.jpg,"['fire', 'smoke']",train
+Train/Fire,image_550.jpg,smoke,train
+Train/Fire,image_551.jpg,"['fire', 'smoke']",val
+Train/Fire,image_552.jpg,"['fire', 'smoke']",val
+Train/Fire,image_553.jpg,fire,val
+Train/Fire,image_554.jpg,fire,val
+Train/Fire,image_555.jpg,"['fire', 'smoke']",train
+Train/Fire,image_556.jpg,"['fire', 'smoke']",train
+Train/Fire,image_557.jpg,"['fire', 'smoke']",train
+Train/Fire,image_558.jpg,fire,train
+Train/Fire,image_559.jpg,"['fire', 'smoke']",train
+Train/Fire,image_56.jpg,"['fire', 'smoke']",train
+Train/Fire,image_560.jpg,"['fire', 'smoke']",train
+Train/Fire,image_561.jpg,"['fire', 'smoke']",train
+Train/Fire,image_562.jpg,"['fire', 'smoke']",train
+Train/Fire,image_563.jpg,fire,train
+Train/Fire,image_564.jpg,fire,val
+Train/Fire,image_565.jpg,"['fire', 'smoke']",train
+Train/Fire,image_566.jpg,"['fire', 'smoke']",val
+Train/Fire,image_567.jpg,fire,val
+Train/Fire,image_568.jpg,fire,train
+Train/Fire,image_569.jpg,fire,train
+Train/Fire,image_57.jpg,"['fire', 'smoke']",train
+Train/Fire,image_570.jpg,"['fire', 'smoke']",train
+Train/Fire,image_571.jpg,"['fire', 'smoke']",val
+Train/Fire,image_572.jpg,"['fire', 'smoke']",train
+Train/Fire,image_573.jpg,"['fire', 'smoke']",train
+Train/Fire,image_574.jpg,fire,train
+Train/Fire,image_575.jpg,"['fire', 'smoke']",val
+Train/Fire,image_576.jpg,fire,val
+Train/Fire,image_577.jpg,"['fire', 'smoke']",val
+Train/Fire,image_578.jpg,"['fire', 'smoke']",train
+Train/Fire,image_579.jpg,"['fire', 'smoke']",train
+Train/Fire,image_58.jpg,"['fire', 'smoke']",train
+Train/Fire,image_580.jpg,"['fire', 'smoke']",train
+Train/Fire,image_581.jpg,fire,train
+Train/Fire,image_582.jpg,"['fire', 'smoke']",train
+Train/Fire,image_583.jpg,fire,train
+Train/Fire,image_584.jpg,"['fire', 'smoke']",train
+Train/Fire,image_585.jpg,fire,train
+Train/Fire,image_586.jpg,fire,train
+Train/Fire,image_587.jpg,"['fire', 'smoke']",train
+Train/Fire,image_588.jpg,"['fire', 'smoke']",train
+Train/Fire,image_589.jpg,"['fire', 'smoke']",val
+Train/Fire,image_59.jpg,fire,train
+Train/Fire,image_590.jpg,"['fire', 'smoke']",train
+Train/Fire,image_591.jpg,none,train
+Train/Fire,image_592.jpg,fire,train
+Train/Fire,image_593.jpg,"['fire', 'smoke']",val
+Train/Fire,image_594.jpg,fire,train
+Train/Fire,image_595.jpg,"['fire', 'smoke']",train
+Train/Fire,image_596.jpg,"['fire', 'smoke']",val
+Train/Fire,image_597.jpg,"['fire', 'smoke']",train
+Train/Fire,image_598.jpg,"['fire', 'smoke']",val
+Train/Fire,image_599.jpg,"['fire', 'smoke']",train
+Train/Fire,image_6.jpg,"['fire', 'smoke']",train
+Train/Fire,image_60.jpg,"['fire', 'smoke']",train
+Train/Fire,image_600.jpg,"['fire', 'smoke']",val
+Train/Fire,image_601.jpg,"['fire', 'smoke']",train
+Train/Fire,image_602.jpg,"['fire', 'smoke']",train
+Train/Fire,image_603.jpg,fire,train
+Train/Fire,image_604.jpg,"['fire', 'smoke']",train
+Train/Fire,image_605.jpg,fire,val
+Train/Fire,image_606.jpg,fire,train
+Train/Fire,image_607.jpg,"['fire', 'smoke']",train
+Train/Fire,image_608.jpg,fire,train
+Train/Fire,image_609.jpg,"['fire', 'smoke']",train
+Train/Fire,image_61.jpg,"['fire', 'smoke']",train
+Train/Fire,image_610.jpg,"['fire', 'smoke']",train
+Train/Fire,image_611.jpg,"['fire', 'smoke']",train
+Train/Fire,image_612.jpg,fire,train
+Train/Fire,image_613.jpg,"['fire', 'smoke']",train
+Train/Fire,image_614.jpg,"['fire', 'smoke']",val
+Train/Fire,image_615.jpg,fire,train
+Train/Fire,image_616.jpg,fire,train
+Train/Fire,image_617.jpg,"['fire', 'smoke']",train
+Train/Fire,image_618.jpg,"['fire', 'smoke']",train
+Train/Fire,image_619.jpg,fire,train
+Train/Fire,image_62.jpg,fire,train
+Train/Fire,image_620.jpg,"['fire', 'smoke']",train
+Train/Fire,image_621.jpg,fire,train
+Train/Fire,image_622.jpg,"['fire', 'smoke']",train
+Train/Fire,image_623.jpg,"['fire', 'smoke']",train
+Train/Fire,image_624.jpg,"['fire', 'smoke']",val
+Train/Fire,image_625.jpg,"['fire', 'smoke']",val
+Train/Fire,image_626.jpg,"['fire', 'smoke']",train
+Train/Fire,image_627.jpg,fire,train
+Train/Fire,image_628.jpg,"['fire', 'smoke']",train
+Train/Fire,image_629.jpg,"['fire', 'smoke']",train
+Train/Fire,image_63.jpg,fire,train
+Train/Fire,image_630.jpg,"['fire', 'smoke']",train
+Train/Fire,image_631.jpg,fire,train
+Train/Fire,image_632.jpg,fire,train
+Train/Fire,image_633.jpg,fire,val
+Train/Fire,image_634.jpg,fire,val
+Train/Fire,image_635.jpg,fire,train
+Train/Fire,image_636.jpg,"['fire', 'smoke']",train
+Train/Fire,image_637.jpg,"['fire', 'smoke']",val
+Train/Fire,image_638.jpg,fire,train
+Train/Fire,image_639.jpg,"['fire', 'smoke']",train
+Train/Fire,image_64.jpg,"['fire', 'smoke']",train
+Train/Fire,image_640.jpg,"['fire', 'smoke']",val
+Train/Fire,image_641.jpg,fire,train
+Train/Fire,image_642.jpg,"['fire', 'smoke']",train
+Train/Fire,image_643.jpg,"['fire', 'smoke']",train
+Train/Fire,image_644.jpg,"['fire', 'smoke']",train
+Train/Fire,image_645.jpg,"['fire', 'smoke']",train
+Train/Fire,image_646.jpg,"['fire', 'smoke']",train
+Train/Fire,image_647.jpg,fire,train
+Train/Fire,image_648.jpg,"['fire', 'smoke']",train
+Train/Fire,image_649.jpg,"['fire', 'smoke']",val
+Train/Fire,image_65.jpg,"['fire', 'smoke']",train
+Train/Fire,image_650.jpg,fire,train
+Train/Fire,image_651.jpg,fire,train
+Train/Fire,image_652.jpg,fire,train
+Train/Fire,image_653.jpg,"['fire', 'smoke']",train
+Train/Fire,image_654.jpg,"['fire', 'smoke']",val
+Train/Fire,image_655.jpg,"['fire', 'smoke']",train
+Train/Fire,image_656.jpg,"['fire', 'smoke']",val
+Train/Fire,image_657.jpg,"['fire', 'smoke']",train
+Train/Fire,image_658.jpg,"['fire', 'smoke']",train
+Train/Fire,image_659.jpg,"['fire', 'smoke']",train
+Train/Fire,image_66.jpg,none,train
+Train/Fire,image_660.jpg,"['fire', 'smoke']",train
+Train/Fire,image_661.jpg,"['fire', 'smoke']",train
+Train/Fire,image_662.jpg,"['fire', 'smoke']",train
+Train/Fire,image_663.jpg,"['fire', 'smoke']",train
+Train/Fire,image_664.jpg,"['fire', 'smoke']",train
+Train/Fire,image_665.jpg,"['fire', 'smoke']",train
+Train/Fire,image_666.jpg,"['fire', 'smoke']",train
+Train/Fire,image_667.jpg,"['fire', 'smoke']",train
+Train/Fire,image_668.jpg,"['fire', 'smoke']",train
+Train/Fire,image_669.jpg,"['fire', 'smoke']",train
+Train/Fire,image_67.jpg,"['fire', 'smoke']",train
+Train/Fire,image_670.jpg,"['fire', 'smoke']",train
+Train/Fire,image_671.jpg,"['fire', 'smoke']",train
+Train/Fire,image_672.jpg,"['fire', 'smoke']",train
+Train/Fire,image_673.jpg,"['fire', 'smoke']",train
+Train/Fire,image_674.jpg,fire,train
+Train/Fire,image_675.jpg,fire,train
+Train/Fire,image_676.jpg,"['fire', 'smoke']",train
+Train/Fire,image_677.jpg,"['fire', 'smoke']",train
+Train/Fire,image_678.jpg,fire,train
+Train/Fire,image_679.jpg,"['fire', 'smoke']",train
+Train/Fire,image_68.jpg,"['fire', 'smoke']",train
+Train/Fire,image_680.jpg,"['fire', 'smoke']",train
+Train/Fire,image_681.jpg,fire,train
+Train/Fire,image_682.jpg,"['fire', 'smoke']",train
+Train/Fire,image_683.jpg,"['fire', 'smoke']",train
+Train/Fire,image_684.jpg,fire,train
+Train/Fire,image_685.jpg,"['fire', 'smoke']",val
+Train/Fire,image_686.jpg,"['fire', 'smoke']",train
+Train/Fire,image_687.jpg,fire,train
+Train/Fire,image_688.jpg,"['fire', 'smoke']",val
+Train/Fire,image_689.jpg,"['fire', 'smoke']",train
+Train/Fire,image_69.jpg,"['fire', 'smoke']",train
+Train/Fire,image_690.jpg,fire,train
+Train/Fire,image_691.jpg,fire,train
+Train/Fire,image_692.jpg,"['fire', 'smoke']",val
+Train/Fire,image_693.jpg,"['fire', 'smoke']",train
+Train/Fire,image_694.jpg,"['fire', 'smoke']",train
+Train/Fire,image_695.jpg,fire,train
+Train/Fire,image_696.jpg,fire,train
+Train/Fire,image_697.jpg,"['fire', 'smoke']",train
+Train/Fire,image_698.jpg,"['fire', 'smoke']",val
+Train/Fire,image_699.jpg,fire,train
+Train/Fire,image_7.jpg,"['fire', 'smoke']",train
+Train/Fire,image_70.jpg,"['fire', 'smoke']",train
+Train/Fire,image_700.jpg,"['fire', 'smoke']",val
+Train/Fire,image_701.jpg,fire,train
+Train/Fire,image_702.jpg,fire,train
+Train/Fire,image_703.jpg,"['fire', 'smoke']",train
+Train/Fire,image_704.jpg,"['fire', 'smoke']",train
+Train/Fire,image_705.jpg,"['fire', 'smoke']",train
+Train/Fire,image_706.jpg,"['fire', 'smoke']",train
+Train/Fire,image_707.jpg,"['fire', 'smoke']",train
+Train/Fire,image_708.jpg,"['fire', 'smoke']",val
+Train/Fire,image_709.jpg,fire,train
+Train/Fire,image_71.jpg,"['fire', 'smoke']",train
+Train/Fire,image_710.jpg,"['fire', 'smoke']",train
+Train/Fire,image_711.jpg,"['fire', 'smoke']",train
+Train/Fire,image_712.jpg,fire,train
+Train/Fire,image_713.jpg,"['fire', 'smoke']",val
+Train/Fire,image_714.jpg,"['fire', 'smoke']",train
+Train/Fire,image_715.jpg,"['fire', 'smoke']",train
+Train/Fire,image_716.jpg,fire,train
+Train/Fire,image_717.jpg,"['fire', 'smoke']",train
+Train/Fire,image_718.jpg,"['fire', 'smoke']",train
+Train/Fire,image_719.jpg,"['fire', 'smoke']",train
+Train/Fire,image_72.jpg,"['fire', 'smoke']",train
+Train/Fire,image_720.jpg,"['fire', 'smoke']",train
+Train/Fire,image_721.jpg,"['fire', 'smoke']",val
+Train/Fire,image_722.jpg,fire,val
+Train/Fire,image_723.jpg,"['fire', 'smoke']",train
+Train/Fire,image_724.jpg,"['fire', 'smoke']",train
+Train/Fire,image_725.jpg,"['fire', 'smoke']",train
+Train/Fire,image_726.jpg,"['fire', 'smoke']",train
+Train/Fire,image_727.jpg,"['fire', 'smoke']",train
+Train/Fire,image_728.jpg,fire,train
+Train/Fire,image_729.jpg,"['fire', 'smoke']",train
+Train/Fire,image_73.jpg,"['fire', 'smoke']",train
+Train/Fire,image_730.jpg,"['fire', 'smoke']",train
+Train/Fire,image_731.jpg,"['fire', 'smoke']",train
+Train/Fire,image_732.jpg,"['fire', 'smoke']",train
+Train/Fire,image_733.jpg,"['fire', 'smoke']",train
+Train/Fire,image_734.jpg,fire,train
+Train/Fire,image_735.jpg,fire,train
+Train/Fire,image_736.jpg,fire,train
+Train/Fire,image_737.jpg,"['fire', 'smoke']",train
+Train/Fire,image_738.jpg,"['fire', 'smoke']",train
+Train/Fire,image_739.jpg,"['fire', 'smoke']",train
+Train/Fire,image_74.jpg,"['fire', 'smoke']",train
+Train/Fire,image_740.jpg,fire,train
+Train/Fire,image_741.jpg,"['fire', 'smoke']",val
+Train/Fire,image_742.jpg,"['fire', 'smoke']",val
+Train/Fire,image_743.jpg,"['fire', 'smoke']",train
+Train/Fire,image_744.jpg,"['fire', 'smoke']",train
+Train/Fire,image_745.jpg,"['fire', 'smoke']",train
+Train/Fire,image_746.jpg,"['fire', 'smoke']",train
+Train/Fire,image_747.jpg,"['fire', 'smoke']",val
+Train/Fire,image_748.jpg,"['fire', 'smoke']",train
+Train/Fire,image_749.jpg,"['fire', 'smoke']",train
+Train/Fire,image_75.jpg,"['fire', 'smoke']",train
+Train/Fire,image_750.jpg,"['fire', 'smoke']",train
+Train/Fire,image_751.jpg,"['fire', 'smoke']",train
+Train/Fire,image_752.jpg,"['fire', 'smoke']",train
+Train/Fire,image_753.jpg,"['fire', 'smoke']",train
+Train/Fire,image_754.jpg,"['fire', 'smoke']",val
+Train/Fire,image_755.jpg,fire,train
+Train/Fire,image_756.jpg,"['fire', 'smoke']",train
+Train/Fire,image_757.jpg,"['fire', 'smoke']",train
+Train/Fire,image_758.jpg,"['fire', 'smoke']",train
+Train/Fire,image_759.jpg,fire,train
+Train/Fire,image_76.jpg,fire,val
+Train/Fire,image_760.jpg,"['fire', 'smoke']",val
+Train/Fire,image_761.jpg,"['fire', 'smoke']",val
+Train/Fire,image_762.jpg,"['fire', 'smoke']",val
+Train/Fire,image_763.jpg,"['fire', 'smoke']",train
+Train/Fire,image_764.jpg,"['fire', 'smoke']",train
+Train/Fire,image_765.jpg,"['fire', 'smoke']",train
+Train/Fire,image_766.jpg,fire,val
+Train/Fire,image_767.jpg,fire,val
+Train/Fire,image_768.jpg,"['fire', 'smoke']",train
+Train/Fire,image_769.jpg,"['fire', 'smoke']",val
+Train/Fire,image_77.jpg,"['fire', 'smoke']",val
+Train/Fire,image_770.jpg,"['fire', 'smoke']",train
+Train/Fire,image_771.jpg,"['fire', 'smoke']",train
+Train/Fire,image_772.jpg,"['fire', 'smoke']",train
+Train/Fire,image_773.jpg,"['fire', 'smoke']",train
+Train/Fire,image_774.jpg,"['fire', 'smoke']",val
+Train/Fire,image_775.jpg,fire,train
+Train/Fire,image_776.jpg,fire,val
+Train/Fire,image_777.jpg,"['fire', 'smoke']",val
+Train/Fire,image_778.jpg,"['fire', 'smoke']",train
+Train/Fire,image_779.jpg,"['fire', 'smoke']",train
+Train/Fire,image_78.jpg,"['fire', 'smoke']",train
+Train/Fire,image_780.jpg,"['fire', 'smoke']",train
+Train/Fire,image_781.jpg,fire,train
+Train/Fire,image_782.jpg,fire,train
+Train/Fire,image_783.jpg,fire,val
+Train/Fire,image_784.jpg,"['fire', 'smoke']",train
+Train/Fire,image_785.jpg,"['fire', 'smoke']",train
+Train/Fire,image_786.jpg,"['fire', 'smoke']",train
+Train/Fire,image_787.jpg,"['fire', 'smoke']",train
+Train/Fire,image_788.jpg,"['fire', 'smoke']",train
+Train/Fire,image_789.jpg,"['fire', 'smoke']",train
+Train/Fire,image_79.jpg,"['fire', 'smoke']",train
+Train/Fire,image_790.jpg,"['fire', 'smoke']",train
+Train/Fire,image_791.jpg,"['fire', 'smoke']",train
+Train/Fire,image_792.jpg,"['fire', 'smoke']",train
+Train/Fire,image_793.jpg,fire,train
+Train/Fire,image_794.jpg,"['fire', 'smoke']",train
+Train/Fire,image_795.jpg,fire,train
+Train/Fire,image_796.jpg,"['fire', 'smoke']",val
+Train/Fire,image_797.jpg,fire,val
+Train/Fire,image_798.jpg,"['fire', 'smoke']",train
+Train/Fire,image_799.jpg,"['fire', 'smoke']",train
+Train/Fire,image_8.jpg,"['fire', 'smoke']",train
+Train/Fire,image_80.jpg,"['fire', 'smoke']",train
+Train/Fire,image_800.jpg,fire,val
+Train/Fire,image_801.jpg,"['fire', 'smoke']",train
+Train/Fire,image_802.jpg,"['fire', 'smoke']",train
+Train/Fire,image_803.jpg,"['fire', 'smoke']",train
+Train/Fire,image_804.jpg,"['fire', 'smoke']",train
+Train/Fire,image_805.jpg,"['fire', 'smoke']",train
+Train/Fire,image_806.jpg,fire,train
+Train/Fire,image_807.jpg,fire,train
+Train/Fire,image_808.jpg,fire,train
+Train/Fire,image_809.jpg,"['fire', 'smoke']",train
+Train/Fire,image_81.jpg,smoke,train
+Train/Fire,image_810.jpg,"['fire', 'smoke']",train
+Train/Fire,image_811.jpg,"['fire', 'smoke']",train
+Train/Fire,image_812.jpg,fire,train
+Train/Fire,image_813.jpg,"['fire', 'smoke']",train
+Train/Fire,image_814.jpg,"['fire', 'smoke']",val
+Train/Fire,image_815.jpg,"['fire', 'smoke']",train
+Train/Fire,image_816.jpg,"['fire', 'smoke']",train
+Train/Fire,image_817.jpg,"['fire', 'smoke']",train
+Train/Fire,image_818.jpg,"['fire', 'smoke']",train
+Train/Fire,image_819.jpg,"['fire', 'smoke']",train
+Train/Fire,image_82.jpg,fire,train
+Train/Fire,image_820.jpg,fire,train
+Train/Fire,image_821.jpg,fire,train
+Train/Fire,image_822.jpg,fire,train
+Train/Fire,image_823.jpg,fire,train
+Train/Fire,image_824.jpg,"['fire', 'smoke']",train
+Train/Fire,image_825.jpg,fire,train
+Train/Fire,image_826.jpg,fire,val
+Train/Fire,image_827.jpg,fire,train
+Train/Fire,image_828.jpg,fire,train
+Train/Fire,image_829.jpg,"['fire', 'smoke']",train
+Train/Fire,image_83.jpg,"['fire', 'smoke']",train
+Train/Fire,image_830.jpg,fire,train
+Train/Fire,image_831.jpg,"['fire', 'smoke']",train
+Train/Fire,image_832.jpg,"['fire', 'smoke']",train
+Train/Fire,image_833.jpg,"['fire', 'smoke']",train
+Train/Fire,image_834.jpg,"['fire', 'smoke']",train
+Train/Fire,image_835.jpg,"['fire', 'smoke']",train
+Train/Fire,image_836.jpg,"['fire', 'smoke']",train
+Train/Fire,image_837.jpg,"['fire', 'smoke']",train
+Train/Fire,image_838.jpg,"['fire', 'smoke']",train
+Train/Fire,image_839.jpg,fire,val
+Train/Fire,image_84.jpg,fire,val
+Train/Fire,image_840.jpg,"['fire', 'smoke']",train
+Train/Fire,image_841.jpg,"['fire', 'smoke']",val
+Train/Fire,image_842.jpg,"['fire', 'smoke']",val
+Train/Fire,image_843.jpg,fire,val
+Train/Fire,image_844.jpg,"['fire', 'smoke']",train
+Train/Fire,image_845.jpg,"['fire', 'smoke']",train
+Train/Fire,image_846.jpg,fire,train
+Train/Fire,image_847.jpg,fire,train
+Train/Fire,image_848.jpg,"['fire', 'smoke']",train
+Train/Fire,image_849.jpg,fire,val
+Train/Fire,image_85.jpg,"['fire', 'smoke']",train
+Train/Fire,image_850.jpg,"['fire', 'smoke']",train
+Train/Fire,image_851.jpg,"['fire', 'smoke']",train
+Train/Fire,image_852.jpg,"['fire', 'smoke']",train
+Train/Fire,image_853.jpg,fire,train
+Train/Fire,image_854.jpg,fire,train
+Train/Fire,image_855.jpg,"['fire', 'smoke']",train
+Train/Fire,image_856.jpg,smoke,train
+Train/Fire,image_857.jpg,"['fire', 'smoke']",val
+Train/Fire,image_858.jpg,"['fire', 'smoke']",train
+Train/Fire,image_859.jpg,"['fire', 'smoke']",train
+Train/Fire,image_86.jpg,"['fire', 'smoke']",train
+Train/Fire,image_860.jpg,"['fire', 'smoke']",train
+Train/Fire,image_861.jpg,"['fire', 'smoke']",val
+Train/Fire,image_862.jpg,fire,train
+Train/Fire,image_863.jpg,"['fire', 'smoke']",train
+Train/Fire,image_864.jpg,smoke,train
+Train/Fire,image_865.jpg,"['fire', 'smoke']",train
+Train/Fire,image_866.jpg,none,train
+Train/Fire,image_867.jpg,"['fire', 'smoke']",val
+Train/Fire,image_868.jpg,fire,train
+Train/Fire,image_869.jpg,"['fire', 'smoke']",train
+Train/Fire,image_87.jpg,"['fire', 'smoke']",train
+Train/Fire,image_870.jpg,"['fire', 'smoke']",train
+Train/Fire,image_871.jpg,"['fire', 'smoke']",train
+Train/Fire,image_872.jpg,"['fire', 'smoke']",train
+Train/Fire,image_873.jpg,"['fire', 'smoke']",train
+Train/Fire,image_874.jpg,none,train
+Train/Fire,image_875.jpg,"['fire', 'smoke']",train
+Train/Fire,image_876.jpg,"['fire', 'smoke']",val
+Train/Fire,image_877.jpg,"['fire', 'smoke']",train
+Train/Fire,image_878.jpg,"['fire', 'smoke']",train
+Train/Fire,image_879.jpg,fire,val
+Train/Fire,image_88.jpg,none,train
+Train/Fire,image_880.jpg,"['fire', 'smoke']",train
+Train/Fire,image_881.jpg,"['fire', 'smoke']",train
+Train/Fire,image_882.jpg,"['fire', 'smoke']",val
+Train/Fire,image_883.jpg,fire,train
+Train/Fire,image_884.jpg,"['fire', 'smoke']",train
+Train/Fire,image_885.jpg,"['fire', 'smoke']",train
+Train/Fire,image_886.jpg,"['fire', 'smoke']",val
+Train/Fire,image_887.jpg,"['fire', 'smoke']",train
+Train/Fire,image_888.jpg,fire,train
+Train/Fire,image_889.jpg,fire,train
+Train/Fire,image_89.jpg,"['fire', 'smoke']",val
+Train/Fire,image_890.jpg,fire,train
+Train/Fire,image_891.jpg,"['fire', 'smoke']",train
+Train/Fire,image_892.jpg,fire,val
+Train/Fire,image_893.jpg,"['fire', 'smoke']",train
+Train/Fire,image_894.jpg,"['fire', 'smoke']",train
+Train/Fire,image_895.jpg,fire,train
+Train/Fire,image_896.jpg,"['fire', 'smoke']",train
+Train/Fire,image_897.jpg,"['fire', 'smoke']",train
+Train/Fire,image_898.jpg,fire,train
+Train/Fire,image_899.jpg,"['fire', 'smoke']",train
+Train/Fire,image_9.jpg,fire,val
+Train/Fire,image_90.jpg,"['fire', 'smoke']",train
+Train/Fire,image_91.jpg,"['fire', 'smoke']",train
+Train/Fire,image_92.jpg,"['fire', 'smoke']",train
+Train/Fire,image_93.jpg,"['fire', 'smoke']",train
+Train/Fire,image_94.jpg,"['fire', 'smoke']",train
+Train/Fire,image_95.jpg,fire,train
+Train/Fire,image_96.jpg,none,train
+Train/Fire,image_97.jpg,"['fire', 'smoke']",train
+Train/Fire,image_98.jpg,"['fire', 'smoke']",train
+Train/Fire,image_99.jpg,"['fire', 'smoke']",train
+Train/Neutral,image_0.jpg,none,train
+Train/Neutral,image_1.jpg,none,val
+Train/Neutral,image_10.jpg,none,train
+Train/Neutral,image_100.jpg,none,train
+Train/Neutral,image_101.jpg,none,train
+Train/Neutral,image_102.jpg,none,train
+Train/Neutral,image_103.jpg,none,train
+Train/Neutral,image_104.jpg,none,train
+Train/Neutral,image_105.jpg,none,train
+Train/Neutral,image_106.jpg,none,train
+Train/Neutral,image_107.jpg,none,train
+Train/Neutral,image_108.jpg,none,val
+Train/Neutral,image_109.jpg,none,train
+Train/Neutral,image_11.jpg,none,train
+Train/Neutral,image_110.jpg,none,train
+Train/Neutral,image_111.jpg,none,train
+Train/Neutral,image_112.jpg,none,train
+Train/Neutral,image_113.jpg,none,val
+Train/Neutral,image_114.jpg,none,train
+Train/Neutral,image_115.jpg,none,train
+Train/Neutral,image_116.jpg,none,val
+Train/Neutral,image_117.jpg,none,train
+Train/Neutral,image_118.jpg,none,train
+Train/Neutral,image_119.jpg,none,train
+Train/Neutral,image_12.jpg,none,train
+Train/Neutral,image_120.jpg,none,train
+Train/Neutral,image_121.jpg,none,val
+Train/Neutral,image_122.jpg,none,train
+Train/Neutral,image_123.jpg,none,train
+Train/Neutral,image_124.jpg,none,val
+Train/Neutral,image_125.jpg,none,train
+Train/Neutral,image_126.jpg,none,val
+Train/Neutral,image_127.jpg,none,train
+Train/Neutral,image_128.jpg,none,train
+Train/Neutral,image_129.jpg,none,train
+Train/Neutral,image_13.jpg,none,train
+Train/Neutral,image_130.jpg,none,train
+Train/Neutral,image_131.jpg,none,train
+Train/Neutral,image_132.jpg,none,train
+Train/Neutral,image_133.jpg,none,train
+Train/Neutral,image_134.jpg,none,train
+Train/Neutral,image_135.jpg,none,train
+Train/Neutral,image_136.jpg,none,train
+Train/Neutral,image_137.jpg,none,train
+Train/Neutral,image_138.jpg,none,train
+Train/Neutral,image_139.jpg,none,train
+Train/Neutral,image_14.jpg,none,train
+Train/Neutral,image_140.jpg,none,train
+Train/Neutral,image_141.jpg,none,train
+Train/Neutral,image_142.jpg,none,train
+Train/Neutral,image_143.jpg,none,train
+Train/Neutral,image_144.jpg,none,val
+Train/Neutral,image_145.jpg,none,train
+Train/Neutral,image_146.jpg,none,train
+Train/Neutral,image_147.jpg,none,val
+Train/Neutral,image_148.jpg,none,val
+Train/Neutral,image_149.jpg,none,train
+Train/Neutral,image_15.jpg,none,train
+Train/Neutral,image_150.jpg,none,train
+Train/Neutral,image_151.jpg,none,train
+Train/Neutral,image_152.jpg,none,val
+Train/Neutral,image_153.jpg,none,val
+Train/Neutral,image_154.jpg,none,train
+Train/Neutral,image_155.jpg,none,train
+Train/Neutral,image_156.jpg,none,train
+Train/Neutral,image_157.jpg,none,train
+Train/Neutral,image_158.jpg,none,train
+Train/Neutral,image_159.jpg,none,train
+Train/Neutral,image_16.jpg,none,train
+Train/Neutral,image_160.jpg,none,val
+Train/Neutral,image_161.jpg,none,train
+Train/Neutral,image_162.jpg,none,train
+Train/Neutral,image_163.jpg,none,train
+Train/Neutral,image_164.jpg,none,train
+Train/Neutral,image_165.jpg,none,train
+Train/Neutral,image_166.jpg,none,val
+Train/Neutral,image_167.jpg,none,train
+Train/Neutral,image_168.jpg,none,val
+Train/Neutral,image_169.jpg,none,train
+Train/Neutral,image_17.jpg,none,train
+Train/Neutral,image_170.jpg,none,train
+Train/Neutral,image_171.jpg,none,train
+Train/Neutral,image_172.jpg,none,train
+Train/Neutral,image_173.jpg,none,train
+Train/Neutral,image_174.jpg,none,train
+Train/Neutral,image_175.jpg,none,train
+Train/Neutral,image_176.jpg,none,train
+Train/Neutral,image_177.jpg,none,val
+Train/Neutral,image_178.jpg,none,train
+Train/Neutral,image_179.jpg,none,train
+Train/Neutral,image_18.jpg,none,train
+Train/Neutral,image_180.jpg,none,train
+Train/Neutral,image_181.jpg,none,val
+Train/Neutral,image_182.jpg,none,train
+Train/Neutral,image_183.jpg,none,train
+Train/Neutral,image_184.jpg,none,train
+Train/Neutral,image_185.jpg,none,val
+Train/Neutral,image_186.jpg,none,val
+Train/Neutral,image_187.jpg,none,val
+Train/Neutral,image_188.jpg,none,train
+Train/Neutral,image_189.jpg,none,train
+Train/Neutral,image_19.jpg,none,train
+Train/Neutral,image_190.jpg,none,val
+Train/Neutral,image_191.jpg,none,val
+Train/Neutral,image_192.jpg,none,val
+Train/Neutral,image_193.jpg,none,train
+Train/Neutral,image_194.jpg,none,train
+Train/Neutral,image_195.jpg,none,train
+Train/Neutral,image_196.jpg,none,val
+Train/Neutral,image_197.jpg,none,val
+Train/Neutral,image_198.jpg,none,train
+Train/Neutral,image_199.jpg,none,train
+Train/Neutral,image_2.jpg,none,val
+Train/Neutral,image_20.jpg,none,train
+Train/Neutral,image_200.jpg,none,train
+Train/Neutral,image_201.jpg,none,train
+Train/Neutral,image_202.jpg,none,val
+Train/Neutral,image_203.jpg,none,train
+Train/Neutral,image_204.jpg,none,train
+Train/Neutral,image_205.jpg,none,val
+Train/Neutral,image_206.jpg,none,val
+Train/Neutral,image_207.jpg,none,train
+Train/Neutral,image_208.jpg,none,train
+Train/Neutral,image_209.jpg,none,train
+Train/Neutral,image_21.jpg,none,train
+Train/Neutral,image_210.jpg,none,val
+Train/Neutral,image_211.jpg,none,train
+Train/Neutral,image_212.jpg,none,train
+Train/Neutral,image_213.jpg,none,train
+Train/Neutral,image_214.jpg,none,train
+Train/Neutral,image_215.jpg,none,train
+Train/Neutral,image_216.jpg,none,train
+Train/Neutral,image_217.jpg,none,train
+Train/Neutral,image_218.jpg,none,train
+Train/Neutral,image_219.jpg,none,train
+Train/Neutral,image_22.jpg,none,train
+Train/Neutral,image_220.jpg,none,train
+Train/Neutral,image_221.jpg,none,val
+Train/Neutral,image_222.jpg,none,train
+Train/Neutral,image_223.jpg,none,train
+Train/Neutral,image_224.jpg,none,train
+Train/Neutral,image_225.jpg,none,train
+Train/Neutral,image_226.jpg,none,train
+Train/Neutral,image_227.jpg,none,train
+Train/Neutral,image_228.jpg,none,train
+Train/Neutral,image_229.jpg,none,val
+Train/Neutral,image_23.jpg,none,train
+Train/Neutral,image_230.jpg,none,train
+Train/Neutral,image_231.jpg,none,train
+Train/Neutral,image_232.jpg,none,train
+Train/Neutral,image_233.jpg,none,train
+Train/Neutral,image_234.jpg,none,train
+Train/Neutral,image_235.jpg,none,val
+Train/Neutral,image_236.jpg,none,train
+Train/Neutral,image_237.jpg,none,val
+Train/Neutral,image_238.jpg,none,train
+Train/Neutral,image_239.jpg,none,train
+Train/Neutral,image_24.jpg,none,train
+Train/Neutral,image_240.jpg,none,train
+Train/Neutral,image_241.jpg,none,train
+Train/Neutral,image_242.jpg,none,val
+Train/Neutral,image_243.jpg,none,train
+Train/Neutral,image_244.jpg,none,train
+Train/Neutral,image_245.jpg,none,train
+Train/Neutral,image_246.jpg,none,train
+Train/Neutral,image_247.jpg,none,val
+Train/Neutral,image_248.jpg,none,train
+Train/Neutral,image_249.jpg,none,train
+Train/Neutral,image_25.jpg,none,train
+Train/Neutral,image_250.jpg,none,train
+Train/Neutral,image_251.jpg,none,val
+Train/Neutral,image_252.jpg,none,train
+Train/Neutral,image_253.jpg,none,val
+Train/Neutral,image_254.jpg,none,train
+Train/Neutral,image_255.jpg,none,train
+Train/Neutral,image_256.jpg,none,val
+Train/Neutral,image_257.jpg,none,train
+Train/Neutral,image_258.jpg,none,val
+Train/Neutral,image_259.jpg,none,train
+Train/Neutral,image_26.jpg,none,train
+Train/Neutral,image_260.jpg,none,train
+Train/Neutral,image_261.jpg,none,val
+Train/Neutral,image_262.jpg,none,val
+Train/Neutral,image_263.jpg,none,train
+Train/Neutral,image_264.jpg,none,train
+Train/Neutral,image_265.jpg,none,train
+Train/Neutral,image_266.jpg,none,train
+Train/Neutral,image_267.jpg,none,train
+Train/Neutral,image_268.jpg,none,train
+Train/Neutral,image_269.jpg,none,val
+Train/Neutral,image_27.jpg,none,train
+Train/Neutral,image_270.jpg,none,val
+Train/Neutral,image_271.jpg,none,train
+Train/Neutral,image_272.jpg,none,val
+Train/Neutral,image_273.jpg,none,val
+Train/Neutral,image_274.jpg,none,val
+Train/Neutral,image_275.jpg,none,train
+Train/Neutral,image_276.jpg,none,train
+Train/Neutral,image_277.jpg,none,train
+Train/Neutral,image_278.jpg,none,train
+Train/Neutral,image_279.jpg,none,train
+Train/Neutral,image_28.jpg,none,train
+Train/Neutral,image_280.jpg,none,train
+Train/Neutral,image_281.jpg,none,val
+Train/Neutral,image_282.jpg,none,val
+Train/Neutral,image_283.jpg,none,val
+Train/Neutral,image_284.jpg,none,val
+Train/Neutral,image_285.jpg,none,train
+Train/Neutral,image_286.jpg,none,train
+Train/Neutral,image_287.jpg,none,train
+Train/Neutral,image_288.jpg,none,val
+Train/Neutral,image_289.jpg,none,train
+Train/Neutral,image_29.jpg,none,train
+Train/Neutral,image_290.jpg,none,train
+Train/Neutral,image_291.jpg,none,train
+Train/Neutral,image_292.jpg,none,train
+Train/Neutral,image_293.jpg,none,train
+Train/Neutral,image_294.jpg,none,train
+Train/Neutral,image_295.jpg,none,train
+Train/Neutral,image_296.jpg,none,train
+Train/Neutral,image_297.jpg,none,val
+Train/Neutral,image_298.jpg,none,train
+Train/Neutral,image_299.jpg,none,train
+Train/Neutral,image_3.jpg,none,train
+Train/Neutral,image_30.jpg,none,train
+Train/Neutral,image_300.jpg,none,train
+Train/Neutral,image_301.jpg,none,train
+Train/Neutral,image_302.jpg,none,val
+Train/Neutral,image_303.jpg,none,train
+Train/Neutral,image_304.jpg,none,val
+Train/Neutral,image_305.jpg,none,train
+Train/Neutral,image_306.jpg,none,train
+Train/Neutral,image_307.jpg,none,train
+Train/Neutral,image_308.jpg,none,train
+Train/Neutral,image_309.jpg,none,val
+Train/Neutral,image_31.jpg,none,val
+Train/Neutral,image_310.jpg,none,train
+Train/Neutral,image_311.jpg,none,train
+Train/Neutral,image_312.jpg,none,val
+Train/Neutral,image_313.jpg,none,train
+Train/Neutral,image_314.jpg,none,val
+Train/Neutral,image_315.jpg,none,train
+Train/Neutral,image_316.jpg,none,train
+Train/Neutral,image_317.jpg,none,train
+Train/Neutral,image_318.jpg,none,train
+Train/Neutral,image_319.jpg,none,train
+Train/Neutral,image_32.jpg,none,train
+Train/Neutral,image_320.jpg,none,train
+Train/Neutral,image_321.jpg,none,train
+Train/Neutral,image_322.jpg,none,train
+Train/Neutral,image_323.jpg,none,train
+Train/Neutral,image_324.jpg,none,train
+Train/Neutral,image_325.jpg,none,val
+Train/Neutral,image_326.jpg,none,train
+Train/Neutral,image_327.jpg,none,train
+Train/Neutral,image_328.jpg,none,val
+Train/Neutral,image_329.jpg,none,train
+Train/Neutral,image_33.jpg,none,train
+Train/Neutral,image_330.jpg,none,train
+Train/Neutral,image_331.jpg,none,val
+Train/Neutral,image_332.jpg,none,train
+Train/Neutral,image_333.jpg,none,train
+Train/Neutral,image_334.jpg,none,train
+Train/Neutral,image_335.jpg,none,train
+Train/Neutral,image_336.jpg,none,train
+Train/Neutral,image_337.jpg,none,train
+Train/Neutral,image_338.jpg,none,val
+Train/Neutral,image_339.jpg,none,val
+Train/Neutral,image_34.jpg,none,val
+Train/Neutral,image_340.jpg,none,train
+Train/Neutral,image_341.jpg,none,val
+Train/Neutral,image_342.jpg,none,train
+Train/Neutral,image_343.jpg,none,train
+Train/Neutral,image_344.jpg,none,val
+Train/Neutral,image_345.jpg,none,train
+Train/Neutral,image_346.jpg,none,train
+Train/Neutral,image_347.jpg,none,train
+Train/Neutral,image_348.jpg,none,train
+Train/Neutral,image_349.jpg,none,val
+Train/Neutral,image_35.jpg,none,val
+Train/Neutral,image_350.jpg,none,val
+Train/Neutral,image_351.jpg,none,val
+Train/Neutral,image_352.jpg,none,val
+Train/Neutral,image_353.jpg,none,train
+Train/Neutral,image_354.jpg,none,train
+Train/Neutral,image_355.jpg,none,train
+Train/Neutral,image_356.jpg,none,train
+Train/Neutral,image_357.jpg,none,train
+Train/Neutral,image_358.jpg,none,train
+Train/Neutral,image_359.jpg,none,train
+Train/Neutral,image_36.jpg,none,val
+Train/Neutral,image_360.jpg,none,train
+Train/Neutral,image_361.jpg,none,train
+Train/Neutral,image_362.jpg,none,train
+Train/Neutral,image_363.jpg,none,val
+Train/Neutral,image_364.jpg,none,val
+Train/Neutral,image_365.jpg,none,train
+Train/Neutral,image_366.jpg,none,train
+Train/Neutral,image_367.jpg,none,val
+Train/Neutral,image_368.jpg,none,train
+Train/Neutral,image_369.jpg,none,val
+Train/Neutral,image_37.jpg,none,train
+Train/Neutral,image_370.jpg,none,train
+Train/Neutral,image_371.jpg,none,train
+Train/Neutral,image_372.jpg,none,val
+Train/Neutral,image_373.jpg,none,train
+Train/Neutral,image_374.jpg,none,train
+Train/Neutral,image_375.jpg,none,val
+Train/Neutral,image_376.jpg,none,train
+Train/Neutral,image_377.jpg,none,val
+Train/Neutral,image_378.jpg,none,val
+Train/Neutral,image_379.jpg,none,train
+Train/Neutral,image_38.jpg,none,train
+Train/Neutral,image_380.jpg,none,train
+Train/Neutral,image_381.jpg,none,train
+Train/Neutral,image_382.jpg,none,train
+Train/Neutral,image_383.jpg,none,train
+Train/Neutral,image_384.jpg,none,train
+Train/Neutral,image_385.jpg,none,val
+Train/Neutral,image_386.jpg,none,train
+Train/Neutral,image_387.jpg,none,train
+Train/Neutral,image_388.jpg,none,train
+Train/Neutral,image_389.jpg,none,val
+Train/Neutral,image_39.jpg,none,train
+Train/Neutral,image_390.jpg,none,train
+Train/Neutral,image_391.jpg,none,train
+Train/Neutral,image_392.jpg,none,train
+Train/Neutral,image_393.jpg,none,train
+Train/Neutral,image_394.jpg,none,train
+Train/Neutral,image_395.jpg,none,train
+Train/Neutral,image_396.jpg,none,train
+Train/Neutral,image_397.jpg,none,train
+Train/Neutral,image_398.jpg,none,train
+Train/Neutral,image_399.jpg,none,train
+Train/Neutral,image_4.jpg,none,train
+Train/Neutral,image_40.jpg,none,train
+Train/Neutral,image_400.jpg,none,train
+Train/Neutral,image_401.jpg,none,train
+Train/Neutral,image_402.jpg,none,train
+Train/Neutral,image_403.jpg,none,train
+Train/Neutral,image_404.jpg,none,val
+Train/Neutral,image_405.jpg,none,val
+Train/Neutral,image_406.jpg,none,train
+Train/Neutral,image_407.jpg,none,val
+Train/Neutral,image_408.jpg,none,train
+Train/Neutral,image_409.jpg,none,train
+Train/Neutral,image_41.jpg,none,train
+Train/Neutral,image_410.jpg,none,train
+Train/Neutral,image_411.jpg,none,val
+Train/Neutral,image_412.jpg,none,train
+Train/Neutral,image_413.jpg,none,train
+Train/Neutral,image_414.jpg,none,train
+Train/Neutral,image_415.jpg,none,train
+Train/Neutral,image_416.jpg,none,val
+Train/Neutral,image_417.jpg,none,train
+Train/Neutral,image_418.jpg,none,train
+Train/Neutral,image_419.jpg,none,train
+Train/Neutral,image_42.jpg,none,train
+Train/Neutral,image_420.jpg,none,train
+Train/Neutral,image_421.jpg,none,train
+Train/Neutral,image_422.jpg,none,val
+Train/Neutral,image_423.jpg,none,train
+Train/Neutral,image_424.jpg,none,train
+Train/Neutral,image_425.jpg,none,val
+Train/Neutral,image_426.jpg,none,train
+Train/Neutral,image_427.jpg,none,val
+Train/Neutral,image_428.jpg,none,train
+Train/Neutral,image_429.jpg,none,train
+Train/Neutral,image_43.jpg,none,val
+Train/Neutral,image_430.jpg,none,val
+Train/Neutral,image_431.jpg,none,train
+Train/Neutral,image_432.jpg,none,train
+Train/Neutral,image_433.jpg,none,train
+Train/Neutral,image_434.jpg,none,train
+Train/Neutral,image_435.jpg,none,train
+Train/Neutral,image_436.jpg,none,train
+Train/Neutral,image_437.jpg,none,train
+Train/Neutral,image_438.jpg,none,train
+Train/Neutral,image_439.jpg,none,val
+Train/Neutral,image_44.jpg,none,train
+Train/Neutral,image_440.jpg,none,train
+Train/Neutral,image_441.jpg,none,val
+Train/Neutral,image_442.jpg,none,train
+Train/Neutral,image_443.jpg,none,train
+Train/Neutral,image_444.jpg,none,train
+Train/Neutral,image_445.jpg,none,val
+Train/Neutral,image_446.jpg,none,val
+Train/Neutral,image_447.jpg,none,train
+Train/Neutral,image_448.jpg,none,val
+Train/Neutral,image_449.jpg,none,train
+Train/Neutral,image_45.jpg,none,train
+Train/Neutral,image_450.jpg,none,train
+Train/Neutral,image_451.jpg,none,train
+Train/Neutral,image_452.jpg,none,val
+Train/Neutral,image_453.jpg,none,train
+Train/Neutral,image_454.jpg,none,train
+Train/Neutral,image_455.jpg,none,train
+Train/Neutral,image_456.jpg,none,train
+Train/Neutral,image_457.jpg,none,train
+Train/Neutral,image_458.jpg,none,train
+Train/Neutral,image_459.jpg,none,train
+Train/Neutral,image_46.jpg,none,train
+Train/Neutral,image_460.jpg,none,train
+Train/Neutral,image_461.jpg,none,train
+Train/Neutral,image_462.jpg,none,train
+Train/Neutral,image_463.jpg,none,train
+Train/Neutral,image_464.jpg,none,train
+Train/Neutral,image_465.jpg,none,train
+Train/Neutral,image_466.jpg,none,train
+Train/Neutral,image_467.jpg,none,train
+Train/Neutral,image_468.jpg,none,train
+Train/Neutral,image_469.jpg,none,train
+Train/Neutral,image_47.jpg,none,train
+Train/Neutral,image_470.jpg,none,train
+Train/Neutral,image_471.jpg,none,train
+Train/Neutral,image_472.jpg,none,train
+Train/Neutral,image_473.jpg,none,val
+Train/Neutral,image_474.jpg,none,train
+Train/Neutral,image_475.jpg,none,train
+Train/Neutral,image_476.jpg,none,train
+Train/Neutral,image_477.jpg,none,val
+Train/Neutral,image_478.jpg,none,train
+Train/Neutral,image_479.jpg,none,train
+Train/Neutral,image_48.jpg,none,train
+Train/Neutral,image_480.jpg,none,train
+Train/Neutral,image_481.jpg,none,val
+Train/Neutral,image_482.jpg,none,val
+Train/Neutral,image_483.jpg,none,train
+Train/Neutral,image_484.jpg,none,train
+Train/Neutral,image_485.jpg,none,train
+Train/Neutral,image_486.jpg,none,train
+Train/Neutral,image_487.jpg,none,train
+Train/Neutral,image_488.jpg,none,train
+Train/Neutral,image_489.jpg,none,train
+Train/Neutral,image_49.jpg,none,train
+Train/Neutral,image_490.jpg,none,train
+Train/Neutral,image_491.jpg,none,val
+Train/Neutral,image_492.jpg,none,train
+Train/Neutral,image_493.jpg,none,train
+Train/Neutral,image_494.jpg,none,val
+Train/Neutral,image_495.jpg,none,val
+Train/Neutral,image_496.jpg,none,val
+Train/Neutral,image_497.jpg,none,train
+Train/Neutral,image_498.jpg,none,train
+Train/Neutral,image_499.jpg,none,train
+Train/Neutral,image_5.jpg,none,train
+Train/Neutral,image_50.jpg,none,train
+Train/Neutral,image_500.jpg,none,train
+Train/Neutral,image_501.jpg,none,train
+Train/Neutral,image_502.jpg,none,train
+Train/Neutral,image_503.jpg,none,train
+Train/Neutral,image_504.jpg,none,train
+Train/Neutral,image_505.jpg,none,val
+Train/Neutral,image_506.jpg,none,val
+Train/Neutral,image_507.jpg,none,train
+Train/Neutral,image_508.jpg,none,train
+Train/Neutral,image_509.jpg,none,train
+Train/Neutral,image_51.jpg,none,train
+Train/Neutral,image_510.jpg,none,train
+Train/Neutral,image_511.jpg,none,val
+Train/Neutral,image_512.jpg,none,train
+Train/Neutral,image_513.jpg,none,train
+Train/Neutral,image_514.jpg,none,train
+Train/Neutral,image_515.jpg,none,val
+Train/Neutral,image_516.jpg,none,train
+Train/Neutral,image_517.jpg,none,train
+Train/Neutral,image_518.jpg,none,train
+Train/Neutral,image_519.jpg,none,train
+Train/Neutral,image_52.jpg,none,val
+Train/Neutral,image_520.jpg,none,val
+Train/Neutral,image_521.jpg,none,train
+Train/Neutral,image_522.jpg,none,train
+Train/Neutral,image_523.jpg,none,val
+Train/Neutral,image_524.jpg,none,train
+Train/Neutral,image_525.jpg,none,train
+Train/Neutral,image_526.jpg,none,train
+Train/Neutral,image_527.jpg,none,train
+Train/Neutral,image_528.jpg,none,train
+Train/Neutral,image_529.jpg,none,train
+Train/Neutral,image_53.jpg,none,train
+Train/Neutral,image_530.jpg,none,train
+Train/Neutral,image_531.jpg,none,train
+Train/Neutral,image_532.jpg,none,train
+Train/Neutral,image_533.jpg,none,train
+Train/Neutral,image_534.jpg,none,train
+Train/Neutral,image_535.jpg,none,val
+Train/Neutral,image_536.jpg,none,train
+Train/Neutral,image_537.jpg,none,train
+Train/Neutral,image_538.jpg,none,val
+Train/Neutral,image_539.jpg,none,train
+Train/Neutral,image_54.jpg,none,train
+Train/Neutral,image_540.jpg,none,train
+Train/Neutral,image_541.jpg,none,train
+Train/Neutral,image_542.jpg,none,train
+Train/Neutral,image_543.jpg,none,train
+Train/Neutral,image_544.jpg,none,train
+Train/Neutral,image_545.jpg,none,train
+Train/Neutral,image_546.jpg,none,train
+Train/Neutral,image_547.jpg,none,train
+Train/Neutral,image_548.jpg,none,train
+Train/Neutral,image_549.jpg,none,train
+Train/Neutral,image_55.jpg,none,train
+Train/Neutral,image_550.jpg,none,train
+Train/Neutral,image_551.jpg,none,train
+Train/Neutral,image_552.jpg,none,val
+Train/Neutral,image_553.jpg,none,train
+Train/Neutral,image_554.jpg,none,train
+Train/Neutral,image_555.jpg,none,train
+Train/Neutral,image_556.jpg,none,train
+Train/Neutral,image_557.jpg,none,train
+Train/Neutral,image_558.jpg,none,train
+Train/Neutral,image_559.jpg,none,train
+Train/Neutral,image_56.jpg,none,train
+Train/Neutral,image_560.jpg,none,train
+Train/Neutral,image_561.jpg,none,train
+Train/Neutral,image_562.jpg,none,train
+Train/Neutral,image_563.jpg,none,train
+Train/Neutral,image_564.jpg,none,val
+Train/Neutral,image_565.jpg,none,train
+Train/Neutral,image_566.jpg,none,val
+Train/Neutral,image_567.jpg,none,val
+Train/Neutral,image_568.jpg,none,train
+Train/Neutral,image_569.jpg,none,train
+Train/Neutral,image_57.jpg,none,train
+Train/Neutral,image_570.jpg,none,train
+Train/Neutral,image_571.jpg,none,val
+Train/Neutral,image_572.jpg,none,train
+Train/Neutral,image_573.jpg,none,train
+Train/Neutral,image_574.jpg,none,train
+Train/Neutral,image_575.jpg,none,train
+Train/Neutral,image_576.jpg,none,train
+Train/Neutral,image_577.jpg,none,val
+Train/Neutral,image_578.jpg,none,val
+Train/Neutral,image_579.jpg,none,val
+Train/Neutral,image_58.jpg,none,train
+Train/Neutral,image_580.jpg,none,train
+Train/Neutral,image_581.jpg,none,train
+Train/Neutral,image_582.jpg,none,train
+Train/Neutral,image_583.jpg,none,train
+Train/Neutral,image_584.jpg,none,train
+Train/Neutral,image_585.jpg,none,train
+Train/Neutral,image_586.jpg,none,train
+Train/Neutral,image_587.jpg,none,train
+Train/Neutral,image_588.jpg,none,train
+Train/Neutral,image_589.jpg,none,train
+Train/Neutral,image_59.jpg,none,val
+Train/Neutral,image_590.jpg,none,val
+Train/Neutral,image_591.jpg,none,train
+Train/Neutral,image_592.jpg,none,val
+Train/Neutral,image_593.jpg,none,train
+Train/Neutral,image_594.jpg,none,train
+Train/Neutral,image_595.jpg,none,train
+Train/Neutral,image_596.jpg,none,train
+Train/Neutral,image_597.jpg,none,train
+Train/Neutral,image_598.jpg,none,train
+Train/Neutral,image_599.jpg,none,train
+Train/Neutral,image_6.jpg,none,train
+Train/Neutral,image_60.jpg,none,train
+Train/Neutral,image_600.jpg,none,train
+Train/Neutral,image_601.jpg,none,train
+Train/Neutral,image_602.jpg,none,train
+Train/Neutral,image_603.jpg,none,train
+Train/Neutral,image_604.jpg,none,train
+Train/Neutral,image_605.jpg,none,train
+Train/Neutral,image_606.jpg,none,train
+Train/Neutral,image_607.jpg,none,train
+Train/Neutral,image_608.jpg,none,val
+Train/Neutral,image_609.jpg,none,train
+Train/Neutral,image_61.jpg,none,train
+Train/Neutral,image_610.jpg,none,train
+Train/Neutral,image_611.jpg,none,train
+Train/Neutral,image_612.jpg,none,val
+Train/Neutral,image_613.jpg,none,train
+Train/Neutral,image_614.jpg,none,train
+Train/Neutral,image_615.jpg,none,train
+Train/Neutral,image_616.jpg,none,train
+Train/Neutral,image_617.jpg,none,train
+Train/Neutral,image_618.jpg,none,train
+Train/Neutral,image_619.jpg,none,val
+Train/Neutral,image_62.jpg,none,train
+Train/Neutral,image_620.jpg,none,val
+Train/Neutral,image_621.jpg,none,train
+Train/Neutral,image_622.jpg,none,train
+Train/Neutral,image_623.jpg,none,train
+Train/Neutral,image_624.jpg,none,train
+Train/Neutral,image_625.jpg,none,val
+Train/Neutral,image_626.jpg,none,train
+Train/Neutral,image_627.jpg,none,train
+Train/Neutral,image_628.jpg,none,train
+Train/Neutral,image_629.jpg,none,val
+Train/Neutral,image_63.jpg,none,train
+Train/Neutral,image_630.jpg,none,train
+Train/Neutral,image_631.jpg,none,val
+Train/Neutral,image_632.jpg,none,train
+Train/Neutral,image_633.jpg,none,train
+Train/Neutral,image_634.jpg,none,train
+Train/Neutral,image_635.jpg,none,val
+Train/Neutral,image_636.jpg,none,train
+Train/Neutral,image_637.jpg,none,val
+Train/Neutral,image_638.jpg,none,train
+Train/Neutral,image_639.jpg,none,train
+Train/Neutral,image_64.jpg,none,train
+Train/Neutral,image_640.jpg,none,val
+Train/Neutral,image_641.jpg,none,val
+Train/Neutral,image_642.jpg,none,train
+Train/Neutral,image_643.jpg,none,train
+Train/Neutral,image_644.jpg,none,val
+Train/Neutral,image_645.jpg,none,val
+Train/Neutral,image_646.jpg,none,train
+Train/Neutral,image_647.jpg,none,train
+Train/Neutral,image_648.jpg,none,train
+Train/Neutral,image_649.jpg,none,train
+Train/Neutral,image_65.jpg,none,train
+Train/Neutral,image_650.jpg,none,train
+Train/Neutral,image_651.jpg,none,train
+Train/Neutral,image_652.jpg,none,train
+Train/Neutral,image_653.jpg,none,train
+Train/Neutral,image_654.jpg,none,train
+Train/Neutral,image_655.jpg,none,train
+Train/Neutral,image_656.jpg,none,val
+Train/Neutral,image_657.jpg,none,val
+Train/Neutral,image_658.jpg,none,train
+Train/Neutral,image_659.jpg,none,train
+Train/Neutral,image_66.jpg,none,train
+Train/Neutral,image_660.jpg,none,train
+Train/Neutral,image_661.jpg,none,train
+Train/Neutral,image_662.jpg,none,val
+Train/Neutral,image_663.jpg,none,train
+Train/Neutral,image_664.jpg,none,train
+Train/Neutral,image_665.jpg,none,train
+Train/Neutral,image_666.jpg,none,train
+Train/Neutral,image_667.jpg,none,train
+Train/Neutral,image_668.jpg,none,train
+Train/Neutral,image_669.jpg,none,train
+Train/Neutral,image_67.jpg,none,train
+Train/Neutral,image_670.jpg,none,train
+Train/Neutral,image_671.jpg,none,val
+Train/Neutral,image_672.jpg,none,train
+Train/Neutral,image_673.jpg,none,train
+Train/Neutral,image_674.jpg,none,val
+Train/Neutral,image_675.jpg,none,train
+Train/Neutral,image_676.jpg,none,train
+Train/Neutral,image_677.jpg,none,train
+Train/Neutral,image_678.jpg,none,val
+Train/Neutral,image_679.jpg,none,train
+Train/Neutral,image_68.jpg,none,train
+Train/Neutral,image_680.jpg,none,train
+Train/Neutral,image_681.jpg,none,train
+Train/Neutral,image_682.jpg,none,train
+Train/Neutral,image_683.jpg,none,train
+Train/Neutral,image_684.jpg,none,train
+Train/Neutral,image_685.jpg,none,train
+Train/Neutral,image_686.jpg,none,train
+Train/Neutral,image_687.jpg,none,train
+Train/Neutral,image_688.jpg,none,train
+Train/Neutral,image_689.jpg,none,train
+Train/Neutral,image_69.jpg,none,train
+Train/Neutral,image_690.jpg,none,train
+Train/Neutral,image_691.jpg,none,train
+Train/Neutral,image_692.jpg,none,train
+Train/Neutral,image_693.jpg,none,train
+Train/Neutral,image_694.jpg,none,train
+Train/Neutral,image_695.jpg,none,train
+Train/Neutral,image_696.jpg,none,train
+Train/Neutral,image_697.jpg,none,train
+Train/Neutral,image_698.jpg,none,train
+Train/Neutral,image_699.jpg,none,train
+Train/Neutral,image_7.jpg,none,val
+Train/Neutral,image_70.jpg,none,train
+Train/Neutral,image_700.jpg,none,train
+Train/Neutral,image_701.jpg,none,train
+Train/Neutral,image_702.jpg,none,val
+Train/Neutral,image_703.jpg,none,train
+Train/Neutral,image_704.jpg,none,train
+Train/Neutral,image_705.jpg,none,train
+Train/Neutral,image_706.jpg,none,train
+Train/Neutral,image_707.jpg,none,val
+Train/Neutral,image_708.jpg,none,val
+Train/Neutral,image_709.jpg,none,train
+Train/Neutral,image_71.jpg,none,val
+Train/Neutral,image_710.jpg,none,train
+Train/Neutral,image_711.jpg,none,train
+Train/Neutral,image_712.jpg,none,train
+Train/Neutral,image_713.jpg,none,train
+Train/Neutral,image_714.jpg,none,train
+Train/Neutral,image_715.jpg,none,train
+Train/Neutral,image_716.jpg,none,train
+Train/Neutral,image_717.jpg,none,val
+Train/Neutral,image_718.jpg,none,train
+Train/Neutral,image_719.jpg,none,val
+Train/Neutral,image_72.jpg,none,train
+Train/Neutral,image_720.jpg,none,train
+Train/Neutral,image_721.jpg,none,val
+Train/Neutral,image_722.jpg,none,train
+Train/Neutral,image_723.jpg,none,train
+Train/Neutral,image_724.jpg,none,train
+Train/Neutral,image_725.jpg,none,train
+Train/Neutral,image_726.jpg,none,train
+Train/Neutral,image_727.jpg,none,val
+Train/Neutral,image_728.jpg,none,train
+Train/Neutral,image_729.jpg,none,train
+Train/Neutral,image_73.jpg,none,val
+Train/Neutral,image_730.jpg,none,train
+Train/Neutral,image_731.jpg,none,train
+Train/Neutral,image_732.jpg,none,train
+Train/Neutral,image_733.jpg,none,train
+Train/Neutral,image_734.jpg,none,val
+Train/Neutral,image_735.jpg,none,train
+Train/Neutral,image_736.jpg,none,train
+Train/Neutral,image_737.jpg,none,train
+Train/Neutral,image_738.jpg,none,train
+Train/Neutral,image_739.jpg,none,train
+Train/Neutral,image_74.jpg,none,train
+Train/Neutral,image_740.jpg,none,train
+Train/Neutral,image_741.jpg,none,train
+Train/Neutral,image_742.jpg,none,train
+Train/Neutral,image_743.jpg,none,train
+Train/Neutral,image_744.jpg,none,train
+Train/Neutral,image_745.jpg,none,train
+Train/Neutral,image_746.jpg,none,train
+Train/Neutral,image_747.jpg,none,val
+Train/Neutral,image_748.jpg,none,train
+Train/Neutral,image_749.jpg,none,train
+Train/Neutral,image_75.jpg,none,train
+Train/Neutral,image_750.jpg,none,train
+Train/Neutral,image_751.jpg,none,train
+Train/Neutral,image_752.jpg,none,train
+Train/Neutral,image_753.jpg,none,train
+Train/Neutral,image_754.jpg,none,train
+Train/Neutral,image_755.jpg,none,train
+Train/Neutral,image_756.jpg,none,train
+Train/Neutral,image_757.jpg,none,val
+Train/Neutral,image_758.jpg,none,train
+Train/Neutral,image_759.jpg,none,val
+Train/Neutral,image_76.jpg,none,train
+Train/Neutral,image_760.jpg,none,train
+Train/Neutral,image_761.jpg,none,train
+Train/Neutral,image_762.jpg,none,train
+Train/Neutral,image_763.jpg,none,train
+Train/Neutral,image_764.jpg,none,train
+Train/Neutral,image_765.jpg,none,train
+Train/Neutral,image_766.jpg,none,val
+Train/Neutral,image_767.jpg,none,train
+Train/Neutral,image_768.jpg,none,train
+Train/Neutral,image_769.jpg,none,train
+Train/Neutral,image_77.jpg,none,train
+Train/Neutral,image_770.jpg,none,train
+Train/Neutral,image_771.jpg,none,train
+Train/Neutral,image_772.jpg,none,train
+Train/Neutral,image_773.jpg,none,train
+Train/Neutral,image_774.jpg,none,train
+Train/Neutral,image_775.jpg,none,val
+Train/Neutral,image_776.jpg,none,train
+Train/Neutral,image_777.jpg,none,train
+Train/Neutral,image_778.jpg,none,train
+Train/Neutral,image_779.jpg,none,train
+Train/Neutral,image_78.jpg,none,train
+Train/Neutral,image_780.jpg,none,val
+Train/Neutral,image_781.jpg,none,train
+Train/Neutral,image_782.jpg,none,train
+Train/Neutral,image_783.jpg,none,train
+Train/Neutral,image_784.jpg,none,train
+Train/Neutral,image_785.jpg,none,train
+Train/Neutral,image_786.jpg,none,val
+Train/Neutral,image_787.jpg,none,train
+Train/Neutral,image_788.jpg,none,train
+Train/Neutral,image_789.jpg,none,val
+Train/Neutral,image_79.jpg,none,val
+Train/Neutral,image_790.jpg,none,train
+Train/Neutral,image_791.jpg,none,train
+Train/Neutral,image_792.jpg,none,train
+Train/Neutral,image_793.jpg,none,train
+Train/Neutral,image_794.jpg,none,train
+Train/Neutral,image_795.jpg,none,train
+Train/Neutral,image_796.jpg,none,train
+Train/Neutral,image_797.jpg,none,train
+Train/Neutral,image_798.jpg,none,train
+Train/Neutral,image_799.jpg,none,train
+Train/Neutral,image_8.jpg,none,train
+Train/Neutral,image_80.jpg,none,train
+Train/Neutral,image_800.jpg,none,val
+Train/Neutral,image_801.jpg,none,train
+Train/Neutral,image_802.jpg,none,train
+Train/Neutral,image_803.jpg,none,train
+Train/Neutral,image_804.jpg,none,train
+Train/Neutral,image_805.jpg,none,train
+Train/Neutral,image_806.jpg,none,train
+Train/Neutral,image_807.jpg,none,train
+Train/Neutral,image_808.jpg,none,val
+Train/Neutral,image_809.jpg,none,train
+Train/Neutral,image_81.jpg,none,train
+Train/Neutral,image_810.jpg,none,train
+Train/Neutral,image_811.jpg,none,val
+Train/Neutral,image_812.jpg,none,train
+Train/Neutral,image_813.jpg,none,train
+Train/Neutral,image_814.jpg,none,train
+Train/Neutral,image_815.jpg,none,train
+Train/Neutral,image_816.jpg,none,train
+Train/Neutral,image_817.jpg,none,train
+Train/Neutral,image_818.jpg,none,val
+Train/Neutral,image_819.jpg,none,train
+Train/Neutral,image_82.jpg,none,train
+Train/Neutral,image_820.jpg,none,train
+Train/Neutral,image_821.jpg,none,val
+Train/Neutral,image_822.jpg,none,train
+Train/Neutral,image_823.jpg,none,train
+Train/Neutral,image_824.jpg,none,train
+Train/Neutral,image_825.jpg,none,val
+Train/Neutral,image_826.jpg,none,train
+Train/Neutral,image_827.jpg,none,train
+Train/Neutral,image_828.jpg,none,val
+Train/Neutral,image_829.jpg,none,train
+Train/Neutral,image_83.jpg,none,train
+Train/Neutral,image_830.jpg,none,train
+Train/Neutral,image_831.jpg,none,train
+Train/Neutral,image_832.jpg,none,train
+Train/Neutral,image_833.jpg,none,train
+Train/Neutral,image_834.jpg,none,train
+Train/Neutral,image_835.jpg,none,train
+Train/Neutral,image_836.jpg,none,train
+Train/Neutral,image_837.jpg,none,train
+Train/Neutral,image_838.jpg,none,train
+Train/Neutral,image_839.jpg,none,val
+Train/Neutral,image_84.jpg,none,train
+Train/Neutral,image_840.jpg,none,train
+Train/Neutral,image_841.jpg,none,train
+Train/Neutral,image_842.jpg,none,train
+Train/Neutral,image_843.jpg,none,val
+Train/Neutral,image_844.jpg,none,val
+Train/Neutral,image_845.jpg,none,train
+Train/Neutral,image_846.jpg,none,train
+Train/Neutral,image_847.jpg,none,train
+Train/Neutral,image_848.jpg,none,train
+Train/Neutral,image_849.jpg,none,train
+Train/Neutral,image_85.jpg,none,train
+Train/Neutral,image_850.jpg,none,train
+Train/Neutral,image_851.jpg,none,val
+Train/Neutral,image_852.jpg,none,train
+Train/Neutral,image_853.jpg,none,train
+Train/Neutral,image_854.jpg,none,train
+Train/Neutral,image_855.jpg,none,train
+Train/Neutral,image_856.jpg,none,train
+Train/Neutral,image_857.jpg,none,train
+Train/Neutral,image_858.jpg,none,train
+Train/Neutral,image_859.jpg,none,train
+Train/Neutral,image_86.jpg,none,train
+Train/Neutral,image_860.jpg,none,train
+Train/Neutral,image_861.jpg,none,val
+Train/Neutral,image_862.jpg,none,val
+Train/Neutral,image_863.jpg,none,train
+Train/Neutral,image_864.jpg,none,train
+Train/Neutral,image_865.jpg,none,train
+Train/Neutral,image_866.jpg,none,train
+Train/Neutral,image_867.jpg,none,train
+Train/Neutral,image_868.jpg,none,train
+Train/Neutral,image_869.jpg,none,val
+Train/Neutral,image_87.jpg,none,train
+Train/Neutral,image_870.jpg,none,train
+Train/Neutral,image_871.jpg,none,val
+Train/Neutral,image_872.jpg,none,train
+Train/Neutral,image_873.jpg,none,train
+Train/Neutral,image_874.jpg,none,train
+Train/Neutral,image_875.jpg,none,train
+Train/Neutral,image_876.jpg,none,train
+Train/Neutral,image_877.jpg,none,train
+Train/Neutral,image_878.jpg,none,train
+Train/Neutral,image_879.jpg,none,train
+Train/Neutral,image_88.jpg,none,train
+Train/Neutral,image_880.jpg,none,train
+Train/Neutral,image_881.jpg,none,train
+Train/Neutral,image_882.jpg,none,train
+Train/Neutral,image_883.jpg,none,train
+Train/Neutral,image_884.jpg,none,train
+Train/Neutral,image_885.jpg,none,train
+Train/Neutral,image_886.jpg,none,train
+Train/Neutral,image_887.jpg,none,train
+Train/Neutral,image_888.jpg,none,train
+Train/Neutral,image_889.jpg,none,train
+Train/Neutral,image_89.jpg,none,train
+Train/Neutral,image_890.jpg,none,train
+Train/Neutral,image_891.jpg,none,train
+Train/Neutral,image_892.jpg,none,train
+Train/Neutral,image_893.jpg,none,train
+Train/Neutral,image_894.jpg,none,train
+Train/Neutral,image_895.jpg,none,train
+Train/Neutral,image_896.jpg,none,val
+Train/Neutral,image_897.jpg,none,train
+Train/Neutral,image_898.jpg,none,train
+Train/Neutral,image_899.jpg,none,train
+Train/Neutral,image_9.jpg,none,train
+Train/Neutral,image_90.jpg,none,train
+Train/Neutral,image_91.jpg,none,train
+Train/Neutral,image_92.jpg,none,train
+Train/Neutral,image_93.jpg,none,train
+Train/Neutral,image_94.jpg,none,train
+Train/Neutral,image_95.jpg,none,train
+Train/Neutral,image_96.jpg,none,train
+Train/Neutral,image_97.jpg,none,val
+Train/Neutral,image_98.jpg,none,train
+Train/Neutral,image_99.jpg,none,train
+Train/Smoke,image_0.jpg,smoke,val
+Train/Smoke,image_1.jpg,smoke,train
+Train/Smoke,image_10.jpg,smoke,train
+Train/Smoke,image_100.jpg,smoke,train
+Train/Smoke,image_101.jpg,smoke,train
+Train/Smoke,image_102.jpg,smoke,train
+Train/Smoke,image_103.jpg,smoke,train
+Train/Smoke,image_104.jpg,smoke,train
+Train/Smoke,image_105.jpg,smoke,train
+Train/Smoke,image_106.jpg,smoke,val
+Train/Smoke,image_107.jpg,smoke,train
+Train/Smoke,image_108.jpg,smoke,train
+Train/Smoke,image_109.jpg,smoke,train
+Train/Smoke,image_11.jpg,smoke,train
+Train/Smoke,image_110.jpg,smoke,train
+Train/Smoke,image_111.jpg,smoke,train
+Train/Smoke,image_112.jpg,smoke,train
+Train/Smoke,image_113.jpg,smoke,train
+Train/Smoke,image_114.jpg,smoke,train
+Train/Smoke,image_115.jpg,smoke,val
+Train/Smoke,image_116.jpg,smoke,val
+Train/Smoke,image_117.jpg,smoke,train
+Train/Smoke,image_118.jpg,smoke,train
+Train/Smoke,image_119.jpg,smoke,train
+Train/Smoke,image_12.jpg,smoke,train
+Train/Smoke,image_120.jpg,smoke,train
+Train/Smoke,image_121.jpg,smoke,val
+Train/Smoke,image_122.jpg,smoke,train
+Train/Smoke,image_123.jpg,none,train
+Train/Smoke,image_124.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_125.jpg,smoke,train
+Train/Smoke,image_126.jpg,smoke,train
+Train/Smoke,image_127.jpg,smoke,train
+Train/Smoke,image_128.jpg,smoke,train
+Train/Smoke,image_129.jpg,smoke,train
+Train/Smoke,image_13.jpg,smoke,val
+Train/Smoke,image_130.jpg,smoke,train
+Train/Smoke,image_131.jpg,smoke,train
+Train/Smoke,image_132.jpg,smoke,train
+Train/Smoke,image_133.jpg,smoke,train
+Train/Smoke,image_134.jpg,smoke,val
+Train/Smoke,image_135.jpg,smoke,train
+Train/Smoke,image_136.jpg,smoke,train
+Train/Smoke,image_137.jpg,smoke,train
+Train/Smoke,image_138.jpg,smoke,train
+Train/Smoke,image_139.jpg,smoke,train
+Train/Smoke,image_14.jpg,smoke,val
+Train/Smoke,image_140.jpg,smoke,train
+Train/Smoke,image_141.jpg,smoke,train
+Train/Smoke,image_142.jpg,smoke,train
+Train/Smoke,image_143.jpg,smoke,train
+Train/Smoke,image_144.jpg,smoke,train
+Train/Smoke,image_145.jpg,smoke,train
+Train/Smoke,image_146.jpg,smoke,train
+Train/Smoke,image_147.jpg,smoke,train
+Train/Smoke,image_148.jpg,smoke,train
+Train/Smoke,image_149.jpg,smoke,train
+Train/Smoke,image_15.jpg,smoke,train
+Train/Smoke,image_150.jpg,smoke,train
+Train/Smoke,image_151.jpg,smoke,train
+Train/Smoke,image_152.jpg,smoke,train
+Train/Smoke,image_153.jpg,smoke,train
+Train/Smoke,image_154.jpg,smoke,val
+Train/Smoke,image_155.jpg,smoke,train
+Train/Smoke,image_156.jpg,smoke,train
+Train/Smoke,image_157.jpg,smoke,train
+Train/Smoke,image_158.jpg,smoke,train
+Train/Smoke,image_159.jpg,smoke,val
+Train/Smoke,image_16.jpg,smoke,train
+Train/Smoke,image_160.jpg,smoke,val
+Train/Smoke,image_161.jpg,smoke,train
+Train/Smoke,image_162.jpg,smoke,val
+Train/Smoke,image_163.jpg,smoke,train
+Train/Smoke,image_164.jpg,smoke,train
+Train/Smoke,image_165.jpg,smoke,train
+Train/Smoke,image_166.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_167.jpg,smoke,val
+Train/Smoke,image_168.jpg,smoke,train
+Train/Smoke,image_169.jpg,smoke,train
+Train/Smoke,image_17.jpg,smoke,train
+Train/Smoke,image_170.jpg,smoke,train
+Train/Smoke,image_171.jpg,smoke,train
+Train/Smoke,image_172.jpg,smoke,val
+Train/Smoke,image_173.jpg,smoke,train
+Train/Smoke,image_174.jpg,smoke,train
+Train/Smoke,image_175.jpg,smoke,val
+Train/Smoke,image_176.jpg,smoke,train
+Train/Smoke,image_177.jpg,smoke,train
+Train/Smoke,image_178.jpg,smoke,train
+Train/Smoke,image_179.jpg,smoke,train
+Train/Smoke,image_18.jpg,smoke,val
+Train/Smoke,image_180.jpg,smoke,val
+Train/Smoke,image_181.jpg,smoke,train
+Train/Smoke,image_182.jpg,smoke,train
+Train/Smoke,image_183.jpg,smoke,train
+Train/Smoke,image_184.jpg,smoke,train
+Train/Smoke,image_185.jpg,smoke,train
+Train/Smoke,image_186.jpg,smoke,train
+Train/Smoke,image_187.jpg,smoke,train
+Train/Smoke,image_188.jpg,smoke,val
+Train/Smoke,image_189.jpg,smoke,train
+Train/Smoke,image_19.jpg,smoke,train
+Train/Smoke,image_190.jpg,smoke,val
+Train/Smoke,image_191.jpg,smoke,train
+Train/Smoke,image_192.jpg,smoke,train
+Train/Smoke,image_193.jpg,smoke,train
+Train/Smoke,image_194.jpg,smoke,train
+Train/Smoke,image_195.jpg,smoke,train
+Train/Smoke,image_196.jpg,smoke,train
+Train/Smoke,image_197.jpg,smoke,train
+Train/Smoke,image_198.jpg,smoke,train
+Train/Smoke,image_199.jpg,smoke,train
+Train/Smoke,image_2.jpg,smoke,val
+Train/Smoke,image_20.jpg,smoke,val
+Train/Smoke,image_200.jpg,smoke,val
+Train/Smoke,image_201.jpg,smoke,val
+Train/Smoke,image_202.jpg,smoke,train
+Train/Smoke,image_203.jpg,smoke,train
+Train/Smoke,image_204.jpg,smoke,val
+Train/Smoke,image_205.jpg,smoke,train
+Train/Smoke,image_206.jpg,smoke,val
+Train/Smoke,image_207.jpg,smoke,train
+Train/Smoke,image_208.jpg,smoke,train
+Train/Smoke,image_209.jpg,smoke,train
+Train/Smoke,image_21.jpg,smoke,train
+Train/Smoke,image_210.jpg,smoke,train
+Train/Smoke,image_211.jpg,smoke,train
+Train/Smoke,image_212.jpg,smoke,train
+Train/Smoke,image_213.jpg,smoke,val
+Train/Smoke,image_214.jpg,smoke,train
+Train/Smoke,image_215.jpg,smoke,train
+Train/Smoke,image_216.jpg,smoke,train
+Train/Smoke,image_217.jpg,smoke,train
+Train/Smoke,image_218.jpg,smoke,train
+Train/Smoke,image_219.jpg,smoke,val
+Train/Smoke,image_22.jpg,smoke,train
+Train/Smoke,image_220.jpg,smoke,val
+Train/Smoke,image_221.jpg,smoke,train
+Train/Smoke,image_222.jpg,smoke,train
+Train/Smoke,image_223.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_224.jpg,smoke,train
+Train/Smoke,image_225.jpg,smoke,train
+Train/Smoke,image_226.jpg,smoke,train
+Train/Smoke,image_227.jpg,smoke,val
+Train/Smoke,image_228.jpg,smoke,train
+Train/Smoke,image_229.jpg,smoke,train
+Train/Smoke,image_23.jpg,smoke,train
+Train/Smoke,image_230.jpg,smoke,train
+Train/Smoke,image_231.jpg,smoke,val
+Train/Smoke,image_232.jpg,smoke,train
+Train/Smoke,image_233.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_234.jpg,smoke,train
+Train/Smoke,image_235.jpg,smoke,train
+Train/Smoke,image_236.jpg,smoke,train
+Train/Smoke,image_237.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_238.jpg,smoke,val
+Train/Smoke,image_239.jpg,smoke,train
+Train/Smoke,image_24.jpg,smoke,train
+Train/Smoke,image_240.jpg,smoke,train
+Train/Smoke,image_241.jpg,smoke,train
+Train/Smoke,image_242.jpg,smoke,train
+Train/Smoke,image_243.jpg,smoke,train
+Train/Smoke,image_244.jpg,smoke,val
+Train/Smoke,image_245.jpg,smoke,train
+Train/Smoke,image_246.jpg,smoke,train
+Train/Smoke,image_247.jpg,smoke,train
+Train/Smoke,image_248.jpg,smoke,train
+Train/Smoke,image_249.jpg,smoke,train
+Train/Smoke,image_25.jpg,smoke,train
+Train/Smoke,image_250.jpg,smoke,val
+Train/Smoke,image_251.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_252.jpg,smoke,train
+Train/Smoke,image_253.jpg,smoke,train
+Train/Smoke,image_254.jpg,smoke,train
+Train/Smoke,image_255.jpg,smoke,train
+Train/Smoke,image_256.jpg,smoke,train
+Train/Smoke,image_257.jpg,smoke,val
+Train/Smoke,image_258.jpg,smoke,train
+Train/Smoke,image_259.jpg,smoke,val
+Train/Smoke,image_26.jpg,smoke,train
+Train/Smoke,image_260.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_261.jpg,smoke,train
+Train/Smoke,image_262.jpg,smoke,val
+Train/Smoke,image_263.jpg,smoke,train
+Train/Smoke,image_264.jpg,smoke,train
+Train/Smoke,image_265.jpg,smoke,val
+Train/Smoke,image_266.jpg,smoke,train
+Train/Smoke,image_267.jpg,smoke,train
+Train/Smoke,image_268.jpg,smoke,train
+Train/Smoke,image_269.jpg,smoke,train
+Train/Smoke,image_27.jpg,smoke,train
+Train/Smoke,image_270.jpg,smoke,train
+Train/Smoke,image_271.jpg,smoke,train
+Train/Smoke,image_272.jpg,smoke,train
+Train/Smoke,image_273.jpg,smoke,train
+Train/Smoke,image_274.jpg,smoke,train
+Train/Smoke,image_275.jpg,smoke,train
+Train/Smoke,image_276.jpg,smoke,train
+Train/Smoke,image_277.jpg,smoke,train
+Train/Smoke,image_278.jpg,smoke,train
+Train/Smoke,image_279.jpg,smoke,train
+Train/Smoke,image_28.jpg,smoke,train
+Train/Smoke,image_280.jpg,smoke,train
+Train/Smoke,image_281.jpg,smoke,train
+Train/Smoke,image_282.jpg,smoke,train
+Train/Smoke,image_283.jpg,smoke,train
+Train/Smoke,image_284.jpg,smoke,train
+Train/Smoke,image_285.jpg,smoke,train
+Train/Smoke,image_286.jpg,smoke,train
+Train/Smoke,image_287.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_288.jpg,smoke,train
+Train/Smoke,image_289.jpg,smoke,train
+Train/Smoke,image_29.jpg,smoke,train
+Train/Smoke,image_290.jpg,smoke,train
+Train/Smoke,image_291.jpg,smoke,train
+Train/Smoke,image_292.jpg,smoke,train
+Train/Smoke,image_293.jpg,smoke,train
+Train/Smoke,image_294.jpg,smoke,train
+Train/Smoke,image_295.jpg,smoke,train
+Train/Smoke,image_296.jpg,smoke,val
+Train/Smoke,image_297.jpg,smoke,train
+Train/Smoke,image_298.jpg,smoke,train
+Train/Smoke,image_299.jpg,smoke,train
+Train/Smoke,image_3.jpg,smoke,train
+Train/Smoke,image_30.jpg,smoke,train
+Train/Smoke,image_300.jpg,smoke,train
+Train/Smoke,image_301.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_302.jpg,smoke,train
+Train/Smoke,image_303.jpg,smoke,train
+Train/Smoke,image_304.jpg,smoke,val
+Train/Smoke,image_305.jpg,smoke,train
+Train/Smoke,image_306.jpg,smoke,train
+Train/Smoke,image_307.jpg,smoke,train
+Train/Smoke,image_308.jpg,smoke,train
+Train/Smoke,image_309.jpg,smoke,train
+Train/Smoke,image_31.jpg,smoke,train
+Train/Smoke,image_310.jpg,smoke,train
+Train/Smoke,image_311.jpg,smoke,train
+Train/Smoke,image_312.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_313.jpg,smoke,train
+Train/Smoke,image_314.jpg,smoke,train
+Train/Smoke,image_315.jpg,smoke,train
+Train/Smoke,image_316.jpg,smoke,train
+Train/Smoke,image_317.jpg,smoke,val
+Train/Smoke,image_318.jpg,smoke,train
+Train/Smoke,image_319.jpg,smoke,val
+Train/Smoke,image_32.jpg,smoke,train
+Train/Smoke,image_320.jpg,smoke,train
+Train/Smoke,image_321.jpg,smoke,train
+Train/Smoke,image_322.jpg,smoke,train
+Train/Smoke,image_323.jpg,smoke,train
+Train/Smoke,image_324.jpg,smoke,train
+Train/Smoke,image_325.jpg,smoke,train
+Train/Smoke,image_326.jpg,smoke,train
+Train/Smoke,image_327.jpg,smoke,train
+Train/Smoke,image_328.jpg,smoke,train
+Train/Smoke,image_329.jpg,none,train
+Train/Smoke,image_33.jpg,none,train
+Train/Smoke,image_330.jpg,smoke,train
+Train/Smoke,image_331.jpg,smoke,train
+Train/Smoke,image_332.jpg,smoke,train
+Train/Smoke,image_333.jpg,smoke,train
+Train/Smoke,image_334.jpg,smoke,train
+Train/Smoke,image_335.jpg,smoke,train
+Train/Smoke,image_336.jpg,smoke,train
+Train/Smoke,image_337.jpg,smoke,val
+Train/Smoke,image_338.jpg,smoke,train
+Train/Smoke,image_339.jpg,smoke,train
+Train/Smoke,image_34.jpg,smoke,train
+Train/Smoke,image_340.jpg,smoke,val
+Train/Smoke,image_341.jpg,smoke,train
+Train/Smoke,image_342.jpg,smoke,train
+Train/Smoke,image_343.jpg,smoke,train
+Train/Smoke,image_344.jpg,smoke,train
+Train/Smoke,image_345.jpg,smoke,train
+Train/Smoke,image_346.jpg,smoke,val
+Train/Smoke,image_347.jpg,smoke,val
+Train/Smoke,image_348.jpg,smoke,val
+Train/Smoke,image_349.jpg,smoke,train
+Train/Smoke,image_35.jpg,smoke,val
+Train/Smoke,image_350.jpg,smoke,train
+Train/Smoke,image_351.jpg,smoke,train
+Train/Smoke,image_352.jpg,smoke,train
+Train/Smoke,image_353.jpg,smoke,train
+Train/Smoke,image_354.jpg,smoke,train
+Train/Smoke,image_355.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_356.jpg,smoke,train
+Train/Smoke,image_357.jpg,smoke,val
+Train/Smoke,image_358.jpg,smoke,train
+Train/Smoke,image_359.jpg,smoke,val
+Train/Smoke,image_36.jpg,smoke,train
+Train/Smoke,image_360.jpg,smoke,train
+Train/Smoke,image_361.jpg,smoke,val
+Train/Smoke,image_362.jpg,smoke,train
+Train/Smoke,image_363.jpg,smoke,train
+Train/Smoke,image_364.jpg,smoke,train
+Train/Smoke,image_365.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_366.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_367.jpg,smoke,train
+Train/Smoke,image_368.jpg,smoke,train
+Train/Smoke,image_369.jpg,smoke,train
+Train/Smoke,image_37.jpg,smoke,train
+Train/Smoke,image_370.jpg,smoke,train
+Train/Smoke,image_371.jpg,smoke,train
+Train/Smoke,image_372.jpg,smoke,train
+Train/Smoke,image_373.jpg,smoke,val
+Train/Smoke,image_374.jpg,smoke,train
+Train/Smoke,image_375.jpg,smoke,train
+Train/Smoke,image_376.jpg,smoke,train
+Train/Smoke,image_377.jpg,smoke,train
+Train/Smoke,image_378.jpg,smoke,train
+Train/Smoke,image_379.jpg,smoke,train
+Train/Smoke,image_38.jpg,smoke,train
+Train/Smoke,image_380.jpg,smoke,val
+Train/Smoke,image_381.jpg,smoke,train
+Train/Smoke,image_382.jpg,smoke,train
+Train/Smoke,image_383.jpg,smoke,val
+Train/Smoke,image_384.jpg,smoke,val
+Train/Smoke,image_385.jpg,smoke,val
+Train/Smoke,image_386.jpg,smoke,train
+Train/Smoke,image_387.jpg,smoke,train
+Train/Smoke,image_388.jpg,smoke,train
+Train/Smoke,image_389.jpg,smoke,train
+Train/Smoke,image_39.jpg,smoke,train
+Train/Smoke,image_390.jpg,smoke,train
+Train/Smoke,image_391.jpg,smoke,train
+Train/Smoke,image_392.jpg,smoke,train
+Train/Smoke,image_393.jpg,smoke,train
+Train/Smoke,image_394.jpg,smoke,val
+Train/Smoke,image_395.jpg,smoke,val
+Train/Smoke,image_396.jpg,smoke,train
+Train/Smoke,image_397.jpg,smoke,train
+Train/Smoke,image_398.jpg,smoke,train
+Train/Smoke,image_399.jpg,smoke,train
+Train/Smoke,image_4.jpg,smoke,train
+Train/Smoke,image_40.jpg,smoke,val
+Train/Smoke,image_400.jpg,smoke,train
+Train/Smoke,image_401.jpg,smoke,train
+Train/Smoke,image_402.jpg,smoke,train
+Train/Smoke,image_403.jpg,smoke,train
+Train/Smoke,image_404.jpg,smoke,train
+Train/Smoke,image_405.jpg,smoke,train
+Train/Smoke,image_406.jpg,smoke,train
+Train/Smoke,image_407.jpg,smoke,train
+Train/Smoke,image_408.jpg,smoke,train
+Train/Smoke,image_409.jpg,smoke,train
+Train/Smoke,image_41.jpg,none,train
+Train/Smoke,image_410.jpg,smoke,train
+Train/Smoke,image_411.jpg,smoke,train
+Train/Smoke,image_412.jpg,smoke,train
+Train/Smoke,image_413.jpg,smoke,train
+Train/Smoke,image_414.jpg,smoke,train
+Train/Smoke,image_415.jpg,smoke,val
+Train/Smoke,image_416.jpg,smoke,val
+Train/Smoke,image_417.jpg,smoke,train
+Train/Smoke,image_418.jpg,smoke,val
+Train/Smoke,image_419.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_42.jpg,smoke,train
+Train/Smoke,image_420.jpg,smoke,train
+Train/Smoke,image_421.jpg,smoke,val
+Train/Smoke,image_422.jpg,smoke,val
+Train/Smoke,image_423.jpg,smoke,val
+Train/Smoke,image_424.jpg,smoke,train
+Train/Smoke,image_425.jpg,smoke,val
+Train/Smoke,image_426.jpg,smoke,train
+Train/Smoke,image_427.jpg,smoke,val
+Train/Smoke,image_428.jpg,smoke,train
+Train/Smoke,image_429.jpg,smoke,val
+Train/Smoke,image_43.jpg,smoke,train
+Train/Smoke,image_430.jpg,smoke,train
+Train/Smoke,image_431.jpg,smoke,train
+Train/Smoke,image_432.jpg,smoke,train
+Train/Smoke,image_433.jpg,smoke,val
+Train/Smoke,image_434.jpg,smoke,train
+Train/Smoke,image_435.jpg,smoke,val
+Train/Smoke,image_436.jpg,smoke,val
+Train/Smoke,image_437.jpg,smoke,train
+Train/Smoke,image_438.jpg,smoke,train
+Train/Smoke,image_439.jpg,smoke,val
+Train/Smoke,image_44.jpg,smoke,train
+Train/Smoke,image_440.jpg,smoke,val
+Train/Smoke,image_441.jpg,smoke,val
+Train/Smoke,image_442.jpg,smoke,train
+Train/Smoke,image_443.jpg,smoke,train
+Train/Smoke,image_444.jpg,smoke,train
+Train/Smoke,image_445.jpg,smoke,train
+Train/Smoke,image_446.jpg,smoke,train
+Train/Smoke,image_447.jpg,smoke,train
+Train/Smoke,image_448.jpg,smoke,train
+Train/Smoke,image_449.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_45.jpg,smoke,train
+Train/Smoke,image_450.jpg,smoke,train
+Train/Smoke,image_451.jpg,smoke,train
+Train/Smoke,image_452.jpg,smoke,train
+Train/Smoke,image_453.jpg,smoke,val
+Train/Smoke,image_454.jpg,smoke,val
+Train/Smoke,image_455.jpg,smoke,train
+Train/Smoke,image_456.jpg,smoke,train
+Train/Smoke,image_457.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_458.jpg,smoke,val
+Train/Smoke,image_459.jpg,smoke,train
+Train/Smoke,image_46.jpg,smoke,val
+Train/Smoke,image_460.jpg,smoke,train
+Train/Smoke,image_461.jpg,smoke,val
+Train/Smoke,image_462.jpg,smoke,val
+Train/Smoke,image_463.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_464.jpg,smoke,train
+Train/Smoke,image_465.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_466.jpg,smoke,val
+Train/Smoke,image_467.jpg,smoke,train
+Train/Smoke,image_468.jpg,smoke,train
+Train/Smoke,image_469.jpg,smoke,train
+Train/Smoke,image_47.jpg,smoke,val
+Train/Smoke,image_470.jpg,smoke,train
+Train/Smoke,image_471.jpg,smoke,train
+Train/Smoke,image_472.jpg,smoke,train
+Train/Smoke,image_473.jpg,smoke,val
+Train/Smoke,image_474.jpg,smoke,train
+Train/Smoke,image_475.jpg,smoke,val
+Train/Smoke,image_476.jpg,smoke,train
+Train/Smoke,image_477.jpg,smoke,train
+Train/Smoke,image_478.jpg,smoke,train
+Train/Smoke,image_479.jpg,smoke,train
+Train/Smoke,image_48.jpg,smoke,val
+Train/Smoke,image_480.jpg,none,train
+Train/Smoke,image_481.jpg,smoke,train
+Train/Smoke,image_482.jpg,smoke,train
+Train/Smoke,image_483.jpg,smoke,train
+Train/Smoke,image_484.jpg,smoke,train
+Train/Smoke,image_485.jpg,smoke,train
+Train/Smoke,image_486.jpg,smoke,train
+Train/Smoke,image_487.jpg,smoke,train
+Train/Smoke,image_488.jpg,smoke,train
+Train/Smoke,image_489.jpg,smoke,train
+Train/Smoke,image_49.jpg,smoke,val
+Train/Smoke,image_490.jpg,smoke,train
+Train/Smoke,image_491.jpg,smoke,train
+Train/Smoke,image_492.jpg,smoke,train
+Train/Smoke,image_493.jpg,smoke,train
+Train/Smoke,image_494.jpg,smoke,train
+Train/Smoke,image_495.jpg,smoke,train
+Train/Smoke,image_496.jpg,smoke,train
+Train/Smoke,image_497.jpg,smoke,val
+Train/Smoke,image_498.jpg,smoke,train
+Train/Smoke,image_499.jpg,smoke,train
+Train/Smoke,image_5.jpg,smoke,train
+Train/Smoke,image_50.jpg,smoke,train
+Train/Smoke,image_500.jpg,smoke,train
+Train/Smoke,image_501.jpg,smoke,val
+Train/Smoke,image_502.jpg,smoke,train
+Train/Smoke,image_503.jpg,smoke,train
+Train/Smoke,image_504.jpg,smoke,train
+Train/Smoke,image_505.jpg,smoke,val
+Train/Smoke,image_506.jpg,smoke,val
+Train/Smoke,image_507.jpg,smoke,train
+Train/Smoke,image_508.jpg,smoke,train
+Train/Smoke,image_509.jpg,smoke,train
+Train/Smoke,image_51.jpg,smoke,train
+Train/Smoke,image_510.jpg,smoke,train
+Train/Smoke,image_511.jpg,smoke,train
+Train/Smoke,image_512.jpg,smoke,val
+Train/Smoke,image_513.jpg,smoke,train
+Train/Smoke,image_514.jpg,smoke,train
+Train/Smoke,image_515.jpg,none,train
+Train/Smoke,image_516.jpg,smoke,train
+Train/Smoke,image_517.jpg,smoke,train
+Train/Smoke,image_518.jpg,smoke,train
+Train/Smoke,image_519.jpg,smoke,val
+Train/Smoke,image_52.jpg,smoke,train
+Train/Smoke,image_520.jpg,smoke,val
+Train/Smoke,image_521.jpg,smoke,val
+Train/Smoke,image_522.jpg,smoke,train
+Train/Smoke,image_523.jpg,smoke,train
+Train/Smoke,image_524.jpg,smoke,val
+Train/Smoke,image_525.jpg,smoke,train
+Train/Smoke,image_526.jpg,smoke,train
+Train/Smoke,image_527.jpg,smoke,train
+Train/Smoke,image_528.jpg,smoke,train
+Train/Smoke,image_529.jpg,smoke,train
+Train/Smoke,image_53.jpg,smoke,train
+Train/Smoke,image_530.jpg,smoke,val
+Train/Smoke,image_531.jpg,smoke,train
+Train/Smoke,image_532.jpg,smoke,train
+Train/Smoke,image_533.jpg,smoke,val
+Train/Smoke,image_534.jpg,smoke,train
+Train/Smoke,image_535.jpg,smoke,val
+Train/Smoke,image_536.jpg,smoke,train
+Train/Smoke,image_537.jpg,smoke,train
+Train/Smoke,image_538.jpg,smoke,val
+Train/Smoke,image_539.jpg,smoke,val
+Train/Smoke,image_54.jpg,smoke,train
+Train/Smoke,image_540.jpg,smoke,train
+Train/Smoke,image_541.jpg,smoke,val
+Train/Smoke,image_542.jpg,smoke,train
+Train/Smoke,image_543.jpg,smoke,train
+Train/Smoke,image_544.jpg,smoke,train
+Train/Smoke,image_545.jpg,smoke,val
+Train/Smoke,image_546.jpg,smoke,train
+Train/Smoke,image_547.jpg,smoke,train
+Train/Smoke,image_548.jpg,smoke,train
+Train/Smoke,image_549.jpg,smoke,train
+Train/Smoke,image_55.jpg,smoke,train
+Train/Smoke,image_550.jpg,smoke,val
+Train/Smoke,image_551.jpg,smoke,val
+Train/Smoke,image_552.jpg,smoke,train
+Train/Smoke,image_553.jpg,smoke,train
+Train/Smoke,image_554.jpg,smoke,train
+Train/Smoke,image_555.jpg,smoke,val
+Train/Smoke,image_556.jpg,smoke,train
+Train/Smoke,image_557.jpg,smoke,val
+Train/Smoke,image_558.jpg,smoke,train
+Train/Smoke,image_559.jpg,smoke,train
+Train/Smoke,image_56.jpg,smoke,train
+Train/Smoke,image_560.jpg,smoke,train
+Train/Smoke,image_561.jpg,smoke,train
+Train/Smoke,image_562.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_563.jpg,smoke,train
+Train/Smoke,image_564.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_565.jpg,smoke,train
+Train/Smoke,image_566.jpg,smoke,train
+Train/Smoke,image_567.jpg,smoke,train
+Train/Smoke,image_568.jpg,smoke,train
+Train/Smoke,image_569.jpg,smoke,val
+Train/Smoke,image_57.jpg,smoke,train
+Train/Smoke,image_570.jpg,smoke,train
+Train/Smoke,image_571.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_572.jpg,smoke,train
+Train/Smoke,image_573.jpg,smoke,train
+Train/Smoke,image_574.jpg,smoke,train
+Train/Smoke,image_575.jpg,smoke,train
+Train/Smoke,image_576.jpg,smoke,train
+Train/Smoke,image_577.jpg,smoke,train
+Train/Smoke,image_578.jpg,smoke,train
+Train/Smoke,image_579.jpg,smoke,train
+Train/Smoke,image_58.jpg,smoke,train
+Train/Smoke,image_580.jpg,smoke,train
+Train/Smoke,image_581.jpg,smoke,train
+Train/Smoke,image_582.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_583.jpg,none,train
+Train/Smoke,image_584.jpg,smoke,train
+Train/Smoke,image_585.jpg,smoke,train
+Train/Smoke,image_586.jpg,smoke,train
+Train/Smoke,image_587.jpg,smoke,train
+Train/Smoke,image_588.jpg,smoke,train
+Train/Smoke,image_589.jpg,smoke,train
+Train/Smoke,image_59.jpg,smoke,train
+Train/Smoke,image_590.jpg,smoke,train
+Train/Smoke,image_591.jpg,smoke,val
+Train/Smoke,image_592.jpg,smoke,train
+Train/Smoke,image_593.jpg,smoke,train
+Train/Smoke,image_594.jpg,smoke,train
+Train/Smoke,image_595.jpg,smoke,train
+Train/Smoke,image_596.jpg,smoke,train
+Train/Smoke,image_597.jpg,smoke,train
+Train/Smoke,image_598.jpg,smoke,train
+Train/Smoke,image_599.jpg,smoke,train
+Train/Smoke,image_6.jpg,smoke,train
+Train/Smoke,image_60.jpg,smoke,train
+Train/Smoke,image_600.jpg,smoke,train
+Train/Smoke,image_601.jpg,smoke,train
+Train/Smoke,image_602.jpg,smoke,train
+Train/Smoke,image_603.jpg,smoke,train
+Train/Smoke,image_604.jpg,smoke,train
+Train/Smoke,image_605.jpg,smoke,val
+Train/Smoke,image_606.jpg,smoke,val
+Train/Smoke,image_607.jpg,smoke,train
+Train/Smoke,image_608.jpg,smoke,train
+Train/Smoke,image_609.jpg,smoke,train
+Train/Smoke,image_61.jpg,smoke,train
+Train/Smoke,image_610.jpg,smoke,train
+Train/Smoke,image_611.jpg,smoke,train
+Train/Smoke,image_612.jpg,smoke,train
+Train/Smoke,image_613.jpg,smoke,train
+Train/Smoke,image_614.jpg,smoke,train
+Train/Smoke,image_615.jpg,smoke,train
+Train/Smoke,image_616.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_617.jpg,smoke,train
+Train/Smoke,image_618.jpg,smoke,train
+Train/Smoke,image_619.jpg,smoke,val
+Train/Smoke,image_62.jpg,smoke,train
+Train/Smoke,image_620.jpg,smoke,train
+Train/Smoke,image_621.jpg,smoke,train
+Train/Smoke,image_622.jpg,smoke,train
+Train/Smoke,image_623.jpg,smoke,train
+Train/Smoke,image_624.jpg,smoke,train
+Train/Smoke,image_625.jpg,smoke,train
+Train/Smoke,image_626.jpg,smoke,train
+Train/Smoke,image_627.jpg,smoke,train
+Train/Smoke,image_628.jpg,smoke,val
+Train/Smoke,image_629.jpg,smoke,train
+Train/Smoke,image_63.jpg,smoke,train
+Train/Smoke,image_630.jpg,smoke,train
+Train/Smoke,image_631.jpg,smoke,val
+Train/Smoke,image_632.jpg,smoke,train
+Train/Smoke,image_633.jpg,smoke,val
+Train/Smoke,image_634.jpg,smoke,train
+Train/Smoke,image_635.jpg,smoke,train
+Train/Smoke,image_636.jpg,smoke,train
+Train/Smoke,image_637.jpg,smoke,train
+Train/Smoke,image_638.jpg,smoke,train
+Train/Smoke,image_639.jpg,smoke,train
+Train/Smoke,image_64.jpg,smoke,train
+Train/Smoke,image_640.jpg,smoke,val
+Train/Smoke,image_641.jpg,smoke,val
+Train/Smoke,image_642.jpg,smoke,val
+Train/Smoke,image_643.jpg,smoke,train
+Train/Smoke,image_644.jpg,smoke,train
+Train/Smoke,image_645.jpg,smoke,val
+Train/Smoke,image_646.jpg,smoke,train
+Train/Smoke,image_647.jpg,smoke,val
+Train/Smoke,image_648.jpg,smoke,train
+Train/Smoke,image_649.jpg,smoke,train
+Train/Smoke,image_65.jpg,smoke,train
+Train/Smoke,image_650.jpg,smoke,train
+Train/Smoke,image_651.jpg,smoke,train
+Train/Smoke,image_652.jpg,smoke,train
+Train/Smoke,image_653.jpg,smoke,train
+Train/Smoke,image_654.jpg,smoke,train
+Train/Smoke,image_655.jpg,smoke,train
+Train/Smoke,image_656.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_657.jpg,smoke,train
+Train/Smoke,image_658.jpg,smoke,train
+Train/Smoke,image_659.jpg,smoke,train
+Train/Smoke,image_66.jpg,smoke,val
+Train/Smoke,image_660.jpg,smoke,train
+Train/Smoke,image_661.jpg,smoke,train
+Train/Smoke,image_662.jpg,smoke,train
+Train/Smoke,image_663.jpg,smoke,train
+Train/Smoke,image_664.jpg,smoke,train
+Train/Smoke,image_665.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_666.jpg,smoke,train
+Train/Smoke,image_667.jpg,smoke,val
+Train/Smoke,image_668.jpg,smoke,train
+Train/Smoke,image_669.jpg,smoke,train
+Train/Smoke,image_67.jpg,smoke,train
+Train/Smoke,image_670.jpg,smoke,train
+Train/Smoke,image_671.jpg,smoke,train
+Train/Smoke,image_672.jpg,smoke,val
+Train/Smoke,image_673.jpg,smoke,train
+Train/Smoke,image_674.jpg,smoke,train
+Train/Smoke,image_675.jpg,smoke,train
+Train/Smoke,image_676.jpg,smoke,train
+Train/Smoke,image_677.jpg,smoke,val
+Train/Smoke,image_678.jpg,smoke,train
+Train/Smoke,image_679.jpg,smoke,val
+Train/Smoke,image_68.jpg,smoke,train
+Train/Smoke,image_680.jpg,smoke,train
+Train/Smoke,image_681.jpg,smoke,train
+Train/Smoke,image_682.jpg,smoke,train
+Train/Smoke,image_683.jpg,smoke,val
+Train/Smoke,image_684.jpg,smoke,train
+Train/Smoke,image_685.jpg,smoke,train
+Train/Smoke,image_686.jpg,smoke,train
+Train/Smoke,image_687.jpg,smoke,train
+Train/Smoke,image_688.jpg,smoke,train
+Train/Smoke,image_689.jpg,smoke,train
+Train/Smoke,image_69.jpg,smoke,val
+Train/Smoke,image_690.jpg,smoke,train
+Train/Smoke,image_691.jpg,smoke,train
+Train/Smoke,image_692.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_693.jpg,smoke,train
+Train/Smoke,image_694.jpg,smoke,train
+Train/Smoke,image_695.jpg,smoke,train
+Train/Smoke,image_696.jpg,smoke,val
+Train/Smoke,image_697.jpg,smoke,train
+Train/Smoke,image_698.jpg,smoke,train
+Train/Smoke,image_699.jpg,smoke,val
+Train/Smoke,image_7.jpg,smoke,val
+Train/Smoke,image_70.jpg,smoke,train
+Train/Smoke,image_700.jpg,smoke,val
+Train/Smoke,image_701.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_702.jpg,smoke,train
+Train/Smoke,image_703.jpg,smoke,train
+Train/Smoke,image_704.jpg,smoke,train
+Train/Smoke,image_705.jpg,smoke,train
+Train/Smoke,image_706.jpg,smoke,train
+Train/Smoke,image_707.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_708.jpg,smoke,train
+Train/Smoke,image_709.jpg,smoke,train
+Train/Smoke,image_71.jpg,smoke,train
+Train/Smoke,image_710.jpg,smoke,train
+Train/Smoke,image_711.jpg,smoke,train
+Train/Smoke,image_712.jpg,smoke,train
+Train/Smoke,image_713.jpg,smoke,train
+Train/Smoke,image_714.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_715.jpg,smoke,train
+Train/Smoke,image_716.jpg,smoke,train
+Train/Smoke,image_717.jpg,smoke,train
+Train/Smoke,image_718.jpg,smoke,train
+Train/Smoke,image_719.jpg,smoke,train
+Train/Smoke,image_72.jpg,smoke,train
+Train/Smoke,image_720.jpg,smoke,train
+Train/Smoke,image_721.jpg,smoke,val
+Train/Smoke,image_722.jpg,smoke,train
+Train/Smoke,image_723.jpg,smoke,train
+Train/Smoke,image_724.jpg,smoke,train
+Train/Smoke,image_725.jpg,smoke,train
+Train/Smoke,image_726.jpg,smoke,train
+Train/Smoke,image_727.jpg,smoke,train
+Train/Smoke,image_728.jpg,smoke,train
+Train/Smoke,image_729.jpg,smoke,train
+Train/Smoke,image_73.jpg,smoke,train
+Train/Smoke,image_730.jpg,smoke,val
+Train/Smoke,image_731.jpg,smoke,train
+Train/Smoke,image_732.jpg,smoke,train
+Train/Smoke,image_733.jpg,smoke,val
+Train/Smoke,image_734.jpg,smoke,train
+Train/Smoke,image_735.jpg,smoke,train
+Train/Smoke,image_736.jpg,smoke,train
+Train/Smoke,image_737.jpg,smoke,val
+Train/Smoke,image_738.jpg,smoke,train
+Train/Smoke,image_739.jpg,smoke,train
+Train/Smoke,image_74.jpg,smoke,val
+Train/Smoke,image_740.jpg,smoke,train
+Train/Smoke,image_741.jpg,smoke,train
+Train/Smoke,image_742.jpg,smoke,val
+Train/Smoke,image_743.jpg,smoke,train
+Train/Smoke,image_744.jpg,smoke,train
+Train/Smoke,image_745.jpg,smoke,train
+Train/Smoke,image_746.jpg,smoke,train
+Train/Smoke,image_747.jpg,smoke,train
+Train/Smoke,image_748.jpg,smoke,train
+Train/Smoke,image_749.jpg,smoke,train
+Train/Smoke,image_75.jpg,smoke,val
+Train/Smoke,image_750.jpg,smoke,train
+Train/Smoke,image_751.jpg,smoke,train
+Train/Smoke,image_752.jpg,smoke,train
+Train/Smoke,image_753.jpg,smoke,val
+Train/Smoke,image_754.jpg,smoke,train
+Train/Smoke,image_755.jpg,smoke,train
+Train/Smoke,image_756.jpg,smoke,val
+Train/Smoke,image_757.jpg,smoke,train
+Train/Smoke,image_758.jpg,smoke,train
+Train/Smoke,image_759.jpg,smoke,val
+Train/Smoke,image_76.jpg,smoke,train
+Train/Smoke,image_760.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_761.jpg,smoke,train
+Train/Smoke,image_762.jpg,smoke,train
+Train/Smoke,image_763.jpg,smoke,train
+Train/Smoke,image_764.jpg,smoke,train
+Train/Smoke,image_765.jpg,smoke,train
+Train/Smoke,image_766.jpg,smoke,train
+Train/Smoke,image_767.jpg,smoke,val
+Train/Smoke,image_768.jpg,smoke,train
+Train/Smoke,image_769.jpg,smoke,train
+Train/Smoke,image_77.jpg,smoke,val
+Train/Smoke,image_770.jpg,smoke,train
+Train/Smoke,image_771.jpg,smoke,train
+Train/Smoke,image_772.jpg,smoke,train
+Train/Smoke,image_773.jpg,smoke,train
+Train/Smoke,image_774.jpg,smoke,val
+Train/Smoke,image_775.jpg,smoke,train
+Train/Smoke,image_776.jpg,smoke,train
+Train/Smoke,image_777.jpg,smoke,val
+Train/Smoke,image_778.jpg,smoke,train
+Train/Smoke,image_779.jpg,smoke,train
+Train/Smoke,image_78.jpg,smoke,train
+Train/Smoke,image_780.jpg,smoke,train
+Train/Smoke,image_781.jpg,smoke,train
+Train/Smoke,image_782.jpg,smoke,train
+Train/Smoke,image_783.jpg,smoke,train
+Train/Smoke,image_784.jpg,smoke,train
+Train/Smoke,image_785.jpg,smoke,train
+Train/Smoke,image_786.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_787.jpg,smoke,val
+Train/Smoke,image_788.jpg,smoke,val
+Train/Smoke,image_789.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_79.jpg,smoke,train
+Train/Smoke,image_790.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_791.jpg,smoke,train
+Train/Smoke,image_792.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_793.jpg,smoke,val
+Train/Smoke,image_794.jpg,smoke,train
+Train/Smoke,image_795.jpg,smoke,train
+Train/Smoke,image_796.jpg,smoke,train
+Train/Smoke,image_797.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_798.jpg,smoke,train
+Train/Smoke,image_799.jpg,smoke,train
+Train/Smoke,image_8.jpg,smoke,val
+Train/Smoke,image_80.jpg,smoke,val
+Train/Smoke,image_800.jpg,smoke,train
+Train/Smoke,image_801.jpg,smoke,train
+Train/Smoke,image_802.jpg,smoke,train
+Train/Smoke,image_803.jpg,smoke,train
+Train/Smoke,image_804.jpg,smoke,train
+Train/Smoke,image_805.jpg,smoke,train
+Train/Smoke,image_806.jpg,smoke,train
+Train/Smoke,image_807.jpg,smoke,train
+Train/Smoke,image_808.jpg,smoke,train
+Train/Smoke,image_809.jpg,smoke,train
+Train/Smoke,image_81.jpg,smoke,train
+Train/Smoke,image_810.jpg,smoke,val
+Train/Smoke,image_811.jpg,smoke,train
+Train/Smoke,image_812.jpg,smoke,train
+Train/Smoke,image_813.jpg,smoke,val
+Train/Smoke,image_814.jpg,smoke,train
+Train/Smoke,image_815.jpg,smoke,train
+Train/Smoke,image_816.jpg,smoke,train
+Train/Smoke,image_817.jpg,smoke,val
+Train/Smoke,image_818.jpg,smoke,train
+Train/Smoke,image_819.jpg,smoke,val
+Train/Smoke,image_82.jpg,smoke,train
+Train/Smoke,image_820.jpg,smoke,train
+Train/Smoke,image_821.jpg,smoke,train
+Train/Smoke,image_822.jpg,smoke,train
+Train/Smoke,image_823.jpg,smoke,train
+Train/Smoke,image_824.jpg,smoke,train
+Train/Smoke,image_825.jpg,smoke,train
+Train/Smoke,image_826.jpg,smoke,val
+Train/Smoke,image_827.jpg,smoke,train
+Train/Smoke,image_828.jpg,smoke,train
+Train/Smoke,image_829.jpg,smoke,val
+Train/Smoke,image_83.jpg,smoke,train
+Train/Smoke,image_830.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_831.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_832.jpg,smoke,train
+Train/Smoke,image_833.jpg,smoke,train
+Train/Smoke,image_834.jpg,smoke,train
+Train/Smoke,image_835.jpg,smoke,train
+Train/Smoke,image_836.jpg,smoke,val
+Train/Smoke,image_837.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_838.jpg,smoke,train
+Train/Smoke,image_839.jpg,smoke,val
+Train/Smoke,image_84.jpg,smoke,train
+Train/Smoke,image_840.jpg,smoke,train
+Train/Smoke,image_841.jpg,smoke,train
+Train/Smoke,image_842.jpg,smoke,val
+Train/Smoke,image_843.jpg,smoke,train
+Train/Smoke,image_844.jpg,smoke,train
+Train/Smoke,image_845.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_846.jpg,smoke,train
+Train/Smoke,image_847.jpg,smoke,train
+Train/Smoke,image_848.jpg,smoke,train
+Train/Smoke,image_849.jpg,smoke,train
+Train/Smoke,image_85.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_850.jpg,smoke,val
+Train/Smoke,image_851.jpg,smoke,train
+Train/Smoke,image_852.jpg,smoke,train
+Train/Smoke,image_853.jpg,smoke,val
+Train/Smoke,image_854.jpg,smoke,val
+Train/Smoke,image_855.jpg,"['fire', 'smoke']",val
+Train/Smoke,image_856.jpg,smoke,train
+Train/Smoke,image_857.jpg,smoke,val
+Train/Smoke,image_858.jpg,smoke,train
+Train/Smoke,image_859.jpg,smoke,val
+Train/Smoke,image_86.jpg,smoke,train
+Train/Smoke,image_860.jpg,smoke,train
+Train/Smoke,image_861.jpg,smoke,train
+Train/Smoke,image_862.jpg,smoke,train
+Train/Smoke,image_863.jpg,smoke,train
+Train/Smoke,image_864.jpg,smoke,train
+Train/Smoke,image_865.jpg,smoke,train
+Train/Smoke,image_866.jpg,smoke,train
+Train/Smoke,image_867.jpg,smoke,train
+Train/Smoke,image_868.jpg,smoke,train
+Train/Smoke,image_869.jpg,smoke,train
+Train/Smoke,image_87.jpg,smoke,train
+Train/Smoke,image_870.jpg,smoke,train
+Train/Smoke,image_871.jpg,smoke,train
+Train/Smoke,image_872.jpg,smoke,train
+Train/Smoke,image_873.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_874.jpg,smoke,train
+Train/Smoke,image_875.jpg,smoke,train
+Train/Smoke,image_876.jpg,smoke,val
+Train/Smoke,image_877.jpg,smoke,train
+Train/Smoke,image_878.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_879.jpg,smoke,val
+Train/Smoke,image_88.jpg,smoke,train
+Train/Smoke,image_880.jpg,smoke,train
+Train/Smoke,image_881.jpg,smoke,train
+Train/Smoke,image_882.jpg,smoke,val
+Train/Smoke,image_883.jpg,smoke,train
+Train/Smoke,image_884.jpg,smoke,train
+Train/Smoke,image_885.jpg,smoke,train
+Train/Smoke,image_886.jpg,smoke,train
+Train/Smoke,image_887.jpg,smoke,val
+Train/Smoke,image_888.jpg,smoke,train
+Train/Smoke,image_889.jpg,smoke,train
+Train/Smoke,image_89.jpg,smoke,train
+Train/Smoke,image_890.jpg,smoke,train
+Train/Smoke,image_891.jpg,smoke,train
+Train/Smoke,image_892.jpg,smoke,train
+Train/Smoke,image_893.jpg,smoke,val
+Train/Smoke,image_894.jpg,smoke,train
+Train/Smoke,image_895.jpg,smoke,train
+Train/Smoke,image_896.jpg,smoke,train
+Train/Smoke,image_897.jpg,"['fire', 'smoke']",train
+Train/Smoke,image_898.jpg,smoke,train
+Train/Smoke,image_899.jpg,smoke,val
+Train/Smoke,image_9.jpg,smoke,train
+Train/Smoke,image_90.jpg,smoke,val
+Train/Smoke,image_91.jpg,smoke,val
+Train/Smoke,image_92.jpg,smoke,val
+Train/Smoke,image_93.jpg,smoke,train
+Train/Smoke,image_94.jpg,smoke,train
+Train/Smoke,image_95.jpg,smoke,train
+Train/Smoke,image_96.jpg,smoke,val
+Train/Smoke,image_97.jpg,smoke,train
+Train/Smoke,image_98.jpg,smoke,train
+Train/Smoke,image_99.jpg,smoke,train
