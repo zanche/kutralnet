@@ -6,9 +6,12 @@ import argparse
 import numpy as np
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import classification_report
-from datasets import datasets
+from datasets import get_dataset
+from datasets import get_preprocessing
 from models import get_model
 from models import get_model_paths
+from models import get_model_params
+from models import get_activation
 from utils.training import add_bool_arg
 from utils.training import test_model
 from utils.training import save_csv
@@ -19,6 +22,10 @@ parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
 parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
+parser.add_argument('--dataset-test', metavar='DATASET_TEST_ID', default='firenet_test',
+                    help='the dataset ID for test')
+parser.add_argument('--activation', default='softmax',
+                    help='the activation function for the model')
 parser.add_argument('--version', metavar='VERSION_ID', default=None,
                     help='the training version')
 parser.add_argument('--batch-size', default=32, type=int,
@@ -27,6 +34,12 @@ parser.add_argument('--models-path', default='models',
                     help='the path where storage the models')
 parser.add_argument('--model-params', default=None,
                     help='the params to instantiate the model')
+parser.add_argument('--dataset-flags', default=None, nargs='*',
+                    help='the datasets flags to instaciate the dataset, this \
+                        flags can be: \
+                            - (no_)one_hot: to one-hot encode or not the labels.\
+                            - (no_)distributed: to use or not a distributed representation.\
+                            - (no_)multi_label: to allow or not the use of multi-label images.')
 add_bool_arg(parser, 'preload-data', default=True, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
@@ -34,15 +47,21 @@ args = parser.parse_args()
 # user's selection
 model_id = args.model #'kutralnet'
 train_dataset_id = args.dataset #'fismo'
+test_dataset_id = args.dataset_test #'firenet_test'
 version = args.version #None
 models_root = args.models_path
+# test config
+activation_fn = args.activation # 'softmax'
 preload_data = bool(args.preload_data) #True # load dataset on-memory
 batch_size = args.batch_size #32
 must_seed = bool(args.seed)
-extra_params = args.model_params
+model_params = args.model_params
+dataset_flags = args.dataset_flags
 
-if not extra_params is None:
-    extra_params = json.loads(extra_params)
+
+if not model_params is None:
+    model_params = json.loads(model_params)
+    
 # cuda if available
 use_cuda = torch.cuda.is_available()
 torch_device = 'cpu'
@@ -60,18 +79,25 @@ if must_seed:
         torch.backends.cudnn.deterministic = True
         torch.backends.cudnn.benchmark = False        
 
-# dataset selection
-test_dataset_id = 'firenet_test'
-test_dataset = datasets[test_dataset_id]['class']
-test_num_classes = datasets[test_dataset_id]['num_classes']
+# models parameters
+config = get_model_params(model_id)
+
+# common preprocess
+transform_params = dict(img_dims=config['img_dims'])
+transform_test = get_preprocessing(config['preprocess_test'], transform_params)
+
+# dataset read
+data_params = dict(purpose='test', transform=transform_test, preload=preload_data)
+data_params.update(dict(dataset_flags=dataset_flags))
+test_data = get_dataset(test_dataset_id, params=data_params)
+
+test_num_classes = test_data.num_classes
 
 # model load
-model, config = get_model(model_id, num_classes=test_num_classes, 
-                          extra_params=extra_params)
-
-# dataset load
-transform_compose = config['preprocess_test']
-dataset = test_dataset(transform=transform_compose, preload=preload_data)
+model = get_model(model_id, num_classes=test_num_classes, 
+                  extra_params=model_params)
+# cost function
+activation = get_activation(activation_fn)
 
 # read models direclty from the repository's folder
 print('Models path:', models_root)
@@ -82,7 +108,8 @@ print('Loading model from {}'.format(model_path))
 model.load_state_dict(torch.load(model_path, 
                             map_location=torch.device(torch_device)))
 # testing
-y_true, y_pred, test_accuracy, test_time = test_model(model, dataset, 
+y_true, y_pred, test_accuracy, test_time = test_model(model, test_data, 
+                                                      activation,
                                            batch_size=batch_size, 
                                            use_cuda=use_cuda)
 
@@ -105,7 +132,7 @@ print('Area under the ROC curve', roc_auc)
 
 # confusion matrix
 print('Classification Report')
-target_names = [ dataset.labels[label]['name'] for label in dataset.labels.keys() ]
+target_names = [ test_data.labels[label]['name'] for label in test_data.labels.keys() ]
 # class discretize
 y_pred_class = np.argmax(y_pred, axis=1)
 # printing purpose only

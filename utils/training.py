@@ -45,7 +45,30 @@ def add_bool_arg(parser, name, default=False, **kwargs):
     parser.set_defaults(**{name.replace('-', '_'):default})
 # end add_bool_arg
 
-def train_model(model, criterion, optimizer, train_data, val_data, 
+def accuracy(outputs, labels, activation, one_hot_encoded=False):
+    # Accuracy
+    if not one_hot_encoded: # no one-hot encoded
+        _, predicted = torch.max(outputs.data, 1)
+        n_classes = 1
+        labels_list = labels.tolist()
+        
+    else: # more classes
+        # treshold the values
+        treshold = 0.5
+        predicted = activation(outputs).detach().clone()
+        predicted[predicted >= treshold] = 1
+        predicted[predicted < treshold] = 0
+        n_classes = outputs.shape[1]
+        
+        labels_list = labels.argmax(dim=1).tolist() # one-hot inverse
+    
+    correct = int((predicted == labels).sum().item() / n_classes)
+    total = labels.size(0)
+    
+    return correct, total, labels_list
+# end accuracy
+
+def train_model(model, criterion, optimizer, activation, train_data, val_data, 
                 epochs=100, batch_size=32, shuffle_dataset=True, scheduler=None, 
                 use_cuda=True, pin_memory=False, callbacks=None):
     # prepare dataset
@@ -92,7 +115,7 @@ def train_model(model, criterion, optimizer, train_data, val_data,
                 if use_cuda:
                     inputs = inputs.to('cuda')
                     labels = labels.to('cuda')
-
+                    
                 # zero the parameter gradients
                 optimizer.zero_grad()
 
@@ -109,13 +132,10 @@ def train_model(model, criterion, optimizer, train_data, val_data,
                 # statistics
                 running_loss += loss.item()
                 # Accuracy
-                if outputs.shape[1] == 2: # two classes
-                    correct = (outputs.argmax(dim=1) == labels).float().sum()
-                else: # more classes
-                    # treshold the values
-                    outputs[outputs >= 0.5] = 1
-                    outputs[outputs < 0.5] = 0
-                    correct = (outputs == labels).float().sum() / outputs.shape[1]
+                correct, _, _ = accuracy(outputs, 
+                                            labels, 
+                                            activation, 
+                                            one_hot_encoded=train_data.one_hot)
                 running_acc += correct
 
             epoch_loss = running_loss / data_lengths[phase]
@@ -124,7 +144,7 @@ def train_model(model, criterion, optimizer, train_data, val_data,
             loss_key = 'loss' if phase == 'train' else 'val_loss'
             acc_key = 'acc' if phase == 'train' else 'val_acc'
             history[loss_key].append(epoch_loss)
-            history[acc_key].append(epoch_acc.item())
+            history[acc_key].append(epoch_acc)
 
             print('{} Loss: {:.4f}'.format(phase.capitalize(), epoch_loss), 
                   'Acc: {:.4f}'.format(epoch_acc), end=" | ")
@@ -148,9 +168,9 @@ def train_model(model, criterion, optimizer, train_data, val_data,
         time_elapsed // 60, time_elapsed % 60))
 
     return history, best_model_wts, time_elapsed
-# end train_model
+# end train_model    
 
-def test_model(model, dataset, batch_size=32, use_cuda=True):
+def test_model(model, dataset, activation, batch_size=32, use_cuda=True):
     test_loader = torch.utils.data.DataLoader(dataset, batch_size=batch_size,
                                               shuffle=False, num_workers=2)
 
@@ -175,13 +195,17 @@ def test_model(model, dataset, batch_size=32, use_cuda=True):
                 labels = labels.to('cuda')
 
             outputs = model(images)
-
-            _, predicted = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
-            Y_test.extend(labels.tolist())
-            y_pred.extend(torch.nn.functional.softmax(outputs, dim=1).tolist())
-
+            
+            predicted, length, labels_list = accuracy(outputs, 
+                                                labels, 
+                                                activation, 
+                                                one_hot_encoded=dataset.one_hot)
+            correct += predicted
+            total += length
+            
+            Y_test.extend(labels_list)
+            y_pred.extend(activation(outputs).tolist())
+            
     time_elapsed = time.time() - since
     test_accuracy = 100 * correct / total
     print('Completed in {:.0f}m {:.0f}s'.format(

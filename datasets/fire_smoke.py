@@ -9,16 +9,33 @@ Created on Wed Jun 17 16:49:51 2020
 import os
 from torchvision import transforms
 
-from .base import BaseDataset
-from .base import datasets_path
+from datasets.base import BaseDataset
+from datasets.base import datasets_path
 
 class FireSmokeImages(BaseDataset):
-    def __init__(self, name, root_path, csv_file='dataset.csv', transform=None,
-        purpose='train', preload=False, multi_label=True):
-        super(FireSmokeImages, self).__init__(name=name, root_path=root_path, csv_file=csv_file, 
-                         transform=transform, purpose=purpose, preload=preload,
-                         multi_label=multi_label)
-            
+    def __init__(self, 
+                 name, 
+                 root_path, 
+                 csv_file='dataset.csv', 
+                 transform=None,
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True, 
+                 distributed=False, 
+                 multi_label=False):
+        super(FireSmokeImages, self).__init__(
+                name=name, 
+                root_path=root_path, 
+                csv_file=csv_file, 
+                transform=transform, 
+                purpose=purpose, 
+                preload=preload,
+                one_hot=one_hot, 
+                distributed=distributed, 
+                multi_label=multi_label
+            )
+    # end __init__
+    
     def set_labels(self):
         self.labels = {
             'none': {
@@ -37,89 +54,184 @@ class FireSmokeImages(BaseDataset):
                 'name': 'Smoke'
             }
         }
-        
-    # end __init__
+        # concatenated classes for one-hot encode
+        # if self.one_hot and self.multi_label:
+        #     self.labels['fire_smoke'] = {
+        #             'idx': self.labels['fire']['idx']
+        #                     + self.labels['smoke']['idx'],
+        #             'label': 'fire_smoke',
+        #             'name': 'Fire & Smoke'
+        #         }
+    # end set_labels
 # end FireSmokeImagesDataset
 
 class FireNetV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
-        super(FireNetV2Dataset, self).__init__(name='FireNet v2', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FireNetV2Dataset, self).__init__(
+            name='FireNet v2', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
-            csv_file='dataset.csv', transform=transform, purpose=purpose, 
-            preload=preload, multi_label=multi_label)
+            csv_file='dataset_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FireNetDataset
 
 class FireNetTestV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='test', 
-                 preload=False, multi_label=True):
-        super(FireNetTestV2Dataset, self).__init__(name='FireNet Test v2', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='test', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FireNetTestV2Dataset, self).__init__(
+            name='FireNet Test v2', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
-            csv_file='dataset_test.csv', transform=transform, purpose=purpose, 
-            preload=preload, multi_label=multi_label)
+            csv_file='dataset_test_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FireNetTestDataset
 
 class FiSmoV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
-        super(FiSmoV2Dataset, self).__init__(name='FiSmo v2', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FiSmoV2Dataset, self).__init__(
+            name='FiSmo v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset.csv', transform=transform, purpose=purpose, 
-            preload=preload, multi_label=multi_label)
+            csv_file='dataset_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FiSmoDataset
 
 class FiSmoBlackV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
-        super(FiSmoBlackV2Dataset, self).__init__(name='FiSmoBlack v2', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FiSmoBlackV2Dataset, self).__init__(
+            name='FiSmoBlack v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_black.csv', transform=transform, purpose=purpose, 
-            preload=preload, multi_label=multi_label)
+            csv_file='dataset_black_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FiSmoBlackDataset
 
 class FiSmoBalancedV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
-        super(FiSmoBalancedV2Dataset, self).__init__(name='FiSmoBalanced v2', 
+        super(FiSmoBalancedV2Dataset, self).__init__(
+            name='FiSmoBalanced v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_balanced.csv', transform=transform, 
-            purpose=purpose, preload=preload, multi_label=multi_label)
+            csv_file='dataset_balanced_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FiSmoBalancedDataset
 
 class FiSmoBalancedBlackV2Dataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
-        super(FiSmoBalancedBlackV2Dataset, self).__init__(name='FiSmoBalancedBlack v2', 
+        super(FiSmoBalancedBlackV2Dataset, self).__init__(
+            name='FiSmoBalancedBlack v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_balanced_black.csv', transform=transform, 
-            purpose=purpose, preload=preload, multi_label=multi_label)
+            csv_file='dataset_balanced_black_v2.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FiSmoBalancedBlackDataset
 
 class FireFlameDataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
-        super(FireFlameDataset, self).__init__(name='FireFlame', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FireFlameDataset, self).__init__(
+            name='FireFlame', 
             root_path=os.path.join(datasets_path, 'FireFlameDataset'),
-            csv_file='dataset.csv', transform=transform, 
-            purpose=purpose, preload=preload, multi_label=multi_label)
+            csv_file='dataset.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FireFlameDataset
 
 class FireFlameTestDataset(FireSmokeImages):
-    def __init__(self, transform=None, purpose='test', 
-                 preload=False, multi_label=True):
-        super(FireFlameTestDataset, self).__init__(name='FireFlame Test', 
+    def __init__(self, 
+                 transform=None, 
+                 purpose='test', 
+                 preload=False, 
+                 one_hot=True,
+                 distributed=False,
+                 multi_label=True):
+        super(FireFlameTestDataset, self).__init__(
+            name='FireFlame Test', 
             root_path=os.path.join(datasets_path, 'FireFlameDataset'),
-            csv_file='dataset_test.csv', transform=transform, 
-            purpose=purpose, preload=preload, multi_label=multi_label)
+            csv_file='dataset_test.csv', 
+            transform=transform, 
+            purpose=purpose, 
+            preload=preload, 
+            one_hot=one_hot,
+            distributed=distributed,
+            multi_label=multi_label)
     # end __init__
 # end FireFlameDataset
 

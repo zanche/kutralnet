@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append('..')
+
 from datasets.base import BaseDataset
 from datasets.base import datasets_path
 from torchvision import transforms
@@ -10,11 +10,9 @@ class ImageNetDataset(BaseDataset):
         purpose='train', preload=False):
         super().__init__(name='ImageNet', root_path=os.path.join(datasets_path, 'ImageNetDataset'),
             csv_file=csv_file, transform=transform, purpose=purpose, preload=preload)
-
-        self.labels = self.get_labels()
     # end __init__
 
-    def get_labels(self):
+    def set_labels(self):
         print('Processing labels...')
         labels = dict()
         for idx, wnid in enumerate(self.data['class'].unique()):
@@ -25,7 +23,7 @@ class ImageNetDataset(BaseDataset):
             }
             labels.update({wnid: label})
         print("{} labels ok".format(len(labels)))
-        return labels
+        self.labels = labels
     # end get_labels
 # end ImageNetDataset
 

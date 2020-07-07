@@ -18,12 +18,20 @@ from datasets.fire_smoke import FireFlameTestDataset
 
 class CombinedDataset(BaseDataset):
     
-    def __init__(self, dataset1, dataset2, name=None, transform=None,
-        purpose='train', preload=False, multi_label=False):
-        self.dataset1 = dataset1(transform=transform, purpose=purpose, 
-                                 preload=False, multi_label=False)
-        self.dataset2 = dataset2(transform=transform, purpose=purpose, 
-                                 preload=False, multi_label=False)
+    def __init__(self, dataset1, dataset2, 
+                 name=None, 
+                 transform=None,
+                 purpose='train', 
+                 preload=False, 
+                 multi_label=False):
+        self.dataset1 = dataset1(transform=transform, 
+                                 purpose=purpose, 
+                                 preload=False, 
+                                 multi_label=False)
+        self.dataset2 = dataset2(transform=transform, 
+                                 purpose=purpose, 
+                                 preload=False, 
+                                 multi_label=False)
         root_path = os.path.commonpath([self.dataset1.root_path, 
                                         self.dataset2.root_path])
         if name is None:
@@ -50,12 +58,18 @@ class CombinedDataset(BaseDataset):
     
 class FireFlameV2Dataset(CombinedDataset):
     
-    def __init__(self, transform=None, purpose='train', 
-                 preload=False, multi_label=True):
+    def __init__(self, 
+                 transform=None, 
+                 purpose='train', 
+                 preload=False, 
+                 multi_label=True):
         super(FireFlameV2Dataset, self).__init__(
             FireNetV2Dataset, FireFlameDataset,
-            name='FireFlame v2', transform=transform, purpose=purpose,
-            preload=preload, multi_label=multi_label)
+            name='FireFlame v2', 
+            transform=transform, 
+            purpose=purpose,
+            preload=preload, 
+            multi_label=multi_label)
     
 class FireFlameTestV2Dataset(CombinedDataset):
     
@@ -63,8 +77,11 @@ class FireFlameTestV2Dataset(CombinedDataset):
                  preload=False, multi_label=True):
         super(FireFlameTestV2Dataset, self).__init__(
             FireNetTestV2Dataset, FireFlameTestDataset,
-            name='FireFlame Test v2', transform=transform, purpose=purpose,
-            preload=preload, multi_label=multi_label)
+            name='FireFlame Test v2', 
+            transform=transform, 
+            purpose=purpose,
+            preload=preload, 
+            multi_label=multi_label)
         
 if __name__ == '__main__':
     transform_compose = transforms.Compose([

@@ -3,6 +3,7 @@ import torch
 import pandas as pd
 from thop import profile, clever_format
 from models import get_model
+from models import get_model_params
 
 def model_profile(model, config):
     img_dims = config['img_dims']
@@ -17,7 +18,8 @@ def model_profile(model, config):
 
 def load_model_profile(model_name, num_classes=2, extra_params=None):
     # model selection
-    model, config = get_model(model_name, extra_params=extra_params)
+    config = get_model_params(model_name)
+    model = get_model(model_name, extra_params=extra_params)
     return model_profile(model, config)
 
 def model_size(model_path):

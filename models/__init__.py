@@ -8,11 +8,30 @@ Created on Fri Jun 12 00:26:58 2020
 import os
 import importlib
 from torch import optim
+from torch.nn import Sigmoid
+from torch.nn import LogSoftmax
 from torch.nn import CrossEntropyLoss
 from torch.nn import BCEWithLogitsLoss
-from torchvision import transforms
+
 from .libs.optim_nadam import Nadam
 
+
+# activations and cost function
+activations = dict()
+
+activations['softmax'] = dict(
+        loss= CrossEntropyLoss,
+        loss_params= None,
+        activation= LogSoftmax,
+        activation_params= dict(dim=1)
+    )
+
+activations['sigmoid'] = dict(
+        loss= BCEWithLogitsLoss,
+        loss_params= None,
+        activation= Sigmoid,
+        activation_params= None
+    )
 
 models = dict()
 models['firenet'] = dict(
@@ -23,18 +42,9 @@ models['firenet'] = dict(
         module_name= 'models.firenet_pt',
         optimizer= optim.Adam,
         optimizer_params= dict(eps= 1e-6),
-        preprocess_train= transforms.Compose([    
-                       transforms.Resize((64, 64)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((64, 64)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((64, 64)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -55,18 +65,9 @@ models['octfiresnet'] = dict(
         module_name= 'models.octfiresnet',
         optimizer= Nadam,
         optimizer_params= dict(lr= 1e-4, eps= 1e-7),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((96, 96)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((96, 96)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((96, 96)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -79,18 +80,9 @@ models['resnet'] = dict(
         module_name= 'models.resnet',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -103,18 +95,9 @@ models['kutralnet'] = dict(
         module_name= 'models.kutralnet',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= optim.lr_scheduler.StepLR,
         scheduler_params= dict(step_size=85)
     )
@@ -127,18 +110,9 @@ models['kutralnetoct'] = dict(
         module_name= 'models.kutralnetoct',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -151,18 +125,9 @@ models['kutralnet_mobile'] =  dict(
         module_name= 'models.kutralnet_mobile',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -175,18 +140,9 @@ models['kutralnet_mobileoct'] = dict(
         module_name= 'models.kutralnet_mobileoct',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -199,18 +155,9 @@ models['kutralnet_pre'] = dict(
         module_name= 'models.kutralnet',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -223,18 +170,9 @@ models['kutralnet_mobileoct_pre'] = dict(
         module_name= 'models.kutralnet_mobileoct',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((84, 84)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -247,18 +185,9 @@ models['resnet18'] = dict(
         module_name= 'models.resnet',
         optimizer= optim.Adam,
         optimizer_params= dict(),
-        preprocess_train= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_val= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
-        preprocess_test= transforms.Compose([
-                       transforms.Resize((224, 224)), #redimension
-                       transforms.ToTensor()
-                    ]),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
     )
@@ -301,37 +230,53 @@ def get_model_paths(models_root, model_name, dataset_name, version=None,
     return save_path, model_path
 # end get_paths
 
-def get_model(model_id='kutralnet', num_classes=2, extra_params=None):
-    model, config = None, None
+def get_model_params(model_id='kutralnet'):
+    params = None
     if model_id in models:
-        config = models[model_id]
-        module = importlib.import_module(config['module_name'])        
-        model = getattr(module, config['class_name'])
-        params = {'classes': num_classes }
-
-        if extra_params is not None:
-            params.update(extra_params)
-
-        model = model(**params)
+        params = models[model_id]        
     else:
-        raise ValueError('Must choose from a model available' + str(models.keys()))
+        raise ValueError('Must choose a registered model', models.keys())
+    
+    return params
+    
+def get_model(model_id='kutralnet', num_classes=2, extra_params=None):
+    model = None
+    config = get_model_params(model_id)
+    module = importlib.import_module(config['module_name'])        
+    model = getattr(module, config['class_name'])
+    params = {'classes': num_classes }
 
-    return model, config
+    if not extra_params is None:
+        params.update(extra_params)
+
+    model = model(**params)
+
+    return model
 # end get_model
 
 
-def get_loss(loss_name='ce'):
-    losses = [
-        'ce' # CrossEntropy
-        'bce' #BinaryCrossEntropy
-        ]
+def get_loss(act_id='softmax'):
+    if not act_id in activations:
+        raise ValueError('Must choose a registered cost function', activations.keys())
+        
+    loss_class = activations[act_id]['loss']
+    params = activations[act_id]['loss_params']
     
-    if loss_name == 'ce':
-        # Cross Entropy binary classification
-        return CrossEntropyLoss()
-    elif loss_name == 'bce':
-        # Binary Cross Entropy with logits for hot-encoded labels
-        return BCEWithLogitsLoss()
+    if not params is None:
+        return loss_class(**params)
     else:
-        raise ValueError('Must choose a registered loss function', losses)
+        return loss_class()
 # end get_loss
+
+def get_activation(act_id='softmax'):
+    if not act_id in activations:
+        raise ValueError('Must choose a registered activation function', activations.keys())
+        
+    activation_class = activations[act_id]['activation']
+    params = activations[act_id]['activation_params']
+    
+    if not params is None:
+        return activation_class(**params)
+    else:
+        return activation_class()
+# end get_activation
