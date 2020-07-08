@@ -11,7 +11,7 @@
 # with smoke, making multi-label images
 
 printf  "Starting download of dataset...\n"
-#wget "https://github.com/DeepQuestAI/Fire-Smoke-Dataset/releases/download/v1/FIRE-SMOKE-DATASET.zip" ""
+wget "https://github.com/DeepQuestAI/Fire-Smoke-Dataset/releases/download/v1/FIRE-SMOKE-DATASET.zip" ""
 
 printf "Unzipping\n"
 unzip -qq "FIRE-SMOKE-DATASET.zip"

@@ -144,11 +144,11 @@ test_results = classification_report(y_true, y_pred_class,
                         target_names=target_names, output_dict=True)
 
 # testing summary
-keys = ['Version', 'Testing time (s)', 'AUROC value', 'Testing accuracy',
-        'Using CUDA', 'Batch size']
+keys = ['Version', 'Test dataset', 'Testing time (s)', 'AUROC value', 
+        'Testing accuracy', 'Using CUDA', 'Batch size']
 test_accuracy /= 100
-values = [str(version), test_time, roc_auc, test_accuracy,
-          use_cuda, batch_size]
+values = [str(version), test_data, test_time, roc_auc, 
+          test_accuracy, use_cuda, batch_size]
 
 for label in target_names:
     for k in test_results[label]:
@@ -158,6 +158,6 @@ for label in target_names:
 testing_summary = list(zip(keys, values))
 
 save_csv(testing_summary, 
-         file_path=os.path.join(save_path, 'testing_summary.csv'),
+         file_path=os.path.join(save_path, '{}_testing_summary.csv'.format(test_dataset_id)),
          header=False,
          index=False)
