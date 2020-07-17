@@ -21,8 +21,8 @@ class FireSmokeImages(BaseDataset):
                  purpose='train', 
                  preload=False, 
                  one_hot=True, 
-                 distributed=False, 
-                 multi_label=False):
+                 distributed=True, 
+                 multi_label=True):
         super(FireSmokeImages, self).__init__(
                 name=name, 
                 root_path=root_path, 
@@ -71,7 +71,7 @@ class FireNetV2Dataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FireNetV2Dataset, self).__init__(
             name='FireNet v2', 
@@ -92,7 +92,7 @@ class FireNetTestV2Dataset(FireSmokeImages):
                  purpose='test', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FireNetTestV2Dataset, self).__init__(
             name='FireNet Test v2', 
@@ -113,7 +113,7 @@ class FiSmoV2Dataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FiSmoV2Dataset, self).__init__(
             name='FiSmo v2', 
@@ -134,7 +134,7 @@ class FiSmoBlackV2Dataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FiSmoBlackV2Dataset, self).__init__(
             name='FiSmoBlack v2', 
@@ -155,7 +155,7 @@ class FiSmoBalancedV2Dataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
         super(FiSmoBalancedV2Dataset, self).__init__(
@@ -177,7 +177,7 @@ class FiSmoBalancedBlackV2Dataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
         super(FiSmoBalancedBlackV2Dataset, self).__init__(
@@ -199,7 +199,7 @@ class FireFlameDataset(FireSmokeImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FireFlameDataset, self).__init__(
             name='FireFlame', 
@@ -220,7 +220,7 @@ class FireFlameTestDataset(FireSmokeImages):
                  purpose='test', 
                  preload=False, 
                  one_hot=True,
-                 distributed=False,
+                 distributed=True,
                  multi_label=True):
         super(FireFlameTestDataset, self).__init__(
             name='FireFlame Test', 

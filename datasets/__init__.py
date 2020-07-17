@@ -64,12 +64,12 @@ datasets['fismo_balanced_black'] = FiSmoBalancedBlackDataset
 # imagenet dataset
 datasets['imagenet']= ImageNetDataset
 # relabeled (revised) set of datasets
-datasets['firenet_relabel'] = FireNetRDataset
-datasets['firenet_test_relabel'] = FireNetTestRDataset
-datasets['fismo_relabel'] = FiSmoRDataset
-datasets['fismo_black_relabel'] = FiSmoBlackRDataset
-datasets['fismo_balanced_relabel'] = FiSmoBalancedRDataset
-datasets['fismo_balanced_black_relabel'] = FiSmoBalancedBlackRDataset
+datasets['firenet_relabeled'] = FireNetRDataset
+datasets['firenet_test_relabeled'] = FireNetTestRDataset
+datasets['fismo_relabeled'] = FiSmoRDataset
+datasets['fismo_black_relabeled'] = FiSmoBlackRDataset
+datasets['fismo_balanced_relabeled'] = FiSmoBalancedRDataset
+datasets['fismo_balanced_black_relabeled'] = FiSmoBalancedBlackRDataset
 # smoke datasets
 datasets['smokeset']= SmokeDataset
 datasets['smokeset_test']= SmokeTestDataset
@@ -113,7 +113,8 @@ def get_dataset(dataset_id, params=None):
                 # remove to be parsed in class instance
                 del dataset_params['dataset_flags']
         
-        return dataset_class(**dataset_params)
+            return dataset_class(**dataset_params)
+        else:
+            return dataset_class()
     else:
         raise ValueError('Must choose a registered dataset', datasets.keys())
-

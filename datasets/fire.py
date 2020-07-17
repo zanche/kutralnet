@@ -238,7 +238,7 @@ class FiSmoBalancedBlackRDataset(FireImages):
                  purpose='train', 
                  preload=False, 
                  one_hot=False):
-        super(FiSmoBalancedBlackDataset, self).__init__(
+        super(FiSmoBalancedBlackRDataset, self).__init__(
             name='FiSmoBalancedBlack-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_black_v2.csv', 

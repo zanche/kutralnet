@@ -3,6 +3,7 @@ import ast
 import math
 import time
 import torch
+import collections
 import pandas as pd
 from PIL import Image
 from torch.utils.data import Dataset
@@ -240,8 +241,8 @@ class BaseDataset(Dataset):
         
         def getValidId(label):
             if not label in self.labels:
-                notice = 'Warning: no label \'{}\' registered! '.format(label)
-                notice += 'default label \'{}\' used instead'.format(
+                notice = 'Warning: label \'{}\' no registered! '.format(label)
+                notice += 'default label \'{}\' is used instead.'.format(
                       self.label_default['label'])
                 
                 if not label in self.labels_missing:
@@ -306,7 +307,7 @@ class BaseDataset(Dataset):
     # end label2tensor
     
     def labels_describe(self, full=False):
-        """Print the classes summary of the dataset.
+        """Print the classes summary of the dataset's CSV.
 
         Parameters
         ----------
@@ -324,6 +325,24 @@ class BaseDataset(Dataset):
         print(self.data[cols].groupby(groups).agg(['count']))
     # end labels_describe
     
+    def print_summary(self):
+        """Print the images per label in the dataset."""
+        labels = dict()
+        
+        for idx in range(len(self.data)):
+            # read label        
+            label = self.data.iloc[idx]['class']
+            label_id = str(self.label2idx(label))
+            
+            if not label_id in labels:
+                labels[label_id] = 0
+                
+            labels[label_id] += 1
+            
+        labels = collections.OrderedDict(sorted(labels.items()))
+        
+        for k in labels.keys():
+            print(k, labels[k])
     
     def split(self, size=0.2, persist=False):
         """Split the dataset into training and validation at specified size.

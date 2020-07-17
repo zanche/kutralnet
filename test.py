@@ -37,9 +37,9 @@ parser.add_argument('--model-params', default=None,
 parser.add_argument('--dataset-flags', default=None, nargs='*',
                     help='the datasets flags to instaciate the dataset, this \
                         flags can be: \
-                            - (no_)one_hot: to one-hot encode or not the labels.\
-                            - (no_)distributed: to use or not a distributed representation.\
-                            - (no_)multi_label: to allow or not the use of multi-label images.')
+                            - [no_]one_hot: to one-hot encode or not the labels.\
+                            - [no_]distributed: to use or not a distributed representation.\
+                            - [no_]multi_label: to allow or not the use of multi-label images.')
 add_bool_arg(parser, 'preload-data', default=True, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
@@ -108,10 +108,11 @@ print('Loading model from {}'.format(model_path))
 model.load_state_dict(torch.load(model_path, 
                             map_location=torch.device(torch_device)))
 # testing
-y_true, y_pred, test_accuracy, test_time = test_model(model, test_data, 
-                                                      activation,
-                                           batch_size=batch_size, 
-                                           use_cuda=use_cuda)
+summary = test_model(model, test_data, activation,
+                        batch_size=batch_size, 
+                        use_cuda=use_cuda)
+
+y_true, y_pred, test_accuracy, test_time = summary
 
 # just percentage to fire class
 y_score = [y[1] for y in y_pred]
