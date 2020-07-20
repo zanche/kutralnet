@@ -6,33 +6,54 @@ Created on Fri Jun 12 00:26:58 2020
 @author: Angel Ayala <angel4ayala [at] gmail.com>
 """
 import os
+import ast
 import importlib
 from torch import optim
 from torch.nn import Sigmoid
-from torch.nn import LogSoftmax
+from torch.nn import Softmax
 from torch.nn import CrossEntropyLoss
 from torch.nn import BCEWithLogitsLoss
 
 from .libs.optim_nadam import Nadam
+from .libs.losses import ClassBalancedLoss
+from .libs.losses import FocalLoss
 
 
-# activations and cost function
+# activation functions
 activations = dict()
-
 activations['softmax'] = dict(
-        loss= CrossEntropyLoss,
-        loss_params= None,
-        activation= LogSoftmax,
-        activation_params= dict(dim=1)
+        fn= Softmax,
+        params= dict(dim=1)
     )
 
 activations['sigmoid'] = dict(
-        loss= BCEWithLogitsLoss,
-        loss_params= None,
-        activation= Sigmoid,
-        activation_params= None
+        fn= Sigmoid,
+        params= dict() # default params
     )
 
+# cost functions
+losses = dict()
+losses['ce'] = dict(
+        fn= CrossEntropyLoss,
+        params= dict()
+    )
+
+losses['bce'] = dict(
+        fn= BCEWithLogitsLoss,
+        params= dict()
+    )
+
+losses['focal'] = dict(
+        fn= FocalLoss,
+        params= dict()
+    )
+
+losses['cb'] = dict(
+        fn= ClassBalancedLoss,
+        params= dict()
+    )
+
+# models registered
 models = dict()
 models['firenet'] = dict(
         img_dims= (64, 64),
@@ -239,14 +260,26 @@ def get_model_params(model_id='kutralnet'):
     
     return params
     
-def get_model(model_id='kutralnet', num_classes=2, extra_params=None):
+def get_model(model_id='kutralnet', num_classes=2, extra_params=dict()):
     model = None
     config = get_model_params(model_id)
     module = importlib.import_module(config['module_name'])        
     model = getattr(module, config['class_name'])
     params = {'classes': num_classes }
 
-    if not extra_params is None:
+    if isinstance(extra_params, list):
+        _model_params = dict()
+        for _param in extra_params:
+            key, val = _param.split("=")
+            try:
+                val = ast.literal_eval(val)                
+            except:
+                pass
+            _model_params[key] = val
+            
+        params.update(_model_params)
+        
+    elif isinstance(extra_params, dict):
         params.update(extra_params)
 
     model = model(**params)
@@ -255,28 +288,70 @@ def get_model(model_id='kutralnet', num_classes=2, extra_params=None):
 # end get_model
 
 
-def get_loss(act_id='softmax'):
-    if not act_id in activations:
-        raise ValueError('Must choose a registered cost function', activations.keys())
-        
-    loss_class = activations[act_id]['loss']
-    params = activations[act_id]['loss_params']
+def get_loss(key_id='ce', extra_params=dict()):
+    keys = key_id.split("_")
+    no_keys = len(keys)
     
-    if not params is None:
-        return loss_class(**params)
+    if no_keys > 2:
+        # loss_loss_activation pattern
+        # recursive to make cb_*_activation
+        act_id = keys[-1]
+        # common extra params
+        add_params = dict()
+        # loss keys
+        loss_idxs = list(range(no_keys -1))        
+        loss_idxs.sort(reverse=True)        
+        
+        for idx in loss_idxs:
+            loss_id = keys[idx]
+            if loss_id in ['cb', 'focal']:
+                add_params['is_softmax'] = act_id == 'softmax'
+            loss_fn = get_loss(loss_id, extra_params=add_params)
+            add_params.update(dict(loss_fn= loss_fn))
+            add_params.update(extra_params)
+        
+        return loss_fn
+        
+    elif no_keys > 1:
+        # loss_activation pattern
+        loss_id = keys[0]
     else:
-        return loss_class()
+        loss_id = key_id
+    
+    if not loss_id in losses:
+        raise ValueError('Must choose a registered cost function', losses.keys())
+        
+    loss = losses[loss_id]
+    params = loss['params']
+        
+    params.update(extra_params)
+    
+    if len(params.keys()) > 0:
+        # if params were passed
+        return loss['fn'](**params)
+    else:
+        return loss['fn']()
 # end get_loss
 
-def get_activation(act_id='softmax'):
+def get_activation(key_id='softmax', extra_params=None):
+    """Load the activation function to estimate the probabilities."""
+    keys = key_id.split("_")
+    
+    # lask key is activation
+    act_id = keys[-1] if len(keys) > 1 else key_id
+    
     if not act_id in activations:
         raise ValueError('Must choose a registered activation function', activations.keys())
         
-    activation_class = activations[act_id]['activation']
-    params = activations[act_id]['activation_params']
+    activation = activations[act_id]
+    params = activation['params']
+        
+    if not extra_params is None:
+        params.update(extra_params)
     
-    if not params is None:
-        return activation_class(**params)
+    if len(params.keys()) > 0:
+        # if params were passed
+        return activation['fn'](**params)
     else:
-        return activation_class()
+        return activation['fn']()
 # end get_activation

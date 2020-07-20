@@ -1,5 +1,5 @@
 import os
-import json
+import ast
 import torch
 import argparse
 import numpy as np
@@ -23,20 +23,22 @@ from utils.plotting import plot_history
 parser = argparse.ArgumentParser(description='Classification models training script')
 parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
-parser.add_argument('--activation', default='softmax',
-                    help='the activation function for the model')
+parser.add_argument('--activation', default='ce_softmax',
+                    help='the activation and loss function for the model as LOSS_ACTIVATION pattern')
 parser.add_argument('--epochs', default=100, type=int,
                     help='the number of maximum iterations')
 parser.add_argument('--batch-size', default=32, type=int,
                     help='the number of items in the batch')
 parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
-parser.add_argument('--version', metavar='VERSION_ID', default='BCEloss',
+parser.add_argument('--version', metavar='VERSION_ID', default=None,
                     help='the training version')
 parser.add_argument('--models-path', default='models',
                     help='the path where storage the models')
-parser.add_argument('--model-params', default=None,
-                    help='the params to instantiate the model')
+parser.add_argument('--model-params', default=None, nargs='*',
+                    help='the params to instantiate the model as KEY=VAL')
+parser.add_argument('--loss-params', default=None, nargs='*',
+                    help='the params to instantiate the cost function as KEY=VAL')
 parser.add_argument('--dataset-flags', default=None, nargs='*',
                     help='the datasets flags to instaciate the dataset, this \
                         flags can be: \
@@ -63,9 +65,7 @@ pin_memory = bool(args.pin_memory) #False # pin dataset on-memory
 must_seed = bool(args.seed) #True # set seed value
 model_params = args.model_params
 dataset_flags = args.dataset_flags
-
-if not model_params is None:
-    model_params = json.loads(model_params)
+loss_params = args.loss_params
     
 # cuda if available
 use_cuda = torch.cuda.is_available()
@@ -102,7 +102,29 @@ num_classes = train_data.num_classes
 model = get_model(model_id, num_classes=num_classes, extra_params=model_params)
 
 # cost function
-criterion = get_loss(activation_fn)
+loss_extra_params = dict()
+if not loss_params is None:
+    for _p in loss_params:
+        key, val = _p.split("=")
+        try:
+            val = ast.literal_eval(val)                
+        except:
+            pass
+        loss_extra_params[key] = val
+
+# class balanced variation
+if 'cb_' in activation_fn:
+    print('Class balanced variation')
+    samples_class = train_data.samples_by_class
+    ref_samples = []
+    
+    for k, sample in samples_class.items():
+        ref_samples.append(sample['p'])
+        
+    loss_extra_params['samples_per_cls'] = ref_samples
+    
+criterion = get_loss(activation_fn, loss_extra_params)
+print("Using", criterion)
 activation = get_activation(activation_fn)
 
 # optimizer

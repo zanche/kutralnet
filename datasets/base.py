@@ -228,7 +228,18 @@ class BaseDataset(Dataset):
         print('{} images loaded in {:.0f}m {:.0f}s'.format(
             len(self), time_elapsed // 60, time_elapsed % 60))
         self.loaded = True
-        self.labels_describe()
+        
+        # print summary
+        samples = self.samples_by_class
+        print('Imgs. detail:')
+        
+        for k, label in self.labels.items():
+            print("{}: {}".format(label['idx'], label['name']), end=", ")
+        print()
+        
+        for k, smpl in samples.items():
+            print("{}: {}\t({:.2f}%)".format(k, smpl['n'], smpl['p'] * 100.))
+            
     # end _preload
     
     def label2idx(self, label):
@@ -291,8 +302,9 @@ class BaseDataset(Dataset):
         
         if self.one_hot:
             # Create one-hot encodings of labels
+            # print(self.num_classes, len(self.labels))
             one_hot = torch.nn.functional.one_hot(labels_tensor, 
-                                                  num_classes=self.num_classes)#len(self.labels))
+                                                  num_classes=len(self.labels))
             
             # if distributed first label must be excluded.
             if self.distributed:
@@ -325,8 +337,9 @@ class BaseDataset(Dataset):
         print(self.data[cols].groupby(groups).agg(['count']))
     # end labels_describe
     
-    def print_summary(self):
-        """Print the images per label in the dataset."""
+    @property
+    def samples_by_class(self):
+        """Probality for each class in the dataset."""
         labels = dict()
         
         for idx in range(len(self.data)):
@@ -340,9 +353,14 @@ class BaseDataset(Dataset):
             labels[label_id] += 1
             
         labels = collections.OrderedDict(sorted(labels.items()))
+        samples = dict()
         
         for k in labels.keys():
-            print(k, labels[k])
+            n = labels[k]
+            p = labels[k] / len(self.data)
+            samples[k] = dict(n=n, p=p)
+            
+        return samples
     
     def split(self, size=0.2, persist=False):
         """Split the dataset into training and validation at specified size.

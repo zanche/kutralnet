@@ -24,7 +24,7 @@ parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
 parser.add_argument('--dataset-test', metavar='DATASET_TEST_ID', default='firenet_test',
                     help='the dataset ID for test')
-parser.add_argument('--activation', default='softmax',
+parser.add_argument('--activation', default='ce_softmax',
                     help='the activation function for the model')
 parser.add_argument('--version', metavar='VERSION_ID', default=None,
                     help='the training version')
@@ -57,10 +57,6 @@ batch_size = args.batch_size #32
 must_seed = bool(args.seed)
 model_params = args.model_params
 dataset_flags = args.dataset_flags
-
-
-if not model_params is None:
-    model_params = json.loads(model_params)
     
 # cuda if available
 use_cuda = torch.cuda.is_available()
