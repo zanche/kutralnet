@@ -84,9 +84,9 @@ class FocalLoss(nn.Module):
             cross_entropy = cross_entropy.repeat(1, logits.size(-1))
             
         loss = modulator * cross_entropy
-        print('modulator', modulator.shape, 
-              'cross_entropy', cross_entropy.shape,
-              'self.weight', self.weight.shape)
+        # print('modulator', modulator.shape, 
+        #       'cross_entropy', cross_entropy.shape,
+        #       'self.weight', self.weight.shape)
 
         # weighted loss
         if not self.weight is None:
