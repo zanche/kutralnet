@@ -24,7 +24,7 @@ class FocalLoss(nn.Module):
     def __init__(self, alpha=0.25, gamma=2, reduction='mean', is_softmax=False):
         """Initialize parameters for Focal loss."""
         super(FocalLoss, self).__init__()
-        self.alpha = float(alpha)
+        self.alpha = alpha
         self.gamma = float(gamma)
         self.reduction = reduction
         self.weight = None
