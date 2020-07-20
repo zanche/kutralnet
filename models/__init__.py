@@ -304,8 +304,6 @@ def get_loss(key_id='ce', extra_params=dict()):
         
         for idx in loss_idxs:
             loss_id = keys[idx]
-            if loss_id in ['cb', 'focal']:
-                add_params['is_softmax'] = act_id == 'softmax'
             loss_fn = get_loss(loss_id, extra_params=add_params)
             add_params.update(dict(loss_fn= loss_fn))
             add_params.update(extra_params)
@@ -315,6 +313,7 @@ def get_loss(key_id='ce', extra_params=dict()):
     elif no_keys > 1:
         # loss_activation pattern
         loss_id = keys[0]
+        act_id = keys[-1]        
     else:
         loss_id = key_id
     
@@ -323,6 +322,9 @@ def get_loss(key_id='ce', extra_params=dict()):
         
     loss = losses[loss_id]
     params = loss['params']
+    
+    if loss_id in ['cb', 'focal']:
+        params.update(dict(is_softmax=act_id == 'softmax'))
         
     params.update(extra_params)
     
