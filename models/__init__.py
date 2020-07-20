@@ -312,8 +312,7 @@ def get_loss(key_id='ce', extra_params=dict()):
         
     elif no_keys > 1:
         # loss_activation pattern
-        loss_id = keys[0]
-        act_id = keys[-1]        
+        loss_id, act_id = keys
     else:
         loss_id = key_id
     
