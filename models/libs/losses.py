@@ -39,7 +39,7 @@ class FocalLoss(nn.Module):
         """Compute Focal loss for the input.
         
         Args:
-            logits Tensor of shape (N, ...): input predicted logits values
+            input Tensor of shape (N, ...): input predicted logits values
             target Tensor of shape(N, ...): the the y values for the input
         """
         # if not hot_encoded
@@ -112,7 +112,7 @@ class ClassBalancedLoss(nn.Module):
     """
     
     def __init__(self, samples_per_cls, loss_fn=nn.BCEWithLogitsLoss(), 
-                 beta=0.9999, is_softmax=False):
+                 beta=0.9999, is_softmax=False, distributed_rep=False):
         """Initialize params for Class Balanced loss.
         
         Parameters
@@ -125,6 +125,10 @@ class ClassBalancedLoss(nn.Module):
             The default is 0.9999.
         is_softmax: optional, indicate if work with softmax activation.
             The default is False.
+        distributed_rep: optional, indicate if the label consider a distributed
+            representation, if True, the first label is excluded from the binary
+            target, manipulating the one_hot encoded target in a different way.
+            The default is False.
         """
         super(ClassBalancedLoss, self).__init__()
         self.beta = float(beta)
@@ -132,29 +136,41 @@ class ClassBalancedLoss(nn.Module):
         self.no_of_classes = self.samples_per_cls.shape[0]
         self.loss_fn = loss_fn
         self.is_softmax = is_softmax
+        self.distributed_rep = distributed_rep
         
         self.effective_num = 1.0 - self.beta ** np.array(samples_per_cls)
         # calculate weights per class
         weights = (1.0 - self.beta) / self.effective_num
         weights = weights / np.sum(weights) * self.no_of_classes
         self.weights = torch.tensor(weights).float()
+        print(self.effective_num, self.effective_num.shape)
+        print(self.samples_per_cls, self.samples_per_cls.shape)
+        print(self.weights, self.weights.shape)
         
         
     def forward(self, input, target): 
         """Compute the weights and loss value."""
         # if not hot_encoded
         if target.dim() < 2 and not self.is_softmax:
-            target = F.one_hot(target, input.size(-1)).float()
+            target = F.one_hot(target, input.size(-1))
         
         if not self.is_softmax:
             # class weight for batch
-            w_idx = torch.argmax(target, dim=1)
+            if self.distributed_rep:
+                # reverse distributed one-hot encoded label
+                values = torch.tensor(range(input.size(-1))) +1
+                w_idx = target.long() @ values
+            else:
+                w_idx = torch.argmax(target, dim=1)
+            # print(target, w_idx)
             batch_weights = self.weights[w_idx].unsqueeze(1)
-            weights = batch_weights.repeat(1, self.no_of_classes)    
+            weights = batch_weights.repeat(1, input.size(-1))#self.no_of_classes)
+            # print('weights',weights )
             self.loss_fn.weight = weights
         else:
             self.loss_fn.weight = self.weights
             
+        self.loss_fn.weight.to(input.device)            
         cb_loss = self.loss_fn(input, target)
         return cb_loss
         

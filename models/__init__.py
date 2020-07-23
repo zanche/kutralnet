@@ -15,8 +15,8 @@ from torch.nn import CrossEntropyLoss
 from torch.nn import BCEWithLogitsLoss
 
 from .libs.optim_nadam import Nadam
-from .libs.losses import ClassBalancedLoss
 from .libs.losses import FocalLoss
+from .libs.losses import ClassBalancedLoss
 
 
 # activation functions
@@ -220,7 +220,7 @@ def get_model_paths(models_root, model_name, dataset_name, version=None,
                     create_path=False):
     # main folder
     models_save_path = os.path.join(models_root, 'saved')
-    # final folder for {model_name}/{dataset_name}_{version}
+    # final folder for {model_name}/{dataset_name}/{version}
     folder_name = os.path.join(model_name, dataset_name)
     if version is not None:
         folder_name = os.path.join(folder_name, version)
@@ -303,7 +303,7 @@ def get_loss(key_id='ce', extra_params=dict()):
         loss_idxs.sort(reverse=True)        
         
         for idx in loss_idxs:
-            loss_id = keys[idx]
+            loss_id = "{}_{}".format(keys[idx], act_id)
             loss_fn = get_loss(loss_id, extra_params=add_params)
             add_params.update(dict(loss_fn= loss_fn))
             add_params.update(extra_params)
@@ -314,16 +314,16 @@ def get_loss(key_id='ce', extra_params=dict()):
         # loss_activation pattern
         loss_id, act_id = keys
     else:
-        loss_id = key_id
-    
+        loss_id = key_id[0]
+        act_id = None
     if not loss_id in losses:
         raise ValueError('Must choose a registered cost function', losses.keys())
         
     loss = losses[loss_id]
     params = loss['params']
     
-    if loss_id in ['cb', 'focal']:
-        params.update(dict(is_softmax=act_id == 'softmax'))
+    if loss_id in ['cb', 'focal'] and not act_id is None:
+        params.update(dict(is_softmax= act_id == 'softmax'))
         
     params.update(extra_params)
     

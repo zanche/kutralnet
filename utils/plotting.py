@@ -199,7 +199,7 @@ def get_results_path(models_root, create_path=False):
         # models root
         if not os.path.exists(models_root):
             os.makedirs(models_root)
-        # model reulst path folder
+        # model result path folder
         if not os.path.exists(models_result_path):
             os.makedirs(models_result_path)
     
@@ -210,10 +210,10 @@ def get_results_path(models_root, create_path=False):
             
     return models_result_path
 
-def get_data(models_root, model_name, dataset_name, version=None):
-    """Get the training and testing data from a model."""
-    save_path, _ = get_model_paths(models_root, model_name, 
-                                                 dataset_name, version)
+def get_data(models_root, model_id, dataset_id, dataset_test_id=None, version=None):
+    """Get the training and testing results of a model."""
+    save_path, _ = get_model_paths(models_root, model_id, 
+                                                 dataset_id, version)
     # check if was trained
     if save_path is None:
         return None, None, None
@@ -221,10 +221,15 @@ def get_data(models_root, model_name, dataset_name, version=None):
     training_data = pd.read_csv(os.path.join(save_path, 'training_summary.csv'),
                                 header=None)
     # testing summary
-    testing_data = pd.read_csv(os.path.join(save_path, 'testing_summary.csv'),
+    testing_filename = 'testing_summary.csv' if (
+        dataset_test_id is None) else '{}_testing_summary.csv'.format(dataset_test_id)
+    testing_data = pd.read_csv(os.path.join(save_path, testing_filename),
                                header=None)
     # ROC values
-    with open(os.path.join(save_path, 'roc_summary.pkl'), 'rb') as f:
+    roc_filename = 'roc_summary.pkl' if (
+        dataset_test_id is None) else '{}_roc_summary.pkl'.format(dataset_test_id)
+                                    
+    with open(os.path.join(save_path, roc_filename), 'rb') as f:
         roc_data = pickle.load(f)
     
     return training_data, testing_data, roc_data
@@ -237,14 +242,14 @@ def get_names(training_data):
 
 def get_validation_acc(training_data):
     """Get the validation data from summary."""
-    val_acc = training_data.loc[15, 1]
-    best_epoch = training_data.loc[16, 1]
+    val_acc = training_data.loc[training_data[0] == 'Validation accuracy'].iat[0, 1]
+    best_epoch = training_data.loc[training_data[0] == 'Best ep'].iat[0, 1]
     return float(val_acc), int(best_epoch)
     
 def get_testing_acc(testing_data):
     """Get the testing data from summary."""
-    test_acc = testing_data.iloc[3, 1]
-    auroc_val = testing_data.iloc[2, 1]
+    test_acc = testing_data.loc[testing_data[0] == 'Testing accuracy'].iat[0, 1]
+    auroc_val = testing_data.loc[testing_data[0] == 'AUROC value'].iat[0, 1]
     return float(test_acc), float(auroc_val)
 
 def plot_all(models_root, datasets, models, 
@@ -296,7 +301,8 @@ def plot_all(models_root, datasets, models,
         for model_id in models:
             for version_id in versions:
                 training_data, testing_data, roc_data = get_data(models_root, 
-                                                    model_id, dataset_id, version_id)
+                                                    model_id, dataset_id, 
+                                                    version=version_id)
                 model_name, dataset_name = get_names(training_data)
                 val_acc, best_epoch = get_validation_acc(training_data)
                 test_acc, auroc_val = get_testing_acc(testing_data)
@@ -428,6 +434,51 @@ def plot_samples(data):
             plt.show()
             break
 # end show_samples
+
+def summary_csv(models_root, models, datasets, test_datasets, filename=None, 
+                versions=None):
+    """Generate a summary CSV from training and test files."""
+    must_save = not filename is None
+    results_path = get_results_path(models_root, create_path=must_save)
+
+    csv_data = []
+
+    if versions is None:
+        versions_list = [None]
+
+    if test_datasets is None:
+        test_datasets = [None]
+
+    for model_id in models:
+        for dataset_id in datasets:        
+            if isinstance(versions, str) and versions == 'all':
+                model_path, _ = get_model_paths(models_root, model_id, 
+                                                dataset_id)
+                versions_list = os.listdir(model_path)
+
+            for dataset_test_id in test_datasets: 
+                for version_id in versions_list:               
+                    summary_data = get_data(models_root, 
+                                            model_id, dataset_id, 
+                                            dataset_test_id=dataset_test_id,
+                                            version=version_id)
+                    
+                    val_acc, best_epoch = get_validation_acc(summary_data[0])
+                    test_acc, auroc_val = get_testing_acc(summary_data[1])
+                    csv_data.append([model_id, dataset_id, dataset_test_id, 
+                                     version_id, best_epoch, val_acc, 
+                                     test_acc, auroc_val])
+
+    columns_name = ['model_id', 'dataset_id', 'dataset_test_id', 
+                    'version_id', 'best_epoch', 'val_acc', 
+                    'test_acc', 'auroc_val']
+    csv_df = pd.DataFrame(data=csv_data, columns=columns_name)
+
+    if must_save:
+        results_path = get_results_path(models_root, create_path=must_save)
+        csv_df.to_csv(os.path.join(results_path, filename), index=None)
+        
+    return csv_df
 
 if __name__ == '__main__':
     root_path = os.path.join('..')

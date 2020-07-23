@@ -122,7 +122,8 @@ roc_summary = {
 }
 
 # save roc data
-with open(os.path.join(save_path, 'roc_summary.pkl'), 'wb') as f:
+with open(os.path.join(save_path,'{}_roc_summary.pkl'.format(test_dataset_id)),
+          'wb') as f:
     pickle.dump(roc_summary, f, pickle.HIGHEST_PROTOCOL)
     
 print('Area under the ROC curve', roc_auc)

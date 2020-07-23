@@ -56,7 +56,7 @@ dataset_id = args.dataset #'fismo'
 version = args.version #None
 models_root = args.models_path
 # train config
-activation_fn = args.activation # 'softmax'
+activation_fn = args.activation # 'ce_softmax'
 epochs = args.epochs #100
 batch_size = args.batch_size #32
 shuffle_dataset = True
@@ -112,6 +112,8 @@ if not loss_params is None:
             pass
         loss_extra_params[key] = val
 
+
+
 # class balanced variation
 if 'cb_' in activation_fn:
     print('Class balanced variation')
@@ -122,6 +124,7 @@ if 'cb_' in activation_fn:
         ref_samples.append(sample['p'])
         
     loss_extra_params['samples_per_cls'] = ref_samples
+    loss_extra_params['distributed_rep'] = train_data.distributed
     
 criterion = get_loss(activation_fn, loss_extra_params)
 print("Using", criterion)

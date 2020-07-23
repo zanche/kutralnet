@@ -231,7 +231,7 @@ class BaseDataset(Dataset):
         
         # print summary
         samples = self.samples_by_class
-        print('Imgs. detail:')
+        print('Labels:', end=' ')
         
         for k, label in self.labels.items():
             print("{}: {}".format(label['idx'], label['name']), end=", ")
@@ -360,6 +360,7 @@ class BaseDataset(Dataset):
             p = labels[k] / len(self.data)
             samples[k] = dict(n=n, p=p)
             
+        print(samples)
         return samples
     
     def split(self, size=0.2, persist=False):
