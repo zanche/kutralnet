@@ -142,7 +142,7 @@ class ClassBalancedLoss(nn.Module):
         # calculate weights per class
         weights = (1.0 - self.beta) / self.effective_num
         weights = weights / np.sum(weights) * self.no_of_classes
-        self.weights = torch.tensor(weights).float()
+        self.weights = torch.tensor(weights).double()
         print(self.effective_num, self.effective_num.shape)
         print(self.samples_per_cls, self.samples_per_cls.shape)
         print(self.weights, self.weights.shape)
@@ -159,19 +159,17 @@ class ClassBalancedLoss(nn.Module):
             if self.distributed_rep:
                 # reverse distributed one-hot encoded label
                 values = torch.tensor(range(input.size(-1))) +1
-                w_idx = target.long() @ values
+                w_idx = target @ values.to(input.device).float()
             else:
                 w_idx = torch.argmax(target, dim=1)
             # print(target, w_idx)
-            batch_weights = self.weights[w_idx].unsqueeze(1)
-            weights = batch_weights.repeat(1, input.size(-1))#self.no_of_classes)
-            # print('weights',weights )
-            self.loss_fn.weight = weights
+            batch_weights = self.weights[w_idx.long()].unsqueeze(1)
+            weights = batch_weights.repeat(1, input.size(-1))
+            self.loss_fn.weight = weights.to(input.device)
         else:
-            self.loss_fn.weight = self.weights
+            self.loss_fn.weight = self.weights.to(input.device)
             
-        self.loss_fn.weight.to(input.device)            
-        cb_loss = self.loss_fn(input, target)
+        cb_loss = self.loss_fn(input.double(), target.double())
         return cb_loss
         
 class SoftmaxBCELoss(nn.BCELoss):

@@ -360,7 +360,6 @@ class BaseDataset(Dataset):
             p = labels[k] / len(self.data)
             samples[k] = dict(n=n, p=p)
             
-        print(samples)
         return samples
     
     def split(self, size=0.2, persist=False):
