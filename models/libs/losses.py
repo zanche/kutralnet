@@ -65,7 +65,7 @@ class FocalLoss(nn.Module):
             probabilities = -F.logsigmoid(logits)
             labels = target
             
-        cross_entropy = self.crit(logits, labels)
+        cross_entropy = self.crit(input, labels)
         
         # probs = torch.sigmoid(logits)
         # pt = torch.where(target == 1, probs, 1 - probs)
@@ -75,13 +75,16 @@ class FocalLoss(nn.Module):
         if self.gamma == 0.0:
             modulator = 1.0
         else:            
-            modulator = torch.exp(-self.gamma * target * logits 
+            modulator = torch.exp(-self.gamma * target * logits
                                   -self.gamma * probabilities)
             
         if self.is_softmax:
             # extend values to batch size fit
             cross_entropy = cross_entropy.unsqueeze(1)
             cross_entropy = cross_entropy.repeat(1, logits.size(-1))
+            
+        # print(cross_entropy)
+        # print(modulator)
             
         loss = modulator * cross_entropy
         # print('modulator', modulator.shape, 
@@ -90,19 +93,19 @@ class FocalLoss(nn.Module):
 
         # weighted loss
         if not self.weight is None:
-            loss = self.weight * loss
+            loss = loss * self.weight
         
-        if self.reduction == 'mean':
-            loss = loss.mean()
-        elif self.reduction == 'sum':
-            loss = loss.sum()
+        # if self.reduction == 'mean':
+        #     loss = loss.mean()
+        # elif self.reduction == 'sum':
+        #     loss = loss.sum()
             
-        return loss
+        # return loss
     
-        # focal_loss = torch.sum(weighted_loss)
-        # # Normalize by the total number of positive samples.
-        # focal_loss /= torch.sum(target)
-        # return focal_loss
+        focal_loss = torch.sum(loss)
+        # Normalize by the total number of positive samples.
+        focal_loss /= torch.sum(target)
+        return focal_loss
 
 class ClassBalancedLoss(nn.Module):    
     """Class balanced loss cost function implementation.
@@ -142,34 +145,36 @@ class ClassBalancedLoss(nn.Module):
         # calculate weights per class
         weights = (1.0 - self.beta) / self.effective_num
         weights = weights / np.sum(weights) * self.no_of_classes
-        self.weights = torch.tensor(weights).double()
-        # print(self.effective_num, self.effective_num.shape)
-        # print(self.samples_per_cls, self.samples_per_cls.shape)
-        # print(self.weights, self.weights.shape)
+        self.weights = torch.from_numpy(weights).float()
         
         
     def forward(self, input, target): 
         """Compute the weights and loss value."""
         # if not hot_encoded
         if target.dim() < 2 and not self.is_softmax:
-            target = F.one_hot(target, input.size(-1))
+            target = F.one_hot(target, input.size(-1)).float()
         
         if not self.is_softmax:
             # class weight for batch
             if self.distributed_rep:
                 # reverse distributed one-hot encoded label
                 values = torch.tensor(range(input.size(-1))) +1
-                w_idx = target @ values.to(input.device).float()
+                print('values', values.dtype)
+                w_idx = target @ values.to(input.device)
             else:
                 w_idx = torch.argmax(target, dim=1)
             # print(target, w_idx)
-            batch_weights = self.weights[w_idx.long()].unsqueeze(1)
+            batch_weights = self.weights[w_idx].unsqueeze(1)
             weights = batch_weights.repeat(1, input.size(-1))
             self.loss_fn.weight = weights.to(input.device)
         else:
+            
+            print('self.weights', self.weights.dtype)
+            
+            
             self.loss_fn.weight = self.weights.to(input.device)
             
-        cb_loss = self.loss_fn(input.double(), target.double())
+        cb_loss = self.loss_fn(input, target)
         return cb_loss
         
 class SoftmaxBCELoss(nn.BCELoss):
