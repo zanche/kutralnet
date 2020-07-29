@@ -45,27 +45,43 @@ def add_bool_arg(parser, name, default=False, **kwargs):
     parser.set_defaults(**{name.replace('-', '_'):default})
 # end add_bool_arg
 
+# def accuracy(outputs, labels, activation, one_hot_encoded=False):
+#     # Accuracy
+#     if not one_hot_encoded: # no one-hot encoded
+#         _, predicted = torch.max(outputs.data, 1)
+#         n_classes = 1
+#         labels_list = labels.tolist()
+        
+#     else: # more classes
+#         # treshold the values
+#         treshold = 0.5
+#         predicted = activation(outputs).detach().clone()
+#         predicted[predicted >= treshold] = 1
+#         predicted[predicted < treshold] = 0
+#         n_classes = outputs.shape[1]
+        
+#         labels_list = labels.argmax(dim=1).tolist() # one-hot inverse
+    
+#     correct = int((predicted == labels).sum().item() / n_classes)
+#     total = labels.size(0)
+    
+#     return correct, total, labels_list
+# # end accuracy
+
 def accuracy(outputs, labels, activation, one_hot_encoded=False):
     # Accuracy
-    if not one_hot_encoded: # no one-hot encoded
-        _, predicted = torch.max(outputs.data, 1)
-        n_classes = 1
-        labels_list = labels.tolist()
-        
-    else: # more classes
+    predicted = activation(outputs).detach().clone()
+    
+    if one_hot_encoded:
         # treshold the values
         treshold = 0.5
-        predicted = activation(outputs).detach().clone()
         predicted[predicted >= treshold] = 1
         predicted[predicted < treshold] = 0
-        n_classes = outputs.shape[1]
         
-        labels_list = labels.argmax(dim=1).tolist() # one-hot inverse
+    # output prediction equals to the entire label
+    correct = (predicted == labels).all(dim=1).sum().item()   
     
-    correct = int((predicted == labels).sum().item() / n_classes)
-    total = labels.size(0)
-    
-    return correct, total, labels_list
+    return correct, predicted
 # end accuracy
 
 def train_model(model, criterion, optimizer, activation, train_data, val_data, 
@@ -132,10 +148,10 @@ def train_model(model, criterion, optimizer, activation, train_data, val_data,
                 # statistics
                 running_loss += loss.item()
                 # Accuracy
-                correct, _, _ = accuracy(outputs, 
-                                            labels, 
-                                            activation, 
-                                            one_hot_encoded=train_data.one_hot)
+                correct, _ = accuracy(outputs, 
+                                    labels, 
+                                    activation, 
+                                    one_hot_encoded=train_data.one_hot)
                 running_acc += correct
 
             epoch_loss = running_loss / data_lengths[phase]
@@ -196,14 +212,14 @@ def test_model(model, dataset, activation, batch_size=32, use_cuda=True):
 
             outputs = model(images)
             
-            predicted, length, labels_list = accuracy(outputs, 
-                                                labels, 
-                                                activation, 
-                                                one_hot_encoded=dataset.one_hot)
+            predicted, _ = accuracy(outputs, 
+                                    labels, 
+                                    activation, 
+                                    one_hot_encoded=dataset.one_hot)
             correct += predicted
-            total += length
+            total += outputs.size(0)
             
-            Y_test.extend(labels_list)
+            Y_test.extend(labels.tolist())
             y_pred.extend(activation(outputs).tolist())
             
     time_elapsed = time.time() - since

@@ -221,16 +221,22 @@ def get_data(models_root, model_id, dataset_id, dataset_test_id=None, version=No
     training_data = pd.read_csv(os.path.join(save_path, 'training_summary.csv'),
                                 header=None)
     # testing summary
-    testing_filename = 'testing_summary.csv' if (
-        dataset_test_id is None) else '{}_testing_summary.csv'.format(dataset_test_id)
-    testing_data = pd.read_csv(os.path.join(save_path, testing_filename),
-                               header=None)
-    # ROC values
-    roc_filename = 'roc_summary.pkl' if (
-        dataset_test_id is None) else '{}_roc_summary.pkl'.format(dataset_test_id)
-                                    
-    with open(os.path.join(save_path, roc_filename), 'rb') as f:
-        roc_data = pickle.load(f)
+    try:
+        testing_filename = 'testing_summary.csv' if (
+            dataset_test_id is None) else '{}_testing_summary.csv'.format(dataset_test_id)
+        testing_data = pd.read_csv(os.path.join(save_path, testing_filename),
+                                   header=None)
+        # ROC values
+        roc_filename = 'roc_summary.pkl' if (
+            dataset_test_id is None) else '{}_roc_summary.pkl'.format(dataset_test_id)
+                                        
+        with open(os.path.join(save_path, roc_filename), 'rb') as f:
+            roc_data = pickle.load(f)
+    except:
+        print('No {} test file for {} trained with {}'.format(
+                dataset_test_id, model_id, dataset_id))
+        testing_data = None
+        roc_data = None
     
     return training_data, testing_data, roc_data
 
@@ -248,6 +254,9 @@ def get_validation_acc(training_data):
     
 def get_testing_acc(testing_data):
     """Get the testing data from summary."""
+    if testing_data is None:
+        return float('NaN'), float('NaN')
+    
     test_acc = testing_data.loc[testing_data[0] == 'Testing accuracy'].iat[0, 1]
     auroc_val = testing_data.loc[testing_data[0] == 'AUROC value'].iat[0, 1]
     return float(test_acc), float(auroc_val)
@@ -457,7 +466,7 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                 versions_list = os.listdir(model_path)
 
             for dataset_test_id in test_datasets: 
-                for version_id in versions_list:               
+                for version_id in versions_list:
                     summary_data = get_data(models_root, 
                                             model_id, dataset_id, 
                                             dataset_test_id=dataset_test_id,

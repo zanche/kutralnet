@@ -143,9 +143,9 @@ class ClassBalancedLoss(nn.Module):
         weights = (1.0 - self.beta) / self.effective_num
         weights = weights / np.sum(weights) * self.no_of_classes
         self.weights = torch.tensor(weights).double()
-        print(self.effective_num, self.effective_num.shape)
-        print(self.samples_per_cls, self.samples_per_cls.shape)
-        print(self.weights, self.weights.shape)
+        # print(self.effective_num, self.effective_num.shape)
+        # print(self.samples_per_cls, self.samples_per_cls.shape)
+        # print(self.weights, self.weights.shape)
         
         
     def forward(self, input, target): 
