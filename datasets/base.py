@@ -407,7 +407,7 @@ class BaseDataset(Dataset):
         if persist:
             print('Saving changes...')
             split_df.to_csv(os.path.join(self.root_path, self.csv_file), 
-                            index=False)
+                            index=False, columns=['folder_path', 'image_id', 'class', 'purpose'])
     
         self.data = split_df
     # end split
