@@ -23,28 +23,28 @@ from utils.plotting import plot_history
 parser = argparse.ArgumentParser(description='Classification models training script')
 parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
-parser.add_argument('--activation', default='ce_softmax',
-                    help='the activation and loss function for the model as LOSS_ACTIVATION pattern')
-parser.add_argument('--epochs', default=100, type=int,
-                    help='the number of maximum iterations')
-parser.add_argument('--batch-size', default=32, type=int,
-                    help='the number of items in the batch')
-parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
-                    help='the dataset ID for training')
-parser.add_argument('--version', metavar='VERSION_ID', default=None,
-                    help='the training version')
-parser.add_argument('--models-path', default='models',
-                    help='the path where storage the models')
 parser.add_argument('--model-params', default=None, nargs='*',
                     help='the params to instantiate the model as KEY=VAL')
+parser.add_argument('--activation', default='ce_softmax',
+                    help='the activation and loss function for the model as LOSS_ACTIVATION pattern')
 parser.add_argument('--loss-params', default=None, nargs='*',
                     help='the params to instantiate the cost function as KEY=VAL')
+parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
+                    help='the dataset ID for training')
 parser.add_argument('--dataset-flags', default=None, nargs='*',
                     help='the datasets flags to instaciate the dataset, this \
                         flags can be: \
                             - (no_)one_hot: to one-hot encode or not the labels.\
                             - (no_)distributed: to use or not a distributed representation.\
                             - (no_)multi_label: to allow or not the use of multi-label images.')
+parser.add_argument('--epochs', default=100, type=int,
+                    help='the number of maximum iterations')
+parser.add_argument('--batch-size', default=32, type=int,
+                    help='the number of items in the batch')
+parser.add_argument('--version', metavar='VERSION_ID', default=None,
+                    help='the training version')
+parser.add_argument('--models-path', default='models',
+                    help='the path where storage the models')
 add_bool_arg(parser, 'preload-data', default=False, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'pin-memory', default=False, help='choose if pin or not the data into CUDA memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
@@ -111,8 +111,6 @@ if not loss_params is None:
         except:
             pass
         loss_extra_params[key] = val
-
-
 
 # class balanced variation
 if 'cb_' in activation_fn:

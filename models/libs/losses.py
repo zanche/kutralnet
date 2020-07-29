@@ -21,13 +21,17 @@ class FocalLoss(nn.Module):
     # version 1: use torch.autograd
     """
 
-    def __init__(self, alpha=0.25, gamma=2, reduction='mean', is_softmax=False):
+    def __init__(self, alpha=0.25, gamma=2, weight=None, reduction='mean', is_softmax=False):
         """Initialize parameters for Focal loss."""
         super(FocalLoss, self).__init__()
-        self.alpha = alpha
+        if isinstance(alpha, (list, type(None))):
+            self.alpha = alpha
+        else:
+            self.alpha = [alpha, 1 -alpha]
+            
         self.gamma = float(gamma)
         self.reduction = reduction
-        self.weight = None
+        self.weight = weight
         self.is_softmax = bool(is_softmax)
         
         if is_softmax:
@@ -49,11 +53,16 @@ class FocalLoss(nn.Module):
         # compute loss
         logits = input.float() # use fp32 if logits is fp16
         
-        if not self.alpha is None:
-            # calculate weights
-            with torch.no_grad():
-                self.weight = torch.empty_like(logits).fill_(1 - self.alpha)
-                self.weight[target == 1] = self.alpha
+        # calculate weights
+        with torch.no_grad():
+            alpha_weight = torch.ones_like(logits) # same weight
+            
+            if not self.alpha is None:
+                # alpha weighted loss
+                alpha_weight[target == 1] = self.alpha[1]
+                alpha_weight[target != 1] = self.alpha[0]
+                
+            # print('self.weight', self.weight)
             
         # numeric transformation of probalities for numeric stability
         if self.is_softmax:
@@ -83,24 +92,10 @@ class FocalLoss(nn.Module):
             cross_entropy = cross_entropy.unsqueeze(1)
             cross_entropy = cross_entropy.repeat(1, logits.size(-1))
             
-        # print(cross_entropy)
-        # print(modulator)
-            
         loss = modulator * cross_entropy
-        # print('modulator', modulator.shape, 
-        #       'cross_entropy', cross_entropy.shape,
-        #       'self.weight', self.weight.shape)
-
-        # weighted loss
-        if not self.weight is None:
-            loss = loss * self.weight
-        
-        # if self.reduction == 'mean':
-        #     loss = loss.mean()
-        # elif self.reduction == 'sum':
-        #     loss = loss.sum()
             
-        # return loss
+        # prioritize previous defined weight
+        loss *= alpha_weight if self.weight is None else self.weight
     
         focal_loss = torch.sum(loss)
         # Normalize by the total number of positive samples.
@@ -145,8 +140,7 @@ class ClassBalancedLoss(nn.Module):
         # calculate weights per class
         weights = (1.0 - self.beta) / self.effective_num
         weights = weights / np.sum(weights) * self.no_of_classes
-        self.weights = torch.from_numpy(weights).float()
-        
+        self.weights = torch.from_numpy(weights).float()        
         
     def forward(self, input, target): 
         """Compute the weights and loss value."""
@@ -158,20 +152,15 @@ class ClassBalancedLoss(nn.Module):
             # class weight for batch
             if self.distributed_rep:
                 # reverse distributed one-hot encoded label
-                values = torch.tensor(range(input.size(-1))) +1
-                print('values', values.dtype)
-                w_idx = target @ values.to(input.device)
+                values = np.array(range(input.size(-1))) +1 # +1 consider multi-label
+                w_idx = target.cpu().long().numpy() @ values
             else:
-                w_idx = torch.argmax(target, dim=1)
-            # print(target, w_idx)
+                w_idx = np.argmax(target, axis=1)
             batch_weights = self.weights[w_idx].unsqueeze(1)
             weights = batch_weights.repeat(1, input.size(-1))
+            
             self.loss_fn.weight = weights.to(input.device)
         else:
-            
-            print('self.weights', self.weights.dtype)
-            
-            
             self.loss_fn.weight = self.weights.to(input.device)
             
         cb_loss = self.loss_fn(input, target)

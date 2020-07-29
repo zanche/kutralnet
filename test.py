@@ -6,6 +6,7 @@ import argparse
 import numpy as np
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import classification_report
+from sklearn.metrics import multilabel_confusion_matrix
 from datasets import get_dataset
 from datasets import get_preprocessing
 from models import get_model
@@ -20,26 +21,26 @@ from utils.training import save_csv
 parser = argparse.ArgumentParser(description='Fire classification test')
 parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
                     help='the model ID for training')
+parser.add_argument('--model-params', default=None,
+                    help='the params to instantiate the model')
+parser.add_argument('--activation', default='ce_softmax',
+                    help='the activation function for the model')
 parser.add_argument('--dataset', metavar='DATASET_ID', default='fismo',
                     help='the dataset ID for training')
 parser.add_argument('--dataset-test', metavar='DATASET_TEST_ID', default='firenet_test',
                     help='the dataset ID for test')
-parser.add_argument('--activation', default='ce_softmax',
-                    help='the activation function for the model')
-parser.add_argument('--version', metavar='VERSION_ID', default=None,
-                    help='the training version')
-parser.add_argument('--batch-size', default=32, type=int,
-                    help='the number of items in the batch')
-parser.add_argument('--models-path', default='models',
-                    help='the path where storage the models')
-parser.add_argument('--model-params', default=None,
-                    help='the params to instantiate the model')
 parser.add_argument('--dataset-flags', default=None, nargs='*',
                     help='the datasets flags to instaciate the dataset, this \
                         flags can be: \
                             - [no_]one_hot: to one-hot encode or not the labels.\
                             - [no_]distributed: to use or not a distributed representation.\
                             - [no_]multi_label: to allow or not the use of multi-label images.')
+parser.add_argument('--version', metavar='VERSION_ID', default=None,
+                    help='the training version')
+parser.add_argument('--batch-size', default=32, type=int,
+                    help='the number of items in the batch')
+parser.add_argument('--models-path', default='models',
+                    help='the path where storage the models')
 add_bool_arg(parser, 'preload-data', default=True, help='choose if load or not the dataset on-memory')
 add_bool_arg(parser, 'seed', default=True, help='choose if set or not a seed for random values')
 args = parser.parse_args()
@@ -107,45 +108,98 @@ model.load_state_dict(torch.load(model_path,
 summary = test_model(model, test_data, activation,
                         batch_size=batch_size, 
                         use_cuda=use_cuda)
+# test results
+true_labels, y_pred, test_accuracy, test_time = summary
 
-y_true, y_pred, test_accuracy, test_time = summary
 
-# just percentage to fire class
-y_score = [y[1] for y in y_pred]
-# Compute ROC curve and ROC area:
-fpr, tpr, _ = roc_curve(y_true, y_score)
-roc_auc = auc(fpr, tpr)
-roc_summary = {
-    'fpr': fpr,
-    'tpr': tpr,
-    'roc_auc': roc_auc
-}
 
-# save roc data
-with open(os.path.join(save_path,'{}_roc_summary.pkl'.format(test_dataset_id)),
-          'wb') as f:
-    pickle.dump(roc_summary, f, pickle.HIGHEST_PROTOCOL)
+if test_data.one_hot:
+    treshold = 0.5
+    y_pred_class = y_pred.copy()    
+    y_pred_class[y_pred_class >= treshold] = 1
+    y_pred_class[y_pred_class < treshold] = 0
     
-print('Area under the ROC curve', roc_auc)
+    # reverse distributed one-hot encoded label
+    values = np.array(range(y_pred.shape[-1]))
+    if test_data.distributed and test_data.multi_label:
+        # +1 consider multi-label
+        values  += 1
+        
+    y_pred_class = y_pred_class @ values
+    # numbered class    
+    y_true = true_labels @ values
+else:    
+    # reverse predicted one-hot encoded (network output)
+    y_pred_class = np.argmax(y_pred, axis=1)
+    # numbered class    
+    y_true = true_labels 
+    
+# print('y_pred', y_pred)
+# print('y_pred_class', y_pred_class)
+# print('true_labels', true_labels)
+# print('y_true', y_true)
 
 # confusion matrix
 print('Classification Report')
 target_names = [ test_data.labels[label]['name'] for label in test_data.labels.keys() ]
-# class discretize
-y_pred_class = np.argmax(y_pred, axis=1)
-# printing purpose only
-class_report = classification_report(y_true, y_pred_class,
-                        target_names=target_names)#, output_dict=True)
+print('target_names', target_names)
 
-print(class_report)
+if test_data.distributed and test_data.multi_label:
+    # if data is distributed create composed class
+    compose_label = "{}&{}".format(target_names[1], target_names[2])
+    target_names.append(compose_label)
+    
+# print('conf matrix', multilabel_confusion_matrix(y_true, y_pred_class))
+
+# printing purpose only
+print(classification_report(y_true, y_pred_class, target_names=target_names))
+                        
 test_results = classification_report(y_true, y_pred_class,
                         target_names=target_names, output_dict=True)
+
+if test_data.distributed and test_data.multi_label:
+    n_labels = y_pred.shape[-1]
+else:
+    n_labels = len(target_names)
+
+roc_summary = dict()
+auroc_label = []
+
+print('Computing area under the ROC curve')
+
+for idx_label in range(n_labels):
+    label_score = [y[idx_label] for y in y_pred]
+    y_true_roc = [yt[idx_label] for yt in true_labels]
+    
+    # Compute ROC curve and ROC area:
+    fpr, tpr, _ = roc_curve(y_true_roc, label_score)
+    auroc_val = auc(fpr, tpr)
+    auroc_label.append(auroc_val)
+    # append label data
+    # label correction for distributed multi-label dataset
+    idx_label += int(test_data.distributed and test_data.multi_label)
+    
+    roc_summary[idx_label] = dict(
+        fpr= fpr,
+        tpr= tpr,
+        auroc= auroc_val
+    )
+    
+    print(target_names[idx_label], auroc_val)
+    
+# save roc data
+with open(os.path.join(save_path,'{}_roc_summary.pkl'.format(test_dataset_id)),
+          'wb') as f:
+    pickle.dump(roc_summary, f, pickle.HIGHEST_PROTOCOL)
 
 # testing summary
 keys = ['Version', 'Test dataset', 'Testing time (s)', 'AUROC value', 
         'Testing accuracy', 'Using CUDA', 'Batch size']
 test_accuracy /= 100
-values = [str(version), test_data, test_time, roc_auc, 
+
+# values = [str(version), test_data, test_time, roc_auc, 
+#           test_accuracy, use_cuda, batch_size]
+values = [str(version), test_data, test_time, auroc_label, 
           test_accuracy, use_cuda, batch_size]
 
 for label in target_names:

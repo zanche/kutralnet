@@ -63,7 +63,7 @@ datasets['fismo_balanced'] = FiSmoBalancedDataset
 datasets['fismo_balanced_black'] = FiSmoBalancedBlackDataset
 # imagenet dataset
 datasets['imagenet']= ImageNetDataset
-# relabeled (revised) set of datasets
+# relabeled fire (& smoke) datasets
 datasets['firenet_relabeled'] = FireNetRDataset
 datasets['firenet_test_relabeled'] = FireNetTestRDataset
 datasets['fismo_relabeled'] = FiSmoRDataset
@@ -80,7 +80,7 @@ datasets['fismo_v2']= FiSmoV2Dataset
 datasets['fismo_blackv2']= FiSmoBlackV2Dataset
 datasets['fireflame']= FireFlameDataset
 datasets['fireflame_test']= FireFlameTestDataset
-# mixed datasets
+# mixed fire and smoke datasets
 datasets['fireflame_v2']= FireFlameV2Dataset
 datasets['fireflame_testv2']= FireFlameTestV2Dataset
 

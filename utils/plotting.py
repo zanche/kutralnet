@@ -7,6 +7,7 @@ Created on Thu Jun 11 12:53:26 2020
 """
 import os
 import pickle
+import ast
 import numpy as np
 import pandas as pd
 from matplotlib.ticker import PercentFormatter
@@ -242,12 +243,14 @@ def get_data(models_root, model_id, dataset_id, dataset_test_id=None, version=No
 
 def get_names(training_data):
     """Get the model and dataset names from summary."""
-    dataset_name = training_data.loc[3, 1]
-    model_name = training_data.loc[1, 1]
+    dataset_name = training_data.loc[training_data[0] == 'Training dataset'].iat[0, 1]
+    model_name = training_data.loc[training_data[0] == 'Model name'].iat[0, 1]
     return model_name, dataset_name
 
 def get_validation_acc(training_data):
     """Get the validation data from summary."""
+    if training_data is None:
+        return float('NaN'), float('NaN')
     val_acc = training_data.loc[training_data[0] == 'Validation accuracy'].iat[0, 1]
     best_epoch = training_data.loc[training_data[0] == 'Best ep'].iat[0, 1]
     return float(val_acc), int(best_epoch)
@@ -259,7 +262,13 @@ def get_testing_acc(testing_data):
     
     test_acc = testing_data.loc[testing_data[0] == 'Testing accuracy'].iat[0, 1]
     auroc_val = testing_data.loc[testing_data[0] == 'AUROC value'].iat[0, 1]
-    return float(test_acc), float(auroc_val)
+    
+    if '[' in auroc_val:
+        auroc_val = ast.literal_eval(auroc_val)
+    else:
+        auroc_val = float(auroc_val)
+    
+    return float(test_acc), auroc_val
 
 def plot_all(models_root, datasets, models, 
              graphs=['val', 'test', 'roc'],

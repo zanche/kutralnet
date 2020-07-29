@@ -45,29 +45,6 @@ def add_bool_arg(parser, name, default=False, **kwargs):
     parser.set_defaults(**{name.replace('-', '_'):default})
 # end add_bool_arg
 
-# def accuracy(outputs, labels, activation, one_hot_encoded=False):
-#     # Accuracy
-#     if not one_hot_encoded: # no one-hot encoded
-#         _, predicted = torch.max(outputs.data, 1)
-#         n_classes = 1
-#         labels_list = labels.tolist()
-        
-#     else: # more classes
-#         # treshold the values
-#         treshold = 0.5
-#         predicted = activation(outputs).detach().clone()
-#         predicted[predicted >= treshold] = 1
-#         predicted[predicted < treshold] = 0
-#         n_classes = outputs.shape[1]
-        
-#         labels_list = labels.argmax(dim=1).tolist() # one-hot inverse
-    
-#     correct = int((predicted == labels).sum().item() / n_classes)
-#     total = labels.size(0)
-    
-#     return correct, total, labels_list
-# # end accuracy
-
 def accuracy(outputs, labels, activation, one_hot_encoded=False):
     # Accuracy
     predicted = activation(outputs).detach().clone()
@@ -77,9 +54,14 @@ def accuracy(outputs, labels, activation, one_hot_encoded=False):
         treshold = 0.5
         predicted[predicted >= treshold] = 1
         predicted[predicted < treshold] = 0
-        
+        # consider full label as correct
+        correct = (predicted == labels).all(dim=1)
+    else:
+        predicted = torch.argmax(predicted, dim=1)
+        correct = predicted == labels
+
     # output prediction equals to the entire label
-    correct = (predicted == labels).all(dim=1).sum().item()   
+    correct = correct.sum().item()
     
     return correct, predicted
 # end accuracy

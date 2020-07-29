@@ -207,7 +207,7 @@ class FiSmoBlackRDataset(FireImages):
         super(FiSmoBlackRDataset, self).__init__(
             name='FiSmoBlack-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
-            csv_file='dataset_black.csv', 
+            csv_file='dataset_black_v2.csv', 
             transform=transform, 
             purpose=purpose, 
             preload=preload, 

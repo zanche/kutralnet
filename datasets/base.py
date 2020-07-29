@@ -340,11 +340,24 @@ class BaseDataset(Dataset):
     @property
     def samples_by_class(self):
         """Probality for each class in the dataset."""
-        labels = dict()
         
-        for idx in range(len(self.data)):
+        def label_sort(columns):
+            values = []
+            for row_val in columns:
+                val = self.label2idx(row_val)
+                if isinstance(val, list):
+                    val = sum(val)
+                values.append(val)
+            return values
+        
+        labels = dict()        
+        subset = self.data.sort_values('class', 
+                                       key=label_sort,
+                                       ignore_index=True)
+        
+        for idx, row in subset.iterrows():
             # read label        
-            label = self.data.iloc[idx]['class']
+            label = row['class']
             label_id = str(self.label2idx(label))
             
             if not label_id in labels:
@@ -352,7 +365,7 @@ class BaseDataset(Dataset):
                 
             labels[label_id] += 1
             
-        labels = collections.OrderedDict(sorted(labels.items()))
+        # labels = collections.OrderedDict(sorted(labels.items()))
         samples = dict()
         
         for k in labels.keys():
