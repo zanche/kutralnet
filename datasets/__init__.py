@@ -1,6 +1,7 @@
 # from .base import BaseDataset
 from .utils import CustomNormalize
-from .utils import ImagePreprocess
+from .utils import SimpleResizer
+from .utils import FireDetectionPreprocess
 
 from .fire import FireNetDataset
 from .fire import FireNetTestDataset
@@ -50,7 +51,8 @@ __all__ = [ 'ImagePreprocess', 'CustomNormalize',
 
 # registered preprocess
 preprocessing = dict()
-preprocessing['resize'] = ImagePreprocess
+preprocessing['resize'] = SimpleResizer
+preprocessing['fire_detection'] = FireDetectionPreprocess
 
 # registered datasets
 datasets = dict()

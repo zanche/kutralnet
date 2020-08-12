@@ -26,14 +26,29 @@ class CustomNormalize:
     # end __repr__
 # end CustomNormalize
 
-class ImagePreprocess(transforms.Compose):
+class SimpleResizer(transforms.Compose):
     """Standard pre-process transformation for the images."""
     
     def __init__(self, img_dims=(224, 224)):
         """Set the resize transform."""
-        super(ImagePreprocess, self).__init__([
+        super(SimpleResizer, self).__init__([
                         transforms.Resize(img_dims), #redimension
                         transforms.ToTensor()
+                    ])
+    # end __init__
+# end ImagePreprocess
+
+class FireDetectionPreprocess(transforms.Compose):
+    """Preprocessing for Deep Convolutional Neural Network for FireDetection
+    Gotthans et al. 2020."""
+    
+    def __init__(self, img_dims=(224, 224)):
+        """Set the resize transform."""
+        super(FireDetectionPreprocess, self).__init__([
+                        transforms.Resize(img_dims), #redimension
+                        transforms.ToTensor(),
+                        transforms.Normalize([0.485, 0.456, 0.406], 
+                                             [0.229,0.224, 0.225])
                     ])
     # end __init__
 # end ImagePreprocess

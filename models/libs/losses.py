@@ -155,7 +155,7 @@ class ClassBalancedLoss(nn.Module):
                 values = np.array(range(input.size(-1))) +1 # +1 consider multi-label
                 w_idx = target.cpu().long().numpy() @ values
             else:
-                w_idx = np.argmax(target, axis=1)
+                w_idx = target.argmax(dim=1)
             batch_weights = self.weights[w_idx].unsqueeze(1)
             weights = batch_weights.repeat(1, input.size(-1))
             

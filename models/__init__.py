@@ -213,6 +213,37 @@ models['resnet18'] = dict(
         scheduler_params= dict()
     )
 
+models['efficientnet'] = dict(
+        img_dims= (224, 224),
+        model_name= 'EfficientNet',
+        model_path= 'model_efficientnet.pth',
+        class_name= 'EfficienNetWildFire',
+        module_name= 'models.efficientnet',
+        optimizer= optim.Adam,
+        optimizer_params= dict(betas=(0.9, 0.99), 
+                              weight_decay=1e-4),
+        preprocess_train= 'resize',
+        preprocess_val= 'resize',
+        preprocess_test= 'resize',
+        scheduler= optim.lr_scheduler.StepLR,
+        scheduler_params= dict(step_size=30)
+    )
+
+models['fire_detection'] = dict(
+        img_dims= (224, 224),
+        model_name= 'FireDetection',
+        model_path= 'model_fire_detection.pth',
+        class_name= 'FireDetection',
+        module_name= 'models.fire_detection',
+        optimizer= optim.Adam,
+        optimizer_params= dict(),
+        preprocess_train= 'fire_detection',
+        preprocess_val= 'fire_detection',
+        preprocess_test= 'fire_detection',
+        scheduler= None,
+        scheduler_params= dict()
+    )
+
 def get_model_name(model_id):
     return models[model_id]['model_name']
 

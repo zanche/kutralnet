@@ -110,9 +110,7 @@ summary = test_model(model, test_data, activation,
                         use_cuda=use_cuda)
 # test results
 true_labels, y_pred, test_accuracy, test_time = summary
-
-
-
+    
 if test_data.one_hot:
     treshold = 0.5
     y_pred_class = y_pred.copy()    
@@ -139,17 +137,26 @@ else:
 # print('true_labels', true_labels)
 # print('y_true', y_true)
 
-# confusion matrix
+
 print('Classification Report')
 target_names = [ test_data.labels[label]['name'] for label in test_data.labels.keys() ]
-print('target_names', target_names)
 
 if test_data.distributed and test_data.multi_label:
     # if data is distributed create composed class
     compose_label = "{}&{}".format(target_names[1], target_names[2])
     target_names.append(compose_label)
+    # if data is distributed None class is absorbed
+    # del target_names[0]
     
-# print('conf matrix', multilabel_confusion_matrix(y_true, y_pred_class))
+print('target_names', target_names)
+    
+# multi_conf = np.array(multilabel_confusion_matrix(y_true, y_pred_class))
+# conf_matrix = np.array(confusion_matrix(y_true, y_pred_class))
+# print('multi conf matrix', multilabel_confusion_matrix(y_true, y_pred_class))
+
+# plt.figure(figsize = (10,7))
+# sb.heatmap(conf_matrix)
+# plt.show()
 
 # printing purpose only
 print(classification_report(y_true, y_pred_class, target_names=target_names))
@@ -167,9 +174,22 @@ auroc_label = []
 
 print('Computing area under the ROC curve')
 
+# plot
+from utils.plotting import PlotHelper
+import matplotlib.pyplot as plt
+
+plotter_roc = PlotHelper('False Positive Rate', 'True Positive Rate')
+
 for idx_label in range(n_labels):
     label_score = [y[idx_label] for y in y_pred]
-    y_true_roc = [yt[idx_label] for yt in true_labels]
+    
+    if test_data.distributed and test_data.multi_label:
+        y_true_roc = [yt[idx_label] for yt in true_labels]
+        y_pred_label = [y[idx_label] for y in y_pred_class]
+    else:
+        y_pred_label = [y for y in y_pred_class]
+        y_true_roc = [yt for yt in true_labels]
+    label_accuracy = (np.array(y_pred_label) == np.array(y_true_roc)).mean()
     
     # Compute ROC curve and ROC area:
     fpr, tpr, _ = roc_curve(y_true_roc, label_score)
@@ -184,9 +204,20 @@ for idx_label in range(n_labels):
         tpr= tpr,
         auroc= auroc_val
     )
+    legend = '{} AUROC={:.2f}'.format(target_names[idx_label], auroc_val)
+    plotter_roc.add_data(legend, fpr, tpr)
     
-    print(target_names[idx_label], auroc_val)
+    print(target_names[idx_label], 
+          'AUROC={:.4f}'.format(auroc_val),
+          'Accuracy={:.4f}'.format(label_accuracy),
+          )
     
+    # print(target_names[idx_label], auroc_val)
+    
+plotter_roc.title = "ROC curve for {} dataset".format(train_dataset_id)
+plotter_roc.plot_roc()
+# plotter_roc.show()
+plt.show()
 # save roc data
 with open(os.path.join(save_path,'{}_roc_summary.pkl'.format(test_dataset_id)),
           'wb') as f:
@@ -213,3 +244,4 @@ save_csv(testing_summary,
          file_path=os.path.join(save_path, '{}_testing_summary.csv'.format(test_dataset_id)),
          header=False,
          index=False)
+
