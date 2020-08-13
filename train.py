@@ -132,7 +132,7 @@ activation = get_activation(activation_fn)
 if model_id == 'efficientnet':
     # as specified in Ho Oh et al. 2020
     epochs = 90
-    batch_size = 256
+    # batch_size = 256
     # batch_size = 128 #used half given memory limits
     conv_layers = dict(params= model._blocks.parameters(),
                        lr= 0.0001)

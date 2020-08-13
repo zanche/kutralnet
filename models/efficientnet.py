@@ -20,5 +20,5 @@ def EfficienNetWildFire(classes):
 
 
 if __name__ == '__main__':
-    efficient = EfficienNetWildFire()
+    efficient = EfficienNetWildFire(2)
     print(efficient)

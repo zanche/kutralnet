@@ -1,5 +1,4 @@
 import os
-import json
 import torch
 import pickle
 import argparse
@@ -17,6 +16,14 @@ from utils.training import add_bool_arg
 from utils.training import test_model
 from utils.training import save_csv
 
+
+def concat_none_class(labels):
+    """Expand the distributed representation array with the zero-label."""
+    base_labels = np.zeros((labels.shape[0], labels.shape[1] +1))
+    base_labels[:, 1:] = labels
+    none_idx = np.where(labels.sum(axis=1) == 0)[0]
+    base_labels[none_idx, 0] = 1
+    return base_labels
 
 parser = argparse.ArgumentParser(description='Fire classification test')
 parser.add_argument('--model', metavar='MODEL_ID', default='kutralnet',
@@ -110,138 +117,128 @@ summary = test_model(model, test_data, activation,
                         use_cuda=use_cuda)
 # test results
 true_labels, y_pred, test_accuracy, test_time = summary
-    
+
 if test_data.one_hot:
+    # set 1 to treshold
     treshold = 0.5
     y_pred_class = y_pred.copy()    
     y_pred_class[y_pred_class >= treshold] = 1
     y_pred_class[y_pred_class < treshold] = 0
     
-    # reverse distributed one-hot encoded label
-    values = np.array(range(y_pred.shape[-1]))
-    if test_data.distributed and test_data.multi_label:
-        # +1 consider multi-label
-        values  += 1
-        
-    y_pred_class = y_pred_class @ values
-    # numbered class    
-    y_true = true_labels @ values
 else:    
     # reverse predicted one-hot encoded (network output)
     y_pred_class = np.argmax(y_pred, axis=1)
-    # numbered class    
-    y_true = true_labels 
     
-# print('y_pred', y_pred)
-# print('y_pred_class', y_pred_class)
-# print('true_labels', true_labels)
-# print('y_true', y_true)
+# numbered class    
+y_true = true_labels
 
+# label names
+label_names = [ label['name'] for key, label in test_data.labels.items() ]
 
-print('Classification Report')
-target_names = [ test_data.labels[label]['name'] for label in test_data.labels.keys() ]
-
-if test_data.distributed and test_data.multi_label:
-    # if data is distributed create composed class
-    compose_label = "{}&{}".format(target_names[1], target_names[2])
-    target_names.append(compose_label)
-    # if data is distributed None class is absorbed
-    # del target_names[0]
+# confussion matrix and metrics
+reports = []
+matrizes = []
+# distributed multi-label have 2 stage test
+if test_data.distributed and test_data.multi_label:    
+    # add none true class
+    multi_y_true = concat_none_class(y_true)    
+    # add none pred class
+    multi_y_pred_class = concat_none_class(y_pred_class)
     
-print('target_names', target_names)
+    print('Distributed multi-label classification report')
+    matrizes.append(multilabel_confusion_matrix(multi_y_true, 
+                                                multi_y_pred_class))
+    print(classification_report(multi_y_true, 
+                                multi_y_pred_class, 
+                                target_names=label_names))
     
-# multi_conf = np.array(multilabel_confusion_matrix(y_true, y_pred_class))
-# conf_matrix = np.array(confusion_matrix(y_true, y_pred_class))
-# print('multi conf matrix', multilabel_confusion_matrix(y_true, y_pred_class))
-
-# plt.figure(figsize = (10,7))
-# sb.heatmap(conf_matrix)
-# plt.show()
-
-# printing purpose only
-print(classification_report(y_true, y_pred_class, target_names=target_names))
-                        
-test_results = classification_report(y_true, y_pred_class,
-                        target_names=target_names, output_dict=True)
-
-if test_data.distributed and test_data.multi_label:
-    n_labels = y_pred.shape[-1]
+    reports.append(classification_report(multi_y_true, 
+                                        multi_y_pred_class, 
+                                        target_names=label_names,
+                                        output_dict=True))
+    
+    # emergency detection metrics
+    eme_y_true = np.where(true_labels.sum(axis=1) == 0, 0, 1)
+    eme_y_pred_class = np.where(y_pred_class.sum(axis=1) == 0, 0, 1)
+    
+    eme_labels = ['None', 'Emergency']
+    print('Fire emergency classification report')
+    test_accuracy = (eme_y_true == eme_y_pred_class).mean()
+    print('Emergency detection accuracy', test_accuracy)
+    matrizes.append(multilabel_confusion_matrix(eme_y_true, 
+                                                eme_y_pred_class))
+    
+    print(classification_report(eme_y_true, 
+                                eme_y_pred_class, 
+                                target_names=eme_labels))
+    reports.append(classification_report(eme_y_true, 
+                                        eme_y_pred_class, 
+                                        target_names=eme_labels,
+                                        output_dict=True))
+    
 else:
-    n_labels = len(target_names)
-
-roc_summary = dict()
-auroc_label = []
-
-print('Computing area under the ROC curve')
-
-# plot
-from utils.plotting import PlotHelper
-import matplotlib.pyplot as plt
-
-plotter_roc = PlotHelper('False Positive Rate', 'True Positive Rate')
-
-for idx_label in range(n_labels):
-    label_score = [y[idx_label] for y in y_pred]
+    # printing single only
+    print('Classification Report All Labels')
+    matrizes.append(multilabel_confusion_matrix(y_true, 
+                                                y_pred_class))
     
-    if test_data.distributed and test_data.multi_label:
-        y_true_roc = [yt[idx_label] for yt in true_labels]
-        y_pred_label = [y[idx_label] for y in y_pred_class]
+    print(classification_report(y_true, y_pred_class, target_names=label_names))
+    reports.append(classification_report(y_true, 
+                                        y_pred_class, 
+                                        target_names=label_names,
+                                        output_dict=True))
+
+# ROC values and AUROC index
+print('Computing area under the ROC curve')
+offset = int(test_data.distributed and test_data.multi_label)
+roc_data = []
+
+# binary-class
+for idx_label in range(len(label_names) -offset):
+    
+    if test_data.one_hot:# and len(y_true.shape) > 1:
+        roc_y_true = y_true[:, idx_label]
     else:
-        y_pred_label = [y for y in y_pred_class]
-        y_true_roc = [yt for yt in true_labels]
-    label_accuracy = (np.array(y_pred_label) == np.array(y_true_roc)).mean()
+        roc_y_true = np.array(y_true == idx_label, dtype=float)
+        
+    roc_y_pred = y_pred[:, idx_label]
     
     # Compute ROC curve and ROC area:
-    fpr, tpr, _ = roc_curve(y_true_roc, label_score)
+    fpr, tpr, _ = roc_curve(roc_y_true, roc_y_pred)
     auroc_val = auc(fpr, tpr)
-    auroc_label.append(auroc_val)
-    # append label data
-    # label correction for distributed multi-label dataset
-    idx_label += int(test_data.distributed and test_data.multi_label)
     
-    roc_summary[idx_label] = dict(
+    data = dict(
+        label= label_names[idx_label +offset],
+        auroc= auroc_val,
         fpr= fpr,
         tpr= tpr,
-        auroc= auroc_val
     )
-    legend = '{} AUROC={:.2f}'.format(target_names[idx_label], auroc_val)
-    plotter_roc.add_data(legend, fpr, tpr)
+    roc_data.append(data)
     
-    print(target_names[idx_label], 
-          'AUROC={:.4f}'.format(auroc_val),
-          'Accuracy={:.4f}'.format(label_accuracy),
-          )
-    
-    # print(target_names[idx_label], auroc_val)
-    
-plotter_roc.title = "ROC curve for {} dataset".format(train_dataset_id)
-plotter_roc.plot_roc()
-# plotter_roc.show()
-plt.show()
-# save roc data
-with open(os.path.join(save_path,'{}_roc_summary.pkl'.format(test_dataset_id)),
+    print(data['label'], 'AUROC={:.6f}'.format(data['auroc']))
+
+
+# save metrics 
+with open(os.path.join(save_path,'testing_metrics_{}.pkl'.format(test_dataset_id)),
           'wb') as f:
-    pickle.dump(roc_summary, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(reports, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(matrizes, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(roc_data, f, pickle.HIGHEST_PROTOCOL)
 
 # testing summary
-keys = ['Version', 'Test dataset', 'Testing time (s)', 'AUROC value', 
-        'Testing accuracy', 'Using CUDA', 'Batch size']
 test_accuracy /= 100
-
-# values = [str(version), test_data, test_time, roc_auc, 
-#           test_accuracy, use_cuda, batch_size]
-values = [str(version), test_data, test_time, auroc_label, 
-          test_accuracy, use_cuda, batch_size]
-
-for label in target_names:
-    for k in test_results[label]:
-        keys.append("{} {}".format(label, k))
-        values.append(test_results[label][k])
-
-testing_summary = list(zip(keys, values))
+testing_summary = [
+        ('Version', str(version)),
+        ('Test dataset', test_data),
+        ('Testing time (s)', test_time),
+        ('Testing accuracy', test_accuracy),
+        ('Using CUDA', use_cuda),
+        ('Batch size', batch_size),
+    ]
 
 save_csv(testing_summary, 
-         file_path=os.path.join(save_path, '{}_testing_summary.csv'.format(test_dataset_id)),
+         file_path=os.path.join(save_path, 
+                                'testing_summary_{}.csv'.format(test_dataset_id)),
          header=False,
          index=False)
 
