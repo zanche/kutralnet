@@ -60,7 +60,7 @@ models['firenet'] = dict(
         model_name= 'FireNet',
         model_path= 'model_firenet.pth',
         class_name= 'FireNet',
-        module_name= 'models.firenet_pt',
+        module_name= 'models.firenet',
         optimizer= optim.Adam,
         optimizer_params= dict(eps= 1e-6),
         preprocess_train= 'resize',
@@ -68,14 +68,6 @@ models['firenet'] = dict(
         preprocess_test= 'resize',
         scheduler= None,
         scheduler_params= dict()
-    )
-
-models['firenet_tf'] = dict(
-        img_dims= (64, 64),
-        model_name= 'FireNet',
-        model_path= 'model_firenet_tf.h5',
-        class_name= 'firenet_tf',
-        module_name= 'models.firenet_tf',
     )
 
 models['octfiresnet'] = dict(
