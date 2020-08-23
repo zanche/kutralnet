@@ -218,48 +218,87 @@ def get_data(models_root, model_id, dataset_id, dataset_test_id=None, version=No
     # check if was trained
     if save_path is None:
         return None, None, None
+    
     # training summary
-    training_data = pd.read_csv(os.path.join(save_path, 'training_summary.csv'),
+    try:
+        training_data = pd.read_csv(os.path.join(save_path, 'training_summary.csv'),
                                 header=None)
+    except:
+        print('No training file for {} trained with {} ({})'.format(
+                model_id, dataset_id, version))
+        training_data = list()
+        
     # testing summary
     try:
         testing_filename = 'testing_summary.csv' if (
-            dataset_test_id is None) else '{}_testing_summary.csv'.format(dataset_test_id)
+            dataset_test_id is None) else 'testing_summary_{}.csv'.format(dataset_test_id)
         testing_data = pd.read_csv(os.path.join(save_path, testing_filename),
                                    header=None)
-        # ROC values
-        roc_filename = 'roc_summary.pkl' if (
-            dataset_test_id is None) else '{}_roc_summary.pkl'.format(dataset_test_id)
-                                        
-        with open(os.path.join(save_path, roc_filename), 'rb') as f:
-            roc_data = pickle.load(f)
+        # metrics
+        metrics_filename = 'testing_metrics.pkl' if (
+            dataset_test_id is None) else 'testing_metrics_{}.pkl'.format(dataset_test_id)
+                    
+        metrics = list()
+        with open(os.path.join(save_path, metrics_filename), 'rb') as f:
+            metrics.append(pickle.load(f)) # reports
+            metrics.append(pickle.load(f)) # matrices
+            metrics.append(pickle.load(f)) # roc_data        
+            
     except:
-        print('No {} test file for {} trained with {}'.format(
-                dataset_test_id, model_id, dataset_id))
-        testing_data = None
-        roc_data = None
+        print('No {} test file for {} trained with {} ({})'.format(
+                dataset_test_id, model_id, dataset_id, version))
+        testing_data = list()
+        metrics = list()
     
-    return training_data, testing_data, roc_data
+    return training_data, testing_data, metrics
 
-def get_names(training_data):
+def process_metrics(metrics):
+    reports, _, roc_data = metrics  # skip matrices
+    metrics_data = dict()
+    
+    if len(reports) == 1:  # fire reports
+        report = reports[0]
+        metrics_data['accuracy_test'] = report['accuracy']
+        metrics_data['precision_avg_weight'] = report['weighted avg'
+                                                       ]['precision']
+        metrics_data['precision_avg_macro'] = report['macro avg'
+                                                      ]['precision']
+
+        for auroc in roc_data:
+            metrics_data[auroc['label']+'_auroc'] = auroc['auroc']
+            metrics_data[auroc['label']+'_precision'] = report[
+                                            auroc['label']]['precision']            
+        
+    elif len(reports) == 2:  # fire and smoke reports
+        raise NotImplementedError('Must implement fire and smoke reports.')
+        
+    return metrics_data
+
+def get_training_info(training_data):
     """Get the model and dataset names from summary."""
     dataset_name = training_data.loc[training_data[0] == 'Training dataset'].iat[0, 1]
     model_name = training_data.loc[training_data[0] == 'Model name'].iat[0, 1]
     return model_name, dataset_name
 
+
+def get_testing_info(testing_data):
+    """Get the model and dataset names from summary."""
+    test_acc = testing_data.loc[
+        testing_data[0] == 'Testing accuracy'].iat[0, 1]
+    test_time = testing_data.loc[
+        testing_data[0] == 'Testing time (s)'].iat[0, 1]
+    return test_acc, test_time
+
+
 def get_validation_acc(training_data):
     """Get the validation data from summary."""
-    if training_data is None:
-        return float('NaN'), float('NaN')
     val_acc = training_data.loc[training_data[0] == 'Validation accuracy'].iat[0, 1]
     best_epoch = training_data.loc[training_data[0] == 'Best ep'].iat[0, 1]
     return float(val_acc), int(best_epoch)
     
+
 def get_testing_acc(testing_data):
-    """Get the testing data from summary."""
-    if testing_data is None:
-        return float('NaN'), float('NaN')
-    
+    """Get the testing data from summary."""    
     test_acc = testing_data.loc[testing_data[0] == 'Testing accuracy'].iat[0, 1]
     auroc_val = testing_data.loc[testing_data[0] == 'AUROC value'].iat[0, 1]
     
@@ -269,6 +308,7 @@ def get_testing_acc(testing_data):
         auroc_val = float(auroc_val)
     
     return float(test_acc), auroc_val
+
 
 def plot_all(models_root, datasets, models, 
              graphs=['val', 'test', 'roc'],
@@ -321,7 +361,7 @@ def plot_all(models_root, datasets, models,
                 training_data, testing_data, roc_data = get_data(models_root, 
                                                     model_id, dataset_id, 
                                                     version=version_id)
-                model_name, dataset_name = get_names(training_data)
+                model_name, dataset_name = get_training_info(training_data)
                 val_acc, best_epoch = get_validation_acc(training_data)
                 test_acc, auroc_val = get_testing_acc(testing_data)
                 
@@ -402,6 +442,7 @@ def plot_all(models_root, datasets, models,
     print('Press enter to exit...')
     input()
     
+    
 def plot_history(history, folder_path=None):
     """Plot history file from training."""
     plt.plot(history['acc'])
@@ -464,6 +505,9 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
     if versions is None:
         versions_list = [None]
 
+    elif isinstance(versions, list):
+        versions_list = versions
+
     if test_datasets is None:
         test_datasets = [None]
 
@@ -481,16 +525,37 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                                             dataset_test_id=dataset_test_id,
                                             version=version_id)
                     
-                    val_acc, best_epoch = get_validation_acc(summary_data[0])
-                    test_acc, auroc_val = get_testing_acc(summary_data[1])
-                    csv_data.append([model_id, dataset_id, dataset_test_id, 
-                                     version_id, best_epoch, val_acc, 
-                                     test_acc, auroc_val])
-
-    columns_name = ['model_id', 'dataset_id', 'dataset_test_id', 
-                    'version_id', 'best_epoch', 'val_acc', 
-                    'test_acc', 'auroc_val']
-    csv_df = pd.DataFrame(data=csv_data, columns=columns_name)
+                    if summary_data[0] is None:
+                        continue
+                    
+                    if len(summary_data[0]) == 0:  # training_data
+                        val_acc, best_epoch = float('NaN'), float('NaN')
+                    else:
+                        val_acc, best_epoch = get_validation_acc(
+                                                            summary_data[0])
+                    
+                    if len(summary_data[1]) == 0:  # testing_data
+                        test_acc, test_time = float('NaN'), float('NaN')
+                        metrics = dict()
+                    else:
+                        test_acc, test_time = get_testing_info(summary_data[1])                        
+                        metrics = process_metrics(summary_data[2])
+                   
+                    exp_data = dict(model_id= model_id,
+                        dataset_id= dataset_id,
+                        dataset_test_id= dataset_test_id,
+                        version_id= version_id,
+                        best_epoch= best_epoch,
+                        val_acc= val_acc,
+                        test_acc= test_acc,
+                        test_time= test_time
+                        )
+                    
+                    exp_data.update(metrics)
+                        
+                    csv_data.append(exp_data)
+                    
+    csv_df = pd.DataFrame.from_dict(csv_data)
 
     if must_save:
         results_path = get_results_path(models_root, create_path=must_save)
