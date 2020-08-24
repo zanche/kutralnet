@@ -256,21 +256,30 @@ def process_metrics(metrics):
     reports, _, roc_data = metrics  # skip matrices
     metrics_data = dict()
     
-    if len(reports) == 1:  # fire reports
-        report = reports[0]
+    # separated labels reports
+    report = reports[0]  
+    if 'accuracy' in report.keys() and len(reports) == 1:
         metrics_data['accuracy_test'] = report['accuracy']
-        metrics_data['precision_avg_weight'] = report['weighted avg'
-                                                       ]['precision']
-        metrics_data['precision_avg_macro'] = report['macro avg'
-                                                      ]['precision']
+    metrics_data['precision_avg_weight'] = report['weighted avg'
+                                                   ]['precision']
+    metrics_data['precision_avg_macro'] = report['macro avg'
+                                                  ]['precision']
 
-        for auroc in roc_data:
-            metrics_data[auroc['label']+'_auroc'] = auroc['auroc']
-            metrics_data[auroc['label']+'_precision'] = report[
-                                            auroc['label']]['precision']            
+    for auroc in roc_data:
+        metrics_data[auroc['label']+'_auroc'] = auroc['auroc']
+        metrics_data[auroc['label']+'_precision'] = report[
+                                        auroc['label']]['precision']
         
-    elif len(reports) == 2:  # fire and smoke reports
-        raise NotImplementedError('Must implement fire and smoke reports.')
+    if len(reports) == 2:  # fire and smoke reports
+        report = reports[1]
+        if 'accuracy' in report.keys():
+            metrics_data['eme_accuracy_test'] = report['accuracy']
+            
+        metrics_data['eme_precision_avg_weight'] = report['weighted avg'
+                                                          ]['precision']
+        metrics_data['eme_precision_avg_macro'] = report['macro avg'
+                                                         ]['precision']
+        metrics_data['Emergency_precision'] = report['Emergency']['precision']
         
     return metrics_data
 
@@ -556,6 +565,9 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                     csv_data.append(exp_data)
                     
     csv_df = pd.DataFrame.from_dict(csv_data)
+    # no numeric data fix
+    csv_df['test_time'] = csv_df['test_time'].astype('float32')
+    csv_df['test_acc'] = csv_df['test_acc'].astype('float32')
 
     if must_save:
         results_path = get_results_path(models_root, create_path=must_save)

@@ -205,11 +205,11 @@ def test_model(model, dataset, activation, batch_size=32, use_cuda=True):
             y_pred.extend(activation(outputs).tolist())
             
     time_elapsed = time.time() - since
-    test_accuracy = 100 * correct / total
+    test_accuracy = correct / total
     print('Completed in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
     print('Accuracy of the network on the test images: {:.2f}%'.format(
-            test_accuracy))
+            test_accuracy * 100))
 
     return np.array(Y_test), np.array(y_pred), test_accuracy, time_elapsed
 

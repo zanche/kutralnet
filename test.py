@@ -137,7 +137,7 @@ label_names = [ label['name'] for key, label in test_data.labels.items() ]
 
 # confussion matrix and metrics
 reports = []
-matrizes = []
+matrices = []
 # distributed multi-label have 2 stage test
 if test_data.distributed and test_data.multi_label:    
     # add none true class
@@ -146,7 +146,7 @@ if test_data.distributed and test_data.multi_label:
     multi_y_pred_class = concat_none_class(y_pred_class)
     
     print('Distributed multi-label classification report')
-    matrizes.append(multilabel_confusion_matrix(multi_y_true, 
+    matrices.append(multilabel_confusion_matrix(multi_y_true, 
                                                 multi_y_pred_class))
     print(classification_report(multi_y_true, 
                                 multi_y_pred_class, 
@@ -165,7 +165,7 @@ if test_data.distributed and test_data.multi_label:
     print('Fire emergency classification report')
     test_accuracy = (eme_y_true == eme_y_pred_class).mean()
     print('Emergency detection accuracy', test_accuracy)
-    matrizes.append(multilabel_confusion_matrix(eme_y_true, 
+    matrices.append(multilabel_confusion_matrix(eme_y_true, 
                                                 eme_y_pred_class))
     
     print(classification_report(eme_y_true, 
@@ -178,8 +178,8 @@ if test_data.distributed and test_data.multi_label:
     
 else:
     # printing single only
-    print('Classification Report All Labels')
-    matrizes.append(multilabel_confusion_matrix(y_true, 
+    print('Classification Report by Label')
+    matrices.append(multilabel_confusion_matrix(y_true, 
                                                 y_pred_class))
     
     print(classification_report(y_true, y_pred_class, target_names=label_names))
@@ -222,11 +222,10 @@ for idx_label in range(len(label_names) -offset):
 with open(os.path.join(save_path,'testing_metrics_{}.pkl'.format(test_dataset_id)),
           'wb') as f:
     pickle.dump(reports, f, pickle.HIGHEST_PROTOCOL)
-    pickle.dump(matrizes, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(matrices, f, pickle.HIGHEST_PROTOCOL)
     pickle.dump(roc_data, f, pickle.HIGHEST_PROTOCOL)
 
-# testing summary
-test_accuracy /= 100
+
 testing_summary = [
         ('Version', str(version)),
         ('Test dataset', test_data),
