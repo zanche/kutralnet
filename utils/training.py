@@ -28,7 +28,7 @@ class BestModelSaveCallback:
             model (torch.nn.Module): the model to be saved.
             acc (float): the accuracy value to be compared.
         """
-        if acc >= self.prev_acc:
+        if acc > self.prev_acc:
             print('Saving model...', end=' ')
             best_model = copy.deepcopy(model.state_dict())
             torch.save(best_model, self.model_path)
