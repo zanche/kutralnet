@@ -367,15 +367,38 @@ def plot_all(models_root, datasets, models,
         
         for model_id in models:
             for version_id in versions:
+                
+                summary_data = get_data(models_root, 
+                                            model_id, dataset_id, 
+                                            dataset_test_id=dataset_test_id,
+                                            version=version_id)
+                
                 training_data, testing_data, roc_data = get_data(models_root, 
                                                     model_id, dataset_id, 
                                                     version=version_id)
-                model_name, dataset_name = get_training_info(training_data)
+                if summary_data[0] is None:
+                        continue
+                    
+                if len(summary_data[0]) == 0:  # training_data
+                    val_acc, best_epoch = float('NaN'), float('NaN')
+                else:
+                    val_acc, best_epoch = get_validation_acc(
+                                                        summary_data[0])
+                
+                if len(summary_data[1]) == 0:  # testing_data
+                    test_acc, test_time = float('NaN'), float('NaN')
+                    metrics = dict()
+                else:
+                    test_acc, test_time = get_testing_info(summary_data[1])                        
+                    metrics = process_metrics(summary_data[2])
+                    
+                    
+                
                 val_acc, best_epoch = get_validation_acc(training_data)
                 test_acc, auroc_val = get_testing_acc(testing_data)
                 
-                if not version_id is None:
-                    model_name += "-" + version_id
+                # if not version_id is None:
+                #     model_name += "-" + version_id
                 
                 if 'val' in graphs:
                     plotter_val.add_data(model_name, dataset_name, val_acc)
@@ -537,6 +560,8 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                     if summary_data[0] is None:
                         continue
                     
+                    model_name, dataset_name = get_training_info(summary_data[0])
+                    
                     if len(summary_data[0]) == 0:  # training_data
                         val_acc, best_epoch = float('NaN'), float('NaN')
                     else:
@@ -551,7 +576,9 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                         metrics = process_metrics(summary_data[2])
                    
                     exp_data = dict(model_id= model_id,
+                        model_name= model_name,
                         dataset_id= dataset_id,
+                        dataset_name= dataset_name,
                         dataset_test_id= dataset_test_id,
                         version_id= version_id,
                         best_epoch= best_epoch,
