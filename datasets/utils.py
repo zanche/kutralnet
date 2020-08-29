@@ -7,6 +7,7 @@ Created on Sat Jul  4 01:32:12 2020
 """
 
 from torchvision import transforms
+from .autoaugment  import ImageNetPolicy
 
 
 class CustomNormalize:
@@ -36,7 +37,21 @@ class SimpleResizer(transforms.Compose):
                         transforms.ToTensor()
                     ])
     # end __init__
-# end ImagePreprocess
+# end SimpleResizer
+
+
+class ResizeImageNetPolicy(transforms.Compose):
+    """Standard pre-process transformation for the images."""
+    
+    def __init__(self, img_dims=(224, 224)):
+        """Set the resize transform."""
+        super(ResizeImageNetPolicy, self).__init__([
+                        transforms.Resize(img_dims),  #redimension
+                        ImageNetPolicy(),  # AutoAugment
+                        transforms.ToTensor()
+                    ])
+    # end __init__
+# end SimpleResizer
 
 class FireDetectionPreprocess(transforms.Compose):
     """Preprocessing for Deep Convolutional Neural Network for FireDetection
@@ -51,7 +66,7 @@ class FireDetectionPreprocess(transforms.Compose):
                                              [0.229,0.224, 0.225])
                     ])
     # end __init__
-# end ImagePreprocess
+# end FireDetectionPreprocess
 
         
 

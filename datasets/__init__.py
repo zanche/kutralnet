@@ -2,6 +2,7 @@
 from .utils import CustomNormalize
 from .utils import SimpleResizer
 from .utils import FireDetectionPreprocess
+from .utils import ResizeImageNetPolicy
 
 from .fire import FireNetDataset
 from .fire import FireNetTestDataset
@@ -52,6 +53,7 @@ __all__ = [ 'ImagePreprocess', 'CustomNormalize',
 # registered preprocess
 preprocessing = dict()
 preprocessing['resize'] = SimpleResizer
+preprocessing['resize_policy'] = ResizeImageNetPolicy
 preprocessing['fire_detection'] = FireDetectionPreprocess
 
 # registered datasets
