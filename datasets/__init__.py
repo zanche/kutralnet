@@ -4,6 +4,9 @@ from .utils import SimpleResizer
 from .utils import FireDetectionPreprocess
 from .utils import ResizeImageNetPolicy
 
+from torchvision import transforms
+from .autoaugment  import ImageNetPolicy
+
 from .fire import FireNetDataset
 from .fire import FireNetTestDataset
 from .fire import FiSmoDataset
@@ -52,9 +55,22 @@ __all__ = [ 'ImagePreprocess', 'CustomNormalize',
 
 # registered preprocess
 preprocessing = dict()
-preprocessing['resize'] = SimpleResizer
-preprocessing['resize_policy'] = ResizeImageNetPolicy
-preprocessing['fire_detection'] = FireDetectionPreprocess
+# preprocessing['resize'] = transforms.Resize#SimpleResizer
+preprocessing['resize'] = (transforms.Resize, None, 'tensor')
+# preprocessing['resize_policy'] = ResizeImageNetPolicy
+preprocessing['resize_policy'] = (transforms.Resize, 'auto_imagenet', 'tensor')
+preprocessing['fire_detection'] = (transforms.Resize, None, 
+                                   ('imagenet', [dict(), 
+                                                 dict(mean=[0.485, 0.456, 0.406],
+                                                      std=[0.229,0.224, 0.225])
+                                                 ]))
+
+augmentation = dict()
+augmentation['auto_imagenet'] = ImageNetPolicy
+
+postprocessing = dict()
+postprocessing['tensor'] = transforms.ToTensor
+postprocessing['imagenet'] = [transforms.ToTensor, transforms.Normalize]
 
 # registered datasets
 datasets = dict()
@@ -91,11 +107,28 @@ datasets['fireflame_testv2']= FireFlameTestV2Dataset
 
 def get_preprocessing(preprocess_id, params=None):
     if preprocess_id in preprocessing:
-        preprocess_class = preprocessing[preprocess_id]
-        if not params is None:
-            return preprocess_class(**params)
+        preprocess, augmentate, postprocess = preprocessing[preprocess_id]
         
-        return preprocess_class()
+        # preprocessing
+        if not params is None:
+            prep = preprocess(**params)
+            
+        # augmentation
+        if not augmentate is None:
+            augment = augmentation[augmentate]()
+        else:
+            augment = augmentate
+            
+        # postprocessing
+        if isinstance(postprocess, tuple):
+            post = []
+            for i in range(len(postprocess[1])):
+                post.append(postprocessing[postprocess[0]][i](**postprocess[1][i]))
+            post = transforms.Compose(*post)
+        else:
+            post = postprocessing[postprocess]()
+        
+        return prep, augment, post
     else:
         raise ValueError('Must choose a registered preprocessing', preprocessing.keys())
 

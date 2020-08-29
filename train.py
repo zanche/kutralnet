@@ -84,17 +84,25 @@ if must_seed:
 config = get_model_params(model_id)
 
 # common preprocess
-transform_params = dict(img_dims=config['img_dims'])
-transform_train = get_preprocessing(config['preprocess_train'], transform_params)
-transform_val = get_preprocessing(config['preprocess_val'], transform_params)
+preprocess_params = dict(size=config['img_dims'])
+transform_train = get_preprocessing(config['preprocess_train'], preprocess_params)
+transform_val = get_preprocessing(config['preprocess_val'], preprocess_params)
 
 # dataset read
-data_params = dict(transform=transform_train, preload=preload_data)
-data_params.update(dict(dataset_flags=dataset_flags))
-train_data = get_dataset(dataset_id, params=data_params)
+train_data_params = dict(preprocess=transform_train[0],
+                        augmentation=transform_train[1], 
+                        postprocess=transform_train[2],
+                        preload=preload_data,
+                        dataset_flags=dataset_flags)
+train_data = get_dataset(dataset_id, params=train_data_params)
 
-data_params.update(dict(purpose='val'))
-val_data = get_dataset(dataset_id, data_params)
+val_data_params = dict(preprocess=transform_val[0],
+                        augmentation=transform_val[1], 
+                        postprocess=transform_val[2],
+                        preload=preload_data,
+                        dataset_flags=dataset_flags,
+                        purpose='val')
+val_data = get_dataset(dataset_id, params=val_data_params)
 
 num_classes = train_data.num_classes
 

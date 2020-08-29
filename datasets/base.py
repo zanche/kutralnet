@@ -5,6 +5,7 @@ import time
 import torch
 import pandas as pd
 from PIL import Image
+from torchvision import transforms
 from torch.utils.data import Dataset
 
 datasets_path = os.path.dirname(os.path.abspath(__file__))
@@ -25,7 +26,8 @@ class BaseDataset(Dataset):
     distributed or not, or can be excluded from the dataset.
     """
     
-    def __init__(self, name, root_path, csv_file='dataset.csv', transform=None,
+    def __init__(self, name, root_path, csv_file='dataset.csv', preprocess=None,
+                 augmentation=None, postprocess=transforms.ToTensor(),
         purpose='train', preload=False, one_hot=False, distributed=False, 
         multi_label=True):
         """Read a CSV file containing the images path, id, class and purpose.
@@ -38,8 +40,13 @@ class BaseDataset(Dataset):
             The root path containing the CSV file and the images.
         csv_file string:
             The CSV filename. The default is 'dataset.csv'.
-        transform torchvision.transform: optional
-            The transformation to be applied in the image. The default is None.
+        prepocess torchvision.transform: optional
+            The transformation to prepocess the image. The default is None.
+        augmentation torchvision.transform: optional
+            The transformation to be applied for augmented dataset. 
+            The default is None.        
+        postprocess torchvision.transform:
+            The transformation to postpocess the image. The default is ToTensor().
         purpose string: optional
             The purpose filter value contained in the CSV. The default is 'train'.
         preload bool: optional
@@ -58,7 +65,9 @@ class BaseDataset(Dataset):
         self.csv_file = csv_file
         self.name = name
         self.purpose = purpose
-        self.transform = transform
+        self.preprocess = preprocess
+        self.augmentation = augmentation
+        self.postprocess = postprocess
         self.preload = preload
         self.one_hot = one_hot
         self.distributed = distributed
@@ -110,9 +119,17 @@ class BaseDataset(Dataset):
             idx = idx.tolist()
 
         if self.loaded:
-            return self.x[idx], self.y[idx]
+            image, label = self.x[idx], self.y[idx]
+        else:
+            image, label = self._item(idx)
 
-        return self._item(idx)
+        # apply augmentation except for none            
+        if self.augmentation and label.sum() > 0: 
+            image = self.augmentation(image)
+            
+        image = self.postprocess(image)
+
+        return image, label
     # end __getitem__
 
     def _item(self, idx):
@@ -133,8 +150,8 @@ class BaseDataset(Dataset):
         label = self.label2tensor(label)
         
         # apply transformations
-        if self.transform:
-            image = self.transform(image)
+        if self.preprocess:
+            image = self.preprocess(image)
 
         return image, label
     # end _item

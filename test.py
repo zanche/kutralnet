@@ -87,12 +87,16 @@ if must_seed:
 config = get_model_params(model_id)
 
 # common preprocess
-transform_params = dict(img_dims=config['img_dims'])
-transform_test = get_preprocessing(config['preprocess_test'], transform_params)
+preprocess_params = dict(size=config['img_dims'])
+transform_test = get_preprocessing(config['preprocess_test'], preprocess_params)
 
 # dataset read
-data_params = dict(purpose='test', transform=transform_test, preload=preload_data)
-data_params.update(dict(dataset_flags=dataset_flags))
+data_params = dict(purpose='test', 
+                    preprocess=transform_test[0],
+                    augmentation=transform_test[1], 
+                    postprocess=transform_test[2],
+                    preload=preload_data,
+                    dataset_flags=dataset_flags)
 test_data = get_dataset(test_dataset_id, params=data_params)
 
 test_num_classes = test_data.num_classes

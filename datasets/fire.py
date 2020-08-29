@@ -10,18 +10,24 @@ class FireImages(BaseDataset):
                  name, 
                  root_path, 
                  csv_file='dataset.csv', 
-                 transform=None,
+                 # transform=None,
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireImages, self).__init__(
                 name=name, 
                 root_path=root_path, 
                 csv_file=csv_file, 
-                transform=transform,
+                # transform=transform,
                 purpose=purpose, 
                 preload=preload, 
-                one_hot=one_hot
+                one_hot=one_hot,
+                preprocess=preprocess,
+                augmentation=augmentation, 
+                postprocess=postprocess
             )
     # end __init__
         
@@ -45,103 +51,139 @@ class FireImages(BaseDataset):
 
 class FireNetDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetDataset, self).__init__(
             name='FireNet', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetDataset
 
 class FireNetTestDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='test', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetTestDataset, self).__init__(
             name='FireNet Test', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset_test.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetTestDataset
 
 class FiSmoDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoDataset, self).__init__(
             name='FiSmo', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoDataset
 
 class FiSmoBlackDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBlackDataset, self).__init__(
             name='FiSmoBlack', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_black.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBlackDataset
 
 class FiSmoBalancedDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBalancedDataset, self).__init__(
             name='FiSmoBalanced', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedDataset
 
 class FiSmoBalancedBlackDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBalancedBlackDataset, self).__init__(
             name='FiSmoBalancedBlack', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_black.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedBlackDataset
 
@@ -149,103 +191,139 @@ class FiSmoBalancedBlackDataset(FireImages):
 ## relabeled versions
 class FireNetRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetRDataset, self).__init__(
             name='FireNet-R', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetRDataset
 
 class FireNetTestRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='test', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetTestRDataset, self).__init__(
             name='FireNet Test-R', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset_test_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetTestRDataset
 
 class FiSmoRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoRDataset, self).__init__(
             name='FiSmo-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoRDataset
 
 class FiSmoBlackRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBlackRDataset, self).__init__(
             name='FiSmoBlack-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_black_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBlackRDataset
 
 class FiSmoBalancedRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBalancedRDataset, self).__init__(
             name='FiSmoBalanced-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedRDataset
 
 class FiSmoBalancedBlackRDataset(FireImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
-                 one_hot=False):
+                 one_hot=False,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBalancedBlackRDataset, self).__init__(
             name='FiSmoBalancedBlack-R', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_black_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
-            one_hot=one_hot)
+            one_hot=one_hot,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedBlackDataset
 

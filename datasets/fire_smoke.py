@@ -17,22 +17,28 @@ class FireSmokeImages(BaseDataset):
                  name, 
                  root_path, 
                  csv_file='dataset.csv', 
-                 transform=None,
+                 # transform=None,
                  purpose='train', 
                  preload=False, 
                  one_hot=True, 
                  distributed=True, 
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireSmokeImages, self).__init__(
                 name=name, 
                 root_path=root_path, 
                 csv_file=csv_file, 
-                transform=transform, 
+                # transform=transform, 
                 purpose=purpose, 
                 preload=preload,
                 one_hot=one_hot, 
                 distributed=distributed, 
-                multi_label=multi_label
+                multi_label=multi_label,
+                preprocess=preprocess,
+                augmentation=augmentation, 
+                postprocess=postprocess
             )
     # end __init__
     
@@ -67,171 +73,219 @@ class FireSmokeImages(BaseDataset):
 
 class FireNetV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetV2Dataset, self).__init__(
             name='FireNet v2', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetDataset
 
 class FireNetTestV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='test', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireNetTestV2Dataset, self).__init__(
             name='FireNet Test v2', 
             root_path=os.path.join(datasets_path, 'FireNetDataset'),
             csv_file='dataset_test_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireNetTestDataset
 
 class FiSmoV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoV2Dataset, self).__init__(
             name='FiSmo v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoDataset
 
 class FiSmoBlackV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FiSmoBlackV2Dataset, self).__init__(
             name='FiSmoBlack v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_black_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBlackDataset
 
 class FiSmoBalancedV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
         super(FiSmoBalancedV2Dataset, self).__init__(
             name='FiSmoBalanced v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedDataset
 
 class FiSmoBalancedBlackV2Dataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         raise NotImplementedError('The csv file must be complemented with smoke images.')
         super(FiSmoBalancedBlackV2Dataset, self).__init__(
             name='FiSmoBalancedBlack v2', 
             root_path=os.path.join(datasets_path, 'FiSmoDataset'),
             csv_file='dataset_balanced_black_v2.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FiSmoBalancedBlackDataset
 
 class FireFlameDataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='train', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireFlameDataset, self).__init__(
             name='FireFlame', 
             root_path=os.path.join(datasets_path, 'FireFlameDataset'),
             csv_file='dataset.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireFlameDataset
 
 class FireFlameTestDataset(FireSmokeImages):
     def __init__(self, 
-                 transform=None, 
+                 # transform=None, 
                  purpose='test', 
                  preload=False, 
                  one_hot=True,
                  distributed=True,
-                 multi_label=True):
+                 multi_label=True,
+                 preprocess=None,
+                 augmentation=None, 
+                 postprocess=transforms.ToTensor()):
         super(FireFlameTestDataset, self).__init__(
             name='FireFlame Test', 
             root_path=os.path.join(datasets_path, 'FireFlameDataset'),
             csv_file='dataset_test.csv', 
-            transform=transform, 
+            # transform=transform, 
             purpose=purpose, 
             preload=preload, 
             one_hot=one_hot,
             distributed=distributed,
-            multi_label=multi_label)
+            multi_label=multi_label,
+            preprocess=preprocess,
+            augmentation=augmentation, 
+            postprocess=postprocess)
     # end __init__
 # end FireFlameDataset
 
