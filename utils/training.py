@@ -2,9 +2,9 @@ import os
 import time
 import copy
 import torch
+import collections
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 
 class BestModelSaveCallback:
@@ -65,6 +65,57 @@ def accuracy(outputs, labels, activation, one_hot_encoded=False):
     
     return correct, predicted
 # end accuracy
+
+# taken from https://www.daniweb.com/programming/computer-science/tutorials/520084/understanding-roc-curves-from-scratch
+ConfusionMatrix = collections.namedtuple('conf', ['tp','fp','tn','fn']) 
+
+def calculate_matrix(actuals, scores, threshold=0.5, positive_label=1):
+    tp=fp=tn=fn=0
+    bool_actuals = [act==positive_label for act in actuals]
+    for truth, score in zip(bool_actuals, scores):
+        if score > threshold:  # predicted positive 
+            if truth:          # actually positive 
+                tp += 1
+            else:              # actually negative              
+                fp += 1          
+        else:                  # predicted negative 
+            if not truth:      # actually negative 
+                tn += 1                          
+            else:              # actually positive 
+                fn += 1
+    return ConfusionMatrix(tp, fp, tn, fn)
+
+def ACC(conf_mtrx):
+    return (conf_mtrx.tp + conf_mtrx.tn) / (conf_mtrx.fp + conf_mtrx.tn + 
+                                            conf_mtrx.tp + conf_mtrx.fn)
+
+def FPR(conf_mtrx):
+    return conf_mtrx.fp / (conf_mtrx.fp + 
+                           conf_mtrx.tn) if (conf_mtrx.fp + 
+                                             conf_mtrx.tn)!=0 else 0
+
+def TPR(conf_mtrx):
+    return conf_mtrx.tp / (conf_mtrx.tp + 
+                           conf_mtrx.fn) if (conf_mtrx.tp + 
+                                             conf_mtrx.fn)!=0 else 0
+                                             
+def ROC(actuals, scores):
+    return apply_metrics(actuals, scores, FPR=FPR, TPR=TPR)
+
+def apply_metrics(actuals, scores, **fxns):
+    # generate thresholds over score domain 
+    low = min(scores)
+    high = max(scores)
+    step = (abs(low) + abs(high)) / 1000
+    thresholds = np.arange(low-step, high+step, step)
+    # calculate confusion matrices for all thresholds
+    confusionMatrices = []
+    for threshold in thresholds:
+        confusionMatrices.append(calculate_matrix(actuals, scores, threshold))
+    # apply functions to confusion matrices 
+    results = {fname:list(map(fxn, confusionMatrices)) for fname, fxn in fxns.items()}
+    results["THR"] = thresholds
+    return results
 
 def train_model(model, criterion, optimizer, activation, train_data, val_data, 
                 epochs=100, batch_size=32, shuffle_dataset=True, scheduler=None, 

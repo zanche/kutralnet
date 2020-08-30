@@ -16,6 +16,10 @@ from utils.training import add_bool_arg
 from utils.training import test_model
 from utils.training import save_csv
 
+from utils.training import apply_metrics
+from utils.training import ROC
+from utils.training import ACC
+
 
 def concat_none_class(labels):
     """Expand the distributed representation array with the zero-label."""
@@ -180,6 +184,9 @@ if test_data.distributed and test_data.multi_label:
                                         target_names=eme_labels,
                                         output_dict=True))
     
+    # m = apply_metrics(eme_y_true, eme_y_pred_class, FPR=FPR, TPR=TPR)
+    # print(m)
+    
 else:
     # printing single only
     print('Classification Report by Label')
@@ -194,11 +201,11 @@ else:
 
 # ROC values and AUROC index
 print('Computing area under the ROC curve')
-offset = int(test_data.distributed and test_data.multi_label)
-roc_data = []
+offset = 1  # None class # int(test_data.distributed and test_data.multi_label)
+metrics_data = []
 
 # binary-class
-for idx_label in range(len(label_names) -offset):
+for idx_label in range(offset, len(label_names)):
     
     if test_data.one_hot:# and len(y_true.shape) > 1:
         roc_y_true = y_true[:, idx_label]
@@ -208,16 +215,18 @@ for idx_label in range(len(label_names) -offset):
     roc_y_pred = y_pred[:, idx_label]
     
     # Compute ROC curve and ROC area:
-    fpr, tpr, _ = roc_curve(roc_y_true, roc_y_pred)
-    auroc_val = auc(fpr, tpr)
+    # fpr, tpr, _ = roc_curve(roc_y_true, roc_y_pred)
+    roc_metric = ROC(roc_y_true, roc_y_pred)
+    acc_metric = apply_metrics(roc_y_true, roc_y_pred, ACC=ACC)
     
     data = dict(
-        label= label_names[idx_label +offset],
-        auroc= auroc_val,
-        fpr= fpr,
-        tpr= tpr,
+        label= label_names[idx_label],
+        auroc= auc(roc_metric['FPR'], roc_metric['TPR']),
+        roc= roc_metric,
+        acc= acc_metric,
+        n= len(roc_y_true)
     )
-    roc_data.append(data)
+    metrics_data.append(data)
     
     print(data['label'], 'AUROC={:.6f}'.format(data['auroc']))
 
@@ -227,7 +236,7 @@ with open(os.path.join(save_path,'testing_metrics_{}.pkl'.format(test_dataset_id
           'wb') as f:
     pickle.dump(reports, f, pickle.HIGHEST_PROTOCOL)
     pickle.dump(matrices, f, pickle.HIGHEST_PROTOCOL)
-    pickle.dump(roc_data, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(metrics_data, f, pickle.HIGHEST_PROTOCOL)
 
 
 testing_summary = [
