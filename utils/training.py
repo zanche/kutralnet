@@ -104,10 +104,12 @@ def ROC(actuals, scores):
 
 def apply_metrics(actuals, scores, **fxns):
     # generate thresholds over score domain 
-    low = min(scores)
-    high = max(scores)
-    step = (abs(low) + abs(high)) / 1000
-    thresholds = np.arange(low-step, high+step, step)
+    # low = min(scores)
+    # high = max(scores)
+    # step = (abs(low) + abs(high)) / 1000
+    # thresholds = np.arange(low-step, high+step, step)
+    # generate fixed thresholds
+    thresholds = np.arange(0, 1, 0.001) # 0.1%
     # calculate confusion matrices for all thresholds
     confusionMatrices = []
     for threshold in thresholds:
