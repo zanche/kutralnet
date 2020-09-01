@@ -283,6 +283,21 @@ def process_metrics(metrics):
         
     return metrics_data
 
+def get_roc_values(roc_metrics):
+    metric_df = None
+    # process metrics by label
+    for roc in roc_metrics:
+        label_metrics = dict()
+        label_metrics['label'] = roc['label']
+        label_metrics['auroc'] = roc['auroc']
+        label_metrics['FPR'] = roc['roc']['FPR']
+        label_metrics['TPR'] = roc['roc']['TPR']
+        label_metrics['ACC'] = roc['acc']['ACC']
+        label_df = pd.DataFrame.from_dict([label_metrics])
+        metric_df = pd.concat([metric_df, label_df])
+
+    return metric_df
+
 def get_training_info(training_data):
     """Get the model and dataset names from summary."""
     dataset_name = training_data.loc[training_data[0] == 'Training dataset'].iat[0, 1]
@@ -532,7 +547,8 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
     must_save = not filename is None
     results_path = get_results_path(models_root, create_path=must_save)
 
-    csv_data = []
+    csv_data = None
+    csv_metrics = None
 
     if versions is None:
         versions_list = [None]
@@ -574,33 +590,44 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                     else:
                         test_acc, test_time = get_testing_info(summary_data[1])                        
                         metrics = process_metrics(summary_data[2])
+                        roc_metrics = get_roc_values(summary_data[2][2])
                    
-                    exp_data = dict(model_id= model_id,
+                    common_data = dict(model_id= model_id,
                         model_name= model_name,
                         dataset_id= dataset_id,
                         dataset_name= dataset_name,
                         dataset_test_id= dataset_test_id,
-                        version_id= version_id,
-                        best_epoch= best_epoch,
+                        version_id= version_id)
+                    
+                    # metrics                    
+                    metrics_df = pd.DataFrame.from_dict([common_data])
+                    metrics_df = metrics_df.join(roc_metrics)
+                    csv_metrics = pd.concat([csv_metrics, metrics_df])
+                    
+                    # summary
+                    summ_data = dict(best_epoch= best_epoch,
                         val_acc= val_acc,
                         test_acc= test_acc,
                         test_time= test_time
                         )
                     
-                    exp_data.update(metrics)
-                        
-                    csv_data.append(exp_data)
+                    common_data.update(summ_data)
+                    common_data.update(metrics)
                     
-    csv_df = pd.DataFrame.from_dict(csv_data)
+                    summ_df = pd.DataFrame.from_dict([common_data])                        
+                    csv_data = pd.concat([csv_data, summ_df])
+                    
+                    
+    # csv_df = pd.DataFrame.from_dict(csv_data)
     # no numeric data fix
-    csv_df['test_time'] = csv_df['test_time'].astype('float32')
-    csv_df['test_acc'] = csv_df['test_acc'].astype('float32')
+    csv_data['test_time'] = csv_data['test_time'].astype('float32')
+    csv_data['test_acc'] = csv_data['test_acc'].astype('float32')
 
     if must_save:
         results_path = get_results_path(models_root, create_path=must_save)
-        csv_df.to_csv(os.path.join(results_path, filename), index=None)
+        csv_data.to_csv(os.path.join(results_path, filename), index=None)
         
-    return csv_df
+    return csv_data, csv_metrics
 
 if __name__ == '__main__':
     root_path = os.path.join('..')

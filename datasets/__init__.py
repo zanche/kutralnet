@@ -124,7 +124,7 @@ def get_preprocessing(preprocess_id, params=None):
             post = []
             for i in range(len(postprocess[1])):
                 post.append(postprocessing[postprocess[0]][i](**postprocess[1][i]))
-            post = transforms.Compose(*post)
+            post = transforms.Compose(post)
         else:
             post = postprocessing[postprocess]()
         
