@@ -208,11 +208,11 @@ metrics_data = []
 for idx_label in range(offset, len(label_names)):
     
     if test_data.one_hot:# and len(y_true.shape) > 1:
-        roc_y_true = y_true[:, idx_label]
+        roc_y_true = y_true[:, idx_label -offset]
+        roc_y_pred = y_pred[:, idx_label -offset]
     else:
         roc_y_true = np.array(y_true == idx_label, dtype=float)
-        
-    roc_y_pred = y_pred[:, idx_label]
+        roc_y_pred = y_pred[:, idx_label]
     
     # Compute ROC curve and ROC area:
     # fpr, tpr, _ = roc_curve(roc_y_true, roc_y_pred)
