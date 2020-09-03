@@ -46,4 +46,4 @@ def model_performance(history_file):
     print('Max validation accuracy {:.4f} reached on epoch {}'.format(
                     best_val_acc, best_ep))
     return best_val_acc, best_ep
-    
+

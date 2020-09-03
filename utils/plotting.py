@@ -305,6 +305,12 @@ def get_training_info(training_data):
     return model_name, dataset_name
 
 
+def get_model_info(training_data):
+    model_flops = training_data.loc[training_data[0] == 'Model FLOPS'].iat[0, 1]
+    model_params = training_data.loc[training_data[0] == 'Model parameters'].iat[0, 1] 
+    return model_flops, model_params
+
+
 def get_testing_info(testing_data):
     """Get the model and dataset names from summary."""
     test_acc = testing_data.loc[
@@ -577,6 +583,7 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                         continue
                     
                     model_name, dataset_name = get_training_info(summary_data[0])
+                    model_flops, model_params = get_model_info(summary_data[0])
                     
                     if len(summary_data[0]) == 0:  # training_data
                         val_acc, best_epoch = float('NaN'), float('NaN')
@@ -608,7 +615,9 @@ def summary_csv(models_root, models, datasets, test_datasets, filename=None,
                     summ_data = dict(best_epoch= best_epoch,
                         val_acc= val_acc,
                         test_acc= test_acc,
-                        test_time= test_time
+                        test_time= test_time,
+                        model_flops= model_flops, 
+                        model_params= model_params
                         )
                     
                     common_data.update(summ_data)
