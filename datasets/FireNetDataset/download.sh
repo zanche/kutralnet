@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# training dataset
+# FireNet dataset
+# Author: Arpit Jadon et al.
+# Website: https://github.com/arpit-jadon/FireNet-LightWeight-Network-for-Fire-Detection
+# Observations: Developed and used for "Firenet: A specialized lightweight fire \& smoke detection model for real-time iot applications"
+# It a custom compilation of fire and neutral images.
+# Some images are misslabeled, we corrected some labels.
 printf  "Starting download of dataset...\n"
 ../../utils/gdown.pl "https://drive.google.com/open?id=165fUt_SiS50syL8QtdON50D_uyudcsrW" "./training.zip"
 
